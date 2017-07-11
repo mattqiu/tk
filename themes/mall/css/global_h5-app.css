@@ -1,0 +1,121 @@
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td { margin: 0; padding: 0; }
+body, button, input, select, textarea { font: 62.5%/1.5 "Microsoft YaHei",SimSun,'\5b8b\4f53',sans-serif; -ms-overflow-style: scrollbar; color: #222; }
+h1,h2,h3,h4,h5,h6{font-size:100%}
+ol,ul{list-style:none}
+body,html{overflow:hidden;width:100%;height:100%}
+img { max-width: 100%; border: none; display: block; overflow: hidden; }
+.clear { zoom: 1; }
+.clear:after { content: ""; clear: both; display: table; }
+a { color: #333157; }
+
+/*小图标样式*/
+@font-face { font-family: iconfont;
+  src: url('../app-fonts/iconfont.eot?t=1471423203'); /* IE9*/
+  src: url('../app-fonts/iconfont.eot?t=1471423203#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../app-fonts/iconfont.woff?t=1471423203') format('woff'), /* chrome, firefox */
+  url('../app-fonts/iconfont.ttf?t=1471423203') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('../app-fonts/iconfont.svg?t=1471423203#iconfont') format('svg'); /* iOS 4.1- */
+}
+.iconfont { font-family: iconfont !important; font-size: 1rem; font-style:normal; -webkit-font-smoothing: antialiased; -webkit-text-stroke-width: 0.2px; -moz-osx-font-smoothing: grayscale; }
+
+.header { z-index: 1; position: fixed; top: 0; height: auto; width: 100%; background: #fff; -webkit-box-shadow: 0 0 5px 0 rgba(0,0,0,.2); box-shadow: 0 0 5px 0 rgba(0,0,0,.2); }
+.nav { padding: .5rem 10%; }
+.nav .logo { float: left; }
+.nav .logo img { float: left; max-height: 55px; position: relative; top: .5rem; }
+.nav .logo h1 { float: left; line-height: 75px; margin-left: .5rem; font-size: 1.8rem; font-family: 'SimHei','STHeiti'; } 
+.download { float: right; padding-top: .4rem; }
+.download li { display: inline-block; border: 1px solid #ccc; border-radius: 4px; padding: 0 1rem; cursor: pointer; transition: all .5s; }
+.download li:first-of-type { margin-right: 1rem; } 
+.download li i { font-size: 2.5rem; }
+.download li span { position: relative; top: -.25em; font-size: 1.25rem; font-weight: 600; font-family: 'SimHei','STHeiti'; }
+.download li:hover { color: #333157; border-color: #333157; }
+
+/*打开扫描下载窗口*/
+.modal{position:fixed;top:0;right:0;bottom:0;left:0;z-index:15;display:none;overflow:hidden;width:100%;height:100%;outline:0;opacity:.5;filter:alpha(opacity=50);-webkit-overflow-scrolling:touch}
+.modal-dialog{position:relative;margin:0 auto;width:320px;height:auto;text-align:center}
+.fade{opacity:0;-webkit-transition:opacity .15s linear;-o-transition:opacity .15s linear;transition:opacity .15s linear}
+.fade.in{opacity:1}
+.modal.fade .modal-dialog{ top: 34%; -webkit-transition:-webkit-opacity .3s ease-out; transition:opacity .3s ease-out; opacity: 0; }
+.modal.in .modal-dialog{ opacity: 1; }
+.modal-open .modal{overflow-x:hidden;overflow-y:auto}
+.modal-content{position:relative;outline:0;border:1px solid #999;border:1px solid rgba(0,0,0,.2);border-radius:2%;background-color:#fff;background-clip:padding-box;-webkit-box-shadow:0 3px 9px rgba(0,0,0,.5);box-shadow:0 3px 9px rgba(0,0,0,.5);-webkit-background-clip:padding-box}
+.modal-backdrop{position:fixed;top:0;right:0;bottom:0;left:0;z-index:5;background-color:#000;opacity:.5;filter:alpha(opacity=50)}
+.modal-backdrop.fade{opacity:0;filter:alpha(opacity=0)}
+.modal-backdrop.in{opacity:.5;filter:alpha(opacity=50)}
+.modal-content img { margin: 2rem 0 0 30px; max-width: 260px; }
+.modal-content p { padding: 1rem 0; font-size: 1.2rem; }
+
+.section-wrap {overflow:visible;width:100%;height:100%;-webkit-transition:-webkit-transform 1s cubic-bezier(.86,0,.03,1);transition:transform 1s cubic-bezier(.86,0,.03,1)}
+.section-wrap .section{position:relative;width:100%;height:100%;background-position:center center;background-repeat:no-repeat;top:90px;}
+.section-wrap.put-section-7 .section { top: 0; }
+.section s.bg-lan { position: absolute; left: 0; bottom: 30%; height: 400px; width: 100%; background: #333157; }
+.section .text { position: absolute; top: 50%; margin-top: -7rem; color: #fff; }
+.section .text:before { content: ""; position: absolute; top: -1.2rem; bottom: 0; left: 0; max-height: 5px; width: 35px; overflow: hidden; background: #faaf19; }
+.section .text.right:before { right: 0; left: auto; }
+.section .text.top-1 { margin-top: -9rem; }
+.section .text.left { left: 50%; margin-left: -35rem; }
+.section .text.right { right: 50%; margin-right: -36rem; text-align: right; }
+.section .text.right-5 { margin-right: -38rem; }
+.section .text h2 { font-size: 3rem; font-weight: 400; }
+.section .text h2.en { font-size: 2rem; }
+.section .text h2.kr { font-size: 2.3rem; }
+.section .text p { font-size: 1.2rem; margin-top: 1.5rem; }
+.section .text .download { float: none; padding-top: 4.5rem; }
+.section .text .download li { background: #fff; border: none; color: #222; }
+.section .text .download li:hover { color: #333157; }
+.section .s { position: absolute; top: auto; bottom: auto; }
+.section s.left { left: 50%; margin-left: -41rem; bottom: 5.7rem;}
+.section s.left-5 { margin-left: -44rem; }
+.section s.left-7 { margin-left: -40rem; }
+.section s.right { right: 50%; margin-right: -41rem; bottom: 5.7rem;}
+.section s.right-1 { bottom: 6rem; }
+.section s.right-6 { margin-right: -41rem;}
+.put-section-0 .fadeInLeft {-webkit-animation-name: fadeInLeft 1.2s ease-out .5s forwards; animation: fadeInLeft 1.2s ease-out .7s forwards; opacity: 0; }
+.put-section-1 .fadeInRight {-webkit-animation-name: fadeInRight 1.2s ease-out .5s forwards; animation: fadeInRight 1.2s ease-out .7s forwards; opacity: 0; }
+.put-section-2 .fadeInBottom, .put-section-3 .time4, .put-section-4 .time5, .put-section-5 .time6, .put-section-6 .time7 {-webkit-animation-name: fadeInBottom 1.2s ease-out 0 forwards; animation: fadeInBottom 1.2s ease-out .7s forwards; opacity: 0; }
+.section s.gif1 { position: absolute; top: 50%; left: 50%; margin: -14.2rem 0 0 -22rem; width: 337px; height: 600px; background: url(../img/app-img/gif-1-cn.gif) no-repeat; }
+.section s.gif2 { position: absolute; top: 50%; right: 50%; margin: -11.2rem -19.8rem 0 0; width: 337px; height: 600px; background: url(../img/app-img/gif-2-cn.gif) no-repeat; }
+.center-download { text-align: center; height: 100%; margin-top: -90px; padding-top: 1rem; -webkit-box-shadow: 0 0 5px 0 rgba(0,0,0,.2); box-shadow: 0 0 5px 0 rgba(0,0,0,.2); }
+.center-download strong { font-size: 2rem; }
+.center-download img { max-width: 12rem; margin: .8rem auto; }
+.center-download .download { float: none; }
+
+@-webkit-keyframes fadeInLeft{from{opacity:0;-webkit-transform:translatex(40%);transform:translatex(40%)}
+to{opacity:1;-webkit-transform:none;transform:none}
+}
+@keyframes fadeInleft{from{opacity:0;-webkit-transform:translatex(40%);transform:translatex(40%)}
+to{opacity:1;-webkit-transform:none;transform:none}
+}
+
+@-webkit-keyframes fadeInRight{from{opacity:0;-webkit-transform:translatex(-40%);transform:translatex(-40%)}
+to{opacity:1;-webkit-transform:none;transform:none}
+}
+@keyframes fadeInRight{from{opacity:0;-webkit-transform:transform:translatex(-40%);transform:translatex(-40%)}
+to{opacity:1;-webkit-transform:none;transform:none}
+}
+
+@-webkit-keyframes fadeInBottom{from{opacity:0;-webkit-transform:translatey(30%);transform:translatey(30%)}
+to{opacity:1;-webkit-transform:none;transform:none}
+}
+@keyframes fadeInBottom{from{opacity:0;-webkit-transform:translatey(30%);transform:translatey(30%)}
+to{opacity:1;-webkit-transform:none;transform:none}
+}
+.put-section-0{-webkit-transform:translateY(0);transform:translateY(0)}
+.put-section-1{-webkit-transform:translateY(-100%);transform:translateY(-100%)}
+.put-section-2{-webkit-transform:translateY(-200%);transform:translateY(-200%)}
+.put-section-3{-webkit-transform:translateY(-300%);transform:translateY(-300%)}
+.put-section-4{-webkit-transform:translateY(-400%);transform:translateY(-400%)}
+.put-section-5{-webkit-transform:translateY(-500%);transform:translateY(-500%)}
+.put-section-6{-webkit-transform:translateY(-600%);transform:translateY(-600%)}
+.put-section-7{-webkit-transform:translateY(-635%);transform:translateY(-635%)}
+.section-btn{position:fixed;top:50%;right:1.5%;}
+.section-btn li { position: relative; margin-bottom: 1.5rem; width: auto; }
+.section-btn li s { display: block; width:10px;height:10px;-webkit-border-radius:50%;border-radius:50%;background:rgba(0,0,0,.3);text-align:center;text-indent:-9999px;cursor:pointer;}
+.section-btn li.on s{background:rgba(255,255,255,.9)}
+.section-btn li span { position: absolute; left: -56px; top: -34px; color: rgba(255,255,255,.5); opacity: 0; transition: all .4s ease-out; }
+.section-btn li.on span { top: -4px; opacity: 1; }
+.arrow{position:absolute;bottom:-40px;left:50%;overflow:hidden;margin-left:-40px;color:#fff;text-align:center;opacity:1;cursor:pointer;animation:arrow 2s cubic-bezier(.5,0,.1,1) infinite;-webkit-animation:arrow 2s cubic-bezier(.5,0,.1,1) infinite}
+.arrow:hover{animation-play-state:paused;-webkit-animation-play-state:paused}
+@keyframes arrow{%0,%100{bottom:-40px;opacity:1} 50%{bottom:30px;opacity:.5}}
+@-webkit-keyframes arrow{%0,%100{bottom:-40px;opacity:1} 50%{bottom:30px;opacity:.5}}
+.arrow i { font-size: 5rem; color: #333157; }

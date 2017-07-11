@@ -1,0 +1,194 @@
+
+.container {
+    width:1200px;
+    margin:0px auto;/*Set the container div algin center.*/
+}
+.header {
+    width:100%;
+    height:90px;
+}
+a {
+    text-decoration: none;
+}
+.header ul{
+    list-style:none;
+}
+.header li{
+    float:left;
+}
+.header .nav{
+    padding: 16px 24px 16px 24px;
+    border-left:#dbdbdb 1px solid;
+    border-right:#dbdbdb 1px solid;
+    font-size: 15px;
+    font-family: Microsoft YaHei;
+}
+.header .cur{border-top: 3px solid #277FBA;padding-top: 13px;}
+.header .nav.first{
+    border-left: 2px solid #DBDBDB;
+}
+.header .nav.last{
+    border-right: 2px solid #DBDBDB;
+}
+.logo{width: 113px;height: 63px;margin-left: -40px;margin-right: 15px;}
+.header .welcome a{
+    color: #ffaa00;
+    /*margin-right: 10px;*/
+    font-weight: bold;
+}
+.header .login{
+    color: #0079c9;
+}
+.navDiv{
+    float: right;
+}
+.header .loginDiv{
+    margin: 16px 10px 0px 0px;
+}
+#countries{
+    width:138px;
+}
+#countries_msdd{
+    float: right;
+    margin-top: 10px;
+}
+.main{
+    width: 100%;
+    background-color: white;
+    margin-top: -5px;
+    min-height: 170px;
+}
+.footer{
+    background-color: #8d8d8d;
+    padding: 12px;
+    margin-top: 10px
+}
+.footer .main_tb{
+    width: 100%;
+}
+.footer .title{
+    font-size: 15px;
+}
+.footer .column1{
+    width: 25%;
+    text-align: center
+}
+.footer .column2{
+    width: 40%;
+    text-align: left;
+    font-size: 13px;
+    color: white;
+    vertical-align: top
+}
+.footer .column3{
+    width: 35%;
+    text-align: center;
+    font-size: 13px;
+    color: white;
+    text-align: left;
+    vertical-align: top
+}
+.footer .column2 .contact{
+    font-size: 13px;
+}
+.footer .copyright p{
+    font-size: 12px;
+    text-align: center;
+    color: white;
+}
+.mod {
+    border: 1px solid #E7E7E7;
+}
+.mod .title {
+    background-color: #F3F3F3;
+    padding: 1px 5px 1px 10px;
+    display: block;
+}
+.title {
+    color: #000;
+    position: relative;
+}
+.p20 {
+    padding: 20px;
+}
+.forgot_tips {
+    line-height: 30px;
+}
+.pt10 {
+    padding-top: 10px;
+}
+.btn_30 {
+    padding: 0px 20px;
+}
+.btn_30 {
+    height: 30px;
+    line-height: 30px;
+}
+.btn_30, .btn_26, .btn_24, .btn_22 {
+    padding: 0px 24px;
+}
+.shadow {
+    border-radius: 1px;
+    box-shadow: 0px 1px 2px #AAA;
+}
+.btn_og, .btn_og:visited {
+    background-color: #FFB527;
+    color: #FFF;
+    text-shadow: 0px -1px 0px #D9D9D9;
+}
+.btn {
+    font-size: 16px;
+    font-weight: bold;
+    display: inline-block;
+    cursor: pointer;
+}
+button{
+    border: 0px none;
+}
+.pl15 {
+    padding-left: 15px;
+}
+.blue, .blue:visited, .blue a, .blue a:visited {
+    color: #1C6CBE;
+}
+.red{
+    color: red;
+}
+.input_text {
+    width: 300px;
+    height: 26px;
+    padding-left: 5px;
+}
+.msg_error {
+    border: 1px solid #F00;
+    background-color: #FAEBE7;
+}
+.msg_success {
+    border: 1px solid #008000;
+    background-color: #EFF5EA;
+}
+.msg_success, .msg_error {
+    padding: 0px 10px;
+    height: 36px;
+    line-height: 36px;
+}
+.mb10 {
+    margin-bottom: 10px;
+}
+.error_icon{
+    width: 19px;
+    height: 19px;
+    background: url("../../img/register.png") no-repeat scroll -14px 0px transparent;
+    vertical-align: middle;
+    margin: 0px 5px 2px 0px;
+}
+.right_icon {
+    width: 19px;
+    height: 19px;
+    background: url("../../img/register.png") no-repeat scroll -33px 0px transparent;
+    vertical-align: middle;
+    margin: 0px 5px 2px 0px;
+}
+.hidden{
+    display: none;
+}

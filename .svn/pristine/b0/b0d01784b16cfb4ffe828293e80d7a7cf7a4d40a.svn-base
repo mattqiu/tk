@@ -1,0 +1,26 @@
+
+.wx_content{
+    height: 100%;
+    width: 380px;
+    margin:0 auto;
+}
+.con_top{
+    margin-top: 50px;
+    height: 400px;
+    width: 380px;
+    background-color: #01a241;
+}
+.title{width:210px;height:45px;background:url(/img/paymentMethod/tit.gif) no-repeat;position:relative;left:90px;top:40px;}
+.dbcode{width:246px;height:246px;position:relative;left:70px;top:65px;background:#FFF;text-align: center}
+
+.con_bot{
+    width: 380px;
+    height:114px;
+    background-color: #ddd;
+    position:relative;top:-23px;
+}
+
+
+.txt270{width:270px;height:68px;background:#efefef;margin:0 auto;position:relative;top:25px;}
+.txt270 p{text-align:center;font-family:'微软雅黑';font-size:24px;color:#bbb;position:relative;top:7px;line-height: 25px}
+

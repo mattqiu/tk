@@ -1,0 +1,11 @@
+.main{
+    width: 100%;
+    height: 900px;
+    background-color: white;
+}
+.main div{
+    float:left;
+}
+.main div .note{
+    margin-left: 20px;
+}

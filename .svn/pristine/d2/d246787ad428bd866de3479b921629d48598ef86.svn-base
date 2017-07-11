@@ -1,0 +1,753 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>套装</title>
+<link href="../css/head.css" rel="stylesheet" type="text/css">
+<link href="../css/all.css" rel="stylesheet" type="text/css">
+<script src="../js/jquery-1.11.1.js"></script>
+<script src="../js/SuperSlide2.1.js"></script>
+</head>
+<body>
+<!--top-->
+<div class="top-wrapper">
+  <div class="container clear">
+    <div class="top-left">
+      <div data-toggle="arrowdown" id="arrow1" class="user-name"><a href="">$Currency<u class="down-icon"></u></a></div>
+      <div data-toggle="arrowdown" id="arrow2" class="user-name"><a href=""><i class="qizhi-usa"></i>Language<u class="down-icon"></u></a></div>
+      <!--hidden-box-->
+      <div data-toggle="hidden-box" id="nav-box1" class="my-yunji-box">
+        <ul>
+          <li><a href="">€ Euro</a></li>
+          <li><a href="">£ Pound Sterling</a></li>
+          <li><a href="">$ US Dollar</a></li>
+        </ul>
+      </div>
+      <div data-toggle="hidden-box" id="nav-box2" class="stow-box">
+        <ul>
+          <li><a href=""><i class="qizhi-english"></i>English</a></li>
+          <li><a href=""><i class="qizhi-zh"></i>简体中文</a></li>
+          <li><a href=""><i class="qizhi-hk"></i>正體中文</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="top-right"> <span class="float-left">Hello,</span> <a href="" class="float-left c-b">Sign In</a> <span class="float-left">|</span> <a href="" class="float-left c-b">Register</a>
+      <div data-toggle="arrowdown" id="arrow3" class="user-name"><a href="#"><s class="yhu"></s>My Account<u class="down-icon"></u></a></div>
+      <div data-toggle="arrowdown" id="arrow4" class="user-name"><a href="#"><s class="xh"></s>Wish List (0)<u class="down-icon"></u></a></div>
+      <a href="" class="float-left"><s class="bz"></s>Help</a> 
+      <!--hidden-box-->
+      <div data-toggle="hidden-box" id="nav-box3" class="language-box">
+        <ul>
+          <li><a href="">Register</a></li>
+          <li><a href="">Login</a></li>
+        </ul>
+      </div>
+      <div data-toggle="hidden-box" id="nav-box4" class="list-box">
+        <ul>
+          <li><a href="">Register</a></li>
+          <li><a href="">Login</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="top-main clear">
+  <div class="container clear">
+    <div class="logo"><a href=""><img src="../img/logo.png"></a></div>
+    <div class="search">
+      <form action="" method="get">
+        <div class="search_input">
+          <input name="url" type="text" class="search_url" placeholder="I’m shopping for…">
+          <input name="" type="submit" class="search_submit" value="">
+        </div>
+      </form>
+    </div>
+    <div class="hd_cart">
+      <div class="cw-icon"> <a href="">My Cart<i class="ci-left"></i> <u class="down-icon ci-right"></u> <b class="ci-count">0</b></a> </div>
+    </div>
+  </div>
+</div>
+<div class="container clear">
+  <div class="nav">
+    <div class="sidebar">
+      <h3 data-toggle="arrowdown" id="arrow6">Categories<s></s></h3>
+      <!--sidebar-info-->
+      <ul class="sidebar-info" data-toggle="hidden-box" id="nav-box6">
+        <li id="mainCate-1" class="mainCate">
+          <div class="titt">
+            <h3><a href="#">白酒</a></h3>
+            <i class="menu-nav-arrow"></i>
+            <p><a href="#">茅台</a><a href="#">五粮液</a><a href="#">国窖1573</a></p>
+          </div>
+          <div class="subCate clear">
+            <div class="item-channels clear">
+              <div class="channels clear"><a href="">家电城<i>&gt;</i></a><a href="">智能生活馆<i>&gt;</i></a><a href="">京东净化馆<i>&gt;</i></a><a href="">京东帮服务店<i>&gt;</i></a></div>
+            </div>
+            <div class="subitems clear">
+              <dl class="fore1">
+                <dt><a href="">手机通讯<i>&gt;</i></a></dt>
+                <dd class="t_none"><a href="">手机</a><a href="">对讲机</a></dd>
+              </dl>
+              <dl class="fore2">
+                <dt><a href="">京东通信<i>&gt;</i></a></dt>
+                <dd><a href="">选号中心</a><a href="">自助服务</a></dd>
+              </dl>
+              <dl class="fore3">
+                <dt><a href="">运营商<i>&gt;</i></a></dt>
+                <dd><a href="">合约机</a><a href="">办套餐</a><a href="">选号码</a><a href="">装宽带</a><a href="">中国移动</a><a href="">中国联通</a><a href="">中国电信</a></dd>
+              </dl>
+              <dl class="fore4">
+                <dt><a href="">运营商<i>&gt;</i></a></dt>
+                <dd><a href="">合约机</a><a href="">办套餐</a><a href="">选号码</a><a href="">装宽带</a><a href="">中国移动</a><a href="">中国联通</a><a href="">中国电信</a><a href="">合约机</a><a href="">办套餐</a><a href="">选号码</a><a href="">装宽带</a><a href="">中国移动</a><a href="">中国联通</a><a href="">中国电信</a></dd>
+              </dl>
+            </div>
+          </div>
+        </li>
+        <li id="mainCate-2" class="mainCate evenLeval">
+          <div class="titt">
+            <h3><a href="#">白酒</a></h3>
+            <i class="menu-nav-arrow"></i>
+            <p><a href="#">茅台</a><a href="#">五粮液</a><a href="#">国窖1573</a></p>
+          </div>
+          <div class="subCate clear">
+            <div class="item-channels clear">
+              <div class="channels"><a href="">二级导航<i>&gt;</i></a><a href="">二级导航<i>&gt;</i></a><a href="">二级导航<i>&gt;</i></a><a href="">二级导航<i>&gt;</i></a></div>
+            </div>
+            <div class="subitems clear">
+              <dl class="fore1">
+                <dt><a href="">手机通讯<i>&gt;</i></a></dt>
+                <dd class="t_none"><a href="">手机</a><a href="">对讲机</a></dd>
+              </dl>
+              <dl class="fore2">
+                <dt><a href="">京东通信<i>&gt;</i></a></dt>
+                <dd><a href="">选号中心</a><a href="">自助服务</a></dd>
+              </dl>
+              <dl class="fore3">
+                <dt><a href="">运营商<i>&gt;</i></a></dt>
+                <dd><a href="">合约机</a><a href="">办套餐</a><a href="">选号码</a><a href="">装宽带</a><a href="">中国移动</a><a href="">中国联通</a><a href="">中国电信</a></dd>
+              </dl>
+              <dl class="fore4">
+                <dt><a href="">运营商<i>&gt;</i></a></dt>
+                <dd><a href="">合约机</a><a href="">办套餐</a><a href="">选号码</a><a href="">装宽带</a><a href="">中国移动</a><a href="">中国联通</a><a href="">中国电信</a><a href="">合约机</a><a href="">办套餐</a><a href="">选号码</a><a href="">装宽带</a><a href="">中国移动</a><a href="">中国联通</a><a href="">中国电信</a></dd>
+              </dl>
+            </div>
+          </div>
+        </li>
+        <li id="mainCate-3" class="mainCate">
+          <div class="titt">
+            <h3><a href="#">白酒</a></h3>
+            <i class="menu-nav-arrow"></i>
+            <p><a href="#">茅台</a><a href="#">五粮液</a><a href="#">国窖1573</a></p>
+          </div>
+          <div class="subCate clear">
+            <div class="item-channels clear">
+              <div class="channels"><a href="">家电城<i>&gt;</i></a><a href="">智能生活馆<i>&gt;</i></a><a href="">京东净化馆<i>&gt;</i></a><a href="">京东帮服务店<i>&gt;</i></a></div>
+            </div>
+            <div class="subitems clear">
+              <dl class="fore1">
+                <dt><a href="">手机通讯<i>&gt;</i></a></dt>
+                <dd class="t_none"><a href="">手机</a><a href="">对讲机</a></dd>
+              </dl>
+              <dl class="fore2">
+                <dt><a href="">京东通信<i>&gt;</i></a></dt>
+                <dd><a href="">选号中心</a><a href="">自助服务</a></dd>
+              </dl>
+              <dl class="fore3">
+                <dt><a href="">运营商<i>&gt;</i></a></dt>
+                <dd><a href="">合约机</a><a href="">办套餐</a><a href="">选号码</a><a href="">装宽带</a><a href="">中国移动</a><a href="">中国联通</a><a href="">中国电信</a></dd>
+              </dl>
+              <dl class="fore4">
+                <dt><a href="">运营商<i>&gt;</i></a></dt>
+                <dd><a href="">合约机</a><a href="">办套餐</a><a href="">选号码</a><a href="">装宽带</a><a href="">中国移动</a><a href="">中国联通</a><a href="">中国电信</a><a href="">合约机</a><a href="">办套餐</a><a href="">选号码</a><a href="">装宽带</a><a href="">中国移动</a><a href="">中国联通</a><a href="">中国电信</a></dd>
+              </dl>
+            </div>
+          </div>
+        </li>
+        <li id="mainCate-4" class="mainCate evenLeval">
+          <div class="titt">
+            <h3><a href="#">白酒</a></h3>
+            <i class="menu-nav-arrow"></i>
+            <p><a href="#">茅台</a><a href="#">五粮液</a><a href="#">国窖1573</a></p>
+          </div>
+          <div class="subCate clear">
+            <div class="item-channels clear">
+              <div class="channels"><a href="">二级导航<i>&gt;</i></a><a href="">二级导航<i>&gt;</i></a><a href="">二级导航<i>&gt;</i></a><a href="">二级导航<i>&gt;</i></a></div>
+            </div>
+            <div class="subitems clear">
+              <dl class="fore1">
+                <dt><a href="">手机通讯<i>&gt;</i></a></dt>
+                <dd class="t_none"><a href="">手机</a><a href="">对讲机</a></dd>
+              </dl>
+              <dl class="fore2">
+                <dt><a href="">京东通信<i>&gt;</i></a></dt>
+                <dd><a href="">选号中心</a><a href="">自助服务</a></dd>
+              </dl>
+              <dl class="fore3">
+                <dt><a href="">运营商<i>&gt;</i></a></dt>
+                <dd><a href="">合约机</a><a href="">办套餐</a><a href="">选号码</a><a href="">装宽带</a><a href="">中国移动</a><a href="">中国联通</a><a href="">中国电信</a></dd>
+              </dl>
+              <dl class="fore4">
+                <dt><a href="">运营商<i>&gt;</i></a></dt>
+                <dd><a href="">合约机</a><a href="">办套餐</a><a href="">选号码</a><a href="">装宽带</a><a href="">中国移动</a><a href="">中国联通</a><a href="">中国电信</a><a href="">合约机</a><a href="">办套餐</a><a href="">选号码</a><a href="">装宽带</a><a href="">中国移动</a><a href="">中国联通</a><a href="">中国电信</a></dd>
+              </dl>
+            </div>
+          </div>
+        </li>
+        <li id="mainCate-5" class="mainCate">
+          <div class="titt">
+            <h3><a href="#">白酒</a></h3>
+            <i class="menu-nav-arrow"></i>
+            <p><a href="#">茅台</a><a href="#">五粮液</a><a href="#">国窖1573</a></p>
+          </div>
+          <div class="subCate clear">
+            <div class="item-channels clear">
+              <div class="channels"><a href="">二级导航<i>&gt;</i></a><a href="">二级导航<i>&gt;</i></a><a href="">二级导航<i>&gt;</i></a><a href="">二级导航<i>&gt;</i></a></div>
+            </div>
+            <div class="subitems clear">
+              <dl class="fore1">
+                <dt><a href="">手机通讯<i>&gt;</i></a></dt>
+                <dd class="t_none"><a href="">手机</a><a href="">对讲机</a></dd>
+              </dl>
+              <dl class="fore2">
+                <dt><a href="">京东通信<i>&gt;</i></a></dt>
+                <dd><a href="">选号中心</a><a href="">自助服务</a></dd>
+              </dl>
+              <dl class="fore3">
+                <dt><a href="">运营商<i>&gt;</i></a></dt>
+                <dd><a href="">合约机</a><a href="">办套餐</a><a href="">选号码</a><a href="">装宽带</a><a href="">中国移动</a><a href="">中国联通</a><a href="">中国电信</a></dd>
+              </dl>
+              <dl class="fore4">
+                <dt><a href="">运营商<i>&gt;</i></a></dt>
+                <dd><a href="">合约机</a><a href="">办套餐</a><a href="">选号码</a><a href="">装宽带</a><a href="">中国移动</a><a href="">中国联通</a><a href="">中国电信</a><a href="">合约机</a><a href="">办套餐</a><a href="">选号码</a><a href="">装宽带</a><a href="">中国移动</a><a href="">中国联通</a><a href="">中国电信</a></dd>
+              </dl>
+            </div>
+          </div>
+        </li>
+        <li id="mainCate-6" class="mainCate evenLeval">
+          <div class="titt">
+            <h3><a href="#">白酒</a></h3>
+            <i class="menu-nav-arrow"></i>
+            <p><a href="#">茅台</a><a href="#">五粮液</a><a href="#">国窖1573</a></p>
+          </div>
+          <div class="subCate">
+            <div class="item-channels clear">
+              <div class="channels"><a href="">二级导航<i>&gt;</i></a><a href="">二级导航<i>&gt;</i></a><a href="">二级导航<i>&gt;</i></a><a href="">二级导航<i>&gt;</i></a></div>
+            </div>
+            <div class="subitems clear">
+              <dl class="fore1">
+                <dt><a href="">手机通讯<i>&gt;</i></a></dt>
+                <dd class="t_none"><a href="">手机</a><a href="">对讲机</a></dd>
+              </dl>
+              <dl class="fore2">
+                <dt><a href="">京东通信<i>&gt;</i></a></dt>
+                <dd><a href="">选号中心</a><a href="">自助服务</a></dd>
+              </dl>
+              <dl class="fore3">
+                <dt><a href="">运营商<i>&gt;</i></a></dt>
+                <dd><a href="">合约机</a><a href="">办套餐</a><a href="">选号码</a><a href="">装宽带</a><a href="">中国移动</a><a href="">中国联通</a><a href="">中国电信</a></dd>
+              </dl>
+              <dl class="fore4">
+                <dt><a href="">运营商<i>&gt;</i></a></dt>
+                <dd><a href="">合约机</a><a href="">办套餐</a><a href="">选号码</a><a href="">装宽带</a><a href="">中国移动</a><a href="">中国联通</a><a href="">中国电信</a><a href="">合约机</a><a href="">办套餐</a><a href="">选号码</a><a href="">装宽带</a><a href="">中国移动</a><a href="">中国联通</a><a href="">中国电信</a></dd>
+              </dl>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="nav_l"><a href="">Products Set Section</a><a href="">Health Care Products</a><a href="">Cosmetic</a><a href="">Skin Care</a></div>
+    <a href="" class="tm"><i></i>Gift Cards</a> </div>
+</div>
+<script>
+ jQuery
+  (".sidebar-info").slide({ 
+  type:"menu", //效果类型
+  titCell:".mainCate", // 鼠标触发对象
+  targetCell:".subCate", // 效果对象，必须被titCell包含
+  delayTime:400, // 效果时间
+  triggerTime:150, //鼠标延迟触发时间
+  defaultPlay:false,//默认执行
+  returnDefault:true//返回默认
+  });
+</script>
+<div class="bj_zhuti">
+  <div class="container banner taozhuang clear">
+    <div class="bd clear">
+      <ul>
+        <li><a href=""><img src="../img/2.jpg"/></a></li>
+        <li><a href=""><img src="../img/3.jpg"/></a></li>
+        <li><a href=""><img src="../img/4.jpg"/></a></li>
+        <li><a href=""><img src="../img/5.jpg"/></a></li>
+        <li><a href=""><img src="../img/6.jpg"/></a></li>
+      </ul>
+    </div>
+    <div class="hd clear">
+      <ul>
+        <li></li>
+      </ul>
+    </div>
+    <div class="dengji clear">
+      <dl class="clear">
+        <dt><s class="s1"></s></dt>
+        <dd><em>白金级店铺</em></dd>
+        <dd>138*****926</dd>
+      </dl>
+      <ul class="body clear">
+        <li data-toggle="arrowdown" id="arrow5"><a href="" class="daipin"><span>代品券 18 张<u class="down-icon run-down"></u></span></a></li>
+        <li>价值 <b class="money">$1250.00</b></li>
+        <li><a href="" class="c-b">查看代品券规则</a></li>
+        <ul data-toggle="hidden-box" id="nav-box5" class="daijin clear">
+          <li><b class="daipin"><span>$10</span></b><span class="sz">数量: <em>8</em> 张</span></li>
+          <li><b class="daipin"><span>$25</b></span><span class="sz">数量: <em>8</em> 张</span></li>
+          <li><b class="daipin"><span>$50</b></span><span class="sz">数量: <em>8</em> 张</span></li>
+          <li><b class="daipin"><span>$100</b></span><span class="sz">数量: <em>8</em> 张</span></li>
+        </ul>
+      </ul>
+    </div>
+  </div>
+  <script>jQuery(".banner").slide({ titCell:".hd ul", mainCell:".bd ul", effect:"fold", autoPlay:true, autoPage:true, trigger:"click",}); </script>
+  <div class="container clear">
+    <div class="crumbs clear"> <a href="">Home</a> > <a href="">Porto Venere</a> > <a href="">Health Care Products </a> </div>
+    <div class="f-line">
+      <div class="col-md-8">
+        <div class="left">
+          <h2>产品套装和套装单品特卖区</h2>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="right"> <span class="fp-text">Page <b>1</b><em>/</em><i>191</i></span><a href="javascript:;" class="fp-prev disabled"><</a><a href="javascript:;" class="fp-next">></a> </div>
+      </div>
+    </div>
+  </div>
+  <div class="container top_15 clear">
+    <div class="grid_1_of_5 no_left clear">
+      <div class="Drive Search tao_z clear">
+        <div class="img_box"><a href="" class="Collect"><s></s>Collect</a><a href=""><img src="../img/cp.jpg"></a></div>
+        <div class="cp_detail clear">
+          <h4>Ulefone Be Pro 4G FDD-LTE Smart Phone An...</h4>
+          <div class="xingxing clear">
+            <div id="starBg" class="star_bg">
+              <div class="star"></div>
+            </div>
+            <div class="Reviews">(<span class="pink">3</span> Reviews)</div>
+          </div>
+          <div class="jiage clear">
+            <div class="title">
+              <p class="pink">$288.25</p>
+              <s>$368.00</s> </div>
+            <div class="huangou"> <a href="javascript:;" class="Buy"><i></i>换购</a>
+              <div class="huangou_sl">
+                <input type="text" value="1" name="nums" class="">
+                <div class="de_in"><s class="s1"></s><s class="s2"></s></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="grid_1_of_5 clear">
+      <div class="Drive Search tao_z clear">
+        <div class="img_box"><a href="" class="Collect"><s></s>Collect</a><a href=""><img src="../img/cp.jpg"></a></div>
+        <div class="cp_detail clear">
+          <h4>Ulefone Be Pro 4G FDD-LTE Smart Phone An...</h4>
+          <div class="xingxing clear">
+            <div id="starBg" class="star_bg">
+              <div class="star"></div>
+            </div>
+            <div class="Reviews">(<span class="pink">3</span> Reviews)</div>
+          </div>
+          <div class="jiage clear">
+            <div class="title">
+              <p class="pink">$288.25</p>
+              <s>$368.00</s> </div>
+            <div class="huangou"> <a href="javascript:;" class="Buy"><i></i>换购</a>
+              <div class="huangou_sl">
+                <input type="text" value="1" name="nums" class="">
+                <div class="de_in"><s class="s1"></s><s class="s2"></s></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="grid_1_of_5 clear">
+      <div class="Drive Search tao_z clear">
+        <div class="img_box"><a href="" class="Collect"><s></s>Collect</a><a href=""><img src="../img/cp.jpg"></a></div>
+        <div class="cp_detail clear">
+          <h4>Ulefone Be Pro 4G FDD-LTE Smart Phone An...</h4>
+          <div class="xingxing clear">
+            <div id="starBg" class="star_bg">
+              <div class="star"></div>
+            </div>
+            <div class="Reviews">(<span class="pink">3</span> Reviews)</div>
+          </div>
+          <div class="jiage clear">
+            <div class="title">
+              <p class="pink">$288.25</p>
+              <s>$368.00</s> </div>
+            <div class="huangou"> <a href="javascript:;" class="Buy"><i></i>换购</a>
+              <div class="huangou_sl">
+                <input type="text" value="1" name="nums" class="">
+                <div class="de_in"><s class="s1"></s><s class="s2"></s></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="grid_1_of_5 clear">
+      <div class="Drive Search tao_z clear">
+        <div class="img_box"><a href="" class="Collect"><s></s>Collect</a><a href=""><img src="../img/cp.jpg"></a></div>
+        <div class="cp_detail clear">
+          <h4>Ulefone Be Pro 4G FDD-LTE Smart Phone An...</h4>
+          <div class="xingxing clear">
+            <div id="starBg" class="star_bg">
+              <div class="star"></div>
+            </div>
+            <div class="Reviews">(<span class="pink">3</span> Reviews)</div>
+          </div>
+          <div class="jiage clear">
+            <div class="title">
+              <p class="pink">$288.25</p>
+              <s>$368.00</s> </div>
+            <div class="huangou"> <a href="javascript:;" class="Buy"><i></i>换购</a>
+              <div class="huangou_sl">
+                <input type="text" value="1" name="nums" class="">
+                <div class="de_in"><s class="s1"></s><s class="s2"></s></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="grid_1_of_5 clear">
+      <div class="Drive Search tao_z clear">
+        <div class="img_box"><a href="" class="Collect"><s></s>Collect</a><a href=""><img src="../img/cp.jpg"></a></div>
+        <div class="cp_detail clear">
+          <h4>Ulefone Be Pro 4G FDD-LTE Smart Phone An...</h4>
+          <div class="xingxing clear">
+            <div id="starBg" class="star_bg">
+              <div class="star"></div>
+            </div>
+            <div class="Reviews">(<span class="pink">3</span> Reviews)</div>
+          </div>
+          <div class="jiage clear">
+            <div class="title">
+              <p class="pink">$288.25</p>
+              <s>$368.00</s> </div>
+            <div class="huangou"> <a href="javascript:;" class="Buy"><i></i>换购</a>
+              <div class="huangou_sl">
+                <input type="text" value="1" name="nums" class="">
+                <div class="de_in"><s class="s1"></s><s class="s2"></s></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12"><h3 class="title">套装单品特卖</h3></div>
+    <div class="grid_1_of_5 no_left clear">
+      <div class="Drive Search tao_z clear">
+        <div class="img_box"><a href="" class="Collect"><s></s>Collect</a><a href=""><img src="../img/cp.jpg"></a></div>
+        <div class="cp_detail clear">
+          <h4>Ulefone Be Pro 4G FDD-LTE Smart Phone An...</h4>
+          <div class="xingxing clear">
+            <div id="starBg" class="star_bg">
+              <div class="star"></div>
+            </div>
+            <div class="Reviews">(<span class="pink">3</span> Reviews)</div>
+          </div>
+          <div class="jiage clear">
+            <div class="title">
+              <p class="pink">$288.25</p>
+              <s>$368.00</s> </div>
+            <div class="huangou"> <a href="javascript:;" class="Buy"><i></i>换购</a>
+              <div class="huangou_sl">
+                <input type="text" value="1" name="nums" class="">
+                <div class="de_in"><s class="s1"></s><s class="s2"></s></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="grid_1_of_5 clear">
+      <div class="Drive Search tao_z clear">
+        <div class="img_box"><a href="" class="Collect"><s></s>Collect</a><a href=""><img src="../img/cp.jpg"></a></div>
+        <div class="cp_detail clear">
+          <h4>Ulefone Be Pro 4G FDD-LTE Smart Phone An...</h4>
+          <div class="xingxing clear">
+            <div id="starBg" class="star_bg">
+              <div class="star"></div>
+            </div>
+            <div class="Reviews">(<span class="pink">3</span> Reviews)</div>
+          </div>
+          <div class="jiage clear">
+            <div class="title">
+              <p class="pink">$288.25</p>
+              <s>$368.00</s> </div>
+            <div class="huangou"> <a href="javascript:;" class="Buy"><i></i>换购</a>
+              <div class="huangou_sl">
+                <input type="text" value="1" name="nums" class="">
+                <div class="de_in"><s class="s1"></s><s class="s2"></s></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="grid_1_of_5 clear">
+      <div class="Drive Search tao_z clear">
+        <div class="img_box"><a href="" class="Collect"><s></s>Collect</a><a href=""><img src="../img/cp.jpg"></a></div>
+        <div class="cp_detail clear">
+          <h4>Ulefone Be Pro 4G FDD-LTE Smart Phone An...</h4>
+          <div class="xingxing clear">
+            <div id="starBg" class="star_bg">
+              <div class="star"></div>
+            </div>
+            <div class="Reviews">(<span class="pink">3</span> Reviews)</div>
+          </div>
+          <div class="jiage clear">
+            <div class="title">
+              <p class="pink">$288.25</p>
+              <s>$368.00</s> </div>
+            <div class="huangou"> <a href="javascript:;" class="Buy"><i></i>换购</a>
+              <div class="huangou_sl">
+                <input type="text" value="1" name="nums" class="">
+                <div class="de_in"><s class="s1"></s><s class="s2"></s></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="grid_1_of_5 clear">
+      <div class="Drive Search tao_z clear">
+        <div class="img_box"><a href="" class="Collect"><s></s>Collect</a><a href=""><img src="../img/cp.jpg"></a></div>
+        <div class="cp_detail clear">
+          <h4>Ulefone Be Pro 4G FDD-LTE Smart Phone An...</h4>
+          <div class="xingxing clear">
+            <div id="starBg" class="star_bg">
+              <div class="star"></div>
+            </div>
+            <div class="Reviews">(<span class="pink">3</span> Reviews)</div>
+          </div>
+          <div class="jiage clear">
+            <div class="title">
+              <p class="pink">$288.25</p>
+              <s>$368.00</s> </div>
+            <div class="huangou"> <a href="javascript:;" class="Buy"><i></i>换购</a>
+              <div class="huangou_sl">
+                <input type="text" value="1" name="nums" class="">
+                <div class="de_in"><s class="s1"></s><s class="s2"></s></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="grid_1_of_5 clear">
+      <div class="Drive Search tao_z clear">
+        <div class="img_box"><a href="" class="Collect"><s></s>Collect</a><a href=""><img src="../img/cp.jpg"></a></div>
+        <div class="cp_detail clear">
+          <h4>Ulefone Be Pro 4G FDD-LTE Smart Phone An...</h4>
+          <div class="xingxing clear">
+            <div id="starBg" class="star_bg">
+              <div class="star"></div>
+            </div>
+            <div class="Reviews">(<span class="pink">3</span> Reviews)</div>
+          </div>
+          <div class="jiage clear">
+            <div class="title">
+              <p class="pink">$288.25</p>
+              <s>$368.00</s> </div>
+            <div class="huangou"> <a href="javascript:;" class="Buy"><i></i>换购</a>
+              <div class="huangou_sl">
+                <input type="text" value="1" name="nums" class="">
+                <div class="de_in"><s class="s1"></s><s class="s2"></s></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 center clear"> <span class="paging-list"><a href="javascript:;" class="fui-prev disabled">Prev</a><a href="javascript:;" class="fui-current disabled">1</a><a href="">2</a><a href="">3</a><a href="">4</a><a href="">5</a><a href="">6</a><a href="">7</a><a href="">8</a><span class="omit">…</span><a href="">100</a><a href="#" data-page="2" class="fui-next" beginpage="2">Next</a></span> </div>
+  </div>
+  <div class="container top_15 clear">
+    <div class="col-md-12 clear"><a href=""><img src="../img/dingyue.jpg" class="img100"></a></div>
+  </div>
+  <div class="container top_15 clear">
+    <div class="foot clear">
+      <div class="col-md-2 clear">
+        <div class="fenx"><a href=""><s class="s1"></s><span>Like us<br>
+          on Facebook</span></a></div>
+      </div>
+      <div class="col-md-2 clear">
+        <div class="fenx"><a href=""><s class="s2"></s><span>Fllow us<br>
+          on Twitter</span></a></div>
+      </div>
+      <div class="col-md-2 clear">
+        <div class="fenx"><a href=""><s class="s3"></s><span>Pin us<br>
+          on Pinterest</span></a></div>
+      </div>
+      <div class="col-md-2 clear">
+        <div class="fenx"><a href=""><s class="s4"></s><span>Read us<br>
+          on our blog</span></a></div>
+      </div>
+      <div class="col-md-2 clear">
+        <div class="fenx"><a href=""><s class="s5"></s><span>Watch us<br>
+          on Youtube</span></a></div>
+      </div>
+      <div class="col-md-2 clear">
+        <div class="fenx"><a href=""><s class="s6"></s><span>Like us<br>
+          on Google+</span></a></div>
+      </div>
+    </div>
+  </div>
+  <div class="container top_15 clear">
+    <div class="I_help clear">
+      <div class="col-md-20 clear">
+        <ul>
+          <li class="links">About us</li>
+          <li><a href="">About ecosko Group</a></li>
+          <li><a href="">About TPS138.com</a></li>
+          <li><a href="">Walhao.com.cn</a></li>
+          <li><a href="">Contact us</a></li>
+        </ul>
+      </div>
+      <div class="col-md-20 clear">
+        <ul>
+          <li class="links">Shopping Guide</li>
+          <li><a href="">Shopping Process</a></li>
+          <li><a href="">Order Operation</a></li>
+          <li><a href="">Products Set Deals</a></li>
+          <li><a href="">Brand Zone</a></li>
+          <li><a href="">Invoices and receipts description</a></li>
+          <li><a href="">Overseas Shopping Notes</a></li>
+          <li><a href="">Asked Questions</a></li>
+        </ul>
+      </div>
+      <div class="col-md-20 clear">
+        <ul>
+          <li class="links">Payments</li>
+          <li><a href="">CUP online payment</a></li>
+          <li><a href="">Alipay</a></li>
+          <li><a href="">Wallet</a></li>
+          <li><a href="">PAYPAL payment</a></li>
+          <li><a href="">Substitutes coupons</a></li>
+          <li><a href="">Gift Cards</a></li>
+        </ul>
+      </div>
+      <div class="col-md-20 clear">
+        <ul>
+          <li class="links">Logistics</li>
+          <li><a href="">Delivery</a></li>
+          <li><a href="">Aging and freight distribution</a></li>
+          <li><a href="">Inspection and receipt</a></li>
+          <li><a href="">Delivery Information Tracking</a></li>
+        </ul>
+      </div>
+      <div class="col-md-20 clear">
+        <ul>
+          <li class="links">Service</li>
+          <li><a href="">Delivery Agreement</a></li>
+          <li><a href="">Refund and aging</a></li>
+          <li><a href="">Refunds or exchanges</a></li>
+          <li><a href="">Customer service telephone voice process</a></li>
+          <li><a href="">Contact us</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="fukuan"><img src="../img/fukuan.png"></p>
+    <p class="copyright">Copyright  © 2004-2005  TPS & Partners Co. Ltd. TPS138.com. All rights reserved. </p>
+  </div>
+</div>
+<div class="pop-compare clear">
+  <div class="huangouqu">
+    <div class="head clear">
+      <h3>换购区</h3>
+      <a href="javascript:;" class="c-b Yinchang">隐藏</a> </div>
+    <div class="body clear">
+      <div class="col-md-10 clear">
+        <div class="JS_p">
+          <ul>
+            <li class="col-md-3">
+              <dl class="marg_10 clear">
+                <dt><a href=""><img src="../img/cp.jpg"></a></dt>
+                <dd> <a href="" class="tit">Verified Suppliers of Consumer Electronics Verified Suppliers of Consumer Electronics</a>
+                  <p><b>$ 42.25</b><a href="" class="c-b delete">删除</a></p>
+                </dd>
+              </dl>
+            </li>
+            <li class="col-md-3">
+              <dl class="marg_10 clear">
+                <dt><a href=""><img src="../img/cp.jpg"></a></dt>
+                <dd> <a href="" class="tit">Verified Suppliers of Consumer Electronics Verified Suppliers of Consumer Electronics</a>
+                  <p><b>$ 42.25</b><a href="" class="c-b delete">删除</a></p>
+                </dd>
+              </dl>
+            </li>
+            <li class="col-md-3">
+              <dl class="marg_10 clear">
+                <dt><a href=""><img src="../img/cp.jpg"></a></dt>
+                <dd> <a href="" class="tit">Verified Suppliers of Consumer Electronics Verified Suppliers of Consumer Electronics</a>
+                  <p><b>$ 42.25</b><a href="" class="c-b delete">删除</a></p>
+                </dd>
+              </dl>
+            </li>
+            <li class="col-md-3">
+              <dl class="marg_10 clear">
+                <dt><a href=""><img src="../img/cp.jpg"></a></dt>
+                <dd> <a href="" class="tit">Verified Suppliers of Consumer Electronics Verified Suppliers of Consumer Electronics</a>
+                  <p><b>$ 42.25</b><a href="" class="c-b delete">删除</a></p>
+                </dd>
+              </dl>
+            </li>
+            <li class="col-md-3">
+              <dl class="marg_10 clear">
+                <dt><a href=""><img src="../img/cp.jpg"></a></dt>
+                <dd> <a href="" class="tit">Verified Suppliers of Consumer Electronics Verified Suppliers of Consumer Electronics</a>
+                  <p><b>$ 42.25</b><a href="" class="c-b delete">删除</a></p>
+                </dd>
+              </dl>
+            </li>
+            <li class="col-md-3">
+              <dl class="marg_10 clear">
+                <dt><a href=""><img src="../img/cp.jpg"></a></dt>
+                <dd> <a href="" class="tit">Verified Suppliers of Consumer Electronics Verified Suppliers of Consumer Electronics</a>
+                  <p><b>$ 42.25</b><a href="" class="c-b delete">删除</a></p>
+                </dd>
+              </dl>
+            </li>
+            <li class="col-md-3">
+              <dl class="marg_10 clear">
+                <dt><a href=""><img src="../img/cp.jpg"></a></dt>
+                <dd> <a href="" class="tit">Verified Suppliers of Consumer Electronics Verified Suppliers of Consumer Electronics</a>
+                  <p><b>$ 42.25</b><a href="" class="c-b delete">删除</a></p>
+                </dd>
+              </dl>
+            </li>
+            <li class="col-md-3">
+              <dl class="marg_10 clear">
+                <dt><a href=""><img src="../img/cp.jpg"></a></dt>
+                <dd> <a href="" class="tit">Verified Suppliers of Consumer Electronics Verified Suppliers of Consumer Electronics</a>
+                  <p><b>$ 42.25</b><a href="" class="c-b delete">删除</a></p>
+                </dd>
+              </dl>
+            </li>
+          </ul>
+          <a class="prev"></a> <a class="next"></a> </div>
+      </div>
+      <div class="col-md-2">
+        <div class="rig">
+          <p>亲，您已用<em>7</em>张代品券，换购<em>5</em>件商品，价值<b>$1350.00</b></p>
+          <!--<a href="" class="btn_hong">确认换购</a>--> 
+          <a href="javascript:;" class="btn_Bhui">确认换购</a> </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>jQuery(".JS_p").slide({ mainCell:"ul", autoPlay:true, effect:"left", vis:4, scroll:1, autoPage:true, pnLoop:false, interTime:1500, });</script> 
+<script src="../js/main.js"></script>
+</body>
+</html>

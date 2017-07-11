@@ -1,0 +1,37 @@
+.about>div{ width:1200px; height:600px;}
+.tps_vision{ background:#F8DD97;}
+
+.tps_vision>div{ float:left;}
+.management_team>div{ float:left;}
+.enrollment>div{float:left;}
+
+.tps_vision_left, .management_team_left{ width:500px; height:500px; position:relative; top:50px; left:80px;}
+.enrollment_left{width:600px; height:500px; position:relative; top:100px; left:80px;}
+
+.tps_vision_left img{ position:absolute; top:30%; left:35%;}
+.management_team_left img{position:absolute; top:25%; left:25%;}
+
+.one_bg1{ position:relative; top:200px; right:400px;}
+.one_bg2{ position:relative; top:500px; right:800px;}
+.one_bg3{ position:relative; top:500px; right:200px;}
+
+.two_bg1{ position:relative; top:80px; right:200px;}
+.two_bg2{ position:relative; top:500px; right:800px;}
+.two_bg3{ position:relative; top:500px; right:200px;}
+
+.three_bg1{ position:relative; top:80px; right:200px;}
+.three_bg2{ position:relative; top:450px; right:800px;}
+.three_bg3{ position:relative; top:450px; right:200px;}
+
+
+.tps_vision_right, .management_team_right { width:500px; height:500px; position:relative; top:50px; left:100px;}
+.enrollment_right{position:relative; top:200px; left:200px;}
+
+.tps_vision_right div, .management_team_right div{ margin:0 auto; width:300px; margin-top:160px; border:dotted #666 3px;}
+
+.tps_vision_right div p, .management_team_right div p { font-size:14px; color:#666; margin-left:30px;}
+.enrollment_left  p{ font-size:14px; color:#666;}
+.tps_vision_right div h1,.management_team_right div h1{ margin-left:80px;}
+
+.management_team{ background:#039DD1;}
+.enrollment{ background:#A4E176;}

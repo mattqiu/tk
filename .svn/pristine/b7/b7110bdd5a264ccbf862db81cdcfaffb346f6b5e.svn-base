@@ -1,0 +1,11 @@
+.main_title{
+    text-align: center;
+    font-size: 30px;
+    padding-top: 100px;
+}
+.success{
+    color: green;
+}
+.fail{
+    color: red;
+}

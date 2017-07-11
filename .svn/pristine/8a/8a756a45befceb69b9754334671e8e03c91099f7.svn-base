@@ -1,0 +1,863 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>TPS首页</title>
+	<meta name="keywords" content="云集品手机版">
+	<meta name="description" content="云集品手机版">
+	<meta property="Yu Long" content="46252978">
+	<link href="../css/head_food_1.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="../css/base.css">
+	<script src="../js/jquery.min.js"></script>
+	<script src="../js/jquery.SuperSlide.2.1.2.js"></script>
+</head>
+<body>
+	<header class="main-header">
+		<div class="header-bar">
+			<div class="w1200">
+				<ul class="fl nav-top">
+					<li class="fl mfr-5">
+						<a class="down" href="">简体中文<s class="minicart_arrow"></s></a>
+						<ol class="li-b xs">
+							<li class="fl"><a href="">English</a></li>
+							<li class="fl"><a href="">简体中文</a></li>
+							<li class="fl"><a href="">繁体中文</a></li>	
+						</ol>
+					</li>
+					<li class="fl mfr-5">
+						<a class="down" href=""><s class="qizhi-CNY"></s>人民币<s class="minicart_arrow"></s></a>
+						<ol class="li-b xs">
+							<li><a href=""><s class="qizhi-USD"></s>美元</a></li>
+							<li><a href=""><s class="qizhi-CNY"></s>人民币</a></li>
+							<li><a href=""><s class="qizhi-HKD"></s>港币</a></li>
+							<li><a href=""><s class="qizhi-KRW"></s>韩币</a></li>
+						</ol>
+					</li>	
+				</ul>
+				<ul class="fr nav-top">
+					<li class="fl mfr-5"><a class="login" href="">登录</a></li>
+					<li class="fl">|</li>
+					<li class="fl mfr-5"><a class="login" href="">注册</a></li>
+					<li class="fl mfr-5"><a href=""><i class="fa fa-star-o"></i>我的收藏(0)</a></li>
+					<li class="fl mfr-5">
+						<a class="down" href="">个人中心<s class="minicart_arrow"></s></a>
+						<ol class="li-b xs">
+							<li><a href="">完成订单</a></li>
+							<li><a href="">交易订单</a></li>
+							<li><a href="">待完成订单</a></li>
+						</ol>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="site-header">
+			<div class="w1200">
+				<div class="logo fl"><a href=""><img src="../img/tps.png" alt=""></a></div>
+				<div class="huiy">
+					<b>124564gfdgdfgdfgdf132.tps.com</b>
+					<p class="z"><span><i></i>普通店铺</span></p>
+				</div>
+				<div class="tps-search fl clear">
+					<input class="search-text" type="search" placeholder="请输入关键词搜索商品">
+					<button type="submit"><i class="fa fa-search"></i></button>
+				</div>
+				<div class="header-cart">
+					<a class="down" href=""><i></i>购物车<b class="ci-count">4</b><s class="minicart_arrow"></s></a>
+					<p class="no">购物袋中还没有商品，赶快选购吧！</p>
+					<s class="spacer"></s>
+					<div class="mycart clear">	
+						<ul class="smc">
+							<li class="bt-n">
+								<div class="p-img fl"><a href="javascript:;"><img src="../img/cp.jpg"></a></div>
+								<div class="p-name fl"><a href="javascript:;">联想（Lenovo）天逸300 14英寸笔记本电脑（i5-6200U 4G 500G 2G独显 DVD win10）黑色</a></div>
+								<div class="p-detail fr">
+									<span><strong>￥3799.00</strong>×1</span>
+									<a class="atn fr" href="javascript:void(0)">删除</a>
+								</div>
+							</li>
+							<li>
+								<div class="p-img fl"><a href="javascript:;"><img src="../img/cp.jpg"></a></div>
+								<div class="p-name fl"><a href="javascript:;">联想（Lenovo）天逸300 14英寸笔记本电脑（i5-6200U 4G 500G 2G独显 DVD win10）黑色</a></div>
+								<div class="p-detail fr">
+									<span><strong>￥3799.00</strong>×1</span>
+									<a class="atn fr" href="javascript:void(0)">删除</a>
+								</div>
+							</li>
+							<li>
+								<div class="p-img fl"><a href="javascript:;"><img src="../img/cp.jpg"></a></div>
+								<div class="p-name fl"><a href="javascript:;">联想（Lenovo）天逸300 14英寸笔记本电脑（i5-6200U 4G 500G 2G独显 DVD win10）黑色</a></div>
+								<div class="p-detail fr">
+									<span><strong>￥3799.00</strong>×1</span>
+									<a class="atn fr" href="javascript:void(0)">删除</a>
+								</div>
+							</li>
+							<li>
+								<div class="p-img fl"><a href="javascript:;"><img src="../img/cp.jpg"></a></div>
+								<div class="p-name fl"><a href="javascript:;">联想（Lenovo）天逸300 14英寸笔记本电脑（i5-6200U 4G 500G 2G独显 DVD win10）黑色</a></div>
+								<div class="p-detail fr">
+									<span><strong>￥3799.00</strong>×1</span>
+									<a class="atn fr" href="javascript:void(0)">删除</a>
+								</div>
+							</li>
+						</ul>
+						<div class="smb clear"><span class="fl">共<b>1</b>件商品　共计<strong>￥ 0.00</strong></span><a class="fr" href="javascript:;" title="去购物车">去购物车</a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<main class="main-content">
+		<div class="nav-wp">
+			<div class="w1200">
+				<div class="catalog fl">
+					<h3><i class="fa fa-list"></i>全部分类<i class="fa fa-angle-down"></i></h3>
+					<div class="menu-cate-all-out">
+						<dl class="dl-1">
+							<dt class="clear"><a href="" class="category">母婴用品</a><i class="fa fa-angle-right"></i></dt>
+							<dd class="submenu clear">
+								<ul class="clear">
+									<li class="b-t"><a href="">广泛大概<i class="fa fa-angle-right"></i></a></li>
+									<li class="n-r"><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a></li>
+								</ul>
+								<ul class="clear">
+									<li class="b-t"><a href="">广泛大概<i class="fa fa-angle-right"></i></a></li>
+									<li class="n-r"><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a></li>
+								</ul>
+								<ul class="clear">
+									<li class="b-t"><a href="">广泛大概<i class="fa fa-angle-right"></i></a></li>
+									<li class="n-r"><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a></li>
+								</ul>
+								<ul class="clear">
+									<li class="b-t"><a href="">广泛大概<i class="fa fa-angle-right"></i></a></li>
+									<li class="n-r"><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a></li>
+								</ul>
+								<ul class="clear">
+									<li class="b-t"><a href="">广泛大概<i class="fa fa-angle-right"></i></a></li>
+									<li class="n-r"><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a></li>
+								</ul>
+								<ul class="clear">
+									<li class="b-t"><a href="">广泛大概<i class="fa fa-angle-right"></i></a></li>
+									<li class="n-r"><a href="">广泛大概</a><a href="">个分的高</a></li>
+								</ul>
+							</dd>
+						</dl>
+						<dl class="dl-2">
+							<dt class="clear"><a href="" class="category">母婴用品</a><i class="fa fa-angle-right"></i></dt>
+							<dd class="submenu clear">
+								<ul class="clear">
+									<li class="b-t"><a href="">广泛大概<i class="fa fa-angle-right"></i></a></li>
+									<li class="n-r"><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a></li>
+								</ul>
+								<ul class="clear">
+									<li class="b-t"><a href="">广泛大概<i class="fa fa-angle-right"></i></a></li>
+									<li class="n-r"><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a></li>
+								</ul>
+								<ul class="clear">
+									<li class="b-t"><a href="">广泛大概<i class="fa fa-angle-right"></i></a></li>
+									<li class="n-r"><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a></li>
+								</ul>
+								<ul class="clear">
+									<li class="b-t"><a href="">广泛大概<i class="fa fa-angle-right"></i></a></li>
+									<li class="n-r"><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a></li>
+								</ul>
+								<ul class="clear">
+									<li class="b-t"><a href="">广泛大概<i class="fa fa-angle-right"></i></a></li>
+									<li class="n-r"><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a></li>
+								</ul>
+								<ul class="clear">
+									<li class="b-t"><a href="">广泛大概<i class="fa fa-angle-right"></i></a></li>
+									<li class="n-r"><a href="">广泛大概</a><a href="">个分的高</a></li>
+								</ul>
+							</dd>
+						</dl>
+						<dl class="dl-3">
+							<dt class="clear"><a href="" class="category">母婴用品</a><i class="fa fa-angle-right"></i></dt>
+							<dd class="submenu clear">
+								<ul class="clear">
+									<li class="b-t"><a href="">广泛大概<i class="fa fa-angle-right"></i></a></li>
+									<li class="n-r"><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a></li>
+								</ul>
+							</dd>
+						</dl>
+						<dl class="dl-4">
+							<dt class="clear"><a href="" class="category">母婴用品</a><i class="fa fa-angle-right"></i></dt>
+							<dd class="submenu clear">
+								<ul class="clear">
+									<li class="b-t"><a href="">广泛大概<i class="fa fa-angle-right"></i></a></li>
+									<li class="n-r"><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a></li>
+								</ul>
+								<ul class="clear">
+									<li class="b-t"><a href="">广泛大概<i class="fa fa-angle-right"></i></a></li>
+									<li class="n-r"><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a></li>
+								</ul>
+							</dd>
+						</dl>
+						<dl class="dl-5">
+							<dt class="clear"><a href="" class="category">母婴用品</a><i class="fa fa-angle-right"></i></dt>
+							<dd class="submenu clear">
+								<ul class="clear">
+									<li class="b-t"><a href="">广泛大概<i class="fa fa-angle-right"></i></a></li>
+									<li class="n-r"><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a></li>
+								</ul>
+								<ul class="clear">
+									<li class="b-t"><a href="">广泛大概<i class="fa fa-angle-right"></i></a></li>
+									<li class="n-r"><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a></li>
+								</ul>
+								<ul class="clear">
+									<li class="b-t"><a href="">广泛大概<i class="fa fa-angle-right"></i></a></li>
+									<li class="n-r"><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a></li>
+								</ul>
+								<ul class="clear">
+									<li class="b-t"><a href="">广泛大概<i class="fa fa-angle-right"></i></a></li>
+									<li class="n-r"><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a></li>
+								</ul>
+							</dd>
+						</dl>
+						<dl class="dl-6">
+							<dt class="clear"><a href="" class="category">母婴用品</a><i class="fa fa-angle-right"></i></dt>
+							<dd class="submenu clear">
+								<ul class="clear">
+									<li class="b-t"><a href="">广泛大概<i class="fa fa-angle-right"></i></a></li>
+									<li class="n-r"><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a></li>
+								</ul>
+								<ul class="clear">
+									<li class="b-t"><a href="">广泛大概<i class="fa fa-angle-right"></i></a></li>
+									<li class="n-r"><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a></li>
+								</ul>
+								<ul class="clear">
+									<li class="b-t"><a href="">广泛大概<i class="fa fa-angle-right"></i></a></li>
+									<li class="n-r"><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a></li>
+								</ul>
+								<ul class="clear">
+									<li class="b-t"><a href="">广泛大概<i class="fa fa-angle-right"></i></a></li>
+									<li class="n-r"><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a></li>
+								</ul>
+								<ul class="clear">
+									<li class="b-t"><a href="">广泛大概<i class="fa fa-angle-right"></i></a></li>
+									<li class="n-r"><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a></li>
+								</ul>
+							</dd>
+						</dl>
+					</div>
+				</div>
+				<div class="menu-normal fl"><a href="">首页</a><a href=""><i class="hot"></i>品牌</a><a href="">团购</a><a href=""><i class="new"></i>折扣</a></div>
+			</div>
+		</div>
+		<div class="MyCart w1200 t-z">
+			<div class="dianxx clear"> <i></i>
+				<div class="col-md-2 clear">
+					<dl class="clear">
+						<dt><s class="s2"></s></dt>
+						<dd> <em>白金级店铺</em>
+							<p>138*****926</p>
+							<p>选择收货区域</p>
+							<select id="con_and_area" autocomplete="off" name="country_id" class="guojia">
+							<option value="">国家</option>
+							<option value="1">中国</option>
+							<option value="2">美国</option>
+							<option value="3">韩国</option>
+							<option value="4">香港</option>
+							<option value="5">新加坡</option>
+							<option value="6">菲律宾</option>
+							<option value="7">马来西亚</option>
+							<option value="8">台湾</option>
+							<option value="9">墨西哥</option>
+							<option value="10">加拿大</option>
+							<option value="11">越南</option>
+							<option value="12">俄罗斯</option>
+							<option value="13">哈萨克斯坦</option>
+							<option value="0">其他</option>
+							</select>
+						</dd>
+					</dl>
+				</div>
+				<div class="col-md-10 clear">
+					<div class="right clear">
+						<p>亲爱的138759621，您的店铺已于2015.7.22由银级店铺升为白金级店铺。</p>
+						<p>已支付：<b class="cse">$780.00</b></p>
+						<p class="ts"><span>重要提示：</span>请您在套餐、套餐单品、代品券三个区里选出价值<em class="cse">$780.00</em>的产品和代品券，完成您的店铺升级，我们将尽快为您发货。</p>
+					</div>
+				</div>
+			</div>
+			<p class="switch-cart clear"><em>一、套餐</em><span class="size"><i class="zhis_cc"></i>必选项：您需先选出最少一套,才能进行后面的操作噢,在您的支付金额内可选多套</span></p>
+			<div class="taocqu_1 clear">
+				<p class="goux">
+					<label>
+						<input type="checkbox">
+						<span>BOB正品彩妆8件套</span>
+					</label>
+				</p>
+				<div class="t-c clear">
+					<div class="JS-tc">
+						<ul>
+							<li>
+								<dl class="clear">
+									<dt><a href="javascript:showBg();"><img src="../img/01.jpg" /></a></dt>
+									<dd>
+									<a href="" class="tit">Verified Suppliers of Consumer Electronics Verified Suppliers of Consumer Electronics</a>
+									<p><b>$ 42.25</b>×2</p>
+									</dd>
+								</dl>
+							</li>
+							<li>
+								<dl class="clear">
+									<dt><a href="javascript:showBg();"><img src="../img/01.jpg" /></a></dt>
+									<dd>
+									<a href="" class="tit">Verified Suppliers of Consumer Electronics Verified Suppliers of Consumer Electronics</a>
+									<p><b>$ 42.25</b>×2</p>
+									</dd>
+								</dl>
+							</li>
+							<li>
+								<dl class="clear">
+									<dt><a href="javascript:showBg();"><img src="../img/01.jpg" /></a></dt>
+									<dd>
+									<a href="" class="tit">Verified Suppliers of Consumer Electronics Verified Suppliers of Consumer Electronics</a>
+									<p><b>$ 42.25</b>×2</p>
+									</dd>
+								</dl>
+							</li>
+							<li>
+								<dl class="clear">
+									<dt><a href="javascript:showBg();"><img src="../img/01.jpg" /></a></dt>
+									<dd>
+									<a href="" class="tit">Verified Suppliers of Consumer Electronics Verified Suppliers of Consumer Electronics</a>
+									<p><b>$ 42.25</b>×2</p>
+									</dd>
+								</dl>
+							</li>
+							<li>
+								<dl class="clear">
+									<dt><a href="javascript:showBg();"><img src="../img/01.jpg" /></a></dt>
+									<dd>
+									<a href="" class="tit">Verified Suppliers of Consumer Electronics Verified Suppliers of Consumer Electronics</a>
+									<p><b>$ 42.25</b>×2</p>
+									</dd>
+								</dl>
+							</li>
+							<li>
+								<dl class="clear">
+									<dt><a href="javascript:showBg();"><img src="../img/01.jpg" /></a></dt>
+									<dd>
+									<a href="" class="tit">Verified Suppliers of Consumer Electronics Verified Suppliers of Consumer Electronics</a>
+									<p><b>$ 42.25</b>×2</p>
+									</dd>
+								</dl>
+							</li>
+							<li>
+								<dl class="clear">
+									<dt><a href="javascript:showBg();"><img src="../img/01.jpg" /></a></dt>
+									<dd>
+									<a href="" class="tit">Verified Suppliers of Consumer Electronics Verified Suppliers of Consumer Electronics</a>
+									<p><b>$ 42.25</b>×2</p>
+									</dd>
+								</dl>
+							</li>
+							<li>
+								<dl class="clear">
+									<dt><a href="javascript:showBg();"><img src="../img/01.jpg" /></a></dt>
+									<dd>
+									<a href="" class="tit">Verified Suppliers of Consumer Electronics Verified Suppliers of Consumer Electronics</a>
+									<p><b>$ 42.25</b>×2</p>
+									</dd>
+								</dl>
+							</li>
+							<li>
+								<dl class="clear">
+									<dt><a href="javascript:showBg();"><img src="../img/01.jpg" /></a></dt>
+									<dd>
+									<a href="" class="tit">Verified Suppliers of Consumer Electronics Verified Suppliers of Consumer Electronics</a>
+									<p><b>$ 42.25</b>×2</p>
+									</dd>
+								</dl>
+							</li>
+							<li>
+								<dl class="clear">
+									<dt><a href="javascript:showBg();"><img src="../img/01.jpg" /></a></dt>
+									<dd>
+									<a href="" class="tit">Verified Suppliers of Consumer Electronics Verified Suppliers of Consumer Electronics</a>
+									<p><b>$ 42.25</b>×2</p>
+									</dd>
+								</dl>
+							</li>
+						</ul>
+						<span class="prev"></span> <span class="next"></span>
+					</div>
+					<ul class="rig">
+						<li>套餐价：<em class="c-o">$588</em></li>
+						<li>已节省：$231</li>
+						<li>总件数：8</li>
+						<!--<li><a href="" class="btn-red">立即购买</a></li>-->
+					</ul>
+				</div>
+				<p class="goux">
+					<label>
+						<input type="checkbox">
+						<span>BOB正品彩妆8件套</span>
+					</label>
+				</p>
+				<div class="t-c clear">
+					<div class="JS-tc">
+						<ul>
+							<li>
+								<dl class="clear">
+									<dt><a href="javascript:showBg();"><img src="../img/01.jpg" /></a></dt>
+									<dd>
+									<a href="" class="tit">Verified Suppliers of Consumer Electronics Verified Suppliers of Consumer Electronics</a>
+									<p><b>$ 42.25</b>×2</p>
+									</dd>
+								</dl>
+							</li>
+						</ul>
+						<span class="prev"></span> <span class="next"></span>
+					</div>
+					<ul class="rig">
+						<li>套餐价：<em class="c-o">$588</em></li>
+						<li>已节省：$231</li>
+						<li>总件数：8</li>
+						<!--<li><a href="" class="btn-red">立即购买</a></li>-->
+					</ul>
+				</div>
+			</div>
+			<div class="tps-stars mt-40 clear">
+				<p class="switch-cart clear"><em>二、套餐单品</em><span class="size"><i class="zhis_cc"></i>可选项：您也可单选套餐中您喜欢的单品</span></p>
+				<div class="bd">
+					<ul class="mt-n">
+						<li>
+							<div class="img-xg">
+								<s class="hot"></s>
+								<i class="top"></i> <i class="right"></i> <i class="bottom"></i> <i class="left"></i>
+								<a class="img" href="#"><img src="../img/1-2.jpg" alt="产品title"></a>
+								<div class="tz-h">
+									<dl class="tit">
+										<dd class="fl">
+											<p><a href="">PORSCHE DESIGN牛皮男女通用钱夹DESIGN牛皮男女通用钱夹DESIGN牛皮男女通用钱夹</a></p>
+											<p class="c-o fs-14">$300.00 <span class="c-bb">/ <s> $300.00</s></span></p>
+										</dd>
+										<dt class="fr">
+											<s class="qizhi-CNY"></s>
+											<p class="c-bb">韩国</p>
+										</dt>
+									</dl>
+									<div class="huangou"> 
+										<a href="javascript:;" class="Buy"><s class="s"></s>换购</a>
+										<div class="huangou_sl">
+											<input type="text" value="1" name="nums" class="">
+											<div class="de_in"><s class="s1"></s><s class="s2"></s></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="img-xg">
+								<s class="new"></s>
+								<i class="top"></i> <i class="right"></i> <i class="bottom"></i> <i class="left"></i>
+								<a class="img" href="#"><img src="../img/flag.jpg" alt="产品title"></a>
+								<div class="tz-h">
+									<dl class="tit">
+										<dd class="fl">
+											<p><a href="">PORSCHE DESIGN牛皮男女通用钱夹DESIGN牛皮男女通用钱夹DESIGN牛皮男女通用钱夹</a></p>
+											<p class="c-o fs-14">$300.00 <span class="c-bb">/ <s> $300.00</s></span></p>
+										</dd>
+										<dt class="fr">
+											<s class="qizhi-CNY"></s>
+											<p class="c-bb">韩国</p>
+										</dt>
+									</dl>
+									<div class="huangou"> 
+										<a href="javascript:;" class="Buy"><s class="s"></s>换购</a>
+										<div class="huangou_sl">
+											<input type="text" value="1" name="nums" class="">
+											<div class="de_in"><s class="s1"></s><s class="s2"></s></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="img-xg">
+								<s class="hot"></s>
+								<i class="top"></i> <i class="right"></i> <i class="bottom"></i> <i class="left"></i>
+								<a class="img" href="#"><img src="../img/1-2.jpg" alt="产品title"></a>
+								<div class="tz-h">
+									<dl class="tit">
+										<dd class="fl">
+											<p><a href="">PORSCHE DESIGN牛皮男女通用钱夹DESIGN牛皮男女通用钱夹DESIGN牛皮男女通用钱夹</a></p>
+											<p class="c-o fs-14">$300.00 <span class="c-bb">/ <s> $300.00</s></span></p>
+										</dd>
+										<dt class="fr">
+											<s class="qizhi-CNY"></s>
+											<p class="c-bb">韩国</p>
+										</dt>
+									</dl>
+									<div class="huangou"> 
+										<a href="javascript:;" class="Buy"><s class="s"></s>换购</a>
+										<div class="huangou_sl">
+											<input type="text" value="1" name="nums" class="">
+											<div class="de_in"><s class="s1"></s><s class="s2"></s></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="img-xg">
+								<s class="new"></s>
+								<i class="top"></i> <i class="right"></i> <i class="bottom"></i> <i class="left"></i>
+								<a class="img" href="#"><img src="../img/flag.jpg" alt="产品title"></a>
+								<div class="tz-h">
+									<dl class="tit">
+										<dd class="fl">
+											<p><a href="">PORSCHE DESIGN牛皮男女通用钱夹DESIGN牛皮男女通用钱夹DESIGN牛皮男女通用钱夹</a></p>
+											<p class="c-o fs-14">$300.00 <span class="c-bb">/ <s> $300.00</s></span></p>
+										</dd>
+										<dt class="fr">
+											<s class="qizhi-CNY"></s>
+											<p class="c-bb">韩国</p>
+										</dt>
+									</dl>
+									<div class="huangou"> 
+										<a href="javascript:;" class="Buy"><s class="s"></s>换购</a>
+										<div class="huangou_sl">
+											<input type="text" value="1" name="nums" class="">
+											<div class="de_in"><s class="s1"></s><s class="s2"></s></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="img-xg">
+								<s class="hot"></s>
+								<i class="top"></i> <i class="right"></i> <i class="bottom"></i> <i class="left"></i>
+								<a class="img" href="#"><img src="../img/1-2.jpg" alt="产品title"></a>
+								<div class="tz-h">
+									<dl class="tit">
+										<dd class="fl">
+											<p><a href="">PORSCHE DESIGN牛皮男女通用钱夹DESIGN牛皮男女通用钱夹DESIGN牛皮男女通用钱夹</a></p>
+											<p class="c-o fs-14">$300.00 <span class="c-bb">/ <s> $300.00</s></span></p>
+										</dd>
+										<dt class="fr">
+											<s class="qizhi-CNY"></s>
+											<p class="c-bb">韩国</p>
+										</dt>
+									</dl>
+									<div class="huangou"> 
+										<a href="javascript:;" class="Buy"><s class="s"></s>换购</a>
+										<div class="huangou_sl">
+											<input type="text" value="1" name="nums" class="">
+											<div class="de_in"><s class="s1"></s><s class="s2"></s></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="img-xg">
+								<s class="new"></s>
+								<i class="top"></i> <i class="right"></i> <i class="bottom"></i> <i class="left"></i>
+								<a class="img" href="#"><img src="../img/flag.jpg" alt="产品title"></a>
+								<div class="tz-h">
+									<dl class="tit">
+										<dd class="fl">
+											<p><a href="">PORSCHE DESIGN牛皮男女通用钱夹DESIGN牛皮男女通用钱夹DESIGN牛皮男女通用钱夹</a></p>
+											<p class="c-o fs-14">$300.00 <span class="c-bb">/ <s> $300.00</s></span></p>
+										</dd>
+										<dt class="fr">
+											<s class="qizhi-CNY"></s>
+											<p class="c-bb">韩国</p>
+										</dt>
+									</dl>
+									<div class="huangou"> 
+										<a href="javascript:;" class="Buy"><s class="s"></s>换购</a>
+										<div class="huangou_sl">
+											<input type="text" value="1" name="nums" class="">
+											<div class="de_in"><s class="s1"></s><s class="s2"></s></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="img-xg">
+								<s class="hot"></s>
+								<i class="top"></i> <i class="right"></i> <i class="bottom"></i> <i class="left"></i>
+								<a class="img" href="#"><img src="../img/1-2.jpg" alt="产品title"></a>
+								<div class="tz-h">
+									<dl class="tit">
+										<dd class="fl">
+											<p><a href="">PORSCHE DESIGN牛皮男女通用钱夹DESIGN牛皮男女通用钱夹DESIGN牛皮男女通用钱夹</a></p>
+											<p class="c-o fs-14">$300.00 <span class="c-bb">/ <s> $300.00</s></span></p>
+										</dd>
+										<dt class="fr">
+											<s class="qizhi-CNY"></s>
+											<p class="c-bb">韩国</p>
+										</dt>
+									</dl>
+									<div class="huangou"> 
+										<a href="javascript:;" class="Buy"><s class="s"></s>换购</a>
+										<div class="huangou_sl">
+											<input type="text" value="1" name="nums" class="">
+											<div class="de_in"><s class="s1"></s><s class="s2"></s></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="img-xg">
+								<s class="new"></s>
+								<i class="top"></i> <i class="right"></i> <i class="bottom"></i> <i class="left"></i>
+								<a class="img" href="#"><img src="../img/flag.jpg" alt="产品title"></a>
+								<div class="tz-h">
+									<dl class="tit">
+										<dd class="fl">
+											<p><a href="">PORSCHE DESIGN牛皮男女通用钱夹DESIGN牛皮男女通用钱夹DESIGN牛皮男女通用钱夹</a></p>
+											<p class="c-o fs-14">$300.00 <span class="c-bb">/ <s> $300.00</s></span></p>
+										</dd>
+										<dt class="fr">
+											<s class="qizhi-CNY"></s>
+											<p class="c-bb">韩国</p>
+										</dt>
+									</dl>
+									<div class="huangou"> 
+										<a href="javascript:;" class="Buy"><s class="s"></s>换购</a>
+										<div class="huangou_sl">
+											<input type="text" value="1" name="nums" class="">
+											<div class="de_in"><s class="s1"></s><s class="s2"></s></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+					<span class="prev"><s></s></span>
+					<span class="next"><s></s></span>
+				</div>
+			</div>
+			<p class="switch-cart mt-40 clear"><em>三、套餐单品</em><span class="size"><i class="zhis_cc"></i>可选项：您也可单选套餐中您喜欢的单品</span></p>
+			<div class="taocqu_3 clear">
+				<div class="col-md-2">
+					<div class="dapj clear"> 
+						<span><p>代品券</p><p>$10</p></span> 
+					</div>
+					<div class="Spinner clear">
+						<a class="DisDe" href="javascript:void(0)"><i>-</i></a>
+						<input class="Amount" value="1" autocomplete="off" maxlength="3">
+						<a class="Increase" href="javascript:void(0)"><i>+</i></a>
+					</div>
+					<p class="goux">
+						<label>
+						<input type="checkbox">
+						<span>勾选</span></label>
+					</p>
+				</div>
+				<div class="col-md-2">
+					<div class="dapj clear"> 
+						<span><p>代品券</p><p>$10</p></span> 
+					</div>
+					<div class="Spinner clear">
+						<a class="DisDe" href="javascript:void(0)"><i>-</i></a>
+						<input class="Amount" value="1" autocomplete="off" maxlength="3">
+						<a class="Increase" href="javascript:void(0)"><i>+</i></a>
+					</div>
+					<p class="goux">
+						<label>
+						<input type="checkbox">
+						<span>勾选</span></label>
+					</p>
+				</div>
+				<div class="col-md-2">
+					<div class="dapj clear"> 
+						<span><p>代品券</p><p>$10</p></span> 
+					</div>
+					<div class="Spinner clear">
+						<a class="DisDe" href="javascript:void(0)"><i>-</i></a>
+						<input class="Amount" value="1" autocomplete="off" maxlength="3">
+						<a class="Increase" href="javascript:void(0)"><i>+</i></a>
+					</div>
+					<p class="goux">
+						<label>
+						<input type="checkbox">
+						<span>勾选</span></label>
+					</p>
+				</div>
+				<div class="col-md-2">
+					<div class="dapj clear"> 
+						<span><p>代品券</p><p>$10</p></span> 
+					</div>
+					<div class="Spinner clear">
+						<a class="DisDe" href="javascript:void(0)"><i>-</i></a>
+						<input class="Amount" value="1" autocomplete="off" maxlength="3">
+						<a class="Increase" href="javascript:void(0)"><i>+</i></a>
+					</div>
+					<p class="goux">
+						<label>
+						<input type="checkbox">
+						<span>勾选</span></label>
+					</p>
+				</div>
+				<div class="col-md-2">
+					<div class="dapj clear"> 
+						<span><p>代品券</p><p>$10</p></span> 
+					</div>
+					<div class="Spinner clear">
+						<a class="DisDe" href="javascript:void(0)"><i>-</i></a>
+						<input class="Amount" value="1" autocomplete="off" maxlength="3">
+						<a class="Increase" href="javascript:void(0)"><i>+</i></a>
+					</div>
+					<p class="goux">
+						<label>
+						<input type="checkbox">
+						<span>勾选</span></label>
+					</p>
+				</div>
+			</div>
+		</div>
+	</main>
+	<div class="pop-compare huangouqu clear">
+		<div class="head clear">
+			<h3>换购区</h3>
+			<a href="javascript:;" class="c-b Yinchang">隐藏</a>
+		</div>
+		<div class="t-c clear">
+			<div class="JS-tc">
+				<ul>
+					<li>
+						<dl class="clear">
+							<dt><a href=""><img src="../img/01.jpg" /></a></dt>
+							<dd>
+								<a href="" class="tit">Verified Suppliers of Consumer Electronics Verified Suppliers of Consumer Electronics</a>
+								<p><b>$ 42.25</b></p>
+							</dd>
+						</dl>
+					</li>
+					<li>
+						<dl class="clear">
+							<dt><a href=""><img src="../img/01.jpg" /></a></dt>
+							<dd>
+								<a href="" class="tit">Verified Suppliers of Consumer Electronics Verified Suppliers of Consumer Electronics</a>
+								<p><b>$ 42.25</b></p>
+							</dd>
+						</dl>
+					</li>
+					<li>
+						<dl class="clear">
+							<dt><a href=""><img src="../img/01.jpg" /></a></dt>
+							<dd>
+								<a href="" class="tit">Verified Suppliers of Consumer Electronics Verified Suppliers of Consumer Electronics</a>
+								<p><b>$ 42.25</b></p>
+							</dd>
+						</dl>
+					</li>
+					<li>
+						<dl class="clear">
+							<dt><a href=""><img src="../img/01.jpg" /></a></dt>
+							<dd>
+								<a href="" class="tit">Verified Suppliers of Consumer Electronics Verified Suppliers of Consumer Electronics</a>
+								<p><b>$ 42.25</b></p>
+							</dd>
+						</dl>
+					</li>
+					<li>
+						<dl class="clear">
+							<dt><a href=""><img src="../img/01.jpg" /></a></dt>
+							<dd>
+								<a href="" class="tit">Verified Suppliers of Consumer Electronics Verified Suppliers of Consumer Electronics</a>
+								<p><b>$ 42.25</b></p>
+							</dd>
+						</dl>
+					</li>
+					<li>
+						<dl class="clear">
+							<dt><a href=""><img src="../img/01.jpg" /></a></dt>
+							<dd>
+								<a href="" class="tit">Verified Suppliers of Consumer Electronics Verified Suppliers of Consumer Electronics</a>
+								<p><b>$ 42.25</b></p>
+							</dd>
+						</dl>
+					</li>
+					<li>
+						<dl class="clear">
+							<dt><a href=""><img src="../img/01.jpg" /></a></dt>
+							<dd>
+								<a href="" class="tit">Verified Suppliers of Consumer Electronics Verified Suppliers of Consumer Electronics</a>
+								<p><b>$ 42.25</b></p>
+							</dd>
+						</dl>
+					</li>
+					<li>
+						<dl class="clear">
+							<dt><a href=""><img src="../img/01.jpg" /></a></dt>
+							<dd>
+								<a href="" class="tit">Verified Suppliers of Consumer Electronics Verified Suppliers of Consumer Electronics</a>
+								<p><b>$ 42.25</b></p>
+							</dd>
+						</dl>
+					</li>
+				</ul>
+				<span class="prev"></span> <span class="next"></span>
+			</div>
+			<ul class="rig">
+				<li>亲，您已用<em>7</em>张代品券，换购<em>5</em>件商品，价值<b>$1350.00</b></li>
+				<li><a href="" class="btn-red">立即购买</a></li>
+			</ul>
+		</div>
+	</div>
+	<footer class="main-footer">
+		<div class="w1200">
+			<div class="fl">
+				<ul>
+					<li>Copyright ©2014-2015 TPS138.com 前海云集品 版权所有. 粤ICP备14072989号-2</li>
+					<li>
+						<p>前海云集品电子商务有限公司</p>
+						<p>汤普森跨进电子商务平台</p>
+					</li>
+					<li><a href=""><i class="fa fa-angle-right"></i>关于我们</a><a href=""><i class="fa fa-angle-right"></i>物流配送</a><a href=""><i class="fa fa-angle-right"></i>售后服务</a><a href=""><i class="fa fa-angle-right"></i>帮助中心</a></li>
+				</ul>
+			</div>
+			<div class="fl ce-l">				
+				<ul>
+					<li>联系方式</li>
+					<li>
+						<p>support@tps138.com</p>
+						<p>0755-88695066</p>
+					</li>
+					<li><a href=""><s title="新浪微博"></s></a> <a href=""><s class="s1"></s></a> <a href=""><s class="s2"></s></a> <a href=""><s class="s3"></s></a></li>
+				</ul>
+			</div>
+			<div class="fr">
+				<img src="../img/weixin.jpg">
+				<p>关注微信</p>
+			</div>
+		</div>
+	</footer>	
+	<!--弹出层-->
+	<div class="wodl t-goods img100 clear" id="BOX_nav">
+		<span class="close" onclick="closeBg();">×</span>
+		<h3>商品介绍</h3>
+		<p class="tit">赋活锁龄套餐赋活锁龄套餐赋活锁龄套餐赋活锁龄套餐赋活锁龄套餐赋活锁龄套餐赋活锁龄套餐赋活锁龄套餐赋活锁龄套餐赋活锁龄套餐赋活锁龄套餐赋活锁龄套餐赋活锁龄套餐赋活锁龄套餐赋活锁龄套餐赋活锁龄套餐赋活锁龄套餐赋活锁龄套餐赋活锁龄套餐赋活锁龄套餐赋活锁龄套餐</p>
+		<div class="goods_img">
+			<img src="../img/1-2.jpg" alt="产品title">
+			<img src="../img/1-2.jpg" alt="产品title">
+			<img src="../img/1-2.jpg" alt="产品title">
+		</div>
+	</div>
+	<div class="xm-backdrop" id="fullbg"></div>
+	<script src="../js/base.js"></script>
+	<script src="../js/main.js"></script>
+	<script>
+		jQuery(".JS-tc").slide({ mainCell:"ul", autoPlay:true, effect:"left", vis:4, scroll:2, autoPage:true, pnLoop:false, interTime:4000,});
+		jQuery(".tps-stars").hover(function(){ jQuery(this).find(".prev,.next").stop(true,true).fadeTo("show",.9) },function(){ jQuery(this).find(".prev,.next").fadeOut() });
+		jQuery(".tps-stars").slide({ mainCell:".bd ul", effect:"left", vis:5, scroll:2, delayTime:500, autoPlay:true, autoPage:true, pnLoop:false, interTime:4000,});
+		$("body").click(function(){
+		    $("#fullbg").css("display","none");
+		    $("#BOX_nav").css("display","none");
+		});
+		$(".t-goods").click(function(event){
+			event.stopPropagation();
+		});
+	</script>
+</body>
+</html>

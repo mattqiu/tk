@@ -1,0 +1,505 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Register</title>
+<link href="../css/head.css" rel="stylesheet" type="text/css">
+<link href="../css/all.css" rel="stylesheet" type="text/css">
+<script src="../js/jquery-1.11.1.js"></script>
+<script src="../js/SuperSlide2.1.js"></script>
+</head>
+<body>
+<!--top-->
+<div class="top-wrapper">
+  <div class="container clear">
+    <div class="top-left">
+      <div data-toggle="arrowdown" id="arrow1" class="user-name"><a href="">$Currency<u class="down-icon"></u></a></div>
+      <div data-toggle="arrowdown" id="arrow2" class="user-name"><a href=""><i class="qizhi-usa"></i>Language<u class="down-icon"></u></a></div>
+      <!--hidden-box-->
+      <div data-toggle="hidden-box" id="nav-box1" class="my-yunji-box">
+        <ul>
+          <li><a href="">€ Euro</a></li>
+          <li><a href="">£ Pound Sterling</a></li>
+          <li><a href="">$ US Dollar</a></li>
+        </ul>
+      </div>
+      <div data-toggle="hidden-box" id="nav-box2" class="stow-box">
+        <ul>
+          <li><a href=""><i class="qizhi-english"></i>English</a></li>
+          <li><a href=""><i class="qizhi-zh"></i>简体中文</a></li>
+          <li><a href=""><i class="qizhi-hk"></i>正體中文</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="top-right"> <span class="float-left">Hello,</span> <a href="" class="float-left se_497fb1">Sign In</a> <span class="float-left">|</span> <a href="" class="float-left se_497fb1">Register</a>
+      <div data-toggle="arrowdown" id="arrow3" class="user-name"><a href="#"><s class="yhu"></s>My Account<u class="down-icon"></u></a></div>
+      <div data-toggle="arrowdown" id="arrow4" class="user-name"><a href="#"><s class="xh"></s>Wish List (0)<u class="down-icon"></u></a></div>
+      <a href="" class="float-left"><s class="bz"></s>Help</a> 
+      <!--hidden-box-->
+      <div data-toggle="hidden-box" id="nav-box3" class="language-box">
+        <ul>
+          <li><a href="">Register</a></li>
+          <li><a href="">Login</a></li>
+        </ul>
+      </div>
+      <div data-toggle="hidden-box" id="nav-box4" class="list-box">
+        <ul>
+          <li><a href="">Register</a></li>
+          <li><a href="">Login</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="top-main clear">
+  <div class="container clear">
+    <div class="row">
+      <div class="logo"><a href=""><img src="../img/logo.png"></a></div>
+      <div class="search">
+        <form action="" method="get">
+          <div class="search_input">
+            <input name="url" type="text" class="search_url" placeholder="I’m shopping for…">
+            <input name="" type="submit" class="search_submit" value="">
+          </div>
+        </form>
+      </div>
+      <div class="hd_cart">
+        <div class="cw-icon"> <a href="">My Cart<i class="ci-left"></i> <u class="down-icon ci-right"></u> <b class="ci-count">0</b></a> </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container clear">
+  <div class="nav">
+    <div class="sidebar">
+      <h3 data-toggle="arrowdown" id="arrow6">Categories<s></s></h3>
+      <!--sidebar-info-->
+      <ul class="sidebar-info" data-toggle="hidden-box" id="nav-box6">
+        <li id="mainCate-1" class="mainCate">
+          <div class="titt">
+            <h3><a href="#">白酒</a></h3>
+            <i class="menu-nav-arrow"></i>
+            <p><a href="#">茅台</a><a href="#">五粮液</a><a href="#">国窖1573</a></p>
+          </div>
+          <div class="subCate clear">
+            <div class="item-channels clear">
+              <div class="channels clear"><a href="">家电城<i>&gt;</i></a><a href="">智能生活馆<i>&gt;</i></a><a href="">京东净化馆<i>&gt;</i></a><a href="">京东帮服务店<i>&gt;</i></a></div>
+            </div>
+            <div class="subitems clear">
+              <dl class="fore1">
+                <dt><a href="">手机通讯<i>&gt;</i></a></dt>
+                <dd class="t_none"><a href="">手机</a><a href="">对讲机</a></dd>
+              </dl>
+              <dl class="fore2">
+                <dt><a href="">京东通信<i>&gt;</i></a></dt>
+                <dd><a href="">选号中心</a><a href="">自助服务</a></dd>
+              </dl>
+              <dl class="fore3">
+                <dt><a href="">运营商<i>&gt;</i></a></dt>
+                <dd><a href="">合约机</a><a href="">办套餐</a><a href="">选号码</a><a href="">装宽带</a><a href="">中国移动</a><a href="">中国联通</a><a href="">中国电信</a></dd>
+              </dl>
+              <dl class="fore4">
+                <dt><a href="">运营商<i>&gt;</i></a></dt>
+                <dd><a href="">合约机</a><a href="">办套餐</a><a href="">选号码</a><a href="">装宽带</a><a href="">中国移动</a><a href="">中国联通</a><a href="">中国电信</a><a href="">合约机</a><a href="">办套餐</a><a href="">选号码</a><a href="">装宽带</a><a href="">中国移动</a><a href="">中国联通</a><a href="">中国电信</a></dd>
+              </dl>
+            </div>
+          </div>
+        </li>
+        <li id="mainCate-2" class="mainCate evenLeval">
+          <div class="titt">
+            <h3><a href="#">白酒</a></h3>
+            <i class="menu-nav-arrow"></i>
+            <p><a href="#">茅台</a><a href="#">五粮液</a><a href="#">国窖1573</a></p>
+          </div>
+          <div class="subCate clear">
+            <div class="item-channels clear">
+              <div class="channels"><a href="">二级导航<i>&gt;</i></a><a href="">二级导航<i>&gt;</i></a><a href="">二级导航<i>&gt;</i></a><a href="">二级导航<i>&gt;</i></a></div>
+            </div>
+            <div class="subitems clear">
+              <dl class="fore1">
+                <dt><a href="">手机通讯<i>&gt;</i></a></dt>
+                <dd class="t_none"><a href="">手机</a><a href="">对讲机</a></dd>
+              </dl>
+              <dl class="fore2">
+                <dt><a href="">京东通信<i>&gt;</i></a></dt>
+                <dd><a href="">选号中心</a><a href="">自助服务</a></dd>
+              </dl>
+              <dl class="fore3">
+                <dt><a href="">运营商<i>&gt;</i></a></dt>
+                <dd><a href="">合约机</a><a href="">办套餐</a><a href="">选号码</a><a href="">装宽带</a><a href="">中国移动</a><a href="">中国联通</a><a href="">中国电信</a></dd>
+              </dl>
+              <dl class="fore4">
+                <dt><a href="">运营商<i>&gt;</i></a></dt>
+                <dd><a href="">合约机</a><a href="">办套餐</a><a href="">选号码</a><a href="">装宽带</a><a href="">中国移动</a><a href="">中国联通</a><a href="">中国电信</a><a href="">合约机</a><a href="">办套餐</a><a href="">选号码</a><a href="">装宽带</a><a href="">中国移动</a><a href="">中国联通</a><a href="">中国电信</a></dd>
+              </dl>
+            </div>
+          </div>
+        </li>
+        <li id="mainCate-3" class="mainCate">
+          <div class="titt">
+            <h3><a href="#">白酒</a></h3>
+            <i class="menu-nav-arrow"></i>
+            <p><a href="#">茅台</a><a href="#">五粮液</a><a href="#">国窖1573</a></p>
+          </div>
+          <div class="subCate clear">
+            <div class="item-channels clear">
+              <div class="channels"><a href="">家电城<i>&gt;</i></a><a href="">智能生活馆<i>&gt;</i></a><a href="">京东净化馆<i>&gt;</i></a><a href="">京东帮服务店<i>&gt;</i></a></div>
+            </div>
+            <div class="subitems clear">
+              <dl class="fore1">
+                <dt><a href="">手机通讯<i>&gt;</i></a></dt>
+                <dd class="t_none"><a href="">手机</a><a href="">对讲机</a></dd>
+              </dl>
+              <dl class="fore2">
+                <dt><a href="">京东通信<i>&gt;</i></a></dt>
+                <dd><a href="">选号中心</a><a href="">自助服务</a></dd>
+              </dl>
+              <dl class="fore3">
+                <dt><a href="">运营商<i>&gt;</i></a></dt>
+                <dd><a href="">合约机</a><a href="">办套餐</a><a href="">选号码</a><a href="">装宽带</a><a href="">中国移动</a><a href="">中国联通</a><a href="">中国电信</a></dd>
+              </dl>
+              <dl class="fore4">
+                <dt><a href="">运营商<i>&gt;</i></a></dt>
+                <dd><a href="">合约机</a><a href="">办套餐</a><a href="">选号码</a><a href="">装宽带</a><a href="">中国移动</a><a href="">中国联通</a><a href="">中国电信</a><a href="">合约机</a><a href="">办套餐</a><a href="">选号码</a><a href="">装宽带</a><a href="">中国移动</a><a href="">中国联通</a><a href="">中国电信</a></dd>
+              </dl>
+            </div>
+          </div>
+        </li>
+        <li id="mainCate-4" class="mainCate evenLeval">
+          <div class="titt">
+            <h3><a href="#">白酒</a></h3>
+            <i class="menu-nav-arrow"></i>
+            <p><a href="#">茅台</a><a href="#">五粮液</a><a href="#">国窖1573</a></p>
+          </div>
+          <div class="subCate clear">
+            <div class="item-channels clear">
+              <div class="channels"><a href="">二级导航<i>&gt;</i></a><a href="">二级导航<i>&gt;</i></a><a href="">二级导航<i>&gt;</i></a><a href="">二级导航<i>&gt;</i></a></div>
+            </div>
+            <div class="subitems clear">
+              <dl class="fore1">
+                <dt><a href="">手机通讯<i>&gt;</i></a></dt>
+                <dd class="t_none"><a href="">手机</a><a href="">对讲机</a></dd>
+              </dl>
+              <dl class="fore2">
+                <dt><a href="">京东通信<i>&gt;</i></a></dt>
+                <dd><a href="">选号中心</a><a href="">自助服务</a></dd>
+              </dl>
+              <dl class="fore3">
+                <dt><a href="">运营商<i>&gt;</i></a></dt>
+                <dd><a href="">合约机</a><a href="">办套餐</a><a href="">选号码</a><a href="">装宽带</a><a href="">中国移动</a><a href="">中国联通</a><a href="">中国电信</a></dd>
+              </dl>
+              <dl class="fore4">
+                <dt><a href="">运营商<i>&gt;</i></a></dt>
+                <dd><a href="">合约机</a><a href="">办套餐</a><a href="">选号码</a><a href="">装宽带</a><a href="">中国移动</a><a href="">中国联通</a><a href="">中国电信</a><a href="">合约机</a><a href="">办套餐</a><a href="">选号码</a><a href="">装宽带</a><a href="">中国移动</a><a href="">中国联通</a><a href="">中国电信</a></dd>
+              </dl>
+            </div>
+          </div>
+        </li>
+        <li id="mainCate-5" class="mainCate">
+          <div class="titt">
+            <h3><a href="#">白酒</a></h3>
+            <i class="menu-nav-arrow"></i>
+            <p><a href="#">茅台</a><a href="#">五粮液</a><a href="#">国窖1573</a></p>
+          </div>
+          <div class="subCate clear">
+            <div class="item-channels clear">
+              <div class="channels"><a href="">二级导航<i>&gt;</i></a><a href="">二级导航<i>&gt;</i></a><a href="">二级导航<i>&gt;</i></a><a href="">二级导航<i>&gt;</i></a></div>
+            </div>
+            <div class="subitems clear">
+              <dl class="fore1">
+                <dt><a href="">手机通讯<i>&gt;</i></a></dt>
+                <dd class="t_none"><a href="">手机</a><a href="">对讲机</a></dd>
+              </dl>
+              <dl class="fore2">
+                <dt><a href="">京东通信<i>&gt;</i></a></dt>
+                <dd><a href="">选号中心</a><a href="">自助服务</a></dd>
+              </dl>
+              <dl class="fore3">
+                <dt><a href="">运营商<i>&gt;</i></a></dt>
+                <dd><a href="">合约机</a><a href="">办套餐</a><a href="">选号码</a><a href="">装宽带</a><a href="">中国移动</a><a href="">中国联通</a><a href="">中国电信</a></dd>
+              </dl>
+              <dl class="fore4">
+                <dt><a href="">运营商<i>&gt;</i></a></dt>
+                <dd><a href="">合约机</a><a href="">办套餐</a><a href="">选号码</a><a href="">装宽带</a><a href="">中国移动</a><a href="">中国联通</a><a href="">中国电信</a><a href="">合约机</a><a href="">办套餐</a><a href="">选号码</a><a href="">装宽带</a><a href="">中国移动</a><a href="">中国联通</a><a href="">中国电信</a></dd>
+              </dl>
+            </div>
+          </div>
+        </li>
+        <li id="mainCate-6" class="mainCate evenLeval">
+          <div class="titt">
+            <h3><a href="#">白酒</a></h3>
+            <i class="menu-nav-arrow"></i>
+            <p><a href="#">茅台</a><a href="#">五粮液</a><a href="#">国窖1573</a></p>
+          </div>
+          <div class="subCate">
+            <div class="item-channels clear">
+              <div class="channels"><a href="">二级导航<i>&gt;</i></a><a href="">二级导航<i>&gt;</i></a><a href="">二级导航<i>&gt;</i></a><a href="">二级导航<i>&gt;</i></a></div>
+            </div>
+            <div class="subitems clear">
+              <dl class="fore1">
+                <dt><a href="">手机通讯<i>&gt;</i></a></dt>
+                <dd class="t_none"><a href="">手机</a><a href="">对讲机</a></dd>
+              </dl>
+              <dl class="fore2">
+                <dt><a href="">京东通信<i>&gt;</i></a></dt>
+                <dd><a href="">选号中心</a><a href="">自助服务</a></dd>
+              </dl>
+              <dl class="fore3">
+                <dt><a href="">运营商<i>&gt;</i></a></dt>
+                <dd><a href="">合约机</a><a href="">办套餐</a><a href="">选号码</a><a href="">装宽带</a><a href="">中国移动</a><a href="">中国联通</a><a href="">中国电信</a></dd>
+              </dl>
+              <dl class="fore4">
+                <dt><a href="">运营商<i>&gt;</i></a></dt>
+                <dd><a href="">合约机</a><a href="">办套餐</a><a href="">选号码</a><a href="">装宽带</a><a href="">中国移动</a><a href="">中国联通</a><a href="">中国电信</a><a href="">合约机</a><a href="">办套餐</a><a href="">选号码</a><a href="">装宽带</a><a href="">中国移动</a><a href="">中国联通</a><a href="">中国电信</a></dd>
+              </dl>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="nav_l"><a href="">Products Set Section</a><a href="">Health Care Products</a><a href="">Cosmetic</a><a href="">Skin Care</a></div>
+    <a href="" class="tm"><i></i>Gift Cards</a> </div>
+</div>
+<script>
+ jQuery
+  (".sidebar-info").slide({ 
+  type:"menu", //效果类型
+  titCell:".mainCate", // 鼠标触发对象
+  targetCell:".subCate", // 效果对象，必须被titCell包含
+  delayTime:400, // 效果时间
+  triggerTime:150, //鼠标延迟触发时间
+  defaultPlay:false,//默认执行
+  returnDefault:true//返回默认
+  });
+</script>
+<div class="bj_zhuti">
+  <div class="container clear">
+    <div class="Register_z clear">
+      <h3>Sign In or Register a New Account</h3>
+      <div class="col-md-6">
+        <div class="Signin">
+          <h4>Sign in</h4>
+          <div class="item-ifo"> <s class="youx"></s>
+            <input id="" class="itxt" name="loginname" tabindex="1" autocomplete="off" placeholder="Enter your Email address">
+          </div>
+          <div class="item-ifo"> <s class="suo"></s>
+            <input id="" class="itxt" name="loginname" tabindex="1" autocomplete="off" placeholder="Enter your password">
+          </div>
+          <div class="item-ifo">
+            <input type="button" class="btn-Login" id="" value="Login" tabindex="8" onclick="reg();">
+            <a href="" class="se_497fb1">Forgot your password?</a> </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="Register">
+          <h4>Sign in</h4>
+          <div class="item-ifo"> <s class="youx"></s>
+            <input id="" class="itxt" name="loginname" tabindex="1" autocomplete="off" placeholder="Enter your Email address">
+          </div>
+          <div class="item-ifo"> <s class="youx"></s>
+            <input id="" class="itxt" name="loginname" tabindex="1" autocomplete="off" placeholder="Enter the Email again">
+          </div>
+          <div class="item-ifo"> <s class="suo"></s>
+            <input id="" class="itxt" name="loginname" tabindex="1" autocomplete="off" placeholder="Enter your password">
+          </div>
+          <div class="item-ifo"> <s class="suo"></s>
+            <input id="" class="itxt" name="loginname" tabindex="1" autocomplete="off" placeholder="Enter the password again">
+          </div>
+          <div class="item-ifo">
+            <label for="protocol">
+              <input type="checkbox" checked="checked">
+              我已阅读并同意<a href="javascript:showBg();" class="se_497fb1" id="protocol">《TPS用户注册协议》</a></label>
+          </div>
+          <div class="item-ifo">
+            <input type="button" class="btn-Register" id="" value="Create my account" tabindex="8" clstag="regist|keycount|personalreg|07" onclick="reg();">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container clear">
+    <div class="col-md-12 clear"><a href=""><img src="../img/dingyue.jpg" class="img100"></a></div>
+  </div>
+  <div class="container clear">
+    <div class="foot clear">
+      <div class="col-md-2 clear">
+        <div class="fenx"><a href=""><s class="s1"></s><span>Like us<br>
+          on Facebook</span></a></div>
+      </div>
+      <div class="col-md-2 clear">
+        <div class="fenx"><a href=""><s class="s2"></s><span>Fllow us<br>
+          on Twitter</span></a></div>
+      </div>
+      <div class="col-md-2 clear">
+        <div class="fenx"><a href=""><s class="s3"></s><span>Pin us<br>
+          on Pinterest</span></a></div>
+      </div>
+      <div class="col-md-2 clear">
+        <div class="fenx"><a href=""><s class="s4"></s><span>Read us<br>
+          on our blog</span></a></div>
+      </div>
+      <div class="col-md-2 clear">
+        <div class="fenx"><a href=""><s class="s5"></s><span>Watch us<br>
+          on Youtube</span></a></div>
+      </div>
+      <div class="col-md-2 clear">
+        <div class="fenx"><a href=""><s class="s6"></s><span>Like us<br>
+          on Google+</span></a></div>
+      </div>
+    </div>
+  </div>
+  <div class="container top_15 clear">
+    <div class="I_help clear">
+      <div class="col-md-20 clear">
+        <ul>
+          <li class="links">About us</li>
+          <li><a href="">About ecosko Group</a></li>
+          <li><a href="">About TPS138.com</a></li>
+          <li><a href="">Walhao.com.cn</a></li>
+          <li><a href="">Contact us</a></li>
+        </ul>
+      </div>
+      <div class="col-md-20 clear">
+        <ul>
+          <li class="links">Shopping Guide</li>
+          <li><a href="">Shopping Process</a></li>
+          <li><a href="">Order Operation</a></li>
+          <li><a href="">Products Set Deals</a></li>
+          <li><a href="">Brand Zone</a></li>
+          <li><a href="">Invoices and receipts description</a></li>
+          <li><a href="">Overseas Shopping Notes</a></li>
+          <li><a href="">Asked Questions</a></li>
+        </ul>
+      </div>
+      <div class="col-md-20 clear">
+        <ul>
+          <li class="links">Payments</li>
+          <li><a href="">CUP online payment</a></li>
+          <li><a href="">Alipay</a></li>
+          <li><a href="">Wallet</a></li>
+          <li><a href="">PAYPAL payment</a></li>
+          <li><a href="">Substitutes coupons</a></li>
+          <li><a href="">Gift Cards</a></li>
+        </ul>
+      </div>
+      <div class="col-md-20 clear">
+        <ul>
+          <li class="links">Logistics</li>
+          <li><a href="">Delivery</a></li>
+          <li><a href="">Aging and freight distribution</a></li>
+          <li><a href="">Inspection and receipt</a></li>
+          <li><a href="">Delivery Information Tracking</a></li>
+        </ul>
+      </div>
+      <div class="col-md-20 clear">
+        <ul>
+          <li class="links">Service</li>
+          <li><a href="">Delivery Agreement</a></li>
+          <li><a href="">Refund and aging</a></li>
+          <li><a href="">Refunds or exchanges</a></li>
+          <li><a href="">Customer service telephone voice process</a></li>
+          <li><a href="">Contact us</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="fukuan"><img src="../img/fukuan.png"></p>
+    <p class="copyright">Copyright  © 2004-2005  TPS & Partners Co. Ltd. TPS138.com. All rights reserved. </p>
+  </div>
+</div>
+<div id="fullbg" class="xm-backdrop "></div>
+<div id="BOX_nav" class="wodl thickbox clear"> <span class="close" onclick="closeBg();">×</span>
+  <h3>TPS用户注册协议</h3>
+  <p class="xy"> 欢迎加入TPS，开始您的幸福购物之旅！ 感谢您使用我们的服务。TPS的各项服务由深圳前海云集品电子商务有限公司提供，服务所有权和运作权属于深圳前海云集品电子商务有限公司，(以下称为“TPS”或“本站”)。 TPS在此特别提醒用户，《TPS用户协议》（以下简称“本协议”）为您与TPS平台经营者之间所订立的契约，具有合同的法律效力。您在使用TPS提供的各项服务之前，应仔细阅读本协议的各项条款，特别是加粗的涉及您核心利益的条款、免除或者限制责任的条款、法律适用和争议解决条款。您一旦使用TPS服务，即视为您已了解并完全同意本协议各项内容，包括TPS对本协议随时所做的任何修改，并成为TPS用户（以下简称“您”或“用户”）。 届时您不应以未阅读本协议的内容为理由，主张本协议无效，或要求撤销本协议。<br />
+    <b>一、服务内容</b><br />
+    1.用户注册成功后，即成为TPS的会员，可享受TPS为您提供的服务，可以在TPS上进行购物、订单查询、参加各项优惠活动、发表产品评论等。请记住您的注册手机号，它是您在TPS的唯一识别，您的任何投诉、问题、购买记录，均采用这个注册手机号处理。<br />
+    2.用户必须自行准备如下设备和承担如下开支：<br />
+    2.1上网设备，包括并不限于电脑或者其他上网终端、调制解调器及其他必备的上网装置；<br />
+    2.2上网开支，包括并不限于网络接入费、上网设备租用费、手机流量费等。<br />
+    3.TPS有权不断更改和改进服务，包括增加、删除某项服务，或暂停、彻底停止某项服务。<br />
+    <b>二、用户注册及使用规则</b><br />
+    1.注册资格<br />
+    2.1 用户同意TPS为提供更好的服务，向您搜集姓名、地址、手机号码等个人信息及子女的相关信息，用户同意其提供的注册资料真实、准确、完整、合法有效，用户个人信息如有变动的，应及时更新个人信息。TPS有权通过征信机构、银行卡绑定等方式，对您提交的身份信息的真实性进行验证。如果用户提供的注册资料不合法、不真实、不准确、不详尽的，用户需承担因此引起的相应责任及后果，并且TPS保留终止用户使用本平台各项服务的权利。<br />
+    2.2 用户设置的会员名不得违反国家法律法规的规定以及侵犯或涉嫌侵犯他人合法权益。TPS有权对用户名等用户注册信息进行审核并向用户反馈注册结果，只有经TPS审核同意并反馈确认的才成为TPS的用户，并享有TPS提供的各项服务。否则，TPS有权终止向用户提供TPS平台服务，注销账户。<br />
+    2.3 用户在本站进行浏览、下单购物等活动时，涉及用户真实姓名/名称、通信地址、联系电话等隐私信息的，本站将予以严格保密，除非得到用户的授权或法律另有规定，本站不会向外界披露用户隐私信息。<br />
+    3.账户<br />
+    3.1 用户注册成功后，将产生TPS用户名和密码等账户信息，用户可以根据本站规定改变密码。用户应谨慎合理的保存、使用用户名和密码。账户因您主动泄露或遭受他人攻击、诈骗等行为导致的损失及后果，均由您自行承担。<br />
+    3.2 您确认并同意，在您的账户登录状态下进行的所有操作均视为您本人的操作，您应对您账户项下的所有行为结果（包括但不限于在线签署各类协议、发布信息、购买商品及服务及披露信息等）负责。<br />
+    3.3 用户不得将在本站注册获得的账户借给他人使用，否则用户应承担由此产生的全部责任，并与实际使用人承担连带责任。<br />
+    4.使用规则<br />
+    4.1 用户在使用TPS服务过程中实施的所有行为均应遵守中华人民共和国法律、法规等规范性文件及TPS各项规则的规定和要求，不违背社会公共利益或公共道德，不损害他人的合法权益，不违反本协议及相关规则。如果违反前述承诺，产生任何法律后果的，用户应以自己的名义独立承担所有的法律责任，并确保TPS免于因此遭受任何损失。<br />
+    4.2 用户确认并同意，TPS有权在提前通过网络公示等方式对平台服务规则进行修改，用户应当在指定时间之内对相关服务规则的修改进行回复。用户未对相关修改进行反馈意见的情况下即视为同意上述修改。<br />
+    4.3 用户应该严格遵守TPS的一切规则，不得出现恶意注册、恶意点评、恶意退款等违规行为，一经发现，TPS有权取消用户资格，同时该用户必须承担由此给TPS带来的所有损失。
+    4.4 用户同意，TPS拥有通过邮件、短信、电话，以及客户端推送等形式，向在本站注册、购物用户、收货人发送促销活动等告知信息的权利。<br />
+    4.5 用户了解并同意，TPS有权应国家司法、行政等主管部门的要求，向其提供您在TPS平台填写的注册信息和交易记录等必要信息。如您涉嫌侵犯他人知识产权，则TPS亦有权在初步判断涉嫌侵权行为存在的情况下，向权利人提供您必要的身份信息。<br />
+    4.6 用户同意，TPS有权使用用户的注册信息、用户名、密码等信息，登录进入用户的注册账户，进行证据保全，包括但不限于公证、见证等。<br />
+    4.7 为便于提供服务，用户同意并授权TPS将用户在注册、使用本站过程中提供、形成的信息传递给TPS关联公司或本站卖方。<br />
+    5.授权使用<br />
+    5.1 对于用户在注册和使用TPS过程中提供的资料及数据信息，用户授权TPS及其关联公司独家的、全球通用的、永久的、免费的许可使用权利（包括再授权），用途包括但不限于网站、电子杂志、杂志、刊物等。TPS及其关联公司有权使用、复制、编辑、改写等方式处理并展示用户的数据资料。<br />
+    <b>三、用户依法言行义务</b><br />
+    1.本协议依据国家相关法律法规规章制定，用户同意在注册账户和使用TPS期间，严格遵守以下义务：<br />
+    1.1 不得传输或发表：煽动抗拒、破坏宪法和法律、行政法规实施的言论，煽动颠覆国家政权，推翻社会主义制度的言论，煽动分裂国家、破坏国家统一的的言论，煽动民族仇恨、民族歧视、破坏民族团结的言论；<br />
+    1.2 不得利用本站从事洗钱、窃取商业秘密、窃取个人信息等违法犯罪活动；<br />
+    1.3 不得干扰本站的正常运转，不得侵入本站及国家计算机信息系统；<br />
+    1.4 不得传输或发表任何违法犯罪的、骚扰性的、中伤他人的、辱骂性的、恐吓性的、伤害性的、庸俗的，淫秽的、不文明的等信息资料；<br />
+    1.5 不得传输或发表损害国家社会公共利益和涉及国家安全的信息资料或言论；<br />
+    1.6 不得教唆他人从事本条所禁止的行为；<br />
+    1.7 不得发布任何侵犯他人著作权、商标权等知识产权或合法权利的内容；<br />
+    1.8 不得发布任何TPS认为不适合在TPS展示的内容；<br />
+    2.用户应不时关注并遵守本站不时公布或修改的各类合法规则规定。<br />
+    3.本站保有删除站内各类不符合法律政策或不真实的信息内容而无须通知用户的权利。<br />
+    4.若用户未遵守以上规定的，本站有权作出独立判断并采取暂停或关闭用户帐号等措施。用户须对自己在网上的言论和行为承担法律责任。<br />
+    <b>四、订单</b><br />
+    1.在本网站购物的用户，请您仔细确认所购商品的名称、价格、数量、型号、规格、尺寸、联系地址、电话、收货人等信息。收货人与用户本人不一致的，收货人的行为和意思表示视为用户的行为和意思表示，用户应对收货人的行为及意思表示的法律后果承担连带责任。<br />
+    2. 除网站页面另有明确标示为自营商品外，TPS应当被界定为本站卖方委托进行商品信息发布并促成交易的居间方，在任何情况下发生的消费者权益纠纷、产品质量纠纷，均应由您与产品或服务的卖方解决，TPS不承担卖方或买方的责任。<br />
+    3.除法律另有强制性规定外，双方约定如下：本站上展示的商品和价格等信息仅仅是要约邀请，您下单时须填写您希望购买的商品数量、价款及支付方式、收货人、联系方式、收货地址等内容；系统生成的订单信息是计算机信息系统根据您填写的内容自动生成的数据，仅是您向品牌合作商发出的合同要约；本站卖方收到您的订单信息后，只有将您在订单中订购的商品从仓库实际直接向您发出时，方视为您与卖方之间就实际直接向您发出的商品建立了合同关系；如果您在一份订单里订购了多种商品并且本站卖方只给您发出了部分商品时，您与本站卖方之间仅就实际直接向您发出的商品建立了合同关系；只有在本站卖方实际直接向您发出了订单中订购的其他商品时，您和本站卖方之间就订单中该其他已实际直接向您发出的商品才成立合同关系。您可以随时登录您在本站注册的账户，查询您的订单状态。<br />
+    4.您了解并同意，本平台上的商品、价格、数量、是否有货等商品信息随时可能发生变动，本站不作特别通知。由于互联网技术原因导致网页显示信息可能会有一定的滞后性或差错，您接受本平台在发现网页错误，正式向您发出通知后，对商品信息进行调整，订单按照正确的信息执行，或取消订单，同时若用户违反TPS交易规则，平台管理者有权关闭或拒绝您的交易订单。<br />
+    5.TPS、TPS关联公司或本站卖方将会把商品（货物）送到您所指定的收货地址。您了解本平台所提示的送货时间供参考，实际送货会与参考时间略有差异。平台管理者和所有者或其关联公司不对因您及收货人原因导致无法送货或延迟送货承担责任。若发生不可抗力或其他正当合理理由导致发货延迟的，您将给予充分理解。<br />
+    因如下情况造成订单延迟或无法配送等，TPS或本站卖方不承担延迟配送的责任：<br />
+    5.1 用户提供的信息错误、地址不详细等原因导致的；<br />
+    5.2 货物送达后无人签收，导致无法配送或延迟配送的；<br />
+    5.3 情势变更因素导致的；<br />
+    5.4 不可抗力因素导致的，例如：自然灾害、交通戒严、突发战争等。<br />
+    <b>五、责任限制</b><br />
+    1.除TPS在本协议中规定的其它限制之外，在中国（“中国”指中华人民共和国，为本协议之目的不包括香港和澳门特别行政区以及台湾省）法律法规所允许的限度内，对于因用户使用服务而引起的或与之有关的任何直接的、间接的、特殊的、附带的、后果性的或惩罚性的损害，或任何其它性质的损害，TPS、TPS的董事、管理人员、雇员、代理或其它代表在任何情况下都不承担责任。<br />
+    2.TPS不对本站所涉及的技术及信息的有效性、准确性、可靠性、稳定性和及时性作出任何承诺和保证。如因不可抗力或其它本站无法控制的原因使本站系统崩溃或无法正常使用导致本平台不能服务或延迟服务、丢失数据信息、记录的，TPS不承担责任，但TPS将协助处理相关事宜。<br />
+    3.用户应理解TPS上发布的商品和货物可能存在风险和瑕疵，TPS不对本站进行交易所涉及商品的质量、安全、商品信息的真实性或准确性承担责任。<br />
+    4.除商品被标有“自营”字样外，用户理解TPS上发布的商品及相关的图片、文字等信息均由入驻TPS的卖方所提供，TPS不对该信息所涉及的知识产权承担责任。<br />
+    5.用户有责任切实维护自身持有的银行卡及资金安全，应当采取一切措施避免银行卡及身份信息被泄露。如您银行卡内资金有未经您许可的被盗刷、资金损失等行为，请您主动联系您的开户银行，或者就上述违法行为向公安机关报案。TPS不承担经系统识别的您卡内资金划转及损失。<br />
+    <b>六、协议修改</b><br />
+    1.TPS有权不定时修改本协议或任何适用于服务的附加条款。所有修改的适用不具有追溯力，且会在公布后生效。如果用户不同意服务的修改条款，应停止使用服务。如用户继续使用服务，则视为同意。<br />
+    2.如果本协议条款与附加条款有冲突，以附加条款为准。<br />
+    <b>七、违约赔偿</b><br />
+    1.用户同意保障和维护TPS及其他用户的利益，如因用户违反有关法律、法规或本协议项下的任何条款而给TPS或任何其他第三人造成损失，用户同意承担由此造成的损害赔偿责任。
+    2.如果用户不遵守本协议，且TPS未立即采取行动，并不意味TPS放弃可能享有的任何权利或在将来采取行动。<br />
+    3.如用户涉嫌违反有关法律或者本协议之规定，使TPS遭受任何损失，或受到任何第三方的索赔，或受到任何行政管理部门的处罚，用户应当赔偿TPS因此造成的损失及（或）发生的费用，包括合理的律师费用。<br />
+    <b>八、协议终止</b><br />
+    1.您了解并同意，TPS有权在您的账户存在风险交易的情况下不经事先通知的中止、终止向您提供部分或全部TPS平台服务，暂时冻结或永久冻结（注销）您的账户，且无须为此向您或任何第三方承担任何责任。<br />
+    2.出现以下情况时，TPS有权直接以注销账户的方式终止本协议:<br />
+    2.1TPS终止向您提供服务后，您涉嫌再一次直接或间接或以他人名义注册为TPS用户的；<br />
+    2.2您注册信息中的主要内容不真实或不准确或不及时或不完整。<br />
+    2.3本协议（含本协议的修改、附加条款及TPS各项规则）变更时，您明示并通知TPS不愿接受新的服务协议的；<br />
+    2.4在您的账户内存在或发现有盗卡、信用卡套现、洗钱等违法违规行为或风险时；<br />
+    2.5其它TPS认为应当终止服务的情况。<br />
+    3.您有权向TPS要求注销您的账户，经TPS审核同意的，TPS注销（永久冻结）您的账户，届时，您与TPS基于本协议的合同关系即终止。您的账户被注销（永久冻结）后，TPS没有义务为您保留或向您披露您账户中的任何信息，也没有义务向您或第三方转发任何您未曾阅读或发送过的信息。<br />
+    4.您同意，您与TPS的合同关系终止后，TPS仍享有下列权利：<br />
+    4.1继续保存您的注册信息及您使用TPS平台服务期间的所有交易信息。<br />
+    4.2您在使用TPS平台服务期间存在违法行为或违反本协议和/或规则的行为的，TPS仍可依据本协议向您主张权利。<br />
+    5.TPS中止或终止向您提供TPS平台服务后，对于您在服务中止或终止之前的交易行为依下列原则处理，您应独立处理并完全承担进行以下处理所产生的任何争议、损失或增加的任何费用，并应确保TPS免于因此产生任何损失或承担任何费用：<br />
+    5.1您在服务中止或终止之前已经上传至TPS平台的物品尚未交易的，TPS有权在中止或终止服务的同时删除此项物品的相关信息；<br />
+    5.2您在服务中止或终止之前已经与本站卖方达成买卖合同，但合同尚未实际履行的，TPS有权删除该买卖合同及其交易物品的相关信息；<br />
+    5.3您在服务中止或终止之前已经与本站卖方达成买卖合同且已部分履行的，TPS可以不删除该项交易，但TPS有权在中止或终止服务的同时将相关情形通知您的交易卖方。<br />
+    <b>九、法律管辖和适用</b><br />
+    1.本协议的订立、执行和解释及争议的解决均应适用中国法律。<br />
+    2.如发生本协议与中国法律相抵触时，则这些条款将完全按法律规定重新解释，而其它合法条款则依旧保持对用户产生法律效力和影响。<br />
+    3.本协议的规定是可分割的，如本协议任何规定被裁定为无效或不可执行，该规定可被删除而其余条款应予以执行。<br />
+    4.为维护用户在本平台交易过程中的权利义务，您同意TPS有权先行裁决您与TPS本站卖方的消费争议，并执行TPS的裁决结果。如您对TPS裁决结果不满意或有异议，您有权将争议提交司法机构。<br />
+    5.如TPS与用户双方就本协议内容或其执行发生任何争议，双方应尽力友好协商解决；协商不成时，任何一方均可向深圳仲裁委员会提起仲裁。<br />
+    <b>十、其他</b><br />
+    1.本协议构成双方对本协议之约定事项及其他有关事宜的完整协议，除本协议规定的之外，未赋予本协议各方其他权利。<br />
+    2.本协议中的标题仅为方便而设，不作为对标题下条款的解释。<br />
+    3.您注册为TPS的会员即视为您完全接受本协议，在注册之前请您再次确认已知悉并完全理解本协议的全部内容。 </p>
+  <input type="button" class="btn-Login" value="同意并继续" onclick="closeBg();">
+</div>
+<script src="../js/main.js"></script>
+</body>
+</html>

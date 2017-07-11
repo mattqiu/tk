@@ -1,0 +1,56 @@
+
+#video .video_bottom .bot_img_txt .img1_txt .v_rtxt1 p,
+#video .video_bottom .bot_img_txt .img2_txt .v_rtxt2 p,
+#video .video_bottom .bot_img_txt .img3_txt .v_rtxt3 p,
+#opport .rig_cont .txt_tools p{
+    line-height: 26px;
+}
+#thr_import .midd_part .import_txt1 .inner_txt,
+#thr_import .righ_part .import_txt2 .inner_txt1,
+#thr_import .left_part .import_txt li{
+    line-height: 20px;
+}
+
+#video .video_top .righ_video .new_txt li{
+    margin-top: 5px;
+}
+#video .video_top .righ_video .img_txt .rtxt{
+    text-overflow: ellipsis;
+}
+#open_select {
+    background: url("../../img/new/select_down_icon.png") no-repeat scroll 73px center rgba(0, 0, 0, 0);
+    width: 99px;
+}
+#thr_import .midd_part .import_txt1 p a{
+    display: block;
+    margin-top: 20px;
+}
+
+#thr_import .left_part .import_txt li{font-size:0.75em;}
+#thr_import .midd_part .import_txt1 .inner_txt{font-size:0.75em;}
+#thr_import .righ_part .import_txt2 .inner_txt1{font-size:0.75em;}
+.other_page .left_part .m_text .c_text p,.other_page .left_part .m_text .c_text p,
+.other_page .left_part .m_text .c_text .list,#ecosko .img_eco p,
+.other_page .left_part .m_text .news_text .v_text p
+,.other_page .left_part .m_text .news_text1 .v_text p
+{
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.other_page .righ_part .text1 h3,.other_page .righ_part .text2 h3,
+.other_page .righ_part .title h3,.other_page .righ_part .pre_nex .prelink .txtpre,.other_page .righ_part .pre_nex .nextlink .txtnext
+,.other_page .left_part .m_text .news_text .title h4,.other_page .righ_part .text3 h2,
+.other_page .left_part .m_text .news_text .img_text .r_text h5,
+.other_page .righ_part .text4 h3
+{
+    font-size: 16px;
+    font-weight: normal;
+}
+.other_page .left_part .m_text .news_locus h4{
+    font-size: 12px;
+    font-weight: normal;
+}
+#ecosko .img_eco h2,.other_page .left_part .m_text .c_text h2{
+    font-size: 16px;
+}

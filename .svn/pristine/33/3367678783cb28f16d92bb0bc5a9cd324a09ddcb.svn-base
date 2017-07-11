@@ -1,0 +1,18 @@
+.tps_reg{margin-bottom:-40px;width:100%;height:600px;background:url(../img/reg_bg.gif) no-repeat;background-size:auto}
+.tps_reg .tps_reg_w1200{position:relative;margin:0 auto;width:1200px;height:100%}
+.tps_reg .tps_reg_box{position:absolute;top:50px;right:0;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;padding:31px 35px;width:385px;background:#fff;font-family:'微软雅黑'}
+.tps_reg .tps_reg_box .reg_nav{width:314px;height:45px;color:#999;text-align:center;font-weight:700;font-size:18px;line-height:45px}
+.tps_reg .tps_reg_box .reg_nav a{color:#999;}
+.tps_reg .tps_reg_box .reg_nav ul li{float:left;box-sizing:border-box;width:156px}
+.active{border-bottom:2px solid #ed4242;color:#ed4242}
+.tps_reg .tps_reg_box .mail_reg{position:relative;margin-top:25px;width:314px}
+.tps_reg .tps_reg_box .mail_reg .login_id{position:absolute;top:13px;left:5px;display:block;width:15px;height:15px;background:url(../img/login_spring.png) no-repeat}
+.tps_reg .tps_reg_box .mail_reg .login_psw{position:absolute;top:72px;left:5px;display:block;width:15px;height:15px;background:url(../img/login_spring.png) no-repeat -26px 0}
+.tps_reg .tps_reg_box .mail_reg .error_msg{position:absolute;top:-10px;left:23px;z-index:2;display:none;padding:6px;border:1px solid #e5e5e5;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;background:#f2f2f2;color:#999;font-size:14px;line-height:23px}
+.tps_reg .tps_reg_box .tel_reg{margin-top:60px;width:314px}
+.tps_reg .tps_reg_box .mail_reg ul li{margin-bottom:20px}
+.tps_input{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;padding-left:25px;width:310px;height:40px;outline:0;border:1px solid #e5e5e5;border-radius:6px;color:#999;font-size:14px;}
+.tps_checkbox{margin-right:5px;width:16px;height:16px;vertical-align:middle}
+.tps_reg_btn{display:block;width:314px;height:45px;border:0;border-radius:6px;background:#ed4242;color:#fff;text-align:center;font-size:18px;line-height:45px;cursor:pointer;-webkit-transition:all 1s ease;-moz-transition:all 1s ease;-o-transition:all 1s ease;transition:all 1s ease;-ms-transition:all 1s ease}
+.tps_reg_btn:hover{background:#c80606}
+.login_ui{margin-top:70px}

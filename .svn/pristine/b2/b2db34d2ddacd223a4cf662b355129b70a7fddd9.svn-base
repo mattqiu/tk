@@ -1,0 +1,152 @@
+*{margin:0;padding:0}
+body{font-family: "Microsoft YaHei"}
+ul li{list-style: none}
+a{text-decoration: none;color:#343434}
+.clx{
+    clear: both;height:0;
+}
+.warp{width:100%;background:#fff}
+.warp .mobile_header{
+    height:75px;
+    background:#e9e9e9;
+    border-bottom:1px solid #ccc;
+    font-size:24px;
+    line-height:75px;
+    padding-left:37px;
+    box-sizing: border-box;
+}
+.warp .mobile_main{
+    width:96%;
+    margin:38px auto 0;
+    height:668px;
+    border:1px solid #ccc;
+    padding:30px 0 0 68px;
+    box-sizing: border-box;
+}
+.warp .mobile_main ul li{
+    width:100px;
+    text-align: center;
+    float:left;
+    margin-right:248px;
+}
+.warp .mobile_main ul li .step{
+    display: block;
+    width:32px;
+    height:32px;
+    border-radius: 16px;
+    background:#fe7002;
+    line-height:32px;
+    text-align: center;
+    font-style: normal;
+    color: #fff;
+    margin-left:35px;
+}
+.warp .mobile_main ul li .step_active{
+    display: block;
+    width:32px;
+    height:32px;
+    border-radius: 16px;
+    background:#fe7002;!important;
+    line-height:32px;
+    text-align: center;
+    font-style: normal;
+    color: #fff;
+    margin-left:35px;
+}
+.warp .mobile_main ul li .step2{
+    background:#b9b9b9;
+}
+.warp .mobile_main ul li .modify_info{
+    color:#fe7002
+}
+.warp .mobile_main ul li .info_gray{
+    color:#b9b9b9
+}
+.warp .mobile_main ul{
+    position:relative;
+}
+.warp .mobile_main ul .modify_step_line{
+    position:absolute;
+    top:16px;
+    left:81px;
+    width:290px;
+    height:3px;
+    background:#ccc;
+}
+.warp .mobile_main ul .line2{
+    left:427px;
+}
+.warp .mobile_main .modify_content{
+    height:450px;
+    padding-top:55px;
+    box-sizing: border-box;
+    padding-left:280px;
+}
+.warp .mobile_main .modify_content .modify_btn{
+    display: block;
+    width:225px;
+    height:82px;
+    line-height:82px;
+    text-align: center;
+    border:1px solid #ccc;
+    box-sizing: border-box;
+    margin-bottom:38px;
+    font-size: 18px;
+}
+.warp .mobile_main .modify_content .active{
+    background:#ff7000;
+    color:#fff;
+}
+.warp .mobile_main .modify_content .next_btn{
+    display: block;
+    width:129px;
+    height:38px;
+    background:#001d59;
+    color:#fff;
+    line-height:38px;
+    text-align:center;
+    margin-left:50px;
+}
+
+.warp .mobile_main .modify_content .next_btn1{
+    display: block;
+    width:129px;
+    height:38px;
+    background:#001d59;
+    color:#fff;
+    line-height:38px;
+    text-align:center;
+    margin-left:75px;
+}
+.warp .mobile_main .modify_content .modify_info_step2 .code_msg{
+    padding-top:95px;
+    box-sizing: border-box;
+}
+.warp .mobile_main .modify_content .modify_info_step2 .code_msg .getCode{
+    width:135px;
+    height:30px;
+    padding-left:10px;
+    box-sizing: border-box;
+}
+.warp .mobile_main .modify_content .modify_info_step2 .code_msg button{
+    height:25px
+}
+.warp .mobile_main ul .step_line_active{
+    position:absolute;
+    top:16px;
+    left:81px;
+    width:290px;
+    height:3px;
+    background:#ff7000;
+}
+.warp .mobile_main ul .step3_line_active{
+    position:absolute;
+    top:16px;
+    left:427px;
+    width:290px;
+    height:3px;
+    background:#ff7000;
+}
+.info_active{
+    color: #ff7000;
+}

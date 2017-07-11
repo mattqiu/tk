@@ -1,0 +1,74 @@
+.main .main_title{
+    margin-left: 308px;
+    border-left:#8D8D8D 2px solid;
+    padding: 10px;
+    font-size:25px;
+    font-family: Microsoft YaHei;
+}
+.login_div{
+    margin: 50px 65px;
+    width: 85%;
+    border: 3px solid #dbdbdb;
+    height: 400px;
+}
+.mandatory{
+    color: #F00;
+    font-size: 30px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+.main .title{
+    text-align: right;
+    font-size: 19px;
+    /*padding-top: 12px;*/
+}
+.main .content{
+    display: block;
+    text-align: left;
+    margin-top: 6px;
+}
+.login_div div{
+    float: left;
+    padding: 60px 20px;
+}
+.login_form{
+    width: 560px;
+}
+.content input{
+    width: 335px;
+    height: 35px;
+    margin: 5px 0px 11px 0px;
+    font-size: 120%;
+}
+.auto_td{
+    text-align: center;
+    padding: 16px;
+}
+.auto_td a{
+    margin-left: 25px;
+}
+.sub_td{
+    text-align: center;
+}
+.sub{
+    width: 214px;
+    height:40px ;
+    background-color: #4353a3;
+    font-size: 23px;
+    color: white;
+    border:solid 0px;
+    cursor: pointer;
+}
+.captcha input{
+    width: 100px;
+    height: 28px;
+}
+.captcha img{
+    margin: 0px 20px -8px 10px;
+}
+.msg{
+    text-align: center;
+    color: red;
+    margin-top: 5px;
+    padding-top: 10px;
+}

@@ -1,0 +1,674 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>My Cart</title>
+<link href="../css/head_food_1.css" rel="stylesheet" type="text/css">
+<link href="../css/base.css" rel="stylesheet" type="text/css">
+<script src="../js/jquery-1.11.1.js"></script>
+</head>
+
+<body>
+<!--调用top-->
+<header class="main-header">
+  <div class="header-bar">
+    <div class="w1200">
+      <ul class="fl nav-top">
+        <li class="fl mfr-5 w88">
+          <a class="down" href=""><s class="qizhi-CNY"></s>中国<s class="minicart_arrow"></s></a>
+          <ol class="li-b xs">
+            <li><a href=""><s class="qizhi-USD"></s>美国</a></li>
+            <li><a href=""><s class="qizhi-CNY"></s>中国</a></li>
+            <li><a href=""><s class="qizhi-HKD"></s>香港</a></li>
+            <li><a href=""><s class="qizhi-KRW"></s>韩国</a></li>
+            <li><a href="">其它地区</a></li>
+          </ol>
+        </li>
+        <li class="fl mfr-5">
+          <a class="down" href="">￥ 人民币<s class="minicart_arrow"></s></a>
+          <ol class="li-b xs">
+            <li><a href="">$ 美元</a></li>
+            <li><a href="">￥ 人民币</a></li>
+            <li><a href="">￥ 港币</a></li>
+            <li><a href="">￥ 韩币</a></li>
+          </ol>
+        </li> 
+      </ul>
+      <ul class="fr nav-top">
+        <li class="fl mfr-5"><a class="login" href="">登录</a></li>
+        <li class="fl">|</li>
+        <li class="fl mfr-5"><a class="login" href="">注册</a></li>
+        <li class="fl mfr-5"><a href=""><i class="fa fa-star-o"></i>我的收藏(0)</a></li>
+        <li class="fl mfr-5 w90">
+          <a class="down" href="">个人中心<s class="minicart_arrow"></s></a>
+          <ol class="li-b xs">
+            <li><a href="">完成订单</a></li>
+            <li><a href="">交易订单</a></li>
+            <li><a href="">待完成订单</a></li>
+          </ol>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="site-header clear">
+    <div class="w1200">
+      <div class="logo fl"><a href=""><img src="../img/tps.png" alt=""></a></div>
+      <div class="huiy">
+        <!--<b>124564gfdgdfgdfgdf132.tps.com</b>
+        <p class="p"><span><i></i>普通店铺</span></p>-->
+        <img src="../img/138com.png" alt="">
+      </div>
+      <div class="header-cart">
+        <a class="down" href=""><i></i>Cart<b class="ci-count">4</b><s class="minicart_arrow"></s></a>
+        <p class="no">购物袋中还没有商品，赶快选购吧！</p>
+        <s class="jt"></s>
+        <div class="mycart clear">
+          <ul class="smc img100">
+            <li class="bt-n">
+              <div class="p-img fl"><a href="javascript:;"><img src="../img/cp.jpg"></a></div>
+              <div class="p-name fl"><a href="javascript:;">联想（Lenovo）天逸300 14英寸笔记本电脑（i5-6200U 4G 500G 2G独显 DVD win10）黑色</a></div>
+              <div class="p-detail fr">
+                <span><strong>￥3799.00</strong>×1</span>
+                <a class="atn fr" href="javascript:void(0)">删除</a>
+              </div>
+            </li>
+            <li>
+              <div class="p-img fl"><a href="javascript:;"><img src="../img/cp.jpg"></a></div>
+              <div class="p-name fl"><a href="javascript:;">联想（Lenovo）天逸300 14英寸笔记本电脑（i5-6200U 4G 500G 2G独显 DVD win10）黑色</a></div>
+              <div class="p-detail fr">
+                <span><strong>￥3799.00</strong>×1</span>
+                <a class="atn fr" href="javascript:void(0)">删除</a>
+              </div>
+            </li>
+            <li>
+              <div class="p-img fl"><a href="javascript:;" target="_blank"><img src="../img/cp.jpg"></a></div>
+              <div class="p-name fl"><a href="javascript:;">联想（Lenovo）天逸300 14英寸笔记本电脑（i5-6200U 4G 500G 2G独显 DVD win10）黑色</a></div>
+              <div class="p-detail fr">
+                <span><strong>￥3799.00</strong>×1</span>
+                <a class="atn fr" href="javascript:void(0)">删除</a>
+              </div>
+            </li>
+            <li>
+
+              <div class="p-img fl"><a href="javascript:;"><img src="../img/cp.jpg"></a></div>
+              <div class="p-name fl"><a href="javascript:;">联想（Lenovo）天逸300 14英寸笔记本电脑（i5-6200U 4G 500G 2G独显 DVD win10）黑色</a></div>
+              <div class="p-detail fr">
+                <span><strong>￥3799.00</strong>×1</span>
+                <a class="atn fr" href="javascript:void(0)">删除</a>
+              </div>
+            </li>
+          </ul>
+          <div class="smb clear"><span class="fl">共<b>1</b>件商品　共计<strong>￥ 0.00</strong></span><a class="fr" href="javascript:;" title="去购物车">去购物车</a></div>
+        </div>
+      </div>
+
+      <div class="tps-search fr clear">
+        <input class="search-text" type="search" placeholder="请输入关键词搜索商品">
+        <button type="submit"><i class="fa fa-search"></i></button>
+      </div>
+    </div>
+  </div>
+  <div class="nav-wp">
+    <div class="w1200">
+      <div class="catalog fl">
+        <h3>CATEGORIES<i class="fa fa-angle-down"></i></h3>
+        <div class="menu-cate-all-out">
+          <dl class="dl-1">
+            <dt class="clear"><a href="" class="category">母婴用品</a><i class="fa fa-angle-right"></i></dt>
+            <dd class="submenu clear">
+              <ul class="clear">
+                <li class="b-t"><a href="">广泛大概<i class="fa fa-angle-right"></i></a></li>
+                <li class="n-r"><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a></li>
+              </ul>
+              <ul class="clear">
+                <li class="b-t"><a href="">广泛大概<i class="fa fa-angle-right"></i></a></li>
+                <li class="n-r"><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a></li>
+              </ul>
+              <ul class="clear">
+                <li class="b-t"><a href="">广泛大概<i class="fa fa-angle-right"></i></a></li>
+                <li class="n-r"><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a></li>
+              </ul>
+              <ul class="clear">
+                <li class="b-t"><a href="">广泛大概<i class="fa fa-angle-right"></i></a></li>
+                <li class="n-r"><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a></li>
+              </ul>
+              <ul class="clear">
+                <li class="b-t"><a href="">广泛大概<i class="fa fa-angle-right"></i></a></li>
+                <li class="n-r"><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a></li>
+              </ul>
+              <ul class="clear">
+                <li class="b-t"><a href="">广泛大概<i class="fa fa-angle-right"></i></a></li>
+                <li class="n-r"><a href="">广泛大概</a><a href="">个分的高</a></li>
+              </ul>
+            </dd>
+          </dl>
+          <dl class="dl-2">
+            <dt class="clear"><a href="" class="category">母婴用品</a><i class="fa fa-angle-right"></i></dt>
+            <dd class="submenu clear">
+              <ul class="clear">
+                <li class="b-t"><a href="">广泛大概<i class="fa fa-angle-right"></i></a></li>
+                <li class="n-r"><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a></li>
+              </ul>
+              <ul class="clear">
+                <li class="b-t"><a href="">广泛大概<i class="fa fa-angle-right"></i></a></li>
+                <li class="n-r"><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a></li>
+              </ul>
+              <ul class="clear">
+                <li class="b-t"><a href="">广泛大概<i class="fa fa-angle-right"></i></a></li>
+                <li class="n-r"><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a></li>
+              </ul>
+              <ul class="clear">
+                <li class="b-t"><a href="">广泛大概<i class="fa fa-angle-right"></i></a></li>
+                <li class="n-r"><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a></li>
+              </ul>
+              <ul class="clear">
+                <li class="b-t"><a href="">广泛大概<i class="fa fa-angle-right"></i></a></li>
+                <li class="n-r"><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a></li>
+              </ul>
+              <ul class="clear">
+                <li class="b-t"><a href="">广泛大概<i class="fa fa-angle-right"></i></a></li>
+                <li class="n-r"><a href="">广泛大概</a><a href="">个分的高</a></li>
+              </ul>
+            </dd>
+          </dl>
+          <dl class="dl-3">
+            <dt class="clear"><a href="" class="category">母婴用品</a><i class="fa fa-angle-right"></i></dt>
+            <dd class="submenu clear">
+              <ul class="clear">
+                <li class="b-t"><a href="">广泛大概<i class="fa fa-angle-right"></i></a></li>
+                <li class="n-r"><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a></li>
+              </ul>
+            </dd>
+          </dl>
+          <dl class="dl-4">
+            <dt class="clear"><a href="" class="category">母婴用品</a><i class="fa fa-angle-right"></i></dt>
+            <dd class="submenu clear">
+              <ul class="clear">
+                <li class="b-t"><a href="">广泛大概<i class="fa fa-angle-right"></i></a></li>
+                <li class="n-r"><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a></li>
+              </ul>
+              <ul class="clear">
+                <li class="b-t"><a href="">广泛大概<i class="fa fa-angle-right"></i></a></li>
+                <li class="n-r"><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a></li>
+              </ul>
+            </dd>
+          </dl>
+          <dl class="dl-5">
+            <dt class="clear"><a href="" class="category">母婴用品</a><i class="fa fa-angle-right"></i></dt>
+            <dd class="submenu clear">
+              <ul class="clear">
+                <li class="b-t"><a href="">广泛大概<i class="fa fa-angle-right"></i></a></li>
+                <li class="n-r"><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a></li>
+              </ul>
+              <ul class="clear">
+                <li class="b-t"><a href="">广泛大概<i class="fa fa-angle-right"></i></a></li>
+                <li class="n-r"><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a></li>
+              </ul>
+              <ul class="clear">
+                <li class="b-t"><a href="">广泛大概<i class="fa fa-angle-right"></i></a></li>
+                <li class="n-r"><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a></li>
+              </ul>
+              <ul class="clear">
+                <li class="b-t"><a href="">广泛大概<i class="fa fa-angle-right"></i></a></li>
+                <li class="n-r"><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a></li>
+              </ul>
+            </dd>
+          </dl>
+          <dl class="dl-6">
+            <dt class="clear"><a href="" class="category">母婴用品</a><i class="fa fa-angle-right"></i></dt>
+            <dd class="submenu clear">
+              <ul class="clear">
+                <li class="b-t"><a href="">广泛大概<i class="fa fa-angle-right"></i></a></li>
+                <li class="n-r"><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a></li>
+              </ul>
+              <ul class="clear">
+                <li class="b-t"><a href="">广泛大概<i class="fa fa-angle-right"></i></a></li>
+                <li class="n-r"><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a></li>
+              </ul>
+              <ul class="clear">
+                <li class="b-t"><a href="">广泛大概<i class="fa fa-angle-right"></i></a></li>
+                <li class="n-r"><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a></li>
+              </ul>
+              <ul class="clear">
+                <li class="b-t"><a href="">广泛大概<i class="fa fa-angle-right"></i></a></li>
+                <li class="n-r"><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a></li>
+              </ul>
+              <ul class="clear">
+                <li class="b-t"><a href="">广泛大概<i class="fa fa-angle-right"></i></a></li>
+                <li class="n-r"><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a></li>
+              </ul>
+            </dd>
+          </dl>
+        </div>
+      </div>
+      <div class="menu-normal fl"><a href="">首页</a><a href=""><i class="hot"></i>品牌</a><a href="">团购</a><a href=""><i class="new"></i>折扣</a></div>
+    </div>
+  </div>
+</header>
+<div class="w1200">
+  <div class="MyCart">
+      <h2>确认订单信息</h2>
+      <div class="checkout-box clear">
+        <div class="body-bd clear">
+          <div class="xinzeng clear"><b>收货信息</b><a href="javascript:showBg();" class="XS_btn"><i>+</i>新增收货地址</a></div>
+          <div class="xm-edit-addr">
+            <div class="item clear">
+              <dl>
+                <dt>收货人<span>*</span></dt>
+                <dd>
+                  <input type="text" class="input">
+                </dd>
+              </dl>
+            </div>
+            <div class="item clear">
+              <dl>
+                <dt>手机号码<span>*</span></dt>
+                <dd>
+                  <input type="text" class="input">
+                </dd>
+              </dl>
+            </div>
+            <div class="item clear">
+              <dl>
+                <dt>备用号码<span>*</span></dt>
+                <dd>
+                  <input type="text" class="input">
+                </dd>
+              </dl>
+            </div>
+            <div class="item clear">
+              <dl>
+                <dt>收货地址<span>*</span></dt>
+                <dd>
+                  <select class="select">
+                    <option value="0">国家</option>
+                    <option zipcode="0" value="2">北京</option>
+                    <option zipcode="0" value="3">天津</option>
+                    <option zipcode="0" value="4">河北</option>
+                    <option zipcode="0" value="5">山西</option>
+                    <option zipcode="0" value="6">内蒙古</option>
+                    <option zipcode="0" value="7">辽宁</option>
+                    <option zipcode="0" value="8">吉林</option>
+                    <option zipcode="0" value="9">黑龙江</option>
+                  </select>
+                  <select class="select">
+                    <option value="0">省份/直辖市</option>
+                    <option zipcode="0" value="2">北京</option>
+                    <option zipcode="0" value="3">天津</option>
+                    <option zipcode="0" value="4">河北</option>
+                    <option zipcode="0" value="5">山西</option>
+                    <option zipcode="0" value="6">内蒙古</option>
+                    <option zipcode="0" value="7">辽宁</option>
+                    <option zipcode="0" value="8">吉林</option>
+                    <option zipcode="0" value="9">黑龙江</option>
+                  </select>
+                  <select class="select">
+                    <option value="0">城市</option>
+                    <option zipcode="0" value="2">北京</option>
+                    <option zipcode="0" value="3">天津</option>
+                    <option zipcode="0" value="4">河北</option>
+                    <option zipcode="0" value="5">山西</option>
+                    <option zipcode="0" value="6">内蒙古</option>
+                    <option zipcode="0" value="7">辽宁</option>
+                    <option zipcode="0" value="8">吉林</option>
+                    <option zipcode="0" value="9">黑龙江</option>
+                  </select>
+                  <select class="select">
+                    <option value="0">区/县</option>
+                    <option zipcode="0" value="2">北京</option>
+                    <option zipcode="0" value="3">天津</option>
+                    <option zipcode="0" value="4">河北</option>
+                    <option zipcode="0" value="5">山西</option>
+                    <option zipcode="0" value="6">内蒙古</option>
+                    <option zipcode="0" value="7">辽宁</option>
+                    <option zipcode="0" value="8">吉林</option>
+                    <option zipcode="0" value="9">黑龙江</option>
+                  </select>
+                </dd>
+              </dl>
+            </div>
+            <div class="item clear">
+              <dl>
+                <dt><span>*</span></dt>
+                <dd>
+                  <input type="text" class="xxidz" placeholder="建议您如实填写详细收货地址，例如街道名称，门牌号码，楼层和房间号等信息">
+                </dd>
+              </dl>
+            </div>
+            <div class="item clear">
+              <dl>
+                <dt><span></span></dt>
+                <dd>
+                  <button class="btn shdz" onclick="" type="button" >保存收货信息</button>
+                  <a href="" class="se_497fb1">更多地址>></a></dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+        <div class="body-bd clear">
+          <div class="address-list clear">
+            <ul>
+              <li class="selected"> <i class="marker"></i> <span class="marker-tip">寄送至</span>
+                <input type="radio" checked>
+                <div class="address-info"> <a href="javascript:void();" class="shanchu se_497fb1">删除</a> <a href="javascript:void();" class="modify se_497fb1">修改</a>
+                  <label>广东省 深圳市 福田区 沙头街道深南大道6019号金润大厦 16E (王玉龙 收) <em>18589027800</em></label>
+                  <em class="tip">默认地址</em> </div>
+              </li>
+              <li> <i class="marker"></i> <span class="marker-tip">寄送至</span>
+                <input type="radio">
+                <div class="address-info"> <a href="javascript:void();" class="shanchu se_497fb1">删除</a> <a href="javascript:void();" class="modify se_497fb1">修改</a>
+                  <label>广东省 深圳市 福田区 沙头街道深南大道6019号金润大厦 16E (王玉龙 收) <em>18589027800</em></label>
+                  <a href="javascript:void();" class="set-default se_497fb1">设置为默认收货地址</a> </div>
+              </li>
+              <li> <i class="marker"></i> <span class="marker-tip">寄送至</span>
+                <input type="radio">
+                <div class="address-info"> <a href="javascript:void();" class="shanchu se_497fb1">删除</a> <a href="javascript:void();" class="modify se_497fb1">修改</a>
+                  <label>广东省 深圳市 福田区 沙头街道深南大道6019号金润大厦 16E (王玉龙 收) <em>18589027800</em></label>
+                  <a href="javascript:void(0);" class="set-default se_497fb1">设置为默认收货地址</a> </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="body-bd clear">
+          <h3>收货时间</h3>
+          <div class="Shuo clear">
+            <p>
+              <label>
+                <input name="diliver_time" type="radio" checked="">
+                <span>周一至周五</span><i>收货地址为公司/学校，以及周末无人收货时，推荐选择。</i></label>
+            </p>
+            <p>
+              <label>
+                <input type="radio">
+                <span>周一至周日均可</span><i>我们会尽快送达。若错过送货，请与快递小哥另约送货时间哦。</i></label>
+            </p>
+            <p>
+              <label>
+                <input type="radio">
+                <span>周六日、节假日</span></label>
+            </p>
+          </div>
+        </div>
+        <!--<div class="body-bd clear">
+            <h3>支付方式<span><em>*</em>推荐使用在线支付，更方便快捷</span></h3>
+            <div class="anniu clear">
+              <span class="anniuk hongk">在线支付<i class="xuanzhong"></i></span><span class="anniuk">可用余额</span>
+            </div>
+          </div>-->
+        <div class="body-bd ddxx clear">
+          <h3>订单商品信息</h3>
+          <div class="box-bd">
+            <dl class="clear">
+              <dt class="clear"> <span class="col-md-8"><span class="P_left">TPS138 发货清单</span></span> <span class="col-md-1 center">单价</span> <span class="col-md-1 center">数量</span> <span class="col-md-2 center">配送方式</span> </dt>
+              <dd class="clear">
+                <div class="x-hl clear">
+                  <div class="col-md-10">
+                    <div class="col-md-10">
+                      <div class="g-info"><span><a href="" class="hui">单品热卖 - 诗碧曼SIPIMO日霜50g 提亮、去黄保湿霜，补水、防紫外、抗氧化护肤面霜</a></span><em class="hui">规格: 50g</em> </div>
+                    </div>
+                    <div class="col-md-1"><b class="hui">$50.80</b></div>
+                    <div class="col-md-1 center"><span class="hui">2</span></div>
+                    <div class="col-md-10">
+                      <div class="g-info"><span><a href="">单品热卖 - 诗碧曼SIPIMO日霜50g 提亮、去黄保湿霜，补水、防紫外、抗氧化护肤面霜</a></span><em>规格: 50g</em></div>
+                    </div>
+                    <div class="col-md-1"><b>$50.80</b></div>
+                    <div class="col-md-1 center">2</div>
+                    <div class="col-md-10">
+                      <div class="g-info"><span><a href="">单品热卖 - 诗碧曼SIPIMO日霜50g 提亮、去黄保湿霜，补水、防紫外、抗氧化护肤面霜</a></span><em>规格: 50g</em></div>
+                    </div>
+                    <div class="col-md-1"><b>$50.80</b></div>
+                    <div class="col-md-1 center">2</div>
+                    <div class="col-md-10">
+                      <div class="g-info"><span><a href="">单品热卖 - 诗碧曼SIPIMO日霜50g 提亮、去黄保湿霜，补水、防紫外、抗氧化护肤面霜</a></span><em>规格: 50g</em></div>
+                    </div>
+                    <div class="col-md-1"><b>$50.80</b></div>
+                    <div class="col-md-1 center">2</div>
+                    <div class="col-md-10">
+                      <p>此商品只限美国销售，如您想购买此商品，请更改您的收货地址为美国地址。</p>
+                    </div>
+                  </div>
+                  <div class="col-md-2">
+                    <div class="peisong clear">
+                      <p>
+                        <select class="select">
+                          <option value="0">城市</option>
+                          <option zipcode="0" value="2">北京</option>
+                          <option zipcode="0" value="3">天津</option>
+                          <option zipcode="0" value="4">河北</option>
+                          <option zipcode="0" value="5">山西</option>
+                          <option zipcode="0" value="6">内蒙古</option>
+                          <option zipcode="0" value="7">辽宁</option>
+                          <option zipcode="0" value="8">吉林</option>
+                          <option zipcode="0" value="9">黑龙江</option>
+                        </select>
+                      </p>
+                      <p>快递$12.00</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="x-hl clear">
+                  <div class="col-md-10">
+                    <div class="col-md-10">
+                      <div class="g-info"><span><a href="" class="hui">单品热卖 - 诗碧曼SIPIMO日霜50g 提亮、去黄保湿霜，补水、防紫外、抗氧化护肤面霜</a></span><em class="hui">规格: 50g</em> </div>
+                    </div>
+                    <div class="col-md-1"><b class="hui">$50.80</b></div>
+                    <div class="col-md-1 center"><span class="hui">2</span></div>
+                    <div class="col-md-10">
+                      <div class="g-info"><span><a href="">单品热卖 - 诗碧曼SIPIMO日霜50g 提亮、去黄保湿霜，补水、防紫外、抗氧化护肤面霜</a></span><em>规格: 50g</em></div>
+                    </div>
+                    <div class="col-md-1"><b>$50.80</b></div>
+                    <div class="col-md-1 center">2</div>
+                    <div class="col-md-10">
+                      <div class="g-info"><span><a href="">单品热卖 - 诗碧曼SIPIMO日霜50g 提亮、去黄保湿霜，补水、防紫外、抗氧化护肤面霜</a></span><em>规格: 50g</em></div>
+                    </div>
+                    <div class="col-md-1"><b>$50.80</b></div>
+                    <div class="col-md-1 center">2</div>
+                    <div class="col-md-10">
+                      <div class="g-info"><span><a href="">单品热卖 - 诗碧曼SIPIMO日霜50g 提亮、去黄保湿霜，补水、防紫外、抗氧化护肤面霜</a></span><em>规格: 50g</em></div>
+                    </div>
+                    <div class="col-md-1"><b>$50.80</b></div>
+                    <div class="col-md-1 center">2</div>
+                    <div class="col-md-10">
+                      <p>此商品只限美国销售，如您想购买此商品，请更改您的收货地址为美国地址。</p>
+                    </div>
+                  </div>
+                  <div class="col-md-2">
+                    <div class="peisong clear">
+                      <p>
+                        <select class="select">
+                          <option value="0">城市</option>
+                          <option zipcode="0" value="2">北京</option>
+                          <option zipcode="0" value="3">天津</option>
+                          <option zipcode="0" value="4">河北</option>
+                          <option zipcode="0" value="5">山西</option>
+                          <option zipcode="0" value="6">内蒙古</option>
+                          <option zipcode="0" value="7">辽宁</option>
+                          <option zipcode="0" value="8">吉林</option>
+                          <option zipcode="0" value="9">黑龙江</option>
+                        </select>
+                      </p>
+                      <p>快递$12.00</p>
+                    </div>
+                  </div>
+                </div>
+              </dd>
+            </dl>
+            <p class="yunfei"><em>配送时间:工作日、双休日与节假日均可送货。</em>运费：￥10.00 <span>本订单金额: $203.00</span></p>
+            <ul class="beizhu clear">
+              <li>添加订单备注:</li>
+              <li>
+                <textarea class="input" data-error="" placeholder="限45个字以内"></textarea>
+              </li>
+              <li>提示： 请勿填写有关支付、发票方面的信息</li>
+            </ul>
+            <div class="zongs clear">
+              <div class="left clear">
+                <dl class="clear">
+                  <dt>收货信息：</dt>
+                  <dd>李正方. 138*****729.中国.广东省.深圳市.宝安区.龙华街道.民治大道牛栏前77栋201号</dd>
+                </dl>
+                <dl class="clear">
+                  <dt>支付方式：</dt>
+                  <dd>在线支付</dd>
+                </dl>
+                <dl class="clear">
+                  <dt>其它信息：</dt>
+                  <dd>收据
+                    <input type="checkbox" checked="checked" class="shouju">
+                    <a href="" class="se_497fb1">下载电子版本</a></dd>
+                </dl>
+              </div>
+              <div class="right clear">
+                <dl class="clear">
+                  <dt>商品金额：</dt>
+                  <dd>$203.00</dd>
+                </dl>
+                <dl class="clear bk bottom_15">
+                  <dt>运费：</dt>
+                  <dd>$10.00</dd>
+                </dl>
+                <dl class="clear">
+                  <dt class="font">实付金额：</dt>
+                  <dd class="hse font"><em>$</em>2134.00</dd>
+                </dl>
+                <dl class="clear">
+                  <dd class="nnniu"><a href="" class="btn_hong">提交订单</a></dd>
+                  <dd class="nnniu"><a href="javascript:;" class="btn_Bhui">提交订单</a></dd>
+                </dl>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+<footer class="main-footer">
+  <div class="w1200">
+    <div class="fl">
+      <ul>
+        <li>Copyright ©2014-2015 TPS138.com 前海云集品 版权所有. 粤ICP备14072989号-2</li>
+        <li>
+          <p>前海云集品电子商务有限公司</p>
+          <p>汤普森跨进电子商务平台</p>
+        </li>
+        <li><a href=""><i class="fa fa-angle-right"></i>关于我们</a><a href=""><i class="fa fa-angle-right"></i>物流配送</a><a href=""><i class="fa fa-angle-right"></i>售后服务</a><a href=""><i class="fa fa-angle-right"></i>帮助中心</a></li>
+      </ul>
+    </div>
+    <div class="fl ce-l">       
+      <ul>
+        <li>联系方式</li>
+        <li>
+          <p>support@tps138.com</p>
+          <p>0755-33198568</p>
+        </li>
+        <li><a href=""><s title="新浪微博"></s></a> <a href=""><s class="s1"></s></a> <a href=""><s class="s2"></s></a> <a href=""><s class="s3"></s></a></li>
+      </ul>
+    </div>
+    <div class="fr">
+      <img src="../img/weixin.jpg" />
+      <p>关注微信 赢取更多优惠</p>
+    </div>
+  </div>
+</footer>
+<!--点击弹出新增/-->
+<div class="xm-edit-addr wodl BOX_nav clear" id="BOX_nav"> <span class="close" onclick="closeBg();">×</span>
+  <h3>新增收货地址</h3>
+  <div class="item"><em>新增收货地址</em><span class="item-title">电话号码、手机号选填一项,其余均为必填项</span></div>
+  <div class="item clear">
+    <dl>
+      <dt>收货人<span>*</span></dt>
+      <dd>
+        <input type="text" class="input">
+      </dd>
+    </dl>
+  </div>
+  <div class="item clear">
+    <dl>
+      <dt>手机号码<span>*</span></dt>
+      <dd>
+        <input type="text" class="input">
+      </dd>
+    </dl>
+  </div>
+  <div class="item clear">
+    <dl>
+      <dt>备用号码<span>*</span></dt>
+      <dd>
+        <input type="text" class="input">
+      </dd>
+    </dl>
+  </div>
+  <div class="item clear">
+    <dl>
+      <dt>收货地址<span>*</span></dt>
+      <dd>
+        <select class="select">
+          <option value="0">国家</option>
+          <option zipcode="0" value="2">北京</option>
+          <option zipcode="0" value="3">天津</option>
+          <option zipcode="0" value="4">河北</option>
+          <option zipcode="0" value="5">山西</option>
+          <option zipcode="0" value="6">内蒙古</option>
+          <option zipcode="0" value="7">辽宁</option>
+          <option zipcode="0" value="8">吉林</option>
+          <option zipcode="0" value="9">黑龙江</option>
+        </select>
+        <select class="select">
+          <option value="0">省份/直辖市</option>
+          <option zipcode="0" value="2">北京</option>
+          <option zipcode="0" value="3">天津</option>
+          <option zipcode="0" value="4">河北</option>
+          <option zipcode="0" value="5">山西</option>
+          <option zipcode="0" value="6">内蒙古</option>
+          <option zipcode="0" value="7">辽宁</option>
+          <option zipcode="0" value="8">吉林</option>
+          <option zipcode="0" value="9">黑龙江</option>
+        </select>
+        <select class="select">
+          <option value="0">城市</option>
+          <option zipcode="0" value="2">北京</option>
+          <option zipcode="0" value="3">天津</option>
+          <option zipcode="0" value="4">河北</option>
+          <option zipcode="0" value="5">山西</option>
+          <option zipcode="0" value="6">内蒙古</option>
+          <option zipcode="0" value="7">辽宁</option>
+          <option zipcode="0" value="8">吉林</option>
+          <option zipcode="0" value="9">黑龙江</option>
+        </select>
+        <select class="select">
+          <option value="0">区/县</option>
+          <option zipcode="0" value="2">北京</option>
+          <option zipcode="0" value="3">天津</option>
+          <option zipcode="0" value="4">河北</option>
+          <option zipcode="0" value="5">山西</option>
+          <option zipcode="0" value="6">内蒙古</option>
+          <option zipcode="0" value="7">辽宁</option>
+          <option zipcode="0" value="8">吉林</option>
+          <option zipcode="0" value="9">黑龙江</option>
+        </select>
+      </dd>
+    </dl>
+  </div>
+  <div class="item clear">
+    <dl>
+      <dt><span>*</span></dt>
+      <dd>
+        <input type="text" class="xxidz" placeholder="建议您如实填写详细收货地址，例如街道名称，门牌号码，楼层和房间号等信息">
+      </dd>
+    </dl>
+  </div>
+  <div class="item clear">
+    <dl>
+      <dt>
+        <label><span></span></label>
+      </dt>
+      <dd>
+        <button class="btn shdz" onclick="" type="button">保存收货信息</button>
+      </dd>
+    </dl>
+  </div>
+</div>
+<div class="xm-backdrop" id="fullbg"></div>
+<script src="../js/main.js"></script>
+</body>
+</html>

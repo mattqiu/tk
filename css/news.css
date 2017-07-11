@@ -1,0 +1,12 @@
+.news{width:800px; height:auto; margin:0 auto; margin-bottom:150px;}
+.news h2{color:#666;}
+.news_title{ width:800px; height:40px; background:#E8EFF9;}
+.news_title ul{line-height:40px;}
+.news_title li{ float:left;list-style:none;}
+.t_time{ margin-left:90%}
+
+.news_context{width:800px;}
+.news_context li{list-style:none; line-height:40px; border-bottom:#666 dashed 1px;}
+.news_context li a{text-decoration: none; color:#666; margin-left:10px;}
+.news_context li span{white-space:nowrap;}
+.c_time{ float:right;}

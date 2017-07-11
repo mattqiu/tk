@@ -1,0 +1,28 @@
+<?php
+if (!defined('BASEPATH')) {
+    exit('No direct script access allowed');
+}
+
+
+/**
+ * User: Able
+ * Date: 2017/6/2
+ * Time: 11:25
+ */
+class bonus_plan_control extends MY_Controller
+{
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->load->model("tb_bonus_plan_control");
+    }
+
+    public function index(){
+        $result = $this->tb_bonus_plan_control->getAllDate();
+        $this->_viewData['title'] = lang('bonus_plan_control');
+        $this->_viewData['list'] = $result;
+        parent::index('admin/');
+    }
+
+}

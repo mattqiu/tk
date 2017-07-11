@@ -1,0 +1,99 @@
+.main .main_title{
+    margin-left: 308px;
+    border-left:#8D8D8D 2px solid;
+    padding: 10px;
+    font-size:25px;
+    font-family: Microsoft YaHei;
+}
+.main .title{
+    text-align: right;
+    font-size: 19px;
+    width: 30%;
+    padding-top: 12px;
+}
+.main .content{
+    display: block;
+    text-align: left;
+    width:30%;
+    margin-top: 6px;
+}
+.main .msg{
+    text-align: left;
+    width:40%
+}
+.register_tab{
+    width: 80%;margin:auto
+}
+.register_tab tr{
+    /*padding: 5px;*/
+}
+.register_tab .content input{
+    width: 350px;
+    height: 45px;
+    margin: 0px 0px 6px 0px;
+    font-size: 120%;
+}
+.mandatory{
+    color: #F00;
+    font-size: 30px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+.agreed{
+    text-align: right;
+    padding: 50px 0px 50px 0px;
+}
+.sub_div{
+    text-align: center;
+    margin-top: -50px;
+}
+.sub{
+    width: 214px;
+    height:50px ;
+    background-color: #4353a3;
+    font-size: 23px;
+    color: white;
+    border:solid 0px;
+    cursor: pointer;
+}
+.msg .error_icon{
+    width: 19px;
+    height: 19px;
+    background: url("../img/register.png") no-repeat scroll -14px 0px transparent;
+    vertical-align: middle;
+    margin: 0px 5px 0px 5px;
+}
+.msg .right_icon{
+    width: 19px;
+    height: 19px;
+    background: url("../img/register.png") no-repeat scroll -33px 0px transparent;
+    vertical-align: middle;
+    margin: 5px;
+    float: left;
+}
+.msg .txt{
+    vertical-align: middle;
+    font-size: 15px;
+}
+.msg .red{
+    color: red;
+}
+#pwd_span div{
+    float: left;
+    background-color: #cccccc;
+    width: 60px;
+    text-align: center;
+    padding: 5px;
+    border-left: white 2px solid;
+    color: white;
+    font-weight: bold;
+}
+#pwd_span .cur_matched{
+    background-color: #fac400;
+}
+.cus_area{
+    width: 95px;
+}
+.cus_box{
+    display: none;
+}

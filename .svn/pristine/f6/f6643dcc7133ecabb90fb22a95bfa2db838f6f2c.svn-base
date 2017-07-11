@@ -1,0 +1,613 @@
+/* ====================公共样式==================== */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td {
+    margin: 0;
+    padding: 0
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+fieldset,img {
+    border: 0
+}
+
+em,strong,th,i {
+    font-weight: normal;
+    font-style: normal
+}
+
+ol,ul {
+    list-style-type: none;
+    list-style-position: outside
+}
+
+caption,th {
+    text-align: left
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-size: 100%;
+    font-weight: normal
+}
+
+body {
+    font-family: 'MicroSoft YaHei';
+    font-size: 14px;
+}
+
+div {
+    margin-left: auto;
+    margin-right: auto
+}
+
+a {
+    text-decoration: none
+}
+/* CSS Document */
+
+@media only screen and (min-width : 1025px){
+    .web-index,.suspension{
+        display:block;
+    }
+    .con{
+        display: none;
+    }
+    .index_mobile, .suspension-mobile {
+        display: none;
+    }
+}
+@media only screen and (max-width : 1024px){
+    .web-index,.suspension{
+        display:none;
+    }
+    .index_mobile, .suspension-mobile {
+        display: block;
+    }
+    .con{
+        width: 100%;
+        overflow: hidden;
+        display: block;
+    }
+    .con .section{
+        padding: 80px 50px;
+    }
+    .con .section .title{
+        text-align: center;
+    }
+    .con .section .title p.up{
+        font-size: 5em;
+    }
+    .con .section .title p.down{
+        font-size: 1em;
+        margin-top:0.75em;
+    }
+	.round_disc{width:5px;height:5px;display: inline-block;font-size:0.5em;line-heigth:25px;text-align:center;color:#fd3388;text-decoration:none;border:1px solid #f00;} 
+    .con .section .title p.desc{
+		text-align: left;
+        font-size: 1.5em;
+        line-height: 2.5em;
+        margin-top:0.5em;
+    }
+    .con .section .section-wrapper{
+        margin: 0 auto;
+        position: relative;
+        overflow: hidden;
+        padding: 3em 0;
+        text-align: center;
+    }
+    .con .section-1{
+        background-color: #fff;
+    }
+    .con .section-1 .section-wrapper .ico{
+        width: 63px;
+        height: 48px;
+        position: absolute;
+        z-index: 2;
+    }
+    .con .section-1 .section-wrapper .ico.l-u{
+        left: 0;
+        top: 0;
+    }
+    .con .section-1 .section-wrapper .ico.r-b{
+        right: 0;
+        bottom: 0;
+    }
+    .con .section-1 .title p.down{
+        color: #888;
+    }
+    .con .section-1 .title p.desc{
+        margin-top: 1em;
+    }
+	.con .section-1 .title p.desc span{
+        color:#fd3388;
+		font-weight:bold;
+		margin-right:.3em;
+    }
+	.con .mob-banner img {
+		height: auto;
+		width: auto\9;
+		width:100%;
+	} 
+	.con .section-1 a{
+        display: block;
+        position:absolute;
+        width: 50%;
+        height: 2em;
+        line-height: 2em;
+        border-radius: 1em;
+        text-align: center;
+        color: #fff;
+        background-color: #ff658e;
+        left: 25%;
+        bottom:-1em;
+        font-size: 5em;
+    }
+    .con .section-2{
+        background: url(/themes/mall/img/tps-summit-meeting/bg3.jpg) no-repeat center;
+        background-size: cover;
+    }
+    .con .section-2 .title p{
+        color: #fff;
+    }
+    .con .section-2 .section-wrapper ul{
+        overflow: hidden;
+        width: 100%;
+        padding-top: 5em;
+    }
+    .con .section-2 .section-wrapper ul li{
+        width: 400px;
+        height: 400px;
+        border: 10px solid #fff;
+        border-radius: 50%;
+        text-align: center;
+        color: #fff;
+    }
+    .con .section-2 .section-wrapper ul li.left{
+        float: left;
+    }
+    .con .section-2 .section-wrapper ul li.right{
+        float: right;
+    }
+    .con .section-2 .section-wrapper ul li p.up{
+        font-size: 130px;
+        margin-top: 85px;
+    }
+    .con .section-2 .section-wrapper ul li p.down{
+        font-size: 30px;
+        font-size: 40px;
+        margin-top: 10px;
+    }
+    .con .section-2 .section-wrapper ul.top li:nth-of-type(1){
+        background-color: #d5b800;
+    }
+    .con .section-2 .section-wrapper ul.top li:nth-of-type(2){
+        background-color: #fa5d9f;
+    }
+    .con .section-2 .section-wrapper ul.down li:nth-of-type(1){
+        background-color: #3172f5;
+    }
+    .con .section-2 .section-wrapper ul.down li:nth-of-type(2){
+        background-color: #601986;
+    }
+    .con .section-3{
+        background-color: #fff;
+    }
+    .con .section-3 .section-wrapper .img{
+        position: relative;
+        overflow: hidden;
+    }
+    .con .section-3 .section-wrapper .img p{
+        position: absolute;
+        left: 50px;
+        color: #fff;
+    }
+    .con .section-3 .section-wrapper .img p.up{
+        font-size: 4em;
+        bottom: 1.5em;
+    }
+    .con .section-3 .section-wrapper .img p.down{
+        font-size: 4em;
+        bottom: 0.1em;
+    }
+    .con .section-3 .section-wrapper ul{
+        padding: 3em 0;
+    }
+    .con .section-3 .section-wrapper,
+    .con .section-3 .section-wrapper ul:last-of-type{
+        padding-bottom: 0;
+    }
+    .con .section-3 .section-wrapper ul li{
+        /*background: url(../images/red-point.png) no-repeat left center;*/
+        font-size: 1.5em;
+        text-align: left;
+        padding-left: 1em;
+        line-height: 2.5em;
+    }
+	.con .section-3 .section-wrapper ul li span{
+		color:#fd3388;
+		font-weight:bold;
+		margin-right:.3em;
+		}
+    .con .section-4{
+        /*background-color: #e2efff;*/
+		background: url(/themes/mall/img/tps-summit-meeting/bg4.jpg) no-repeat center;
+		background-size: cover;
+		height:1570px;
+    }
+    .con .section-4 .section-wrapper ul li img{
+        width: 100%;
+    }
+    .con .section .section-wrapper ul.three{
+        width: 100%;
+        overflow: hidden;
+        padding-top: 1em;
+    }
+	.con .section .section-wrapper ul.three p{
+		color:#fff;
+		font-size:3em;
+		padding-top:.875em;
+		line-height:1.5em;
+	}
+    .con .section .section-wrapper ul.three li.first{
+        /*float: left;*/
+        width: 200px;
+		height:200px;
+		display:inline-block;
+		background-color: #134564;
+		
+
+        border: 10px solid #a1a1a1;
+        border-radius: 100%;
+        text-align: center;
+        color: #fff;
+    }
+	.con .section .section-wrapper ul.three li.second{
+        /*float: left;*/
+        width: 200px;
+		height:200px;
+		display:inline-block;
+		background-color: #552b73;
+		
+
+        border: 10px solid #a1a1a1;
+        border-radius: 100%;
+        text-align: center;
+        color: #fff;
+    }
+	.con .section .section-wrapper ul.three li.third{
+        /*float: left;*/
+        width: 200px;
+		height:200px;
+		display:inline-block;
+		background-color: #395336;
+		
+
+        border: 10px solid #a1a1a1;
+        border-radius: 100%;
+        text-align: center;
+        color: #fff;
+    }
+    .con .section .section-wrapper ul.three li:nth-of-type(3n){
+        margin-right: 0;
+    }
+    .con .section-4 .section-wrapper ul li p.up{
+        font-size: 3em;
+        padding: 0.5em 0 0.3em;
+    }
+    .con .section-4 .section-wrapper ul li p.down{
+        font-size: 1.8em;
+        line-height: 1.5em;
+        color: #888;
+    }
+    .con .section .section-wrapper ul.two{
+        width: 65%;
+        margin: 0 auto;
+        overflow: hidden;
+        padding-top: 5em;
+    }
+    .con .section .section-wrapper ul.two li{
+        float: left;
+        width: 46.1%;
+        margin-right: 7.8%;
+    }
+    .con .section .section-wrapper ul.two li:nth-of-type(2n){
+        margin-right: 0;
+    }
+    .con .section-5{
+        background-color: #fff;
+    }
+    .con .section-5 .section-wrapper .img{
+        width: 45%;
+        margin: 3em auto;
+        border: 2px solid #ddd;
+    }
+    .con .section-5 .section-wrapper img{
+        width: 100%;
+    }
+    .con .section-5 .section-wrapper .img.two{
+        width: 100%;
+        overflow: hidden;
+        border:none;
+    }
+    .con .section-5 .section-wrapper .img.two img{
+        width: 45%;
+        border: 2px solid #ddd;
+    }
+    .con .section-5 .section-wrapper .img.two img:nth-of-type(1){
+        float: left;
+    }
+    .con .section-5 .section-wrapper .img.two img:nth-of-type(2){
+        float: right;
+    }
+    .con .section-5 .section-wrapper p.bottom-p{
+        text-align: center;
+        font-size: 2.8em;
+    }
+    .con .section-5 .section-wrapper ul li{
+        border:2px solid #ddd;
+    }
+    .con .section-5 .section-wrapper ul.three li{
+        width: 29.5%;
+    }
+    .con .section-5 .section-wrapper ul.two li{
+        width: 45%;
+    }
+    .con .section-5 .section-wrapper ul.one{
+        padding-top: 5em;
+    }
+    .con .section-5 .section-wrapper ul.one li{
+        width: 29.5%;
+        margin: 0 auto;
+    }
+    .con .section-6{
+        background-color: #fff;
+        position: relative;
+        padding-top: 8em;
+    }
+    .con .section-6 .title p.desc{
+        text-align: left;
+    }
+    .con .section-6 a{
+        display: block;
+        position: absolute;
+        width: 50%;
+        height: 2em;
+        line-height: 2em;
+        border-radius: 1em;
+        text-align: center;
+        color: #fff;
+        background-color: #ff658e;
+        left: 25%;
+        top: -1em;
+        font-size: 5em;
+    }
+    .con .section-7,
+    .con .section-8{
+        background-color: #042134;
+        color: #fff;
+    }
+    .con .section-7 .section-wrapper,
+    .con .section-8 .section-wrapper{
+        padding: 0;
+    }
+    .con .section-7 .section-wrapper p,
+    .con .section-8 .section-wrapper p{
+        text-align: left;
+    }
+    .con .section-7{
+        border-bottom: 1px solid #26475d;
+    }
+    .con .section p.big-title{
+        font-size: 5em;
+    }
+    .con .section p.small-title{
+        font-size: 3em;
+        line-height: 1.8em;
+    }
+    .con .section-7 .section-wrapper a,
+    .con .section-8 .section-wrapper a,
+    .con .section p.small-title span.tel{
+        color: #5ca2da;
+    }
+    .con .section-8 .section-wrapper{
+        position: relative;
+    }
+    .con .section-8 .section-wrapper .img{
+        width: 67.2%;
+        padding: 5em 0 3em;
+    }
+    .con .section-8 .section-wrapper p.down{
+        font-size: 3em;
+        line-height: 1.7em;
+        text-align: center;
+    }
+    .con .section-8 .section-wrapper p.down:last-of-type{
+        padding-bottom: 4em;
+    }
+    .con .section-8 .section-wrapper a.sign{
+        display: block;
+        width: 67.2%;
+        position: absolute;
+        height: 2em;
+        line-height: 2em;
+        border-radius: 0.5em;
+        text-align: center;
+        color: #fff;
+        background-color: #ff658e;
+        left: 16.4%;
+        bottom: 0;
+        font-size: 5em;
+    }
+	
+.con .section-map{
+    width: 100%;
+    background-color: #fff;
+}
+.con .section-map .section-wrapper{
+    background: url(/themes/mall/img/tps-summit-meeting/bg7.jpg) no-repeat center 80px;
+	margin-left:-3.5em;
+}
+.con .section-map .section-wrapper .box{
+    width: 100%;
+    overflow: hidden;
+    height: 500px;
+    margin-top:3em;
+}
+.con .section-map .section-wrapper .box .l{
+    height: 100%;
+    width: 65%;
+	float:left;
+}
+.con .section-map .section-wrapper .box .r{
+    height: 450px;
+    width: 90%;
+    padding:25px 15px;
+    background-color: #555555;
+}
+.con .section-map .section-wrapper .box .r p{
+    font-size: 1em;
+    color: #fff;
+    line-height: 25px;
+	text-align:left;
+	margin-left:28em;
+}
+.con .section-map .section-wrapper .box .r p.up{
+    font-size: 1.625em;
+    color: #fd3388;
+    border-left: 5px solid #fd3388;
+    padding-left: .5em;
+}
+.con .section-map .section-wrapper .box .r p.middle{
+    margin-top: 23px;
+	padding-left: 17.5em;
+}
+.con .section-map .section-wrapper .box .r p.down{
+    margin-top: 15px;
+	padding-left: 1em;
+}
+.con .section-map .section-wrapper .box .r p.down a{
+    color: #fd3388;
+}
+
+    .con .footer{
+        background-color: #000000;
+        color: #fff;
+        text-align: center;
+        padding: 5em 0;
+    }
+    .con .footer .copyright{
+        font-size: 4em;
+    }
+	
+	
+.con .section-sign_up{
+    width: 100%;
+    background-color: #fff;
+	margin-top:-10em;
+}
+.con .section-sign_up .section-wrapper{
+    background: url(/themes/mall/img/tps-summit-meeting/bg7.jpg) no-repeat center 80px;
+	margin-left:-3.5em;
+}
+.con .section-sign_up .section-wrapper .box{
+    width: 100%;
+    margin-top: 50px;
+    overflow: hidden;
+}
+.con .section-sign_up .section-wrapper .box .l{
+    width: 80%;
+}
+.con .section-sign_up .section-wrapper .box .l p.up{
+    font-size:1.25em;
+    color: #fd3388;
+	border-left: 5px solid #fd3388;
+	text-align:left;
+	padding-left:1em;
+}
+.con .section-sign_up .section-wrapper .box .l form{
+    text-align:left;
+}
+.con .section-sign_up .section-wrapper .box .l .form-group{
+    padding: -0.5em 0;
+}
+.con .section-sign_up .section-wrapper .box .l .form-group label{
+    font-size: 3em;
+}
+.con .section-sign_up .section-wrapper .box .l .form-group input[type=text]{
+    border: 1px solid #888888;
+    height: 3em;
+    width:25em;
+    padding: 0 15px;
+    background-color: #fff;
+    font-size: 1.3em;
+    line-height: 40px;
+	padding-top:.5em;
+}
+.con .section-sign_up .section-wrapper .box .l .form-group.btns{
+    padding-top: 1.5em;
+}
+.con .section-sign_up .section-wrapper .box .l .form-group input.btn{
+    width: 7em;
+	height:2em;
+    border-radius: .75em;
+    font-size: 3em;
+    text-align: center;
+    padding: .3em .5em;
+    background-color: #fd3388;
+    color: #fff;
+    border:none;
+    cursor: pointer;
+    font-family: "MicroSoft YaHei";
+}
+.con .section-sign_up .section-wrapper .box .l .form-group label.error{
+    color: #fd3388;
+    padding-left: 100px;
+}
+.con .section-sign_up .section-wrapper .box .l .form-group.captchas{
+    overflow: hidden;
+}
+.con .section-sign_up .section-wrapper .box .l .form-group.captchas div.l{
+    float: left;
+    width: 350px;
+}
+.con .section-sign_up .section-wrapper .box .l .form-group.captchas input{
+    width: 220px;
+    margin-left: 2px;
+}
+.con .section-sign_up .section-wrapper .box .l .form-group.captchas a{
+    display: inline-block;
+    float: right;
+    width: 120px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border: 1px solid #888888;
+    color: #333;
+    margin-right: 4px;
+    background-color: #fdc4d4;
+}
+.con .section-sign_up .section-wrapper .box .r{
+    width: 570px;
+}
+.con .section-sign_up .section-wrapper .box .l .text-con p{
+    line-height: 35px;
+}
+.con .section-sign_up .section-wrapper .box .l .text-con p.up{
+    font-size: 1.25em;
+    color: #fd3388;
+    border-left: 5px solid #fd3388;
+    padding-left: 20px;
+}
+.con .section-sign_up .section-wrapper .box .l .text-con p.down{
+    font-size: 1.25em;
+    padding-left: 25px;
+	text-align:left;
+}
+.con .section-sign_up .section-wrapper .box p.down.blue{
+    color: #4584ce;
+    margin: 5px 0;
+}
+}
+

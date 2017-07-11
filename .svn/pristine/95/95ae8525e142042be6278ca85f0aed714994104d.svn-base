@@ -1,0 +1,17 @@
+User-agent: *
+Disallow: /sitemap/
+Disallow: /*.php?*
+Disallow: /ucenter/
+Disallow: /admin/
+Disallow: /api/
+Disallow: /certs/
+Disallow: /file/
+Disallow: /themes/
+Disallow: /upload/
+Disallow: /logs/
+Disallow: /js/
+Disallow: /css/
+Disallow: /img/
+Disallow: /front/
+Disallow: /ucenter_theme/
+Disallow: .jpg$ 

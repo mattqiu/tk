@@ -1,0 +1,556 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>My Cart</title>
+<link href="../css/head.css" rel="stylesheet" type="text/css">
+<link href="../css/all.css" rel="stylesheet" type="text/css">
+<script src="../js/jquery-1.11.1.js"></script>
+</head>
+
+<body>
+<!--top-->
+<div class="top-wrapper">
+  <div class="container clear">
+    <div class="top-left">
+      <div data-toggle="arrowdown" id="arrow1" class="user-name"><a href="">$Currency<u class="down-icon"></u></a></div>
+      <div data-toggle="arrowdown" id="arrow2" class="user-name"><a href=""><i class="qizhi-usa"></i>Language<u class="down-icon"></u></a></div>
+      <!--hidden-box-->
+      <div data-toggle="hidden-box" id="nav-box1" class="my-yunji-box">
+        <ul>
+          <li><a href="">€ Euro</a></li>
+          <li><a href="">£ Pound Sterling</a></li>
+          <li><a href="">$ US Dollar</a></li>
+        </ul>
+      </div>
+      <div data-toggle="hidden-box" id="nav-box2" class="stow-box">
+        <ul>
+          <li><a href=""><i class="qizhi-english"></i>English</a></li>
+          <li><a href=""><i class="qizhi-zh"></i>简体中文</a></li>
+          <li><a href=""><i class="qizhi-hk"></i>正體中文</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="top-right"> <span class="float-left">Hello,</span> <a href="" class="float-left se_497fb1">Sign In</a> <span class="float-left">|</span> <a href="" class="float-left se_497fb1">Register</a>
+      <div data-toggle="arrowdown" id="arrow3" class="user-name"><a href="#"><s class="yhu"></s>My Account<u class="down-icon"></u></a></div>
+      <div data-toggle="arrowdown" id="arrow4" class="user-name"><a href="#"><s class="xh"></s>Wish List (0)<u class="down-icon"></u></a></div>
+      <a class="float-left" href=""><s class="bz"></s>Help</a> 
+      <!--hidden-box-->
+      <div data-toggle="hidden-box" id="nav-box3" class="language-box">
+        <ul>
+          <li><a href="">Register</a></li>
+          <li><a href="">Login</a></li>
+        </ul>
+      </div>
+      <div data-toggle="hidden-box" id="nav-box4" class="list-box">
+        <ul>
+          <li><a href="">Register</a></li>
+          <li><a href="">Login</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="top-main clear">
+  <div class="container clear">
+    <div class="logo"><a href=""><img src="../img/logo.png"></a></div>
+    <div class="search">
+      <form action="" method="get">
+        <div class="search_input">
+          <input name="url" type="text" class="search_url" placeholder="I’m shopping for…">
+          <input name="" type="submit" class="search_submit" value="">
+        </div>
+      </form>
+    </div>
+    <div class="hd_cart">
+      <div class="cw-icon"> <a href="">My Cart<i class="ci-left"></i> <u class="down-icon ci-right"></u> <b class="ci-count">0</b></a> </div>
+    </div>
+  </div>
+</div>
+<div class="bj_zhuti">
+  <div class="MyCart">
+    <div class="container clear">
+      <h2>确认订单信息</h2>
+      <div class="checkout-box clear">
+        <div class="body-bd clear">
+          <div class="xinzeng clear"><b>收货信息</b><a href="javascript:showBg();" class="XS_btn"><i>+</i>新增收货地址</a></div>
+          <div class="xm-edit-addr">
+            <div class="item clear">
+              <dl>
+                <dt>收货人<span>*</span></dt>
+                <dd>
+                  <input type="text" class="input">
+                </dd>
+              </dl>
+            </div>
+            <div class="item clear">
+              <dl>
+                <dt>手机号码<span>*</span></dt>
+                <dd>
+                  <input type="text" class="input">
+                </dd>
+              </dl>
+            </div>
+            <div class="item clear">
+              <dl>
+                <dt>备用号码<span>*</span></dt>
+                <dd>
+                  <input type="text" class="input">
+                </dd>
+              </dl>
+            </div>
+            <div class="item clear">
+              <dl>
+                <dt>收货地址<span>*</span></dt>
+                <dd>
+                  <select class="select">
+                    <option value="0">国家</option>
+                    <option zipcode="0" value="2">北京</option>
+                    <option zipcode="0" value="3">天津</option>
+                    <option zipcode="0" value="4">河北</option>
+                    <option zipcode="0" value="5">山西</option>
+                    <option zipcode="0" value="6">内蒙古</option>
+                    <option zipcode="0" value="7">辽宁</option>
+                    <option zipcode="0" value="8">吉林</option>
+                    <option zipcode="0" value="9">黑龙江</option>
+                  </select>
+                  <select class="select">
+                    <option value="0">省份/直辖市</option>
+                    <option zipcode="0" value="2">北京</option>
+                    <option zipcode="0" value="3">天津</option>
+                    <option zipcode="0" value="4">河北</option>
+                    <option zipcode="0" value="5">山西</option>
+                    <option zipcode="0" value="6">内蒙古</option>
+                    <option zipcode="0" value="7">辽宁</option>
+                    <option zipcode="0" value="8">吉林</option>
+                    <option zipcode="0" value="9">黑龙江</option>
+                  </select>
+                  <select class="select">
+                    <option value="0">城市</option>
+                    <option zipcode="0" value="2">北京</option>
+                    <option zipcode="0" value="3">天津</option>
+                    <option zipcode="0" value="4">河北</option>
+                    <option zipcode="0" value="5">山西</option>
+                    <option zipcode="0" value="6">内蒙古</option>
+                    <option zipcode="0" value="7">辽宁</option>
+                    <option zipcode="0" value="8">吉林</option>
+                    <option zipcode="0" value="9">黑龙江</option>
+                  </select>
+                  <select class="select">
+                    <option value="0">区/县</option>
+                    <option zipcode="0" value="2">北京</option>
+                    <option zipcode="0" value="3">天津</option>
+                    <option zipcode="0" value="4">河北</option>
+                    <option zipcode="0" value="5">山西</option>
+                    <option zipcode="0" value="6">内蒙古</option>
+                    <option zipcode="0" value="7">辽宁</option>
+                    <option zipcode="0" value="8">吉林</option>
+                    <option zipcode="0" value="9">黑龙江</option>
+                  </select>
+                </dd>
+              </dl>
+            </div>
+            <div class="item clear">
+              <dl>
+                <dt><span>*</span></dt>
+                <dd>
+                  <input type="text" class="xxidz" placeholder="建议您如实填写详细收货地址，例如街道名称，门牌号码，楼层和房间号等信息">
+                </dd>
+              </dl>
+            </div>
+            <div class="item clear">
+              <dl>
+                <dt><span></span></dt>
+                <dd>
+                  <button class="btn shdz" onclick="" type="button" >保存收货信息</button>
+                  <a href="" class="se_497fb1">更多地址>></a></dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+        <div class="body-bd clear">
+          <div class="address-list clear">
+            <ul>
+              <li class="selected"> <i class="marker"></i> <span class="marker-tip">寄送至</span>
+                <input type="radio" checked>
+                <div class="address-info"> <a href="javascript:void();" class="shanchu se_497fb1">删除</a> <a href="javascript:void();" class="modify se_497fb1">修改</a>
+                  <label>广东省 深圳市 福田区 沙头街道深南大道6019号金润大厦 16E (王玉龙 收) <em>18589027800</em></label>
+                  <em class="tip">默认地址</em> </div>
+              </li>
+              <li> <i class="marker"></i> <span class="marker-tip">寄送至</span>
+                <input type="radio">
+                <div class="address-info"> <a href="javascript:void();" class="shanchu se_497fb1">删除</a> <a href="javascript:void();" class="modify se_497fb1">修改</a>
+                  <label>广东省 深圳市 福田区 沙头街道深南大道6019号金润大厦 16E (王玉龙 收) <em>18589027800</em></label>
+                  <a href="javascript:void();" class="set-default se_497fb1">设置为默认收货地址</a> </div>
+              </li>
+              <li> <i class="marker"></i> <span class="marker-tip">寄送至</span>
+                <input type="radio">
+                <div class="address-info"> <a href="javascript:void();" class="shanchu se_497fb1">删除</a> <a href="javascript:void();" class="modify se_497fb1">修改</a>
+                  <label>广东省 深圳市 福田区 沙头街道深南大道6019号金润大厦 16E (王玉龙 收) <em>18589027800</em></label>
+                  <a href="javascript:void(0);" class="set-default se_497fb1">设置为默认收货地址</a> </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="body-bd clear">
+          <h3>收货时间</h3>
+          <div class="Shuo clear">
+            <p>
+              <label>
+                <input name="diliver_time" type="radio" checked="">
+                <span>周一至周五</span><i>收货地址为公司/学校，以及周末无人收货时，推荐选择。</i></label>
+            </p>
+            <p>
+              <label>
+                <input type="radio">
+                <span>周一至周日均可</span><i>我们会尽快送达。若错过送货，请与快递小哥另约送货时间哦。</i></label>
+            </p>
+            <p>
+              <label>
+                <input type="radio">
+                <span>周六日、节假日</span></label>
+            </p>
+          </div>
+        </div>
+        <!--<div class="body-bd clear">
+            <h3>支付方式<span><em>*</em>推荐使用在线支付，更方便快捷</span></h3>
+            <div class="anniu clear">
+              <span class="anniuk hongk">在线支付<i class="xuanzhong"></i></span><span class="anniuk">可用余额</span>
+            </div>
+          </div>-->
+        <div class="body-bd ddxx clear">
+          <h3>订单商品信息</h3>
+          <div class="box-bd">
+            <dl class="clear">
+              <dt class="clear"> <span class="col-md-8"><span class="P_left">TPS138 发货清单</span></span> <span class="col-md-1 center">单价</span> <span class="col-md-1 center">数量</span> <span class="col-md-2 center">配送方式</span> </dt>
+              <dd class="clear">
+                <div class="x-hl clear">
+                  <div class="col-md-10">
+                    <div class="col-md-10">
+                      <div class="g-info"><span><a href="" class="hui">单品热卖 - 诗碧曼SIPIMO日霜50g 提亮、去黄保湿霜，补水、防紫外、抗氧化护肤面霜</a></span><em class="hui">规格: 50g</em> </div>
+                    </div>
+                    <div class="col-md-1"><b class="hui">$50.80</b></div>
+                    <div class="col-md-1 center"><span class="hui">2</span></div>
+                    <div class="col-md-10">
+                      <div class="g-info"><span><a href="">单品热卖 - 诗碧曼SIPIMO日霜50g 提亮、去黄保湿霜，补水、防紫外、抗氧化护肤面霜</a></span><em>规格: 50g</em></div>
+                    </div>
+                    <div class="col-md-1"><b>$50.80</b></div>
+                    <div class="col-md-1 center">2</div>
+                    <div class="col-md-10">
+                      <div class="g-info"><span><a href="">单品热卖 - 诗碧曼SIPIMO日霜50g 提亮、去黄保湿霜，补水、防紫外、抗氧化护肤面霜</a></span><em>规格: 50g</em></div>
+                    </div>
+                    <div class="col-md-1"><b>$50.80</b></div>
+                    <div class="col-md-1 center">2</div>
+                    <div class="col-md-10">
+                      <div class="g-info"><span><a href="">单品热卖 - 诗碧曼SIPIMO日霜50g 提亮、去黄保湿霜，补水、防紫外、抗氧化护肤面霜</a></span><em>规格: 50g</em></div>
+                    </div>
+                    <div class="col-md-1"><b>$50.80</b></div>
+                    <div class="col-md-1 center">2</div>
+                    <div class="col-md-10">
+                      <p>此商品只限美国销售，如您想购买此商品，请更改您的收货地址为美国地址。</p>
+                    </div>
+                  </div>
+                  <div class="col-md-2">
+                    <div class="peisong clear">
+                      <p>
+                        <select class="select">
+                          <option value="0">城市</option>
+                          <option zipcode="0" value="2">北京</option>
+                          <option zipcode="0" value="3">天津</option>
+                          <option zipcode="0" value="4">河北</option>
+                          <option zipcode="0" value="5">山西</option>
+                          <option zipcode="0" value="6">内蒙古</option>
+                          <option zipcode="0" value="7">辽宁</option>
+                          <option zipcode="0" value="8">吉林</option>
+                          <option zipcode="0" value="9">黑龙江</option>
+                        </select>
+                      </p>
+                      <p>快递$12.00</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="x-hl clear">
+                  <div class="col-md-10">
+                    <div class="col-md-10">
+                      <div class="g-info"><span><a href="" class="hui">单品热卖 - 诗碧曼SIPIMO日霜50g 提亮、去黄保湿霜，补水、防紫外、抗氧化护肤面霜</a></span><em class="hui">规格: 50g</em> </div>
+                    </div>
+                    <div class="col-md-1"><b class="hui">$50.80</b></div>
+                    <div class="col-md-1 center"><span class="hui">2</span></div>
+                    <div class="col-md-10">
+                      <div class="g-info"><span><a href="">单品热卖 - 诗碧曼SIPIMO日霜50g 提亮、去黄保湿霜，补水、防紫外、抗氧化护肤面霜</a></span><em>规格: 50g</em></div>
+                    </div>
+                    <div class="col-md-1"><b>$50.80</b></div>
+                    <div class="col-md-1 center">2</div>
+                    <div class="col-md-10">
+                      <div class="g-info"><span><a href="">单品热卖 - 诗碧曼SIPIMO日霜50g 提亮、去黄保湿霜，补水、防紫外、抗氧化护肤面霜</a></span><em>规格: 50g</em></div>
+                    </div>
+                    <div class="col-md-1"><b>$50.80</b></div>
+                    <div class="col-md-1 center">2</div>
+                    <div class="col-md-10">
+                      <div class="g-info"><span><a href="">单品热卖 - 诗碧曼SIPIMO日霜50g 提亮、去黄保湿霜，补水、防紫外、抗氧化护肤面霜</a></span><em>规格: 50g</em></div>
+                    </div>
+                    <div class="col-md-1"><b>$50.80</b></div>
+                    <div class="col-md-1 center">2</div>
+                    <div class="col-md-10">
+                      <p>此商品只限美国销售，如您想购买此商品，请更改您的收货地址为美国地址。</p>
+                    </div>
+                  </div>
+                  <div class="col-md-2">
+                    <div class="peisong clear">
+                      <p>
+                        <select class="select">
+                          <option value="0">城市</option>
+                          <option zipcode="0" value="2">北京</option>
+                          <option zipcode="0" value="3">天津</option>
+                          <option zipcode="0" value="4">河北</option>
+                          <option zipcode="0" value="5">山西</option>
+                          <option zipcode="0" value="6">内蒙古</option>
+                          <option zipcode="0" value="7">辽宁</option>
+                          <option zipcode="0" value="8">吉林</option>
+                          <option zipcode="0" value="9">黑龙江</option>
+                        </select>
+                      </p>
+                      <p>快递$12.00</p>
+                    </div>
+                  </div>
+                </div>
+              </dd>
+            </dl>
+            <p class="yunfei"><em>配送时间:工作日、双休日与节假日均可送货。</em>运费：￥10.00 <span>本订单金额: $203.00</span></p>
+            <ul class="beizhu clear">
+              <li>添加订单备注:</li>
+              <li>
+                <textarea class="input" data-error="" placeholder="限45个字以内"></textarea>
+              </li>
+              <li>提示： 请勿填写有关支付、发票方面的信息</li>
+            </ul>
+            <div class="zongs clear">
+              <div class="left clear">
+                <dl class="clear">
+                  <dt>收货信息：</dt>
+                  <dd>李正方. 138*****729.中国.广东省.深圳市.宝安区.龙华街道.民治大道牛栏前77栋201号</dd>
+                </dl>
+                <dl class="clear">
+                  <dt>支付方式：</dt>
+                  <dd>在线支付</dd>
+                </dl>
+                <dl class="clear">
+                  <dt>其它信息：</dt>
+                  <dd>收据
+                    <input type="checkbox" checked="checked" class="shouju">
+                    <a href="" class="se_497fb1">下载电子版本</a></dd>
+                </dl>
+              </div>
+              <div class="right clear">
+                <dl class="clear">
+                  <dt>商品金额：</dt>
+                  <dd>$203.00</dd>
+                </dl>
+                <dl class="clear bk bottom_15">
+                  <dt>运费：</dt>
+                  <dd>$10.00</dd>
+                </dl>
+                <dl class="clear">
+                  <dt class="font">实付金额：</dt>
+                  <dd class="hse font"><em>$</em>2134.00</dd>
+                </dl>
+                <dl class="clear">
+                  <dd class="nnniu"><a href="" class="btn_hong">提交订单</a></dd>
+                  <dd class="nnniu"><a href="javascript:;" class="btn_Bhui">提交订单</a></dd>
+                </dl>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container top_15 clear">
+    <div class="foot clear">
+      <div class="col-md-2 clear">
+        <div class="fenx"><a href=""><s class="s1"></s><span>Like us<br>
+          on Facebook</span></a></div>
+      </div>
+      <div class="col-md-2 clear">
+        <div class="fenx"><a href=""><s class="s2"></s><span>Fllow us<br>
+          on Twitter</span></a></div>
+      </div>
+      <div class="col-md-2 clear">
+        <div class="fenx"><a href=""><s class="s3"></s><span>Pin us<br>
+          on Pinterest</span></a></div>
+      </div>
+      <div class="col-md-2 clear">
+        <div class="fenx"><a href=""><s class="s4"></s><span>Read us<br>
+          on our blog</span></a></div>
+      </div>
+      <div class="col-md-2 clear">
+        <div class="fenx"><a href=""><s class="s5"></s><span>Watch us<br>
+          on Youtube</span></a></div>
+      </div>
+      <div class="col-md-2 clear">
+        <div class="fenx"><a href=""><s class="s6"></s><span>Like us<br>
+          on Google+</span></a></div>
+      </div>
+    </div>
+  </div>
+  <div class="container top_15 clear">
+    <div class="I_help clear">
+      <div class="col-md-20 clear">
+        <ul>
+          <li class="links">About us</li>
+          <li><a href="">About ecosko Group</a></li>
+          <li><a href="">About TPS138.com</a></li>
+          <li><a href="">Walhao.com.cn</a></li>
+          <li><a href="">Contact us</a></li>
+        </ul>
+      </div>
+      <div class="col-md-20 clear">
+        <ul>
+          <li class="links">Shopping Guide</li>
+          <li><a href="">Shopping Process</a></li>
+          <li><a href="">Order Operation</a></li>
+          <li><a href="">Products Set Deals</a></li>
+          <li><a href="">Brand Zone</a></li>
+          <li><a href="">Invoices and receipts description</a></li>
+          <li><a href="">Overseas Shopping Notes</a></li>
+          <li><a href="">Asked Questions</a></li>
+        </ul>
+      </div>
+      <div class="col-md-20 clear">
+        <ul>
+          <li class="links">Payments</li>
+          <li><a href="">CUP online payment</a></li>
+          <li><a href="">Alipay</a></li>
+          <li><a href="">Wallet</a></li>
+          <li><a href="">PAYPAL payment</a></li>
+          <li><a href="">Substitutes coupons</a></li>
+          <li><a href="">Gift Cards</a></li>
+        </ul>
+      </div>
+      <div class="col-md-20 clear">
+        <ul>
+          <li class="links">Logistics</li>
+          <li><a href="">Delivery</a></li>
+          <li><a href="">Aging and freight distribution</a></li>
+          <li><a href="">Inspection and receipt</a></li>
+          <li><a href="">Delivery Information Tracking</a></li>
+        </ul>
+      </div>
+      <div class="col-md-20 clear">
+        <ul>
+          <li class="links">Service</li>
+          <li><a href="">Delivery Agreement</a></li>
+          <li><a href="">Refund and aging</a></li>
+          <li><a href="">Refunds or exchanges</a></li>
+          <li><a href="">Customer service telephone voice process</a></li>
+          <li><a href="">Contact us</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="fukuan"><img src="../img/fukuan.png"></p>
+    <p class="copyright">Copyright  © 2004-2005  TPS & Partners Co. Ltd. TPS138.com. All rights reserved. </p>
+  </div>
+</div>
+
+<!--点击弹出新增/-->
+<div class="xm-edit-addr wodl BOX_nav clear" id="BOX_nav"> <span class="close" onclick="closeBg();">×</span>
+  <h3>新增收货地址</h3>
+  <div class="item"><em>新增收货地址</em><span class="item-title">电话号码、手机号选填一项,其余均为必填项</span></div>
+  <div class="item clear">
+    <dl>
+      <dt>收货人<span>*</span></dt>
+      <dd>
+        <input type="text" class="input">
+      </dd>
+    </dl>
+  </div>
+  <div class="item clear">
+    <dl>
+      <dt>手机号码<span>*</span></dt>
+      <dd>
+        <input type="text" class="input">
+      </dd>
+    </dl>
+  </div>
+  <div class="item clear">
+    <dl>
+      <dt>备用号码<span>*</span></dt>
+      <dd>
+        <input type="text" class="input">
+      </dd>
+    </dl>
+  </div>
+  <div class="item clear">
+    <dl>
+      <dt>收货地址<span>*</span></dt>
+      <dd>
+        <select class="select">
+          <option value="0">国家</option>
+          <option zipcode="0" value="2">北京</option>
+          <option zipcode="0" value="3">天津</option>
+          <option zipcode="0" value="4">河北</option>
+          <option zipcode="0" value="5">山西</option>
+          <option zipcode="0" value="6">内蒙古</option>
+          <option zipcode="0" value="7">辽宁</option>
+          <option zipcode="0" value="8">吉林</option>
+          <option zipcode="0" value="9">黑龙江</option>
+        </select>
+        <select class="select">
+          <option value="0">省份/直辖市</option>
+          <option zipcode="0" value="2">北京</option>
+          <option zipcode="0" value="3">天津</option>
+          <option zipcode="0" value="4">河北</option>
+          <option zipcode="0" value="5">山西</option>
+          <option zipcode="0" value="6">内蒙古</option>
+          <option zipcode="0" value="7">辽宁</option>
+          <option zipcode="0" value="8">吉林</option>
+          <option zipcode="0" value="9">黑龙江</option>
+        </select>
+        <select class="select">
+          <option value="0">城市</option>
+          <option zipcode="0" value="2">北京</option>
+          <option zipcode="0" value="3">天津</option>
+          <option zipcode="0" value="4">河北</option>
+          <option zipcode="0" value="5">山西</option>
+          <option zipcode="0" value="6">内蒙古</option>
+          <option zipcode="0" value="7">辽宁</option>
+          <option zipcode="0" value="8">吉林</option>
+          <option zipcode="0" value="9">黑龙江</option>
+        </select>
+        <select class="select">
+          <option value="0">区/县</option>
+          <option zipcode="0" value="2">北京</option>
+          <option zipcode="0" value="3">天津</option>
+          <option zipcode="0" value="4">河北</option>
+          <option zipcode="0" value="5">山西</option>
+          <option zipcode="0" value="6">内蒙古</option>
+          <option zipcode="0" value="7">辽宁</option>
+          <option zipcode="0" value="8">吉林</option>
+          <option zipcode="0" value="9">黑龙江</option>
+        </select>
+      </dd>
+    </dl>
+  </div>
+  <div class="item clear">
+    <dl>
+      <dt><span>*</span></dt>
+      <dd>
+        <input type="text" class="xxidz" placeholder="建议您如实填写详细收货地址，例如街道名称，门牌号码，楼层和房间号等信息">
+      </dd>
+    </dl>
+  </div>
+  <div class="item clear">
+    <dl>
+      <dt>
+        <label><span></span></label>
+      </dt>
+      <dd>
+        <button class="btn shdz" onclick="" type="button">保存收货信息</button>
+      </dd>
+    </dl>
+  </div>
+</div>
+<div class="xm-backdrop" id="fullbg"></div>
+<script src="../js/main.js"></script>
+</body>
+</html>

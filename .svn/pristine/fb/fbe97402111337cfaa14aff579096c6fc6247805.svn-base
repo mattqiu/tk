@@ -1,0 +1,15 @@
+/* CSS Document */
+.opportunity{margin:0 auto; width:1200px; margin-top:50px;}
+.opportunity_top{margin:0 auto; width:800px;}
+.opportunity_top_context{margin:0 auto;}
+.opportunity_top_context img{position:absolute; top:130px; margin-left:30px;}
+.opportunity_top_context h1{margin-left:35%;}
+.opportunity_top_context p{ text-indent:30px; font-size:14px; color:#666; margin-left:80px;}
+
+.opportunity_bottom{margin:0 auto; width:800px; height:400px; margin-top:80px;}
+.opportunity_bottom>div{float:left;}
+.opportunity_bottom_left{width:500px;}
+.opportunity_bottom_left h1{ margin-left:10%;}
+.opportunity_bottom_left p{text-indent:30px; font-size:14px; color:#666;}
+.opportunity_bottom_right{ width:200px; margin-top:180px;}
+.opportunity_bottom_right img{ }

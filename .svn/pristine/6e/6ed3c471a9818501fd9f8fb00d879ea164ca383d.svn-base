@@ -1,0 +1,158 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+		<meta name="renderer" content="webkit">
+		<title>tps商城app下载</title>
+		<link rel="stylesheet" href="../css/h5-app.css">
+		<script src="../js/jquery-1.11.1.js"></script>
+		<script src="../js/bootstrap.min.js"></script>
+		<script src="../js/app.js"></script>
+		<!--[if lte IE 8]>
+			<style type="text/css">
+				html,body{width:100%; height:100%; overflow:scroll}
+				.section-btn{display:none;}
+			</style>
+		<![endif]-->
+	</head>
+	<body>
+		<div class="header clear">
+			<div class="nav clear">
+				<div class="logo">
+					<a href=""><img src="../img/app-img/logo.png" alt=""><h1>TPS商城手机版</h1></a>
+				</div>
+				<ul class="download">
+					<li data-toggle="modal" data-target="#iPhone"><i class="iconfont">&#xe624;</i><span>IPhone下载</span></li>
+					<li data-toggle="modal" data-target="#andriond"><i class="iconfont">&#xe690;</i><span>Andriond下载</span></li>
+				</ul>
+			</div>
+		</div>
+
+		<section class="section-wrap">
+			<div class="section">
+				<s class="bg-lan"></s>
+				<div class="text left top-1 fadeInLeft">
+					<h2>把TPS商城装进口袋</h2>
+					<p>TPS手机客户端，你想要的，这都有！<br/>点击下列按钮即可扫码下载！</p>
+					<ul class="download">
+						<li data-toggle="modal" data-target="#iPhone"><i class="iconfont">&#xe624;</i><span>IPhone下载</span></li> 
+						<li data-toggle="modal" data-target="#andriond"><i class="iconfont">&#xe690;</i><span>Andriond下载</span></li>
+					</ul>
+				</div>
+				<s class="s right right-1 fadeInLeft"><img src="../img/app-img/cn-1.png" alt=""></s>
+			</div>
+
+			<div class="section">
+				<s class="bg-lan"></s>
+				<s class="s left fadeInRight"><img src="../img/app-img/cn-2.png" alt=""></s>
+				<div class="text right fadeInRight">
+					<h2>多地区、多货币切换</h2>
+					<p>随时随地切换国家与币种，全球优质商品供您挑选<br/>购物更佳便捷</p>
+				</div>
+			</div>
+
+			<div class="section">
+				<s class="bg-lan"></s>
+				<div class="text left fadeInBottom">
+					<h2>各种促销活动 优惠不断</h2>
+					<p>特惠促销、口碑热卖、新品上市、包邮专区<br/>您想要的一切优惠，都在这里</p>
+				</div>
+				<s class="s right fadeInBottom"><img src="../img/app-img/cn-3.png" alt=""></s>
+			</div>
+
+			<div class="section">
+				<s class="bg-lan"></s>
+				<s class="s left time4"><img src="../img/app-img/cn-4.png" alt=""></s>
+				<div class="text right time4">
+					<h2>全面的会员中心 操作更贴心</h2>
+					<p>为了让体验更加顺畅，我们重新优化“会员中心”<br/>在这里，您可以便捷的进行操作您的帐户</p>
+				</div>
+			</div>
+
+			<div class="section">
+				<s class="bg-lan"></s>
+				<s class="s left left-5 time5"><s class="gif1"></s><img src="../img/app-img/cn-5.png" alt=""></s>
+				<div class="text right right-5 time5">
+					<h2>扫码加盟 发展团队</h2>
+					<p>只需要扫描二维码、完成注册，即可快速发展线下会员<br/>点击“个人资料”—“我的二维码”生成二维码</p>
+				</div>
+			</div>
+
+			<div class="section">
+				<s class="bg-lan"></s>
+				<s class="s right right-6 time6"><s class="gif2"></s><img src="../img/app-img/cn-6.png" alt=""></s>
+				<div class="text left time6">
+					<h2>我的资产-整合帐户资金</h2>
+					<p>我们将现金池、月费池、分红池、代品券<br/>整合进“我的资产”，让您查看资金更佳便捷</p>
+				</div>
+			</div>
+
+			<div class="section">
+				<s class="bg-lan"></s>
+				<s class="s left left-7 time7"><img src="../img/app-img/cn-7.png" alt=""></s>
+				<div class="text right right-5 time7">
+					<h2>更优化的'资金变动报表'</h2>
+					<p>我们将“佣金报表”与“个人资金流动表”进行了合并<br/>现在，您可以在“资金变动报表”表里查看原先的所有内容<br/>点击“筛选”，即可查看每月的所有资金流</p>
+				</div>
+			</div>
+
+			<div class="section">
+				<div class="center-download">
+					<strong>立即下载 了解更多优惠</strong>
+					<p><img src="../img/app-img/logo.png" alt=""></p>
+					<ul class="download">
+						<li data-toggle="modal" data-target="#iPhone"><i class="iconfont">&#xe624;</i><span>IPhone下载</span></li>
+						<li data-toggle="modal" data-target="#andriond"><i class="iconfont">&#xe690;</i><span>Andriond下载</span></li>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<ul class="section-btn">
+			<li class="on">
+				<s></s>
+			</li>
+			<li>
+				<s></s>
+			</li>
+			<li>
+				<s></s>
+			</li>
+			<li>
+				<s></s>
+			</li>
+			<li>
+				<s></s>
+			</li>
+			<li>
+				<s></s>
+			</li>
+			<li>
+				<s></s>
+			</li>
+			<li>
+				<s></s>
+			</li>
+		</ul>
+		<div class="arrow"><i class="iconfont">&#xe633;</i></div>
+		
+		<div class="modal fade" id="iPhone" tabindex="-1" role="dialog">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<img src="../img/app-img/app-1.png" alt="">
+					<p>IOS系统 手机扫码 即可下载</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="modal fade" id="andriond" tabindex="-1" role="dialog">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<img src="../img/app-img/app-2.png" alt="">
+					<p>ANDRIOND系统 手机扫码 即可下载</p>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

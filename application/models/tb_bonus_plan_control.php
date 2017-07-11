@@ -1,0 +1,59 @@
+<?php
+
+/**
+ * Created by PhpStorm.
+ * User: TPS
+ * Date: 2017/6/2
+ * Time: 14:55
+ */
+class tb_bonus_plan_control extends MY_Model
+{
+    protected $table = "bonus_plan_control";
+
+    function __construct()
+    {
+        parent::__construct();
+    }
+
+    public function getAllDate(){
+        return $this->db->from($this->table)->order_by("type")->order_by("id","desc")->get()->result_array();
+    }
+
+    /**
+     * 修改计划状态
+     * @param $item_type
+     * @param $param
+     */
+    public function changeExecStatus($item_type,$param){
+        $this->db->where('item_type',$item_type);
+        $this->db->update($this->table,$param);
+        return $this->db->affected_rows();
+    }
+
+    
+    /**
+     * 获取检测状态
+     * @param unknown $item
+     * @return Ambigous <number, unknown>
+     */
+    public function getBonusType($item)
+    {
+        $sql = "select status from bonus_plan_control where item_type=".$item;
+        $query = $this->db->query($sql)->row_array()['status'];
+        if(!empty($query))
+        {
+            return $query;
+        }
+        else
+        {
+            return 0;
+        }        
+    }
+
+
+    public function getState($item_type){
+        $sql = "select status,ishand,ishanding,exec_end_time,rate from bonus_plan_control where item_type=$item_type";     
+        return $this->db->query($sql)->row_array();
+    }
+    
+}

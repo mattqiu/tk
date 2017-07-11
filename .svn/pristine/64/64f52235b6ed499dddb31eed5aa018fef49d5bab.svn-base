@@ -1,0 +1,1665 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>TPS首页</title>
+	<meta name="keywords" content="云集品中秋特惠">
+	<meta name="description" content="云集品中秋特惠">
+	<meta property="Berton.peng" content="">
+	<link rel="stylesheet" href="../css/head_food_1.css">
+	<link rel="stylesheet" href="../css/base.css">
+	<script src="../js/jquery.min.js"></script>
+	<script src="../js/jquery.SuperSlide.2.1.2.js"></script>
+    <style type="text/css">
+    .banner { width: 100%; position: relative; height: 630px; background:#fff; }
+	.banner .bd li { width:100% !important; min-width: 1200px; height: 630px; overflow:hidden; text-align:center; background: url(../img/loading250_250.gif) no-repeat center; }
+	.banner .bd li a { display:block; height: 630px; }
+	.banner .bd img{ width: 100%; height: auto;max-width: 100%; display: block; } 
+
+	.nTab{
+	float: left;
+	width: 100%;
+	margin: 0 auto;
+	}
+	.nTab .TabTitle{
+	clear: both;
+	height: 77px;
+	overflow: hidden;
+	margin-top:68px;
+	margin-bottom:42px;
+	}
+	.nTab .TabTitle ul{
+	margin:0;
+	padding:0;
+	}
+	.nTab .TabTitle li{
+	float: left;
+	width: 393px;
+	cursor: pointer;
+	height:77px;
+
+	
+	list-style-type: none;
+	}
+	.nTab .TabTitle .active{filter:alpha(opacity=100);  
+      -moz-opacity:1.0;  
+      -khtml-opacity: 1.0;  
+      opacity: 1.0; }
+	.nTab .TabTitle .normal{filter:alpha(opacity=60);  
+      -moz-opacity:0.6;  
+      -khtml-opacity: 0.6;  
+      opacity: 0.6;  }
+	.nTab .TabContent{
+	width:auto;background:#fff;
+	margin: 0px auto;
+	}
+	.none {display:none;}
+	.btn_bg1{background:url(../img/button_1.png);}
+	.btn_bg2{background:url(../img/button_2.png);}
+	.btn_bg3{background:url(../img/button_3.png);}
+	.mgl10{margin-left:10px;}
+	.mgl15{margin-left:15px;}
+	.bgfff{background-color:#fff;}
+	
+	.tbcontent{width:100%;height:240px;margin:0 auto;}
+	/*.tabcl592{width:592px;height:240px;border:1px solid #ddd;float:left;}
+	.tabcl592 .limg{width:240px;height:240px;float:left;border-right:1px solid #ddd;display:table-cell;text-align:center;vertical-align:middle;}*/
+	.tabcl592{width:49.3%;height:240px;border:1px solid #ddd;float:left;}
+	.tabcl592 .limg{width:40.5%;height:240px;float:left;border-right:1px solid #ddd;display:table-cell;text-align:center;vertical-align:middle;}
+	i{display:inline-block;height:100%;vertical-align:middle}
+	.tabcl592 .limg img{vertical-align:middle;width:100%;height:100%;}
+	.tabcl592 .r350{width:59.2%;height:240px;float:left;}
+	.tabcl592 .r350 .top174{width:100%;height:174px;border-bottom:1px solid #ddd;}
+	.tabcl592 .r350 .top174 .htop66{width:100%;height:174px;border:1px solid #f00;}
+	dl.tit { text-align: left; padding: 10px 0; margin: 0 10px; line-height: 1.5; }
+	dl.tit p { height: auto; clear: both; /* 清除左右浮动 */   
+				word-break: break-word; /* 文本行的任意字内断开 */  
+				word-wrap: break-word; /* IE */  
+				white-space: -moz-pre-wrap; /* Mozilla */ 
+				white-space: -hp-pre-wrap; /* HP printers */ 
+				white-space: -o-pre-wrap; /* Opera 7 */ 
+				white-space: -pre-wrap; /* Opera 4-6 */ 
+				white-space: pre; /* CSS2 */ 
+				white-space: pre-wrap; /* CSS 2.1 */ 
+				white-space: pre-line; /* CSS 3 (and 2.1 as well, actually) */ 
+			 }
+	dl.tit p a:link { text-decoration: none; color: #333;}
+	dl.tit p a:visited { text-decoration: none; color: #333;}
+	dl.tit p a:focus{ color: #ed4242; text-decoration:none; }
+	dl.tit p a:hover{ color: #ed4242; text-decoration:none; }
+	dl.tit p a:active{ color: #ed4242; text-decoration:none; }
+	.tabcl592 .r350 .bot65{width:100%;height:65px;}
+	.ccauto{width:100%;height:auto;float:left;text-align:left;}
+	.ccauto ul{margin:5px 0px 0px 10px;}
+	.ccauto li{line-height:20px;color:#999; white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
+	.ccauto li span{display:inline-block;width:10px;height:10px;}
+	.btnonce{text-align: center;font-size: 18px;width:auto;min-width:100px;height:40px;color: white;-webkit-border-radius: 5px;-moz-border-radius: 5px;background-color: #db524a;padding-top:10px;position:relative;right:20px;bottom:5px; white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
+	.btnonce a:link { text-decoration: none; color: #fff; }
+	.btnonce a:visited { text-decoration: none; color: #fff; }
+	.btnonce a:focus { color: #fff; text-decoration:none; }
+	.btnonce a:hover { color: #fff; text-decoration:none; }
+	.btnonce a:active { color: #fff; text-decoration:none; }
+	.tbcontent1{width:100%;height:287px;margin:0 auto;}
+	.tabcl296{width:24.5%;height:287px;float:left;border:1px solid #ddd;}
+	.tabcl296 .timg{width:24.5%;height:228px;border-bottom:1px solid #ddd;display:table-cell;text-align:center;vertical-align:middle;}
+	.tabcl296 .timg img{vertical-align:middle;width:100%;height:100%;}
+	.tabcl296 .bcont295{width:24.5%;height:58px;margin:0 auto;}
+	.tabcl296 .bcont295 p{ white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
+	.ml-5 { margin-left: 4px; }
+	.w228{width:228px;height:228px;margin:0 auto;}
+
+    </style>
+</head>
+<body>
+	<header class="main-header">
+		<div class="header-bar">
+			<div class="w1200">
+				<ul class="fl nav-top">
+					<li class="fl mfr-5 w88">
+						<a class="down" href=""><s class="qizhi-CNY"></s>中国<s class="minicart_arrow"></s></a>
+						<ol class="li-b xs">
+							<li><a href=""><s class="qizhi-USD"></s>美国</a></li>
+							<li><a href=""><s class="qizhi-CNY"></s>中国</a></li>
+							<li><a href=""><s class="qizhi-HKD"></s>香港</a></li>
+							<li><a href=""><s class="qizhi-KRW"></s>韩国</a></li>
+							<li><a href="">其它地区</a></li>
+						</ol>
+					</li>
+					<li class="fl mfr-5">
+						<a class="down" href="">￥ 人民币<s class="minicart_arrow"></s></a>
+						<ol class="li-b xs">
+							<li><a href="">$ 美元</a></li>
+							<li><a href="">￥ 人民币</a></li>
+							<li><a href="">￥ 港币</a></li>
+							<li><a href="">￥ 韩币</a></li>
+						</ol>
+					</li>	
+				</ul>
+				<ul class="fr nav-top">
+					<li class="fl mfr-5"><a class="login" href="">登录</a></li>
+					<li class="fl">|</li>
+					<li class="fl mfr-5"><a class="login" href="">注册</a></li>
+					<li class="fl mfr-5"><a href=""><i class="fa fa-star-o"></i>我的收藏(0)</a></li>
+					<li class="fl mfr-5 w90">
+						<a class="down" href="">个人中心<s class="minicart_arrow"></s></a>
+						<ol class="li-b xs">
+							<li><a href="">完成订单</a></li>
+							<li><a href="">交易订单</a></li>
+							<li><a href="">待完成订单</a></li>
+						</ol>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="site-header clear">
+			<div class="w1200">
+				<div class="logo fl"><a href=""><img src="../img/tps.png" alt=""></a></div>
+				<div class="huiy">
+					<img src="../img/138com.png" alt="">
+				</div>
+				<div class="header-cart">
+					<a class="down" href=""><i></i>Cart<b class="ci-count">4</b><s class="minicart_arrow"></s></a>
+					<p class="no">购物袋中还没有商品，赶快选购吧！</p>
+					<s class="jt"></s>
+					<div class="mycart clear">
+						<ul class="smc img100">
+							<li class="bt-n">
+								<div class="p-img fl"><a href="javascript:;"><img src="../img/cp.jpg"></a></div>
+								<div class="p-name fl"><a href="javascript:;">联想（Lenovo）天逸300 14英寸笔记本电脑（i5-6200U 4G 500G 2G独显 DVD win10）黑色</a></div>
+								<div class="p-detail fr">
+									<span><strong>￥3799.00</strong>×1</span>
+									<a class="atn fr" href="javascript:void(0)">删除</a>
+								</div>
+							</li>
+							<li>
+								<div class="p-img fl"><a href="javascript:;"><img src="../img/cp.jpg"></a></div>
+								<div class="p-name fl"><a href="javascript:;">联想（Lenovo）天逸300 14英寸笔记本电脑（i5-6200U 4G 500G 2G独显 DVD win10）黑色</a></div>
+								<div class="p-detail fr">
+									<span><strong>￥3799.00</strong>×1</span>
+									<a class="atn fr" href="javascript:void(0)">删除</a>
+								</div>
+							</li>
+							<li>
+								<div class="p-img fl"><a href="javascript:;" target="_blank"><img src="../img/cp.jpg"></a></div>
+								<div class="p-name fl"><a href="javascript:;">联想（Lenovo）天逸300 14英寸笔记本电脑（i5-6200U 4G 500G 2G独显 DVD win10）黑色</a></div>
+								<div class="p-detail fr">
+									<span><strong>￥3799.00</strong>×1</span>
+									<a class="atn fr" href="javascript:void(0)">删除</a>
+								</div>
+							</li>
+							<li>
+
+								<div class="p-img fl"><a href="javascript:;"><img src="../img/cp.jpg"></a></div>
+								<div class="p-name fl"><a href="javascript:;">联想（Lenovo）天逸300 14英寸笔记本电脑（i5-6200U 4G 500G 2G独显 DVD win10）黑色</a></div>
+								<div class="p-detail fr">
+									<span><strong>￥3799.00</strong>×1</span>
+									<a class="atn fr" href="javascript:void(0)">删除</a>
+								</div>
+							</li>
+						</ul>
+						<div class="smb clear"><span class="fl">共<b>1</b>件商品　共计<strong>￥ 0.00</strong></span><a class="fr" href="javascript:;" title="去购物车">去购物车</a></div>
+					</div>
+				</div>
+
+				<div class="tps-search fr clear">
+					<input class="search-text" type="search" placeholder="请输入关键词搜索商品">
+					<button type="submit"><i class="fa fa-search"></i></button>
+				</div>
+			</div>
+		</div>
+		<div class="nav-wp">
+			<div class="w1200">
+				<div class="catalog fl">
+					<h3>所有商品分类<i class="fa fa-angle-down"></i></h3>
+					<div class="menu-cate-all-out">
+						<dl class="dl-1">
+							<dt class="clear"><a href="" class="category">母婴用品</a><i class="fa fa-angle-right"></i></dt>
+							<dd class="submenu clear">
+								<ul class="clear">
+									<li class="b-t"><a href="">广泛大概<i class="fa fa-angle-right"></i></a></li>
+									<li class="n-r"><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a></li>
+								</ul>
+								<ul class="clear">
+									<li class="b-t"><a href="">广泛大概<i class="fa fa-angle-right"></i></a></li>
+									<li class="n-r"><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a></li>
+								</ul>
+								<ul class="clear">
+									<li class="b-t"><a href="">广泛大概<i class="fa fa-angle-right"></i></a></li>
+									<li class="n-r"><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a></li>
+								</ul>
+								<ul class="clear">
+									<li class="b-t"><a href="">广泛大概<i class="fa fa-angle-right"></i></a></li>
+									<li class="n-r"><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a></li>
+								</ul>
+								<ul class="clear">
+									<li class="b-t"><a href="">广泛大概<i class="fa fa-angle-right"></i></a></li>
+									<li class="n-r"><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a></li>
+								</ul>
+								<ul class="clear">
+									<li class="b-t"><a href="">广泛大概<i class="fa fa-angle-right"></i></a></li>
+									<li class="n-r"><a href="">广泛大概</a><a href="">个分的高</a></li>
+								</ul>
+							</dd>
+						</dl>
+						<dl class="dl-2">
+							<dt class="clear"><a href="" class="category">母婴用品</a><i class="fa fa-angle-right"></i></dt>
+							<dd class="submenu clear">
+								<ul class="clear">
+									<li class="b-t"><a href="">广泛大概<i class="fa fa-angle-right"></i></a></li>
+									<li class="n-r"><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a></li>
+								</ul>
+								<ul class="clear">
+									<li class="b-t"><a href="">广泛大概<i class="fa fa-angle-right"></i></a></li>
+									<li class="n-r"><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a></li>
+								</ul>
+								<ul class="clear">
+									<li class="b-t"><a href="">广泛大概<i class="fa fa-angle-right"></i></a></li>
+									<li class="n-r"><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a></li>
+								</ul>
+								<ul class="clear">
+									<li class="b-t"><a href="">广泛大概<i class="fa fa-angle-right"></i></a></li>
+									<li class="n-r"><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a></li>
+								</ul>
+								<ul class="clear">
+									<li class="b-t"><a href="">广泛大概<i class="fa fa-angle-right"></i></a></li>
+									<li class="n-r"><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a></li>
+								</ul>
+								<ul class="clear">
+									<li class="b-t"><a href="">广泛大概<i class="fa fa-angle-right"></i></a></li>
+									<li class="n-r"><a href="">广泛大概</a><a href="">个分的高</a></li>
+								</ul>
+							</dd>
+						</dl>
+						<dl class="dl-3">
+							<dt class="clear"><a href="" class="category">母婴用品</a><i class="fa fa-angle-right"></i></dt>
+							<dd class="submenu clear">
+								<ul class="clear">
+									<li class="b-t"><a href="">广泛大概<i class="fa fa-angle-right"></i></a></li>
+									<li class="n-r"><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a></li>
+								</ul>
+							</dd>
+						</dl>
+						<dl class="dl-4">
+							<dt class="clear"><a href="" class="category">母婴用品</a><i class="fa fa-angle-right"></i></dt>
+							<dd class="submenu clear">
+								<ul class="clear">
+									<li class="b-t"><a href="">广泛大概<i class="fa fa-angle-right"></i></a></li>
+									<li class="n-r"><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a></li>
+								</ul>
+								<ul class="clear">
+									<li class="b-t"><a href="">广泛大概<i class="fa fa-angle-right"></i></a></li>
+									<li class="n-r"><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a></li>
+								</ul>
+							</dd>
+						</dl>
+						<dl class="dl-5">
+							<dt class="clear"><a href="" class="category">母婴用品</a><i class="fa fa-angle-right"></i></dt>
+							<dd class="submenu clear">
+								<ul class="clear">
+									<li class="b-t"><a href="">广泛大概<i class="fa fa-angle-right"></i></a></li>
+									<li class="n-r"><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a></li>
+								</ul>
+								<ul class="clear">
+									<li class="b-t"><a href="">广泛大概<i class="fa fa-angle-right"></i></a></li>
+									<li class="n-r"><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a></li>
+								</ul>
+								<ul class="clear">
+									<li class="b-t"><a href="">广泛大概<i class="fa fa-angle-right"></i></a></li>
+									<li class="n-r"><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a></li>
+								</ul>
+								<ul class="clear">
+									<li class="b-t"><a href="">广泛大概<i class="fa fa-angle-right"></i></a></li>
+									<li class="n-r"><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a></li>
+								</ul>
+							</dd>
+						</dl>
+						<dl class="dl-6">
+							<dt class="clear"><a href="" class="category">母婴用品</a><i class="fa fa-angle-right"></i></dt>
+							<dd class="submenu clear">
+								<ul class="clear">
+									<li class="b-t"><a href="">广泛大概<i class="fa fa-angle-right"></i></a></li>
+									<li class="n-r"><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a></li>
+								</ul>
+								<ul class="clear">
+									<li class="b-t"><a href="">广泛大概<i class="fa fa-angle-right"></i></a></li>
+									<li class="n-r"><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a></li>
+								</ul>
+								<ul class="clear">
+									<li class="b-t"><a href="">广泛大概<i class="fa fa-angle-right"></i></a></li>
+									<li class="n-r"><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a></li>
+								</ul>
+								<ul class="clear">
+									<li class="b-t"><a href="">广泛大概<i class="fa fa-angle-right"></i></a></li>
+									<li class="n-r"><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a></li>
+								</ul>
+								<ul class="clear">
+									<li class="b-t"><a href="">广泛大概<i class="fa fa-angle-right"></i></a></li>
+									<li class="n-r"><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">个分的高</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a><a href="">广泛大概</a></li>
+								</ul>
+							</dd>
+						</dl>
+					</div>
+				</div>
+				<div class="menu-normal fl"><a href="">商城首页</a><a href=""><i class="hot"></i>新品上市</a><a href="">口碑热卖</a><a href=""><i class="new"></i>特惠促销</a><a href="">包邮专区</a><a href="">超值团购</a><a href="">会员套餐</a><a href="">旅游服务</a></div>
+			</div>
+		</div>
+	</header>
+	<main class="main-content bgfff">	
+		<div class="banner clear">
+			<div class="bd">
+				<ul>
+                    <li><img src="../img/m-aut-banner.png"></li>
+				</ul>
+			</div>
+		</div>
+        
+        
+        <div class="w1200">
+        <!--1F-->
+        <script language="javascript">
+        	function scrollview1()
+			{
+				
+				document.getElementById('pos_f1').style.display="block";
+				document.getElementById('pos_f1').scrollIntoView();
+				document.getElementById('pos_f2').style.display="none";
+				document.getElementById('pos_f3').style.display="none";
+			}
+			function scrollview2()
+			{
+				
+				document.getElementById('pos_f2').style.display="block";
+				document.getElementById('pos_f2').scrollIntoView();
+				document.getElementById('pos_f1').style.display="none";
+				document.getElementById('pos_f3').style.display="none";
+			}
+			function scrollview3()
+			{
+				
+				document.getElementById('pos_f3').style.display="block";
+				document.getElementById('pos_f3').scrollIntoView();
+				document.getElementById('pos_f1').style.display="none";
+				document.getElementById('pos_f2').style.display="none";
+			}
+        </script>
+        
+        <center>
+            <div style="text-align:center;">
+            <!-- 选项卡开始 -->
+              <div class="nTab">
+                <!-- 标题开始 -->
+                <div id="pos_f1" style="width:100%;height:20px;display:none;"></div>
+                <div class="TabTitle">
+                  <ul>
+                    <a href="javascript:void(0)" onclick="scrollview1();"><li class="active" style="background:url(../img/button_1.png);"> </li></a>
+                    <a href="javascript:void(0)" onclick="scrollview2();"><li class="normal" style="background:url(../img/button_2.png);margin-left:10px;"></li></a>
+                    <a href="javascript:void(0)" onclick="scrollview3();"><li class="normal" style="background:url(../img/button_3.png);margin-left:10px;"></li></a>
+                  </ul>
+                </div>
+                <!-- 内容开始 -->
+                <div class="TabContent">
+                  <!--第一横-->
+                  	<div class="tbcontent">
+                    	<div class="tabcl592">
+                        	<div class="limg"><i></i><a href="https://www.tps138.com/index/product?snm=40405139" target="_blank"><img src="../img/liu01.jpg" alt=""></a></div>
+                            <div class="r350">
+                            	<div class="top174">
+                                    <dl class="tit">
+                                        <dd class="fl">
+                                            <p class="fs-18"><a href="https://www.tps138.com/index/product?snm=40405139" target="_blank">53°开国大典500ml*2瓶</a></p>
+                                        </dd>
+                                        <dt class="fr">
+                                            <s class="qizhi-CNY"></s>
+                                            <p class="c-bb">中国</p>
+                                        </dt>
+                                    </dl>
+                                </div>
+                                <div class="bot65">
+                                	<dl class="tit">
+                                        <dd class="fl">
+                                            <p class="fw-b">中秋欢庆价：</p>
+                                            <p class="c-o fs-14">$210.00 </p>
+                                        </dd>
+                                        <dt class="fr">
+                                        	<div class="btnonce"><a href="https://www.tps138.com/index/product?snm=40405139" target="_blank">马上抢购</a></div>
+                                        </dt>
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tabcl592 mgl10">
+                        	<div class="limg"><i></i><a href="https://www.tps138.com/index/product?snm=91841153" target="_blank"><img src="../img/liu02.jpg" alt=""></a></div>
+                            <div class="r350">
+                            	<div class="top174">
+                                     <dl class="tit">
+                                        <dd class="fl">
+                                            <p class="fs-18"><a href="https://www.tps138.com/index/product?snm=91841153" target="_blank">法国朗德世家窖藏红葡萄酒*2+法国拉格里红葡萄酒*2+西班牙嘉拉红葡萄酒*2+双支袋*3+海马酒师刀</a></p>
+                                        </dd>
+                                        <dt class="fr">
+                                            <s class="qizhi-FR"></s>
+                                            <p class="c-bb">法国</p>
+                                        </dt>
+                                    </dl>
+                                </div>
+                                <div class="bot65">
+                                	<dl class="tit">
+                                        <dd class="fl">
+                                            <p class="fw-b">团购价：</p>
+                                            <p class="c-o fs-14">$242.00</p>
+                                        </dd>
+                                        <dt class="fr">
+                                        	<div class="btnonce"><a href="https://www.tps138.com/index/product?snm=91841153" target="_blank">马上抢购</a></div>
+                                        </dt>
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--第二横-->
+                    <div class="tbcontent mt-10">
+                    	<div class="tabcl592">
+                        	<div class="limg"><i></i><a href="https://www.tps138.com/index/product?snm=64983983" target="_blank"><img src="../img/liu03.jpg" alt=""></a></div>
+                            <div class="r350">
+                            	<div class="top174">
+                                    <dl class="tit">
+                                        <dd class="fl">
+                                            <p class="fs-18"><a href="https://www.tps138.com/index/product?snm=64983983" target="_blank">买一送一 阿根廷进口 INCA太阳酒庄 木桶丹拿（珍藏）红葡萄酒750ml 赠送 太阳妥伦托斯霞多丽白葡萄酒750ml</a></p>
+                                        </dd>
+                                        <dt class="fr">
+                                            <s class="qizhi-ARG"></s>
+                                            <p class="c-bb">阿根廷</p>
+                                        </dt>
+                                    </dl>
+                                </div>
+                                <div class="bot65">
+                                	<dl class="tit">
+                                        <dd class="fl">
+                                            <p class="fw-b">中秋欢庆价：</p>
+                                            <p class="c-o fs-14">$48.20 </p>
+                                        </dd>
+                                        <dt class="fr">
+                                        	<div class="btnonce"><a href="https://www.tps138.com/index/product?snm=64983983" target="_blank">马上抢购</a></div>
+                                        </dt>
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tabcl592 mgl10">
+                        	<div class="limg"><i></i><a href="https://www.tps138.com/index/product?snm=82432072" target="_blank"><img src="../img/liu04.jpg" alt=""></a></div>
+                            <div class="r350">
+                            	<div class="top174">
+                                     <dl class="tit">
+                                        <dd class="fl">
+                                            <p class="fs-18"><a href="https://www.tps138.com/index/product?snm=82432072" target="_blank">买一送一 智利进口 朝凯蓝酒庄 玛薇娜琼瑶浆白葡萄酒750ml 赠送同款白葡萄酒 全国包邮</a></p>
+                                        </dd>
+                                        <dt class="fr">
+                                            <s class="qizhi-CHILE"></s>
+                                            <p class="c-bb">智利</p>
+                                        </dt>
+                                    </dl>
+                                </div>
+                                <div class="bot65">
+                                	<dl class="tit">
+                                        <dd class="fl">
+                                            <p class="fw-b">团购价：</p>
+                                            <p class="c-o fs-14">$59.80</p>
+                                        </dd>
+                                        <dt class="fr">
+                                        	<div class="btnonce"><a href="https://www.tps138.com/index/product?snm=82432072" target="_blank">马上抢购</a></div>
+                                        </dt>
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--第三横-->
+                    <div class="tbcontent mt-10">
+                    	<div class="tabcl592">
+                        	<div class="limg"><i></i><a href="https://www.tps138.com/index/product?snm=53560731" target="_blank"><img src="../img/liu05.jpg" alt=""></a></div>
+                            <div class="r350">
+                            	<div class="top174">
+                                    <dl class="tit">
+                                        <dd class="fl">
+                                            <p class="fs-18"><a href="https://www.tps138.com/index/product?snm=53560731" target="_blank">法国进口 十字纳德古堡葡萄酒750ml/瓶*2瓶 全国包邮</a></p>
+                                        </dd>
+                                        <dt class="fr">
+                                            <s class="qizhi-FR"></s>
+                                            <p class="c-bb">法国</p>
+                                        </dt>
+                                    </dl>
+                                </div>
+                                <div class="bot65">
+                                	<dl class="tit">
+                                        <dd class="fl">
+                                            <p class="fw-b">中秋欢庆价：</p>
+                                            <p class="c-o fs-14">$55.10 </p>
+                                        </dd>
+                                        <dt class="fr">
+                                        	<div class="btnonce"><a href="https://www.tps138.com/index/product?snm=53560731" target="_blank">马上抢购</a></div>
+                                        </dt>
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tabcl592 mgl10">
+                        	<div class="limg"><i></i><a href="https://www.tps138.com/index/product?snm=00160646" target="_blank"><img src="../img/liu06.jpg" alt=""></a></div>
+                            <div class="r350">
+                            	<div class="top174">
+                                     <dl class="tit">
+                                        <dd class="fl">
+                                            <p class="fs-18"><a href="https://www.tps138.com/index/product?snm=00160646" target="_blank">澳大利亚原装进口 LOT158赤霞珠干红葡萄酒750ML/瓶*2瓶+富洛赤霞珠干红葡萄酒750ML/瓶*2瓶</a></p>
+                                        </dd>
+                                        <dt class="fr">
+                                            <s class="qizhi-AUS"></s>
+                                            <p class="c-bb">澳大利亚</p>
+                                        </dt>
+                                    </dl>
+                                </div>
+                                <div class="bot65">
+                                	<dl class="tit">
+                                        <dd class="fl">
+                                            <p class="fw-b">团购价：</p>
+                                            <p class="c-o fs-14">$160.00</p>
+                                        </dd>
+                                        <dt class="fr">
+                                        	<div class="btnonce"><a href="https://www.tps138.com/index/product?snm=00160646" target="_blank">马上抢购</a></div>
+                                        </dt>
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--第四横-->
+                  	<div class="tbcontent mt-10">
+                    	<div class="tabcl592">
+                        	<div class="limg"><i></i><a href="https://www.tps138.com/index/product?snm=27252676" target="_blank"><img src="../img/liu07.jpg" alt=""></a></div>
+                            <div class="r350">
+                            	<div class="top174">
+                                    <dl class="tit">
+                                        <dd class="fl">
+                                            <p class="fs-18"><a href="https://www.tps138.com/index/product?snm=27252676" target="_blank">澳大利亚原装进口 富洛赤霞珠干红葡萄酒750ML/瓶*2瓶</a></p>
+                                        </dd>
+                                        <dt class="fr">
+                                            <s class="qizhi-AUS"></s>
+                                            <p class="c-bb">澳大利亚</p>
+                                        </dt>
+                                    </dl>
+                                </div>
+                                <div class="bot65">
+                                	<dl class="tit">
+                                        <dd class="fl">
+                                            <p class="fw-b">中秋欢庆价：</p>
+                                            <p class="c-o fs-14">$78.00 </p>
+                                        </dd>
+                                        <dt class="fr">
+                                        	<div class="btnonce"><a href="https://www.tps138.com/index/product?snm=27252676" target="_blank">马上抢购</a></div>
+                                        </dt>
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tabcl592 mgl10">
+                        	<div class="limg"><i></i><a href="https://www.tps138.com/index/product?snm=35999298" target="_blank"><img src="../img/liu08.jpg" alt=""></a></div>
+                            <div class="r350">
+                            	<div class="top174">
+                                     <dl class="tit">
+                                        <dd class="fl">
+                                            <p class="fs-18"><a href="https://www.tps138.com/index/product?snm=35999298" target="_blank">法国阿布尔杜钟楼干红葡萄酒*1+法国朗德世家经典红葡萄酒*1+西班牙塔帕红葡萄酒*1+智利圣玛赤霞珠干红葡萄酒*1（此产品只提供礼品袋，不提供木盒）</a></p>
+                                        </dd>
+                                        <dt class="fr">
+                                            <s class="qizhi-FR"></s>
+                                            <p class="c-bb">法国</p>
+                                        </dt>
+                                    </dl>
+                                </div>
+                                <div class="bot65">
+                                	<dl class="tit">
+                                        <dd class="fl">
+                                            <p class="fw-b">团购价：</p>
+                                            <p class="c-o fs-14">$156.00</p>
+                                        </dd>
+                                        <dt class="fr">
+                                        	<div class="btnonce"><a href="https://www.tps138.com/index/product?snm=35999298" target="_blank">马上抢购</a></div>
+                                        </dt>
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tbcontent1 mt-40">
+                    	<div class="tabcl296">
+                        	<div class="timg"><a href="https://www.tps138.com/index/product?snm=80183038" target="_blank"><img src="../img/liu09.jpg" alt=""></a></div>
+                            <div class="bcont295">
+                            	<dl class="tit">
+                                    <dd class="fl">
+                                        <p><a href="https://www.tps138.com/index/product?snm=80183038" target="_blank">香槟葡萄酒套餐 红香槟汽泡酒*2+卡门王子+碧颂男爵（此产品只提供礼品袋，不提供木盒）</a></p>
+                                        <p class="c-o fs-14">$170.00</p>
+                                    </dd>
+                                    <dt class="fr">
+                                        <s class="qizhi-FR"></s>
+                                        <p class="c-bb">法国</p>
+                                    </dt>
+                                </dl>
+                            </div>
+                        </div>
+                        <div class="tabcl296 ml-5">
+                        	<div class="timg"><a href="https://www.tps138.com/index/product?snm=69182915" target="_blank"><img src="../img/liu10.jpg" alt=""></a></div>
+                            <div class="bcont295">
+                            	<dl class="tit">
+                                    <dd class="fl">
+                                        <p><a href="https://www.tps138.com/index/product?snm=69182915" target="_blank">法国进口 约瑟芬-盛宴红葡萄酒750ml/瓶*2瓶</a></p>
+                                        <p class="c-o fs-14">$62.60</p>
+                                    </dd>
+                                    <dt class="fr">
+                                        <s class="qizhi-FR"></s>
+                                        <p class="c-bb">法国</p>
+                                    </dt>
+                                </dl>
+                            </div>
+                        </div>
+                        <div class="tabcl296 ml-5">
+                        	<div class="timg"><a href="https://www.tps138.com/index/product?snm=45181260" target="_blank"><img src="../img/liu11.jpg" alt=""></a></div>
+                            <div class="bcont295">
+                            	<dl class="tit">
+                                    <dd class="fl">
+                                        <p><a href="https://www.tps138.com/index/product?snm=45181260" target="_blank">智利圣玛赤霞珠红葡萄酒</a></p>
+                                        <p class="c-o fs-14">$58</p>
+                                    </dd>
+                                    <dt class="fr">
+                                        <s class="qizhi-CHILE"></s>
+                                        <p class="c-bb">智利</p>
+                                    </dt>
+                                </dl>
+                            </div>
+                        </div>
+                        <div class="tabcl296 ml-5">
+                        	<div class="timg"><a href="https://www.tps138.com/index/product?snm=29006749" target="_blank"><img src="../img/liu12.jpg" alt=""></a></div>
+                            <div class="bcont295">
+                            	<dl class="tit">
+                                    <dd class="fl">
+                                        <p><a href="https://www.tps138.com/index/product?snm=29006749" target="_blank">红白葡萄酒套装B 黑咖菲红+黑咖菲白+碧颂男爵+碧颂男爵</a></p>
+                                        <p class="c-o fs-14">$160.00</p>
+                                    </dd>
+                                    <dt class="fr">
+                                        <s class="qizhi-FR"></s>
+                                        <p class="c-bb">法国</p>
+                                    </dt>
+                                </dl>
+                            </div>
+                       </div>
+                    
+                    <div class="tbcontent1 mt-15">
+                    	<div class="tabcl296">
+                        	<div class="timg"><a href="https://www.tps138.com/index/product?snm=72018548" target="_blank"><img src="../img/liu13.jpg" alt=""></a></div>
+                            <div class="bcont295">
+                            	<dl class="tit">
+                                    <dd class="fl">
+                                        <p><a href="https://www.tps138.com/index/product?snm=72018548" target="_blank">澳大利亚原装进口 LOT158赤霞珠干红葡萄酒750ML/瓶*2瓶</a></p>
+                                        <p class="c-o fs-14">$78.00</p>
+                                    </dd>
+                                    <dt class="fr">
+                                        <s class="qizhi-AUS"></s>
+                                        <p class="c-bb">澳大利亚</p>
+                                    </dt>
+                                </dl>
+                            </div>
+                        </div>
+                        <div class="tabcl296 ml-5">
+                        	<div class="timg"><a href="https://www.tps138.com/index/product?snm=83109457" target="_blank"><img src="../img/liu14.jpg" alt=""></a></div>
+                            <div class="bcont295">
+                            	<dl class="tit">
+                                    <dd class="fl">
+                                        <p><a href="https://www.tps138.com/index/product?snm=83109457" target="_blank">法国蓝玫瑰庄园红葡萄酒750ML*2+法国朗德世家窖藏红葡萄酒750ML*2</a></p>
+                                        <p class="c-o fs-14">$156.00</p>
+                                    </dd>
+                                    <dt class="fr">
+                                        <s class="qizhi-FR"></s>
+                                        <p class="c-bb">法国</p>
+                                    </dt>
+                                </dl>
+                            </div>
+                        </div>
+                        <div class="tabcl296 ml-5">
+                        	<div class="timg"><a href="https://www.tps138.com/index/product?snm=28907172" target="_blank"><img src="../img/liu15.jpg" alt=""></a></div>
+                            <div class="bcont295">
+                            	<dl class="tit">
+                                    <dd class="fl">
+                                        <p><a href="https://www.tps138.com/index/product?snm=28907172" target="_blank">53度茅台高尔夫会员酒</a></p>
+                                        <p class="c-o fs-14">$262.50</p>
+                                    </dd>
+                                    <dt class="fr">
+                                        <s class="qizhi-CNY"></s>
+                                        <p class="c-bb">中国</p>
+                                    </dt>
+                                </dl>
+                            </div>
+                        </div>
+                        <div class="tabcl296 ml-5">
+                        	<div class="timg"><a href="https://www.tps138.com/index/product?snm=80857768" target="_blank"><img src="../img/liu16.jpg" alt=""></a></div>
+                            <div class="bcont295">
+                            	<dl class="tit">
+                                    <dd class="fl">
+                                        <p><a href="https://www.tps138.com/index/product?snm=80857768" target="_blank">鹏宝庄园红葡萄酒（正牌）</a></p>
+                                        <p class="c-o fs-14">$95.00</p>
+                                    </dd>
+                                    <dt class="fr">
+                                        <s class="qizhi-FR"></s>
+                                        <p class="c-bb">法国</p>
+                                    </dt>
+                                </dl>
+                            </div>
+                    </div>
+                    
+                </div>
+              </div>
+              </div>
+           </center>
+           
+           <!--2F-->
+        <center>
+            <div style="text-align:center;">
+            
+            <!-- 选项卡开始 -->
+              <div class="nTab">
+                <!-- 标题开始 -->
+                <div id="pos_f2" style="width:100%;height:20px;display:none;"></div>
+                <div class="TabTitle">
+                
+                  <ul>
+                    <a href="javascript:void(0)" onclick="scrollview1();"><li class="normal" style="background:url(../img/button_1.png);"> </li></a>
+                    <a href="javascript:void(0)" onclick="scrollview2();"><li class="active" style="background:url(../img/button_2.png);margin-left:10px;"></li></a>
+                    <a href="javascript:void(0)" onclick="scrollview3();"><li class="normal" style="background:url(../img/button_3.png);margin-left:10px;"></li></a>
+                  </ul>
+                </div>
+                <!-- 内容开始 -->
+                
+                <div class="TabContent">
+                  <!--第一横-->
+                  	<div class="tbcontent">
+                    	<div class="tabcl592">
+                        	<div class="limg"><i></i><a href="https://www.tps138.com/index/product?snm=48756260" target="_blank"><img src="../img/tea01.jpg" alt=""></a></div>
+                            <div class="r350">
+                            	<div class="top174">
+                                    <dl class="tit">
+                                        <dd class="fl">
+                                            <p class="fs-18"><a href="https://www.tps138.com/index/product?snm=48756260" target="_blank">新包装套餐D 普洱茶礼盒500克+大红袍礼盒250克</a></p>
+                                        </dd>
+                                        <dt class="fr">
+                                            <s class="qizhi-CNY"></s>
+                                            <p class="c-bb">中国</p>
+                                        </dt>
+                                    </dl>
+                                </div>
+                                <div class="bot65">
+                                	<dl class="tit">
+                                        <dd class="fl">
+                                            <p class="fw-b">中秋欢庆价：</p>
+                                            <p class="c-o fs-14">$190.00 </p>
+                                        </dd>
+                                        <dt class="fr">
+                                        	<div class="btnonce"><a href="https://www.tps138.com/index/product?snm=48756260" target="_blank">马上抢购</a></div>
+                                        </dt>
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tabcl592 mgl10">
+                        	<div class="limg"><i></i><a href="https://www.tps138.com/index/product?snm=14144776" target="_blank"><img src="../img/tea02.jpg" alt=""></a></div>
+                            <div class="r350">
+                            	<div class="top174">
+                                     <dl class="tit">
+                                        <dd class="fl">
+                                            <p class="fs-18"><a href="https://www.tps138.com/index/product?snm=14144776" target="_blank">新包装 套餐A铁观音木礼盒250克+金骏眉500克</a></p>
+                                        </dd>
+                                        <dt class="fr">
+                                            <s class="qizhi-CNY"></s>
+                                            <p class="c-bb">中国</p>
+                                        </dt>
+                                    </dl>
+                                </div>
+                                <div class="bot65">
+                                	<dl class="tit">
+                                        <dd class="fl">
+                                            <p class="fw-b">团购价：</p>
+                                            <p class="c-o fs-14">$190.00</p>
+                                        </dd>
+                                        <dt class="fr">
+                                        	<div class="btnonce"><a href="https://www.tps138.com/index/product?snm=14144776" target="_blank">马上抢购</a></div>
+                                        </dt>
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--第二横-->
+                    <div class="tbcontent mt-10">
+                    	<div class="tabcl592">
+                        	<div class="limg"><i></i><a href="https://www.tps138.com/index/product?snm=78511968" target="_blank"><img src="../img/tea03.jpg" alt=""></a></div>
+                            <div class="r350">
+                            	<div class="top174">
+                                    <dl class="tit">
+                                        <dd class="fl">
+                                            <p class="fs-18"><a href="https://www.tps138.com/index/product?snm=78511968" target="_blank">福鼎大白茶 白牡丹茶饼 礼盒装350克/饼</a></p>
+                                        </dd>
+                                        <dt class="fr">
+                                            <s class="qizhi-CNY"></s>
+                                            <p class="c-bb">中国</p>
+                                        </dt>
+                                    </dl>
+                                </div>
+                                <div class="bot65">
+                                	<dl class="tit">
+                                        <dd class="fl">
+                                            <p class="fw-b">中秋欢庆价：</p>
+                                            <p class="c-o fs-14">$100.00 </p>
+                                        </dd>
+                                        <dt class="fr">
+                                        	<div class="btnonce"><a href="https://www.tps138.com/index/product?snm=78511968" target="_blank">马上抢购</a></div>
+                                        </dt>
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tabcl592 mgl10">
+                        	<div class="limg"><i></i><a href="https://www.tps138.com/index/product?snm=83374579" target="_blank"><img src="../img/tea04.jpg" alt=""></a></div>
+                            <div class="r350">
+                            	<div class="top174">
+                                     <dl class="tit">
+                                        <dd class="fl">
+                                            <p class="fs-18"><a href="https://www.tps138.com/index/product?snm=83374579" target="_blank">新包装套餐E 龙井茶礼盒500克+紫阳富硒茶礼盒500克</a></p>
+                                        </dd>
+                                        <dt class="fr">
+                                            <s class="qizhi-CNY"></s>
+                                            <p class="c-bb">中国</p>
+                                        </dt>
+                                    </dl>
+                                </div>
+                                <div class="bot65">
+                                	<dl class="tit">
+                                        <dd class="fl">
+                                            <p class="fw-b">团购价：</p>
+                                            <p class="c-o fs-14">$190.00</p>
+                                        </dd>
+                                        <dt class="fr">
+                                        	<div class="btnonce"><a href="https://www.tps138.com/index/product?snm=83374579" target="_blank">马上抢购</a></div>
+                                        </dt>
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--第三横-->
+                    <div class="tbcontent mt-10">
+                    	<div class="tabcl592">
+                        	<div class="limg"><i></i><a href="https://www.tps138.com/index/product?snm=00912340" target="_blank"><img src="../img/tea05.jpg" alt=""></a></div>
+                            <div class="r350">
+                            	<div class="top174">
+                                    <dl class="tit">
+                                        <dd class="fl">
+                                            <p class="fs-18"><a href="https://www.tps138.com/index/product?snm=00912340" target="_blank">茉莉花茶500克 + 金丝黄菊20朵/盒</a></p>
+                                        </dd>
+                                        <dt class="fr">
+                                            <s class="qizhi-CNY"></s>
+                                            <p class="c-bb">中国</p>
+                                        </dt>
+                                    </dl>
+                                </div>
+                                <div class="bot65">
+                                	<dl class="tit">
+                                        <dd class="fl">
+                                            <p class="fw-b">中秋欢庆价：</p>
+                                            <p class="c-o fs-14">$150.00 </p>
+                                        </dd>
+                                        <dt class="fr">
+                                        	<div class="btnonce"><a href="https://www.tps138.com/index/product?snm=00912340" target="_blank">马上抢购</a></div>
+                                        </dt>
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tabcl592 mgl10">
+                        	<div class="limg"><i></i><a href="https://www.tps138.com/index/product?snm=64605357" target="_blank"><img src="../img/tea06.jpg" alt=""></a></div>
+                            <div class="r350">
+                            	<div class="top174">
+                                     <dl class="tit">
+                                        <dd class="fl">
+                                            <p class="fs-18"><a href="https://www.tps138.com/index/product?snm=64605357" target="_blank">康汇百年 枣杞牛蒡茶精品装 20包*7克/罐*2 全国包邮</a></p>
+                                        </dd>
+                                        <dt class="fr">
+                                            <s class="qizhi-CNY"></s>
+                                            <p class="c-bb">中国</p>
+                                        </dt>
+                                    </dl>
+                                </div>
+                                <div class="bot65">
+                                	<dl class="tit">
+                                        <dd class="fl">
+                                            <p class="fw-b">团购价：</p>
+                                            <p class="c-o fs-14">$70.18</p>
+                                        </dd>
+                                        <dt class="fr">
+                                        	<div class="btnonce"><a href="https://www.tps138.com/index/product?snm=64605357" target="_blank">马上抢购</a></div>
+                                        </dt>
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--第四横-->
+                  	<div class="tbcontent mt-10">
+                    	<div class="tabcl592">
+                        	<div class="limg"><i></i><a href="https://www.tps138.com/index/product?snm=28617365" target="_blank"><img src="../img/tea07.jpg" alt=""></a></div>
+                            <div class="r350">
+                            	<div class="top174">
+                                    <dl class="tit">
+                                        <dd class="fl">
+                                            <p class="fs-18"><a href="https://www.tps138.com/index/product?snm=28617365" target="_blank">新包装 大红袍礼盒250克</a></p>
+                                        </dd>
+                                        <dt class="fr">
+                                            <s class="qizhi-CNY"></s>
+                                            <p class="c-bb">中国</p>
+                                        </dt>
+                                    </dl>
+                                </div>
+                                <div class="bot65">
+                                	<dl class="tit">
+                                        <dd class="fl">
+                                            <p class="fw-b">中秋欢庆价：</p>
+                                            <p class="c-o fs-14">$90.00 </p>
+                                        </dd>
+                                        <dt class="fr">
+                                        	<div class="btnonce"><a href="https://www.tps138.com/index/product?snm=28617365" target="_blank">马上抢购</a></div>
+                                        </dt>
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tabcl592 mgl10">
+                        	<div class="limg"><i></i><a href="https://www.tps138.com/index/product?snm=95938361" target="_blank"><img src="../img/tea08.jpg" alt=""></a></div>
+                            <div class="r350">
+                            	<div class="top174">
+                                     <dl class="tit">
+                                        <dd class="fl">
+                                            <p class="fs-18"><a href="https://www.tps138.com/index/product?snm=95938361" target="_blank">产品包装已全线升级，自备送礼佳品首选----汉中仙毫500G+大红袍250G</a></p>
+                                        </dd>
+                                        <dt class="fr">
+                                            <s class="qizhi-CNY"></s>
+                                            <p class="c-bb">中国</p>
+                                        </dt>
+                                    </dl>
+                                </div>
+                                <div class="bot65">
+                                	<dl class="tit">
+                                        <dd class="fl">
+                                            <p class="fw-b">团购价：</p>
+                                            <p class="c-o fs-14">$220.00</p>
+                                        </dd>
+                                        <dt class="fr">
+                                        	<div class="btnonce"><a href="https://www.tps138.com/index/product?snm=95938361" target="_blank">马上抢购</a></div>
+                                        </dt>
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tbcontent1 mt-40">
+                    	<div class="tabcl296">
+                        	<div class="timg"><a href="https://www.tps138.com/index/product?snm=16607868" target="_blank"><div class="w228"><img src="../img/tea09.jpg"></div></a></div>
+                            <div class="bcont295">
+                            	<dl class="tit">
+                                    <dd class="fl">
+                                        <p><a href="https://www.tps138.com/index/product?snm=16607868" target="_blank">新包装 金骏眉礼盒500克</a></p>
+                                        <p class="c-o fs-14">$110.00</p>
+                                    </dd>
+                                    <dt class="fr">
+                                        <s class="qizhi-CNY"></s>
+                                        <p class="c-bb">中国</p>
+                                    </dt>
+                                </dl>
+                            </div>
+                        </div>
+                        <div class="tabcl296 ml-5">
+                        	<div class="timg"><a href="https://www.tps138.com/index/product?snm=93643622" target="_blank"><div class="w228"><img src="../img/tea10.jpg" alt=""></div></a></div>
+                            <div class="bcont295">
+                            	<dl class="tit">
+                                    <dd class="fl">
+                                        <p><a href="https://www.tps138.com/index/product?snm=93643622" target="_blank">茗茶精品 巴蜀贡品碧螺春250克/罐*2罐</a></p>
+                                        <p class="c-o fs-14">$40.00</p>
+                                    </dd>
+                                    <dt class="fr">
+                                        <s class="qizhi-CNY"></s>
+                                        <p class="c-bb">中国</p>
+                                    </dt>
+                                </dl>
+                            </div>
+                        </div>
+                        <div class="tabcl296 ml-5">
+                        	<div class="timg"><a href="https://www.tps138.com/index/product?snm=92437679" target="_blank"><div class="w228"><img src="../img/tea11.jpg" alt=""></div></a></div>
+                            <div class="bcont295">
+                            	<dl class="tit">
+                                    <dd class="fl">
+                                        <p><a href="https://www.tps138.com/index/product?snm=92437679" target="_blank">新包装 紫阳富硒茶礼盒500克</a></p>
+                                        <p class="c-o fs-14">$90.00</p>
+                                    </dd>
+                                    <dt class="fr">
+                                        <s class="qizhi-CNY"></s>
+                                        <p class="c-bb">中国</p>
+                                    </dt>
+                                </dl>
+                            </div>
+                        </div>
+                        <div class="tabcl296 ml-5">
+                        	<div class="timg"><a href="https://www.tps138.com/index/product?snm=98165719" target="_blank"><div class="w228"><img src="../img/tea12.jpg" alt=""></div></a></div>
+                            <div class="bcont295">
+                            	<dl class="tit">
+                                    <dd class="fl">
+                                        <p><a href="https://www.tps138.com/index/product?snm=98165719" target="_blank">新包装 龙井茶礼盒500克</a></p>
+                                        <p class="c-o fs-14">$110.00</p>
+                                    </dd>
+                                    <dt class="fr">
+                                        <s class="qizhi-CNY"></s>
+                                        <p class="c-bb">中国</p>
+                                    </dt>
+                                </dl>
+                            </div>
+                       </div>
+                    </div>
+                    
+                    <div class="tbcontent1 mt-15">
+                    	<div class="tabcl296">
+                        	<div class="timg"><a href="https://www.tps138.com/index/product?snm=38768087" target="_blank"><div class="w228"><img src="../img/tea13.jpg" alt=""></div></a></div>
+                            <div class="bcont295">
+                            	<dl class="tit">
+                                    <dd class="fl">
+                                        <p><a href="https://www.tps138.com/index/product?snm=38768087" target="_blank">感恩大回馈安吉白茶125克*2罐</a></p>
+                                        <p class="c-o fs-14">$40.00</p>
+                                    </dd>
+                                    <dt class="fr">
+                                        <s class="qizhi-CNY"></s>
+                                        <p class="c-bb">中国</p>
+                                    </dt>
+                                </dl>
+                            </div>
+                        </div>
+                        <div class="tabcl296 ml-5">
+                        	<div class="timg"><a href="https://www.tps138.com/index/product?snm=51214371" target="_blank"><div class="w228"><img src="../img/tea14.jpg" alt=""></div></a></div>
+                            <div class="bcont295">
+                            	<dl class="tit">
+                                    <dd class="fl">
+                                        <p><a href="https://www.tps138.com/index/product?snm=51214371" target="_blank">茗茶精品 桐木关经典金骏眉250克/罐*2罐</a></p>
+                                        <p class="c-o fs-14">$40.00</p>
+                                    </dd>
+                                    <dt class="fr">
+                                        <s class="qizhi-CNY"></s>
+                                        <p class="c-bb">中国</p>
+                                    </dt>
+                                </dl>
+                            </div>
+                        </div>
+                        <div class="tabcl296 ml-5">
+                        	<div class="timg"><a href="https://www.tps138.com/index/product?snm=38864857" target="_blank"><div class="w228"><img src="../img/tea15.jpg" alt=""></div></a></div>
+                            <div class="bcont295">
+                            	<dl class="tit">
+                                    <dd class="fl">
+                                        <p><a href="https://www.tps138.com/index/product?snm=38864857" target="_blank">感恩大回馈正山小种250克*2罐</a></p>
+                                        <p class="c-o fs-14">$40.00</p>
+                                    </dd>
+                                    <dt class="fr">
+                                        <s class="qizhi-CNY"></s>
+                                        <p class="c-bb">中国</p>
+                                    </dt>
+                                </dl>
+                            </div>
+                        </div>
+                        <div class="tabcl296 ml-5">
+                        	<div class="timg"><a href="https://www.tps138.com/index/product?snm=83564974" target="_blank"><div class="w228"><img src="../img/tea16.jpg" alt=""></div></a></div>
+                            <div class="bcont295">
+                            	<dl class="tit">
+                                    <dd class="fl">
+                                        <p><a href="https://www.tps138.com/index/product?snm=83564974" target="_blank">新包装 铁观音纸礼盒250克</a></p>
+                                        <p class="c-o fs-14">$80.00</p>
+                                    </dd>
+                                    <dt class="fr">
+                                        <s class="qizhi-CNY"></s>
+                                        <p class="c-bb">中国</p>
+                                    </dt>
+                                </dl>
+                            </div>
+                       </div>
+                    </div>
+                    
+                    <div class="tbcontent1 mt-15">
+                    	<div class="tabcl296">
+                        	<div class="timg"><a href="https://www.tps138.com/index/product?snm=08043915" target="_blank"><div class="w228"><img src="../img/tea17.jpg" alt=""></div></a></div>
+                            <div class="bcont295">
+                            	<dl class="tit">
+                                    <dd class="fl">
+                                        <p><a href="https://www.tps138.com/index/product?snm=08043915" target="_blank">金丝黄菊20朵/盒，独立包装</a></p>
+                                        <p class="c-o fs-14">$70.00</p>
+                                    </dd>
+                                    <dt class="fr">
+                                        <s class="qizhi-CNY"></s>
+                                        <p class="c-bb">中国</p>
+                                    </dt>
+                                </dl>
+                            </div>
+                        </div>
+                        <div class="tabcl296 ml-5">
+                        	<div class="timg"><a href="https://www.tps138.com/index/product?snm=84453078" target="_blank"><div class="w228"><img src="../img/tea18.jpg" alt=""></div></a></div>
+                            <div class="bcont295">
+                            	<dl class="tit">
+                                    <dd class="fl">
+                                        <p><a href="https://www.tps138.com/index/product?snm=84453078" target="_blank">新包装套餐B 铁观音纸礼盒500克+铁观音纸礼盒250克</a></p>
+                                        <p class="c-o fs-14">$180.00</p>
+                                    </dd>
+                                    <dt class="fr">
+                                        <s class="qizhi-CNY"></s>
+                                        <p class="c-bb">中国</p>
+                                    </dt>
+                                </dl>
+                            </div>
+                        </div>
+                        <div class="tabcl296 ml-5">
+                        	<div class="timg"><a href="https://www.tps138.com/index/product?snm=29853518" target="_blank"><div class="w228"><img src="../img/tea19.jpg" alt=""></div></a></div>
+                            <div class="bcont295">
+                            	<dl class="tit">
+                                    <dd class="fl">
+                                        <p><a href="https://www.tps138.com/index/product?snm=29853518" target="_blank">新包装 铁观音纸礼盒500克</a></p>
+                                        <p class="c-o fs-14">$110.00</p>
+                                    </dd>
+                                    <dt class="fr">
+                                        <s class="qizhi-CNY"></s>
+                                        <p class="c-bb">中国</p>
+                                    </dt>
+                                </dl>
+                            </div>
+                        </div>
+                        <div class="tabcl296 ml-5">
+                        	<div class="timg"><a href="https://www.tps138.com/index/product?snm=61403133" target="_blank"><div class="w228"><img src="../img/tea20.jpg" alt=""></div></a></div>
+                            <div class="bcont295">
+                            	<dl class="tit">
+                                    <dd class="fl">
+                                        <p><a href="https://www.tps138.com/index/product?snm=61403133" target="_blank">福鼎白茶 老白茶茶饼350克/饼</a></p>
+                                        <p class="c-o fs-14">$27.00</p>
+                                    </dd>
+                                    <dt class="fr">
+                                        <s class="qizhi-CNY"></s>
+                                        <p class="c-bb">中国</p>
+                                    </dt>
+                                </dl>
+                            </div>
+                       </div>
+
+                    </div>
+                    
+                </div>
+              </div>
+              </div>
+           </center>
+           
+           <!--3F-->
+           
+        <center>
+            <div style="text-align:center;">
+            
+            <!-- 选项卡开始 -->
+              <div class="nTab">
+              <div id="pos_f3" style="width:100%;height:40px;display:none;"></div>
+                <!-- 标题开始 -->
+                <a name="3F"></a>
+                <div class="TabTitle">
+                
+                  <ul>
+                    <a href="javascript:void(0)" onclick="scrollview1();"><li class="normal" style="background:url(../img/button_1.png);"> </li></a>
+                    <a href="javascript:void(0)" onclick="scrollview2();"><li class="normal" style="background:url(../img/button_2.png);margin-left:10px;"></li></a>
+                    <a href="javascript:void(0)" onclick="scrollview3();"><li class="active" style="background:url(../img/button_3.png);margin-left:10px;"></li></a>
+                  </ul>
+                </div>
+                
+                <!-- 内容开始 -->
+                <div class="TabContent">
+                  <!--第一横-->
+                  	<div class="tbcontent">
+                    	<div class="tabcl592">
+                        	<div class="limg"><i></i><a href="https://www.tps138.com/index/product?snm=59854630" target="_blank"><img src="../img/mk01.jpg" alt=""></a></div>
+                            <div class="r350">
+                            	<div class="top174">
+                                    <dl class="tit">
+                                        <dd class="fl">
+                                            <p class="fs-18"><a href="https://www.tps138.com/index/product?snm=59854630" target="_blank">岭南酒店 岭月臻品 奶黄月饼38克*8/盒 全国包邮</a></p>
+                                        </dd>
+                                        <dt class="fr">
+                                            <s class="qizhi-CNY"></s>
+                                            <p class="c-bb">中国</p>
+                                        </dt>
+                                    </dl>
+                                </div>
+                                <div class="bot65">
+                                	<dl class="tit">
+                                        <dd class="fl">
+                                            <p class="fw-b">中秋欢庆价：</p>
+                                            <p class="c-o fs-14">$32.00 </p>
+                                        </dd>
+                                        <dt class="fr">
+                                        	<div class="btnonce"><a href="https://www.tps138.com/index/product?snm=59854630" target="_blank">马上抢购</a></div>
+                                        </dt>
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tabcl592 mgl10">
+                        	<div class="limg"><i></i><a href="https://www.tps138.com/index/product?snm=06407110" target="_blank"><img src="../img/mk02.jpg" alt=""></a></div>
+                            <div class="r350">
+                            	<div class="top174">
+                                     <dl class="tit">
+                                        <dd class="fl">
+                                            <p class="fs-18"><a href="https://www.tps138.com/index/product?snm=06407110" target="_blank">岭南酒店 岭月臻品 双黄纯白莲蓉月饼165克*4/盒 全国包邮</a></p>
+                                        </dd>
+                                        <dt class="fr">
+                                            <s class="qizhi-CNY"></s>
+                                            <p class="c-bb">中国</p>
+                                        </dt>
+                                    </dl>
+                                </div>
+                                <div class="bot65">
+                                	<dl class="tit">
+                                        <dd class="fl">
+                                            <p class="fw-b">团购价：</p>
+                                            <p class="c-o fs-14">$24.80</p>
+                                        </dd>
+                                        <dt class="fr">
+                                        	<div class="btnonce"><a href="https://www.tps138.com/index/product?snm=06407110" target="_blank">马上抢购</a></div>
+                                        </dt>
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--第二横-->
+                    <div class="tbcontent mt-10">
+                    	<div class="tabcl592">
+                        	<div class="limg"><i></i><a href="https://www.tps138.com/index/product?snm=12596447" target="_blank"><img src="../img/mk03.jpg" alt=""></a></div>
+                            <div class="r350">
+                            	<div class="top174">
+                                    <dl class="tit">
+                                        <dd class="fl">
+                                            <p class="fs-18"><a href="https://www.tps138.com/index/product?snm=12596447" target="_blank">岭南酒店 岭月臻品 金腿五仁月饼165克*4/盒 全国包邮</a></p>
+                                        </dd>
+                                        <dt class="fr">
+                                            <s class="qizhi-CNY"></s>
+                                            <p class="c-bb">中国</p>
+                                        </dt>
+                                    </dl>
+                                </div>
+                                <div class="bot65">
+                                	<dl class="tit">
+                                        <dd class="fl">
+                                            <p class="fw-b">中秋欢庆价：</p>
+                                            <p class="c-o fs-14">$27.20 </p>
+                                        </dd>
+                                        <dt class="fr">
+                                        	<div class="btnonce"><a href="https://www.tps138.com/index/product?snm=12596447" target="_blank">马上抢购</a></div>
+                                        </dt>
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tabcl592 mgl10">
+                        	<div class="limg"><i></i><a href="https://www.tps138.com/index/product?snm=72310832" target="_blank"><img src="../img/mk04.jpg" alt=""></a></div>
+                            <div class="r350">
+                            	<div class="top174">
+                                     <dl class="tit">
+                                        <dd class="fl">
+                                            <p class="fs-18"><a href="https://www.tps138.com/index/product?snm=72310832" target="_blank">Amalee燕窝月饼礼盒 中秋佳礼月饼礼盒 8种口味 100g/个*8 礼盒装 全国包邮</a></p>
+                                        </dd>
+                                        <dt class="fr">
+                                            <s class="qizhi-CNY"></s>
+                                            <p class="c-bb">中国</p>
+                                        </dt>
+                                    </dl>
+                                </div>
+                                <div class="bot65">
+                                	<dl class="tit">
+                                        <dd class="fl">
+                                            <p class="fw-b">团购价：</p>
+                                            <p class="c-o fs-14">$44.50</p>
+                                        </dd>
+                                        <dt class="fr">
+                                        	<div class="btnonce"><a href="https://www.tps138.com/index/product?snm=72310832" target="_blank">马上抢购</a></div>
+                                        </dt>
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--第三横-->
+                    <div class="tbcontent mt-10">
+                    	<div class="tabcl592">
+                        	<div class="limg"><i></i><a href="https://www.tps138.com/index/product?snm=73733710" target="_blank"><img src="../img/mk05.jpg" alt=""></a></div>
+                            <div class="r350">
+                            	<div class="top174">
+                                    <dl class="tit">
+                                        <dd class="fl">
+                                            <p class="fs-18"><a href="https://www.tps138.com/index/product?snm=73733710" target="_blank">中嘉国际大酒店 精纯双黄白莲蓉月饼 4x150g/盒 包邮</a></p>
+                                        </dd>
+                                        <dt class="fr">
+                                            <s class="qizhi-CNY"></s>
+                                            <p class="c-bb">中国</p>
+                                        </dt>
+                                    </dl>
+                                </div>
+                                <div class="bot65">
+                                	<dl class="tit">
+                                        <dd class="fl">
+                                            <p class="fw-b">中秋欢庆价：</p>
+                                            <p class="c-o fs-14">$12.80 </p>
+                                        </dd>
+                                        <dt class="fr">
+                                        	<div class="btnonce"><a href="https://www.tps138.com/index/product?snm=73733710" target="_blank">马上抢购</a></div>
+                                        </dt>
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tabcl592 mgl10">
+                        	<div class="limg"><i></i><a href="https://www.tps138.com/index/product?snm=86440710" target="_blank"><img src="../img/mk06.jpg" alt=""></a></div>
+                            <div class="r350">
+                            	<div class="top174">
+                                     <dl class="tit">
+                                        <dd class="fl">
+                                            <p class="fs-18"><a href="https://www.tps138.com/index/product?snm=86440710" target="_blank">中嘉国际大酒店 广式豆沙月饼 4x150g/盒 包邮</a></p>
+                                        </dd>
+                                        <dt class="fr">
+                                            <s class="qizhi-CNY"></s>
+                                            <p class="c-bb">中国</p>
+                                        </dt>
+                                    </dl>
+                                </div>
+                                <div class="bot65">
+                                	<dl class="tit">
+                                        <dd class="fl">
+                                            <p class="fw-b">团购价：</p>
+                                            <p class="c-o fs-14">$9.33</p>
+                                        </dd>
+                                        <dt class="fr">
+                                        	<div class="btnonce"><a href="https://www.tps138.com/index/product?snm=86440710" target="_blank">马上抢购</a></div>
+                                        </dt>
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--第四横-->
+                  	<div class="tbcontent mt-10">
+                    	<div class="tabcl592">
+                        	<div class="limg"><i></i><a href="https://www.tps138.com/index/product?snm=48575935" target="_blank"><img src="../img/mk07.jpg" alt=""></a></div>
+                            <div class="r350">
+                            	<div class="top174">
+                                    <dl class="tit">
+                                        <dd class="fl">
+                                            <p class="fs-18"><a href="https://www.tps138.com/index/product?snm=48575935" target="_blank">福海月饼 迷你八仙过海礼盒 600g(8*75g) 包邮</a></p>
+                                        </dd>
+                                        <dt class="fr">
+                                            <s class="qizhi-CNY"></s>
+                                            <p class="c-bb">中国</p>
+                                        </dt>
+                                    </dl>
+                                </div>
+                                <div class="bot65">
+                                	<dl class="tit">
+                                        <dd class="fl">
+                                            <p class="fw-b">中秋欢庆价：</p>
+                                            <p class="c-o fs-14">$19.29 </p>
+                                        </dd>
+                                        <dt class="fr">
+                                        	<div class="btnonce"><a href="https://www.tps138.com/index/product?snm=48575935" target="_blank">马上抢购</a></div>
+                                        </dt>
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tabcl592 mgl10">
+                        	<div class="limg"><i></i><a href="https://www.tps138.com/index/product?snm=66897017" target="_blank"><img src="../img/mk08.jpg" alt=""></a></div>
+                            <div class="r350">
+                            	<div class="top174">
+                                     <dl class="tit">
+                                        <dd class="fl">
+                                            <p class="fs-18"><a href="https://www.tps138.com/index/product?snm=66897017" target="_blank">福海月饼 中秋纯正黑芝麻月饼广式月饼礼盒4只装/600g 包邮</a></p>
+                                        </dd>
+                                        <dt class="fr">
+                                            <s class="qizhi-CNY"></s>
+                                            <p class="c-bb">中国</p>
+                                        </dt>
+                                    </dl>
+                                </div>
+                                <div class="bot65">
+                                	<dl class="tit">
+                                        <dd class="fl">
+                                            <p class="fw-b">团购价：</p>
+                                            <p class="c-o fs-14">$14.47</p>
+                                        </dd>
+                                        <dt class="fr">
+                                        	<div class="btnonce"><a href="https://www.tps138.com/index/product?snm=66897017" target="_blank">马上抢购</a></div>
+                                        </dt>
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tbcontent1 mt-40">
+                    	<div class="tabcl296">
+                        	<div class="timg"><a href="https://www.tps138.com/index/product?snm=72034513" target="_blank"><img src="../img/mk09.jpg" alt=""></a></div>
+                            <div class="bcont295">
+                            	<dl class="tit">
+                                    <dd class="fl">
+                                        <p><a href="https://www.tps138.com/index/product?snm=72034513" target="_blank">心特软心悦至尚 苏式+广式月饼双重搭配 1120克/盒 全国包邮</a></p>
+                                        <p class="c-o fs-14">$40.41</p>
+                                    </dd>
+                                    <dt class="fr">
+                                        <s class="qizhi-CNY"></s>
+                                        <p class="c-bb">中国</p>
+                                    </dt>
+                                </dl>
+                            </div>
+                        </div>
+                        <div class="tabcl296 ml-5">
+                        	<div class="timg"><a href="https://www.tps138.com/index/product?snm=50944190" target="_blank"><img src="../img/mk10.jpg" alt=""></a></div>
+                            <div class="bcont295">
+                            	<dl class="tit">
+                                    <dd class="fl">
+                                        <p><a href="https://www.tps138.com/index/product?snm=50944190" target="_blank">裕和月饼 中秋豪礼广式月饼礼盒一路有您 1280g 包邮</a></p>
+                                        <p class="c-o fs-14">$25.25</p>
+                                    </dd>
+                                    <dt class="fr">
+                                        <s class="qizhi-CNY"></s>
+                                        <p class="c-bb">中国</p>
+                                    </dt>
+                                </dl>
+                            </div>
+                        </div>
+                        <div class="tabcl296 ml-5">
+                        	<div class="timg"><a href="https://www.tps138.com/index/product?snm=29853518" target="_blank"><img src="../img/mk11.jpg" alt=""></a></div>
+                            <div class="bcont295">
+                            	<dl class="tit">
+                                    <dd class="fl">
+                                        <p><a href="https://www.tps138.com/index/product?snm=29853518" target="_blank">新包装 铁观音纸礼盒500克</a></p>
+                                        <p class="c-o fs-14">$110.00</p>
+                                    </dd>
+                                    <dt class="fr">
+                                        <s class="qizhi-CNY"></s>
+                                        <p class="c-bb">中国</p>
+                                    </dt>
+                                </dl>
+                            </div>
+                        </div>
+                        <div class="tabcl296 ml-5">
+                        	<div class="timg"><a href="https://www.tps138.com/index/product?snm=77680387" target="_blank"><img src="../img/mk12.jpg" alt=""></a></div>
+                            <div class="bcont295">
+                            	<dl class="tit">
+                                    <dd class="fl">
+                                        <p><a href="https://www.tps138.com/index/product?snm=77680387" target="_blank">裕和月饼中秋豪礼 月饼礼盒广式中秋蛋黄 青花雅月 520g 包邮</a></p>
+                                        <p class="c-o fs-14">$14.88</p>
+                                    </dd>
+                                    <dt class="fr">
+                                        <s class="qizhi-CNY"></s>
+                                        <p class="c-bb">中国</p>
+                                    </dt>
+                                </dl>
+                            </div>
+                       </div>
+                    </div>
+
+                    
+                </div>
+              </div>
+              </div>
+           </center>
+
+
+        </div>
+        
+	</main>
+
+	<!--楼层导航-->	
+	<div class="floatCtro"><p class="cur">母婴</p><p>美妆</p><p>酒水</p><p>首饰</p><p>保健</p><p>家居</p><p>体育</p><a style="display: block;"><span title="Top">TOP</span></a></div>
+
+	<footer class="main-footer">
+		<div class="w1200">
+			<div class="fl">
+				<ul>
+					<li>Copyright ©2014-2015 TPS138.com 前海云集品 版权所有. 粤ICP备14072989号-2</li>
+					<li>
+						<p>前海云集品电子商务有限公司</p>
+						<p>汤普森跨进电子商务平台</p>
+					</li>
+					<li><a href=""><i class="fa fa-angle-right"></i>关于我们</a><a href=""><i class="fa fa-angle-right"></i>物流配送</a><a href=""><i class="fa fa-angle-right"></i>售后服务</a><a href=""><i class="fa fa-angle-right"></i>帮助中心</a></li>
+				</ul>
+			</div>
+			<div class="fl ce-l">				
+				<ul>
+					<li>联系方式</li>
+					<li>
+						<p>support@tps138.com</p>
+						<p>0755-88695066</p>
+					</li>
+					<li><a href=""><s title="新浪微博"></s></a> <a href=""><s class="s1"></s></a> <a href=""><s class="s2"></s></a> <a href=""><s class="s3"></s></a></li>
+				</ul>
+			</div>
+			<div class="fr">
+				<img src="../img/weixin.jpg" />
+				<p>关注微信 赢取更多优惠</p>
+			</div>
+		</div>
+	</footer>
+	<script>
+		//顶部广告
+		$(function(){
+			$(".w-100 span").click(function(a){
+				$(".w-100 s").slideDown(300);
+				a.stopPropagation();
+				$(this).blur()
+			});
+			
+			$(".w-100 span").click(function(a){
+				a.stopPropagation()
+			});
+			$(document).click(function(a){
+				a.button!=2&&$(".w-100 span").slideUp(300)
+			});
+		});
+
+		//固定导航
+		$(function(){
+			var nav = $('.site-header'),
+				doc = $(document),
+				win = $(window);
+			win.scroll(function() {
+				if (win.scrollTop() > 100) {
+					nav.addClass('fixed-top');
+				} 
+				else {
+					nav.removeClass('fixed-top');
+				}
+			});
+			win.scroll();
+		});
+
+		//竖直导航
+		$(function(){
+			$('.catalog').hover(function() {
+				$(this).addClass('Hover');
+			},function() {
+				$(this).removeClass('Hover');
+				$('.menu-cate-all-out dl').removeClass('on');
+			})	
+			$('.menu-cate-all-out dt').mouseover(function(){
+				$('.menu-cate-all-out dl').removeClass('on');
+				$(this).parent().addClass('on');
+			})
+		});
+
+		// 楼层导航JS
+		$(function(){
+		   var AllHet = $(window).height();
+		   var mainHet= $('.floatCtro').height();
+		   var fixedTop = (AllHet - mainHet)/2
+		   $('.floatCtro p').click(function(){
+				var ind = $('.floatCtro p').index(this)+1;
+				var topVal = $('#float0'+ind).offset().top;
+				$('body,html').animate({scrollTop:topVal},500)
+               alert(topVal);
+			})
+			$('.floatCtro a').click(function(){
+				$('body,html').animate({scrollTop:0},500)
+				})
+		   $(window).scroll(scrolls)
+		   scrolls()
+		   function scrolls(){
+			   var f1,f2,f3,f4,f5,f6,f7,bck;
+			   var fixRight = $('.floatCtro p');
+			   var blackTop = $('.floatCtro a')
+			   var sTop = $(window).scrollTop();
+			   fl = $('#float01').offset().top;
+			   f2 = $('#float02').offset().top;
+			   f3 = $('#float03').offset().top;
+			   f4 = $('#float04').offset().top;
+			   f5 = $('#float05').offset().top;
+			   f6 = $('#float06').offset().top;
+			   f7 = $('#float07').offset().top;	   
+
+				if(sTop<=$('#float01').get(0).offsetHeight){
+					$('.floatCtro').hide();
+				}
+				else{
+					$('.floatCtro').show();
+				}
+
+			   if(sTop>=fl){
+				   fixRight.eq(0).addClass('cur').siblings().removeClass('cur');
+				   }
+			   if(sTop>=f2-50){
+				   fixRight.eq(1).addClass('cur').siblings().removeClass('cur');
+				   }
+			   if(sTop>=f3-50){
+				   fixRight.eq(2).addClass('cur').siblings().removeClass('cur');
+				   }
+			   if(sTop>=f4-50){
+				   fixRight.eq(3).addClass('cur').siblings().removeClass('cur');
+				   }
+			   if(sTop>=f5-50){
+				   fixRight.eq(4).addClass('cur').siblings().removeClass('cur');
+				   }
+			   if(sTop>=f6-50){
+				   fixRight.eq(5).addClass('cur').siblings().removeClass('cur');
+				   }
+			   if(sTop>=f7-50){
+				   fixRight.eq(6).addClass('cur').siblings().removeClass('cur');
+				   } 
+		     }
+		   })
+	</script>
+</body>
+</html>

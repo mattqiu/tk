@@ -1,0 +1,290 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>云集品商城</title>
+<link href="../css/head.css" rel="stylesheet" type="text/css">
+<script src="../js/jquery-1.11.1.js"></script>
+<script src="../js/SuperSlide2.1.js"></script>
+</head>
+
+<body>
+<!--top-->
+<div class="top-wrapper">
+  <div class="container clear">
+    <div class="row">
+      <div class="top-left">
+        <div data-toggle="arrowdown" id="arrow1" class="user-name"><a href="">$Currency<u class="down-icon"></u></a></div>
+        <!--<div data-toggle="arrowdown" id="arrow2" class="user-name"><a href=""><i class="qizhi-usa"></i>Language<u class="down-icon"></u></a></div>-->
+        <!--hidden-box-->
+        <div data-toggle="hidden-box" id="nav-box1" class="my-yunji-box">
+          <ul>
+            <li><a href=""><i class="qizhi-english"></i>€ Euro</a></li>
+            <li><a href=""><i class="qizhi-zh"></i>£ Pound Sterling</a></li>
+            <li><a href=""><i class="qizhi-hk"></i>$ US Dollar</a></li>
+          </ul>
+        </div>
+        <a href="javascript:;" class="float-left yuyan">English</a>
+        <a href="javascript:;" class="float-left">简体中文</a>
+        <a href="javascript:;" class="float-left">繁體中文</a>
+        <!--
+        <div data-toggle="hidden-box" id="nav-box2" class="stow-box">
+          <ul>
+            <li><a href=""><i class="qizhi-english"></i>English</a></li>
+            <li><a href=""><i class="qizhi-zh"></i>简体中文</a></li>
+            <li><a href=""><i class="qizhi-hk"></i>正體中文</a></li>
+          </ul>
+        </div>-->
+      </div>
+      <div class="top-right"> <span class="float-left">Hello,</span> <a href="" class="float-left se_497fb1">Sign In</a> <span class="float-left">|</span> <a href="" class="float-left se_497fb1">Register</a>
+        <div data-toggle="arrowdown" id="arrow3" class="user-name"><a href="#"><s class="yhu"></s>My Account<u class="down-icon"></u></a></div>
+        <a class="float-left" href=""><s class="xh"></s>Wish List (0)</a> <a href="" class="float-left"><s class="bz"></s>Help</a> 
+        <!--hidden-box-->
+        <div data-toggle="hidden-box" id="nav-box3" class="language-box">
+          <ul>
+            <li><a href="">Register</a></li>
+            <li><a href="">Login</a></li>
+          </ul>
+        </div>
+        <div data-toggle="hidden-box" id="nav-box4" class="list-box">
+          <ul>
+            <li><a href="">Register</a></li>
+            <li><a href="">Login</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="top-main clear">
+  <div class="container clear">
+    <div class="row">
+      <div class="logo"><a href=""><img src="img/logo.png"></a></div>
+      <div class="search">
+        <form action="" method="get">
+          <div class="search_input">
+            <input name="url" type="text" class="search_url" placeholder="I’m shopping for…">
+            <input name="" type="submit" class="search_submit" value="">
+          </div>
+        </form>
+      </div>
+      <div class="hd_cart">
+        <div class="cw-icon"> <a href="">My Cart<i class="ci-left"></i> <!--<u class="down-icon ci-right"></u>--> <b class="ci-count">0</b></a> </div>
+        <!--<div data-toggle="hidden-box" id="nav-box5" class="dorpdown-layer">
+          <div class="prompt">
+            <div class="spacer"></div>
+            <div class="nogoods"><i></i>购物车中还没有商品，赶紧选购吧！</div>
+          </div>
+        </div>--> 
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container clear">
+  <div class="row clear">
+    <div class="nav">
+      <div class="sidebar">
+        <h3 data-toggle="arrowdown" id="arrow6"><i class="ht"></i>Categories<s class="jt"></s></h3>
+        <!--sidebar-info-->
+        <ul class="sidebar-info" data-toggle="hidden-box" id="nav-box6">
+          <li id="mainCate-1" class="mainCate">
+            <div class="titt">
+              <h3><a href="#">白酒</a></h3>
+              <i class="menu-nav-arrow"></i>
+              <p><a href="#">茅台</a><a href="#">五粮液</a><a href="#">国窖1573</a></p>
+            </div>
+            <div class="subCate clear">
+              <div class="item-channels clear">
+                <div class="channels clear"><a href="">家电城<i>&gt;</i></a><a href="">智能生活馆<i>&gt;</i></a><a href="">京东净化馆<i>&gt;</i></a><a href="">京东帮服务店<i>&gt;</i></a></div>
+              </div>
+              <div class="subitems clear">
+                <dl class="fore1">
+                  <dt><a href="">手机通讯<i>&gt;</i></a></dt>
+                  <dd class="t_none"><a href="">手机</a><a href="">对讲机</a></dd>
+                </dl>
+                <dl class="fore2">
+                  <dt><a href="">京东通信<i>&gt;</i></a></dt>
+                  <dd><a href="">选号中心</a><a href="">自助服务</a></dd>
+                </dl>
+                <dl class="fore3">
+                  <dt><a href="">运营商<i>&gt;</i></a></dt>
+                  <dd><a href="">合约机</a><a href="">办套餐</a><a href="">选号码</a><a href="">装宽带</a><a href="">中国移动</a><a href="">中国联通</a><a href="">中国电信</a></dd>
+                </dl>
+                <dl class="fore4">
+                  <dt><a href="">运营商<i>&gt;</i></a></dt>
+                  <dd><a href="">合约机</a><a href="">办套餐</a><a href="">选号码</a><a href="">装宽带</a><a href="">中国移动</a><a href="">中国联通</a><a href="">中国电信</a><a href="">合约机</a><a href="">办套餐</a><a href="">选号码</a><a href="">装宽带</a><a href="">中国移动</a><a href="">中国联通</a><a href="">中国电信</a></dd>
+                </dl>
+              </div>
+            </div>
+          </li>
+          <li id="mainCate-2" class="mainCate evenLeval">
+            <div class="titt">
+              <h3><a href="#">白酒</a></h3>
+              <i class="menu-nav-arrow"></i>
+              <p><a href="#">茅台</a><a href="#">五粮液</a><a href="#">国窖1573</a></p>
+            </div>
+            <div class="subCate clear">
+              <div class="item-channels clear">
+                <div class="channels"><a href="">二级导航<i>&gt;</i></a><a href="">二级导航<i>&gt;</i></a><a href="">二级导航<i>&gt;</i></a><a href="">二级导航<i>&gt;</i></a></div>
+              </div>
+              <div class="subitems clear">
+                <dl class="fore1">
+                  <dt><a href="">手机通讯<i>&gt;</i></a></dt>
+                  <dd class="t_none"><a href="">手机</a><a href="">对讲机</a></dd>
+                </dl>
+                <dl class="fore2">
+                  <dt><a href="">京东通信<i>&gt;</i></a></dt>
+                  <dd><a href="">选号中心</a><a href="">自助服务</a></dd>
+                </dl>
+                <dl class="fore3">
+                  <dt><a href="">运营商<i>&gt;</i></a></dt>
+                  <dd><a href="">合约机</a><a href="">办套餐</a><a href="">选号码</a><a href="">装宽带</a><a href="">中国移动</a><a href="">中国联通</a><a href="">中国电信</a></dd>
+                </dl>
+                <dl class="fore4">
+                  <dt><a href="">运营商<i>&gt;</i></a></dt>
+                  <dd><a href="">合约机</a><a href="">办套餐</a><a href="">选号码</a><a href="">装宽带</a><a href="">中国移动</a><a href="">中国联通</a><a href="">中国电信</a><a href="">合约机</a><a href="">办套餐</a><a href="">选号码</a><a href="">装宽带</a><a href="">中国移动</a><a href="">中国联通</a><a href="">中国电信</a></dd>
+                </dl>
+              </div>
+            </div>
+          </li>
+          <li id="mainCate-3" class="mainCate">
+            <div class="titt">
+              <h3><a href="#">白酒</a></h3>
+              <i class="menu-nav-arrow"></i>
+              <p><a href="#">茅台</a><a href="#">五粮液</a><a href="#">国窖1573</a></p>
+            </div>
+            <div class="subCate clear">
+              <div class="item-channels clear">
+                <div class="channels"><a href="">家电城<i>&gt;</i></a><a href="">智能生活馆<i>&gt;</i></a><a href="">京东净化馆<i>&gt;</i></a><a href="">京东帮服务店<i>&gt;</i></a></div>
+              </div>
+              <div class="subitems clear">
+                <dl class="fore1">
+                  <dt><a href="">手机通讯<i>&gt;</i></a></dt>
+                  <dd class="t_none"><a href="">手机</a><a href="">对讲机</a></dd>
+                </dl>
+                <dl class="fore2">
+                  <dt><a href="">京东通信<i>&gt;</i></a></dt>
+                  <dd><a href="">选号中心</a><a href="">自助服务</a></dd>
+                </dl>
+                <dl class="fore3">
+                  <dt><a href="">运营商<i>&gt;</i></a></dt>
+                  <dd><a href="">合约机</a><a href="">办套餐</a><a href="">选号码</a><a href="">装宽带</a><a href="">中国移动</a><a href="">中国联通</a><a href="">中国电信</a></dd>
+                </dl>
+                <dl class="fore4">
+                  <dt><a href="">运营商<i>&gt;</i></a></dt>
+                  <dd><a href="">合约机</a><a href="">办套餐</a><a href="">选号码</a><a href="">装宽带</a><a href="">中国移动</a><a href="">中国联通</a><a href="">中国电信</a><a href="">合约机</a><a href="">办套餐</a><a href="">选号码</a><a href="">装宽带</a><a href="">中国移动</a><a href="">中国联通</a><a href="">中国电信</a></dd>
+                </dl>
+              </div>
+            </div>
+          </li>
+          <li id="mainCate-4" class="mainCate evenLeval">
+            <div class="titt">
+              <h3><a href="#">白酒</a></h3>
+              <i class="menu-nav-arrow"></i>
+              <p><a href="#">茅台</a><a href="#">五粮液</a><a href="#">国窖1573</a></p>
+            </div>
+            <div class="subCate clear">
+              <div class="item-channels clear">
+                <div class="channels"><a href="">二级导航<i>&gt;</i></a><a href="">二级导航<i>&gt;</i></a><a href="">二级导航<i>&gt;</i></a><a href="">二级导航<i>&gt;</i></a></div>
+              </div>
+              <div class="subitems clear">
+                <dl class="fore1">
+                  <dt><a href="">手机通讯<i>&gt;</i></a></dt>
+                  <dd class="t_none"><a href="">手机</a><a href="">对讲机</a></dd>
+                </dl>
+                <dl class="fore2">
+                  <dt><a href="">京东通信<i>&gt;</i></a></dt>
+                  <dd><a href="">选号中心</a><a href="">自助服务</a></dd>
+                </dl>
+                <dl class="fore3">
+                  <dt><a href="">运营商<i>&gt;</i></a></dt>
+                  <dd><a href="">合约机</a><a href="">办套餐</a><a href="">选号码</a><a href="">装宽带</a><a href="">中国移动</a><a href="">中国联通</a><a href="">中国电信</a></dd>
+                </dl>
+                <dl class="fore4">
+                  <dt><a href="">运营商<i>&gt;</i></a></dt>
+                  <dd><a href="">合约机</a><a href="">办套餐</a><a href="">选号码</a><a href="">装宽带</a><a href="">中国移动</a><a href="">中国联通</a><a href="">中国电信</a><a href="">合约机</a><a href="">办套餐</a><a href="">选号码</a><a href="">装宽带</a><a href="">中国移动</a><a href="">中国联通</a><a href="">中国电信</a></dd>
+                </dl>
+              </div>
+            </div>
+          </li>
+          <li id="mainCate-5" class="mainCate">
+            <div class="titt">
+              <h3><a href="#">白酒</a></h3>
+              <i class="menu-nav-arrow"></i>
+              <p><a href="#">茅台</a><a href="#">五粮液</a><a href="#">国窖1573</a></p>
+            </div>
+            <div class="subCate clear">
+              <div class="item-channels clear">
+                <div class="channels"><a href="">二级导航<i>&gt;</i></a><a href="">二级导航<i>&gt;</i></a><a href="">二级导航<i>&gt;</i></a><a href="">二级导航<i>&gt;</i></a></div>
+              </div>
+              <div class="subitems clear">
+                <dl class="fore1">
+                  <dt><a href="">手机通讯<i>&gt;</i></a></dt>
+                  <dd class="t_none"><a href="">手机</a><a href="">对讲机</a></dd>
+                </dl>
+                <dl class="fore2">
+                  <dt><a href="">京东通信<i>&gt;</i></a></dt>
+                  <dd><a href="">选号中心</a><a href="">自助服务</a></dd>
+                </dl>
+                <dl class="fore3">
+                  <dt><a href="">运营商<i>&gt;</i></a></dt>
+                  <dd><a href="">合约机</a><a href="">办套餐</a><a href="">选号码</a><a href="">装宽带</a><a href="">中国移动</a><a href="">中国联通</a><a href="">中国电信</a></dd>
+                </dl>
+                <dl class="fore4">
+                  <dt><a href="">运营商<i>&gt;</i></a></dt>
+                  <dd><a href="">合约机</a><a href="">办套餐</a><a href="">选号码</a><a href="">装宽带</a><a href="">中国移动</a><a href="">中国联通</a><a href="">中国电信</a><a href="">合约机</a><a href="">办套餐</a><a href="">选号码</a><a href="">装宽带</a><a href="">中国移动</a><a href="">中国联通</a><a href="">中国电信</a></dd>
+                </dl>
+              </div>
+            </div>
+          </li>
+          <li id="mainCate-6" class="mainCate evenLeval">
+            <div class="titt">
+              <h3><a href="#">白酒</a></h3>
+              <i class="menu-nav-arrow"></i>
+              <p><a href="#">茅台</a><a href="#">五粮液</a><a href="#">国窖1573</a></p>
+            </div>
+            <div class="subCate">
+              <div class="item-channels clear">
+                <div class="channels"><a href="">二级导航<i>&gt;</i></a><a href="">二级导航<i>&gt;</i></a><a href="">二级导航<i>&gt;</i></a><a href="">二级导航<i>&gt;</i></a></div>
+              </div>
+              <div class="subitems clear">
+                <dl class="fore1">
+                  <dt><a href="">手机通讯<i>&gt;</i></a></dt>
+                  <dd class="t_none"><a href="">手机</a><a href="">对讲机</a></dd>
+                </dl>
+                <dl class="fore2">
+                  <dt><a href="">京东通信<i>&gt;</i></a></dt>
+                  <dd><a href="">选号中心</a><a href="">自助服务</a></dd>
+                </dl>
+                <dl class="fore3">
+                  <dt><a href="">运营商<i>&gt;</i></a></dt>
+                  <dd><a href="">合约机</a><a href="">办套餐</a><a href="">选号码</a><a href="">装宽带</a><a href="">中国移动</a><a href="">中国联通</a><a href="">中国电信</a></dd>
+                </dl>
+                <dl class="fore4">
+                  <dt><a href="">运营商<i>&gt;</i></a></dt>
+                  <dd><a href="">合约机</a><a href="">办套餐</a><a href="">选号码</a><a href="">装宽带</a><a href="">中国移动</a><a href="">中国联通</a><a href="">中国电信</a><a href="">合约机</a><a href="">办套餐</a><a href="">选号码</a><a href="">装宽带</a><a href="">中国移动</a><a href="">中国联通</a><a href="">中国电信</a></dd>
+                </dl>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="nav_l"><a href="">Products Set Section</a><a href="">Health Care Products</a><a href="">Cosmetic</a><a href="">Skin Care</a></div>
+    </div>
+  </div>
+</div>
+<script>
+ jQuery
+  (".sidebar-info").slide({ 
+  type:"menu", //效果类型
+  titCell:".mainCate", // 鼠标触发对象
+  targetCell:".subCate", // 效果对象，必须被titCell包含
+  delayTime:400, // 效果时间
+  triggerTime:150, //鼠标延迟触发时间
+  defaultPlay:false,//默认执行
+  returnDefault:true//返回默认
+  });
+</script> 
+<script src="../js/main.js"></script>
+</body>
+</html>

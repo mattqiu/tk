@@ -1,0 +1,92 @@
+.tb1 .top_txt{width:100%;height:auto;margin-bottom:4px;margin-top:5px;text-align:right;font-size:1em;font-family:Arial, Helvetica, sans-serif;color:#6a6666;}
+.tb1 .hello{width:90%;height:auto;float:left;font-family:Arial, Helvetica, sans-serif;font-size:1em;color:#333;font-weight:bold;text-align:left;padding-left:15px;}
+.tb1 .id_line li{width:20%;height:auto;min-height:20px;float:left;font-family:Arial, Helvetica, sans-serif;font-size:1em;color:#333;}
+.tb1 .ac_safe li{width:50%;float:left;height:auto;min-height:20px;font-family:Arial, Helvetica, sans-serif;font-size:1em;color:#333;}
+.tb1 .ac_safe li ul li{float:left;font-size:1em;color:#333;font-family:Arial, Helvetica, sans-serif;}
+.tb1 .sh_store_bg .sh_store li{width:50%;float:left;font-family:Arial, Helvetica, sans-serif,Arial;font-size:1em;color:#333;}
+.container .title .tb_tit .ltxt{width:auto;min-width:30%;float:left;padding-left:15px;margin-top:5px;text-align:left;font-weight:normal;font-size:1em;font-family:Arial, Helvetica, sans-serif;color:#666;}
+.container .title .tb_tit .rtxt{width:auto;min-width:30%;float:right;margin-top:5px;font-weight:normal;text-align:right;font-size:1em;font-family:Arial, Helvetica, sans-serif;color:#666;}
+.tb100 .notice p a{font-family:Arial, Helvetica, sans-serif;font-size:1em;color:#666;}
+.tb100 .order_list .row-md li{width:20%;float:left;height:auto;font-size:1em;font-family:Arial, Helvetica, sans-serif;color:#666;text-align:center;margin-top:20px;}
+.tb100 .order_list .row-md li .track_layer .toptit li{float:left;font-size:1em;font-family:Arial, Helvetica, sans-serif;color:#333;text-align:center;margin-top:25px;}
+.tb100 .order_list .row-md li .track_layer .track_info li{width:50%;margin-top:0px;float:left;font-size:1em;font-family:Arial, Helvetica, sans-serif;color:#333;height:auto;min-height:18px;}
+.tb100 .order_list .none_info .m_info{width:45%;padding-left:35%;height:40px;margin-top:50px;}
+.tb100 .order_list .none_info .m_info .rtxt{width:auto;float:left;margin-left:10px;margin-top:5px;min-height:20px;font-size:1em;font-family:Arial, Helvetica, sans-serif;color:#878787;}
+.container .index_bot .txt a{font-size:1em;font-family:Arial, Helvetica, sans-serif;color:#999;}
+.butcss{background:#f3f3f3;font-size:0.875em;color:#333;font-family:Arial, Helvetica, sans-serif;border:1px solid #666;}
+.wel_upgrade{font-family:Arial, Helvetica, sans-serif;font-size:0.875em;color:#08c;font-weight:bold;margin-left:10px;}
+.tb2 .ltit{width:auto;min-width:80px;font-size:0.875em;color:#333;font-family:Arial, Helvetica, sans-serif; font-weight:normal;height:30px;float:left;}
+.tb2 .rtit a{font-size:0.875em;color:#08c;font-family:Arial, Helvetica, sans-serif; font-weight:normal;background:rgba(255, 255, 255, 0) none repeat scroll 0 0 !important;filter:Alpha(opacity=80);}
+.btn-select {position: relative;display: inline-block;width:auto;min-width: 70px;height: 20px;background-color: #f3f3f3;font: 12px "Arial";color: #333;margin-top:5px;border:1px solid #666;}
+.btn1-select {position: relative;display: inline-block;width:auto;min-width: 60px;height: 20px;font: 12px "Arial";color: #08c;text-align:left;cursor:pointer;}
+.tb1 .safe_cont1 p{font-size:0.875em;font-family:Arial, Helvetica, sans-serif;color:#666; text-indent:10px;}
+.tb1 .safe_cont2 .top_level li{font-family:Arial, Helvetica, sans-serif;font-size:0.875em;float:left;margin-top:35px;height:20px;}
+.tb1 .safe_cont2 .safe_info li{font-family:Arial, Helvetica, sans-serif;font-size:0.875em;float:left;color:#666;}
+.tb1 .my_msg .one_msg .left_time p{font-size:1em;color:#666;font-family:Arial, Helvetica, sans-serif;text-align:right;margin-top:22px;}
+.tb1 .my_msg .one_msg .rig_info .title h4{margin:0;padding:0;width:88%;float:right;height:20px;font-family:Arial, Helvetica, sans-serif;font-size:1.125em;color:#333;}
+.tb1 .my_msg .one_msg .rig_info p{font-family:Arial, Helvetica, sans-serif;font-size:0.875em;color:#666;margin:10px 0 0 35px;line-height:20px;}
+.tb1 .my_msg .bott_msg li{float:left;height:40px;width:20%;font-family:Arial, Helvetica, sans-serif;font-size:0.875em;color:#666;}
+.btn1_cs,.btn2_cs{height:25px;background:#f6f5f5;border:1px solid #ccc;margin-top:8px;font-family:Arial, Helvetica, sans-serif;font-size:0.875em;color:#666;}
+.tb1 .ship_addr .one_ship .left_txt{width:14%;height:25px;text-align:right;font-size:0.875em;font-family:Arial, Helvetica, sans-serif;color:#666;float:left;padding-top:10px;position:relative;right:10px;}
+.tb1 .ship_addr .save_addr{margin-left:20px;width:100%;height:auto;clear:both;overflow:auto;margin-top:10px;font-family:Arial, Helvetica, sans-serif;font-size:1em;color:#666;}
+.tb1 .ship_addr .addr_list h4{font-size:1em;color:#666;font-family:Arial, Helvetica, sans-serif;margin-left:20px;}
+.tb1 .ship_addr .addr_list .addr_list1 h4{font-family:Arial, Helvetica, sans-serif;font-size:1em;color:#333;width:120px;float:left;}
+.tb1 .ship_addr .addr_list .addr_list1 .row_text{height:auto;width:100%;font-family:Arial, Helvetica, sans-serif;color:#999;font-size:0.875em;clear:both;overflow:auto;}
+.tb1 .ship_addr .addr_list .addr_list1 .row_text .rtxt2{width:auto;min-width:20%;height:22px;text-align:left;float:right;font-size:1em;font-family:Arial, Helvetica, sans-serif;color:#2272c8;}
+.tb1 .ship_addr .addr_list .addr_list1 .row_text .rtxt2 a{font-size:1em;font-family:Arial, Helvetica, sans-serif;color:#2272c8;}
+.tb100 .my_orders .top_info .linfo li{float:left;font-family:Arial, Helvetica, sans-serif;font-size:1em;color:#333;width:22%;height:auto;margin-left:8px;word-wrap: break-word;word-break: normal;}
+.tb100 .my_orders .nav li{float:left;word-wrap: break-word;word-break: normal;font-family:Arial, Helvetica, sans-serif;font-size:1em;color:#333;width:16%;text-align:center;}
+.tb100 .my_orders .prod_info .top_tit .txt .rtxt{width:30%;float:right;font-family:Arial, Helvetica, sans-serif;font-size:1em;color:#666;}
+.tb100 .my_orders .prod_info .detail .imginfo .prodtxt{word-wrap: break-word;word-break: normal;width:68%;float:right;height:60px;overflow:hidden;margin-top:10px;margin-left:5px;font-size:1em;font-family:Arial, Helvetica, sans-serif;color:#666;}
+.tb100 .my_orders .prod_info .detail .rlist li{float:left;font-size:1em;font-family:Arial, Helvetica, sans-serif;color:#666;text-align:center;word-break: break-all; word-wrap:break-word;}
+.tb100 .my_orders .prod_info .detail li{float:left;font-size:1em;font-family:Arial, Helvetica, sans-serif;color:#666;text-align:center;width:16%;word-wrap: break-word;word-break: normal;margin-top:5px;}
+
+.atten{width:100%;min-height:16px;font-family:Arial, Helvetica, sans-serif;font-size:1em;position:relative;top:-15px;margin-bottom:-30px;}
+.corder .ctext span{position:relative;top:20px;margin-left:15px;font-family:Arial, Helvetica, sans-serif;color:#ff8a15;}
+.track_layer .toptit li{float:left;font-size:0.875em;font-family:Arial, Helvetica, sans-serif;color:#333;text-align:center;margin-top:25px;word-break: break-all; word-wrap:break-word;}
+.track_layer .track_info li{width:50%;float:left;font-size:0.875em;font-family:Arial, Helvetica, sans-serif;color:#333;height:auto;min-height:18px;word-break: break-all; word-wrap:break-word;}
+.orderinfo .process_txt li{width:33%;float:left;font-size:1.125em;font-family:Arial, Helvetica, sans-serif;color:#333;text-align:center;}
+.orderinfo .process_time li{width:33%;float:left;margin-left:10px;font-size:1em;font-family:Arial, Helvetica, sans-serif;color:#666;text-align:center;}
+.o_info .linfo .deta_info .text h4{margin:0 0 10px 0;padding:7px 0 0 5px;background:#f4f4f4;height:25px;font-size:1.25em;font-family:Arial, Helvetica, sans-serif;color:#666;}
+.o_info .linfo .deta_info .text p{font-size:1.25em;font-family:Arial, Helvetica, sans-serif;color:#666;width:95%;margin:0 auto;}
+.o_info .rinfo .rtxt .ttxt p{font-size:1em;font-family:Arial, Helvetica, sans-serif;color:#666;}
+.eval{width:auto;min-width:50px;background:#f7f7f7;border:1px solid #ccc;font-size:0.875em;font-family:Arial, Helvetica, sans-serif;color:#666;}
+.o_info .rinfo .rtxt .btxt p{font-size:1em;font-family:Arial, Helvetica, sans-serif;color:#666;}
+.shop_list .ttop li{float:left;font-size:1em;font-family:Arial, Helvetica, sans-serif;color:#666;height:auto;min-height:25px;text-align:center;padding-top:8px;}
+.shop_list .shop_info li{float:left;font-size:1em;font-family:Arial, Helvetica, sans-serif;color:#666;height:auto;min-height:25px;text-align:center;padding-top:8px;}
+.shop_list .shop_info li .text{word-break:break-all;word-wrap:break-word;width:auto;min-width:150px;font-size:1em;font-family:Arial, Helvetica, sans-serif;color:#666;text-align:left;}
+.shop_list .tbot p{text-align:right;font-size:1em;font-family:Arial, Helvetica, sans-serif;color:#666;margin:10px 50px 10px 0;}
+.bull_board .bull_txt h4{font-family:Arial, Helvetica, sans-serif;font-size:1.125em;color:#333;}
+.bull_board .bull_txt p{font-family:Arial, Helvetica, sans-serif;font-size:0.875em;color:#666;}
+.bull_board .bull_txt .time{width:100%;height:auto;min-width:16px;font-family:Arial, Helvetica, sans-serif;font-size:0.875em;color:#b5b5b5;text-align:right;margin-top:-10px;}
+.coupons .rule_link a{font-family:Arial, Helvetica, sans-serif;font-size:0.875em;color:#08c;}
+.coupons .coup_main .coup_info .lcoup h4{margin:0;padding:0;font-family:Arial, Helvetica, sans-serif;font-weight:normal;font-size:0.875em;color:#666;margin-bottom:5px;}
+.coupons .coup_main .coup_info .lcoup .lcouptxt .limg .limg_bg{background:#ff757e;width:auto;min-width:110px;height:auto;min-height:73px;font-family:Arial, Helvetica, sans-serif;font-size:1.375em;color:#fff;text-align:center;}
+.coupons .coup_main .coup_info .lcoup .lcouptxt .rtxt .rrtxt p{font-family:Arial, Helvetica, sans-serif;font-size:0.875em;color:#666;}
+.coupons .coup_main .coup_info .rcoup p{font-family:Arial, Helvetica, sans-serif;font-size:0.875em;color:#666;text-align:right;}
+.refund_info .process_txt li{width:20%;float:left;font-size:1.125em;font-family:Arial, Helvetica, sans-serif;color:#333;text-align:center;}
+.btn70{min-width:70px;height:25px;border:1px solid #848484;font-family:Arial, Helvetica, sans-serif;font-size:0.875em;color:#4d4d4d; background:#fff;}
+.refund_info .main_btn .linfo h4{width:100%;height:30px;font-size:0.875em;font-weight:normal;font-family:Arial, Helvetica, sans-serif;color:#333;float:left;text-align:left;border-bottom:1px solid #dcdcdc;}
+.refund_info .main_btn .linfo .txt230 .txt60 p{width:72%;float:right;font-family:Arial, Helvetica, sans-serif;font-size:0.875em;color:#666;margin-top:5px;}
+.refund_info .main_btn .linfo .txt230 p{width:90%;float:left;font-family:Arial, Helvetica, sans-serif;font-size:0.875em;color:#666;margin-top:5px;text-align:left;}
+.refund_info .main_btn .rinfo .rtxt h4{font-size:1.125em;font-family:Arial, Helvetica, sans-serif;color:#333;font-weight:normal;margin-top:40px;width:100%;}
+.refund_info .main_btn .rinfo .rtxt p{font-size:0.875em;font-weight:normal;font-family:Arial, Helvetica, sans-serif;color:#666;}
+.btn60{min-width:60px;height:25px;border:1px solid #b90100;font-family:Arial, Helvetica, sans-serif;font-size:0.875em;color:#666; background:#fff;}
+.returns .process_txt .top_tit li{width:16%;float:left;font-size:0.875em;font-family:Arial, Helvetica, sans-serif;color:#4d4d4d;text-align:center;min-height:20px;}
+.returns .process_txt .de_info li{float:left;font-size:0.875em;font-family:Arial, Helvetica, sans-serif;color:#4d4d4d;text-align:center;}
+.collection li p{font-family:Arial, Helvetica, sans-serif;font-size:0.875em;color:#666;}
+.coll_btn_cn,.coll_btn_en{width:auto;min-width:70px;height:25px;font-family:Arial, Helvetica, sans-serif;font-size:0.875em;color:#666;}
+.evaluate .mcont .tlink p a{font-family:Arial, Helvetica, sans-serif;font-size:0.875em;color:#4388c6;}
+.evaluate .mcont .beval .score .thank{width:60%;min-height:24px;float:left;margin-left:40px;margin-top:15px;background:url(../img/new/ucenter/c_s_order.png) 0 0 no-repeat;font-size:1.25em;font-family:Arial, Helvetica, sans-serif;color:#7abd54; font-weight:bold; text-indent:35px;}
+.evaluate .rtime p{font-family:Arial, Helvetica, sans-serif;font-size:0.875em;color:#666;text-align:right;margin-top:25px;}
+.e_bott .btncon span{margin-left:20px;font-family:Arial, Helvetica, sans-serif;font-size:0.875em;color:#666;}
+.ev_btn{background:#4388c6;width:auto;min-width:140px;height:32px;border:0px;font-family:Arial, Helvetica, sans-serif;font-size:0.875em;color:#dff0ff;}
+.choose_alert .tb1 .ltxt p{width:95%;margin:0 auto;line-height:20px;font-size:1em;color:#666;font-family:Arial, Helvetica, sans-serif;}
+.btn_choose_cn,.btn_choose_en{background:#FF4400;border:none; color: #fff; font-size: 1em; font-weight:normal;font-family:Arial, Helvetica, sans-serif;margin:65px 0 10px 10px;}
+/*.container .tb1 .choose_alert .ltxt p{width:95%;margin:0 auto;line-height:20px;font-size:1em;color:#666;font-family:Arial, Helvetica, sans-serif;}
+.btn_choose_cn,.btn_choose_en{background:#FF4400;border:none; color: #fff; font-size: 1em; font-weight:normal;font-family:Arial, Helvetica, sans-serif;margin:65px 0 10px 10px;}*/
+.coupon_txt h4{font-family:Arial, Helvetica, sans-serif;font-size:1.125em;color:#666;}
+.coupon_txt p{font-family:Arial, Helvetica, sans-serif;font-size:1em;color:#999;}
+.coupon_txt .limg{width:auto;min-width:110px;height:auto;min-height:73px;float:left;border:2px dashed #f65a60;font-family:Arial, Helvetica, sans-serif;font-size:1.5em;color:#ffffd0;}
+.coupon_txt .limg .limg_bg{background:#ff757e;width:auto;min-width:110px;height:auto;min-height:73px;font-family:Arial, Helvetica, sans-serif;font-size:1.375em;color:#fff;text-align:center;}
+.orders_font{font-size:12px;font-family:Arial, Helvetica, sans-serif;}

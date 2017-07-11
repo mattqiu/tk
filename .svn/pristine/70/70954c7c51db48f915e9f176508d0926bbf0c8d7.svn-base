@@ -1,0 +1,12 @@
+.mall{width:1200px; height:auto;}
+.mall_top{width:800px; margin:0 auto; margin-top:50px;}
+.mall_top>div{float:left;}
+.mall_top_left{width:300px;}
+.mall_top_left img{width:260px;}
+.mall_top_right{width:400px; margin-top:50px; margin-left:50px;}
+.mall_top_right b{color:#97C53F; font-size:24px;}
+.mall_top_right p{color:#97C53F; font-size:16px;}
+
+
+.mall_bottom{width:600px; margin:0 auto;}
+.mall_bottom img{width:500px; margin-top:120px;}

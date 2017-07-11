@@ -1,0 +1,81 @@
+*{
+    padding:0;
+    margin:0;
+}
+body{
+    font-size:14px;
+    font-family:"微软雅黑";
+}
+.fl{
+    float:left;
+}
+a{
+    text-decoration:none;
+}
+/*我的收货地址样式*/
+.address_contain{
+    width:100%;
+}
+.address_contain .address_title{
+    height:70px;
+    line-height:70px;
+    padding-left:40px;
+    background:#f6f6f6;
+    border:1px solid #ccc;
+    font-size:20px;
+    font-weight:bold;
+    box-sizing:border-box;
+}
+.address_contain .address_content{
+    margin-top:55px;
+    position:relative;
+}
+.address_contain .address_content p{
+    font-size:16px;
+    font-weight:bold;
+    width:90%;
+    margin:0 auto;
+    padding-bottom:15px;
+
+}
+.address_contain .address_content .add_address{
+    position:absolute;
+    top:0;
+    right:4%;
+    color:#f00;
+    font-size:14px;
+}
+.address_contain .address_content p .num_address{
+    font-size: 16px;
+    font-weight: normal;
+    color:#b6b6b6;
+}
+.address_contain .address_content table{
+    width:100%;
+    margin:0 auto;
+    border-collapse: collapse;
+}
+.address_contain .address_content table tr td{
+    border:1px solid #CCCCCC;
+    padding:10px;
+    position:relative;
+}
+.address_contain .address_content table tr td a{
+    color:#52b6f1;
+}
+.address_contain .address_content table tr td .moren_address{
+    width:146px;
+    height:36px;
+    background: #fff;
+    border:1px solid #f00;
+    display:block;
+    line-height:25px;
+    text-align:center;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    border-radius:3px;
+    color:#f00;
+}
+tr{
+    text-align: center;
+}
