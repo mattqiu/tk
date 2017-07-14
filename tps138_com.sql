@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50634
 File Encoding         : 65001
 
-Date: 2017-07-05 09:37:29
+Date: 2017-07-14 09:59:55
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -67,7 +67,7 @@ CREATE TABLE `admin_action_logs` (
   KEY `action_object_id` (`action_object_id`),
   KEY `action` (`action`),
   KEY `action_time` (`action_time`)
-) ENGINE=InnoDB AUTO_INCREMENT=1095667 DEFAULT CHARSET=utf8 COMMENT='管理员操作日志表';
+) ENGINE=InnoDB AUTO_INCREMENT=1108904 DEFAULT CHARSET=utf8 COMMENT='管理员操作日志表';
 
 -- ----------------------------
 -- Table structure for admin_ads_file_manage
@@ -130,7 +130,7 @@ CREATE TABLE `admin_after_sale_batch` (
   KEY `batch_num` (`batch_num`),
   KEY `status` (`status`),
   KEY `born_time` (`create_time`)
-) ENGINE=InnoDB AUTO_INCREMENT=116 DEFAULT CHARSET=utf8 COMMENT='支付宝提现批次表（售后）';
+) ENGINE=InnoDB AUTO_INCREMENT=117 DEFAULT CHARSET=utf8 COMMENT='支付宝提现批次表（售后）';
 
 -- ----------------------------
 -- Table structure for admin_after_sale_order
@@ -174,7 +174,7 @@ CREATE TABLE `admin_after_sale_remark` (
   `remark` varchar(500) NOT NULL DEFAULT '0',
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=20986 DEFAULT CHARSET=utf8 COMMENT='售后单备注';
+) ENGINE=InnoDB AUTO_INCREMENT=21788 DEFAULT CHARSET=utf8 COMMENT='售后单备注';
 
 -- ----------------------------
 -- Table structure for admin_blacklist
@@ -187,6 +187,21 @@ CREATE TABLE `admin_blacklist` (
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '添加时间',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1059 DEFAULT CHARSET=utf8 COMMENT='词语黑名单';
+
+-- ----------------------------
+-- Table structure for admin_fix_credit_log
+-- ----------------------------
+DROP TABLE IF EXISTS `admin_fix_credit_log`;
+CREATE TABLE `admin_fix_credit_log` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `admin_id` int(11) NOT NULL DEFAULT '0' COMMENT '操作的后台用户',
+  `action` varchar(50) NOT NULL DEFAULT '' COMMENT '操作的方法',
+  `action_data` varchar(255) NOT NULL DEFAULT '' COMMENT '操作传递的数据 type 1只修复积分 2 一起修复 3 修复职称',
+  `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '操作时间',
+  `admin_email` varchar(50) NOT NULL DEFAULT '' COMMENT '操作的邮件',
+  `data` varchar(255) NOT NULL DEFAULT '' COMMENT '修复前后的积分和职称',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='后台修复积积分和职称表';
 
 -- ----------------------------
 -- Table structure for admin_knowledge
@@ -269,7 +284,7 @@ CREATE TABLE `admin_manage_commission_logs` (
   `key` varchar(50) NOT NULL DEFAULT '' COMMENT '关联字段，用竖线 | 隔开，竖线前是表名，竖线后是关联的ID',
   `create_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=22327 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=25501 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for admin_notice
@@ -294,7 +309,7 @@ CREATE TABLE `admin_repair_user_amount_log` (
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '创建时间',
   PRIMARY KEY (`id`),
   KEY `user_id` (`uid`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=385 DEFAULT CHARSET=utf8 COMMENT='修复会员现金池记录表';
+) ENGINE=InnoDB AUTO_INCREMENT=394 DEFAULT CHARSET=utf8 COMMENT='修复会员现金池记录表';
 
 -- ----------------------------
 -- Table structure for admin_repair_user_point_log
@@ -345,7 +360,7 @@ CREATE TABLE `admin_right_log` (
   KEY `right_id_index` (`right_id`) USING BTREE,
   KEY `type_index` (`type`) USING BTREE,
   KEY `create_time_index` (`create_time`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=362 DEFAULT CHARSET=utf8 COMMENT='权限修改记录';
+) ENGINE=InnoDB AUTO_INCREMENT=477 DEFAULT CHARSET=utf8 COMMENT='权限修改记录';
 
 -- ----------------------------
 -- Table structure for admin_tickets
@@ -378,7 +393,7 @@ CREATE TABLE `admin_tickets` (
   KEY `create_time` (`create_time`),
   KEY `apply_close_time` (`apply_close_time`),
   KEY `idx_last_assign_time` (`last_assign_time`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=847953 DEFAULT CHARSET=utf8 COMMENT='会员申请的售后工单';
+) ENGINE=InnoDB AUTO_INCREMENT=890262 DEFAULT CHARSET=utf8 COMMENT='会员申请的售后工单';
 
 -- ----------------------------
 -- Table structure for admin_tickets_attach
@@ -393,7 +408,7 @@ CREATE TABLE `admin_tickets_attach` (
   `is_reply` tinyint(4) DEFAULT '0' COMMENT '0:原始工单的附件，1回复工单的附件',
   PRIMARY KEY (`id`),
   KEY `tickets_id` (`tickets_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=447038 DEFAULT CHARSET=utf8 COMMENT='工单的附件';
+) ENGINE=InnoDB AUTO_INCREMENT=477090 DEFAULT CHARSET=utf8 COMMENT='工单的附件';
 
 -- ----------------------------
 -- Table structure for admin_tickets_bak
@@ -493,7 +508,7 @@ CREATE TABLE `admin_tickets_daily_count` (
   PRIMARY KEY (`id`),
   KEY `admin_id` (`admin_id`),
   KEY `count_time` (`count_time`)
-) ENGINE=InnoDB AUTO_INCREMENT=15897 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=16615 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for admin_tickets_logs
@@ -510,7 +525,7 @@ CREATE TABLE `admin_tickets_logs` (
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '处理时间',
   PRIMARY KEY (`id`),
   KEY `tickets_id` (`tickets_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12834550 DEFAULT CHARSET=utf8 COMMENT='管理员操作工单，状态，优先级，管理员的的变更记录';
+) ENGINE=InnoDB AUTO_INCREMENT=13608329 DEFAULT CHARSET=utf8 COMMENT='管理员操作工单，状态，优先级，管理员的的变更记录';
 
 -- ----------------------------
 -- Table structure for admin_tickets_record
@@ -527,7 +542,7 @@ CREATE TABLE `admin_tickets_record` (
   KEY `type` (`type`),
   KEY `assign_time` (`assign_time`),
   KEY `admin_id` (`admin_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=587335 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=633885 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for admin_tickets_reply
@@ -547,7 +562,7 @@ CREATE TABLE `admin_tickets_reply` (
   KEY `tickets_id_index` (`tickets_id`),
   KEY `admin_id` (`admin_id`),
   KEY `uid` (`uid`)
-) ENGINE=InnoDB AUTO_INCREMENT=1822992 DEFAULT CHARSET=utf8 COMMENT='工单所有的回复的内容';
+) ENGINE=InnoDB AUTO_INCREMENT=1936795 DEFAULT CHARSET=utf8 COMMENT='工单所有的回复的内容';
 
 -- ----------------------------
 -- Table structure for admin_tickets_template
@@ -564,7 +579,7 @@ CREATE TABLE `admin_tickets_template` (
   PRIMARY KEY (`id`),
   KEY `admin_id` (`admin_id`),
   KEY `status` (`status`)
-) ENGINE=InnoDB AUTO_INCREMENT=2342 DEFAULT CHARSET=utf8 COMMENT='自定义模板';
+) ENGINE=InnoDB AUTO_INCREMENT=2531 DEFAULT CHARSET=utf8 COMMENT='自定义模板';
 
 -- ----------------------------
 -- Table structure for admin_users
@@ -582,7 +597,7 @@ CREATE TABLE `admin_users` (
   `area` int(11) DEFAULT '0' COMMENT '1：英文客服，2：中国客服',
   PRIMARY KEY (`id`),
   KEY `job_number` (`job_number`)
-) ENGINE=InnoDB AUTO_INCREMENT=561 DEFAULT CHARSET=utf8 COMMENT='后台管理用户表';
+) ENGINE=InnoDB AUTO_INCREMENT=572 DEFAULT CHARSET=utf8 COMMENT='后台管理用户表';
 
 -- ----------------------------
 -- Table structure for bonus_plan_control
@@ -598,6 +613,9 @@ CREATE TABLE `bonus_plan_control` (
   `description` varchar(255) DEFAULT NULL COMMENT '描述',
   `type` tinyint(4) NOT NULL DEFAULT '0' COMMENT '类型 1天 2周 3月',
   `opentype` tinyint(2) DEFAULT '0' COMMENT '操作类型：0，分红监控;1.其他监控',
+  `ishand` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '是否手动发奖 0否 1是',
+  `ishanding` tinyint(1) NOT NULL DEFAULT '0' COMMENT '手动发奖执行状态  0未执行 1开始执行',
+  `rate` float(4,4) NOT NULL DEFAULT '0.0000' COMMENT '比例',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COMMENT='分红计划监控';
 
@@ -637,7 +655,7 @@ CREATE TABLE `bulletin_board` (
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   `important` tinyint(3) NOT NULL DEFAULT '0' COMMENT '1 顯示重要提示',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=218 DEFAULT CHARSET=utf8 COMMENT='公告栏';
+) ENGINE=InnoDB AUTO_INCREMENT=220 DEFAULT CHARSET=utf8 COMMENT='公告栏';
 
 -- ----------------------------
 -- Table structure for bulletin_read
@@ -907,7 +925,7 @@ CREATE TABLE `cash_account_log_201705` (
   KEY `related_uid` (`related_uid`) USING HASH,
   KEY `item_type` (`item_type`,`create_time`) USING BTREE,
   KEY `uid` (`uid`,`item_type`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=573211399 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=573211538 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for cash_account_log_201706
@@ -929,7 +947,7 @@ CREATE TABLE `cash_account_log_201706` (
   KEY `item_type` (`item_type`) USING HASH,
   KEY `order_id` (`order_id`) USING HASH,
   KEY `related_uid` (`related_uid`) USING HASH
-) ENGINE=InnoDB AUTO_INCREMENT=95368214 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=95378752 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for cash_account_log_201707
@@ -951,7 +969,7 @@ CREATE TABLE `cash_account_log_201707` (
   KEY `item_type` (`item_type`) USING HASH,
   KEY `order_id` (`order_id`) USING HASH,
   KEY `related_uid` (`related_uid`) USING HASH
-) ENGINE=InnoDB AUTO_INCREMENT=21618308 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=58427558 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for cash_account_log_201707_1380
@@ -973,7 +991,7 @@ CREATE TABLE `cash_account_log_201707_1380` (
   KEY `IDX_item_type` (`item_type`),
   KEY `IDX_order_id` (`order_id`),
   KEY `IDX_related_uid` (`related_uid`)
-) ENGINE=InnoDB AUTO_INCREMENT=6916811 DEFAULT CHARSET=utf8 COMMENT='资金变动报表';
+) ENGINE=InnoDB AUTO_INCREMENT=18256825 DEFAULT CHARSET=utf8 COMMENT='资金变动报表';
 
 -- ----------------------------
 -- Table structure for cash_account_log_201707_1381
@@ -995,7 +1013,7 @@ CREATE TABLE `cash_account_log_201707_1381` (
   KEY `IDX_item_type` (`item_type`),
   KEY `IDX_order_id` (`order_id`),
   KEY `IDX_related_uid` (`related_uid`)
-) ENGINE=InnoDB AUTO_INCREMENT=5768286 DEFAULT CHARSET=utf8 COMMENT='资金变动报表';
+) ENGINE=InnoDB AUTO_INCREMENT=15249682 DEFAULT CHARSET=utf8 COMMENT='资金变动报表';
 
 -- ----------------------------
 -- Table structure for cash_account_log_201707_1382
@@ -1017,7 +1035,7 @@ CREATE TABLE `cash_account_log_201707_1382` (
   KEY `IDX_item_type` (`item_type`),
   KEY `IDX_order_id` (`order_id`),
   KEY `IDX_related_uid` (`related_uid`)
-) ENGINE=InnoDB AUTO_INCREMENT=4369905 DEFAULT CHARSET=utf8 COMMENT='资金变动报表';
+) ENGINE=InnoDB AUTO_INCREMENT=11682773 DEFAULT CHARSET=utf8 COMMENT='资金变动报表';
 
 -- ----------------------------
 -- Table structure for cash_account_log_201707_1383
@@ -1039,7 +1057,7 @@ CREATE TABLE `cash_account_log_201707_1383` (
   KEY `IDX_item_type` (`item_type`),
   KEY `IDX_order_id` (`order_id`),
   KEY `IDX_related_uid` (`related_uid`)
-) ENGINE=InnoDB AUTO_INCREMENT=4443072 DEFAULT CHARSET=utf8 COMMENT='资金变动报表';
+) ENGINE=InnoDB AUTO_INCREMENT=12559091 DEFAULT CHARSET=utf8 COMMENT='资金变动报表';
 
 -- ----------------------------
 -- Table structure for cash_account_log_201707_1384
@@ -1061,7 +1079,7 @@ CREATE TABLE `cash_account_log_201707_1384` (
   KEY `IDX_item_type` (`item_type`),
   KEY `IDX_order_id` (`order_id`),
   KEY `IDX_related_uid` (`related_uid`)
-) ENGINE=InnoDB AUTO_INCREMENT=120208 DEFAULT CHARSET=utf8 COMMENT='资金变动报表';
+) ENGINE=InnoDB AUTO_INCREMENT=679158 DEFAULT CHARSET=utf8 COMMENT='资金变动报表';
 
 -- ----------------------------
 -- Table structure for cash_account_log_201707_1385
@@ -1250,7 +1268,7 @@ CREATE TABLE `cash_account_log_info` (
   `remark` text COMMENT '备注',
   PRIMARY KEY (`info_id`),
   UNIQUE KEY `UQE_id` (`id`,`related_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=33486 DEFAULT CHARSET=utf8 COMMENT='资金报表详情表';
+) ENGINE=InnoDB AUTO_INCREMENT=46081 DEFAULT CHARSET=utf8 COMMENT='资金报表详情表';
 
 -- ----------------------------
 -- Table structure for cash_paypal_take_out_batch_tb
@@ -1275,7 +1293,7 @@ CREATE TABLE `cash_paypal_take_out_batch_tb` (
   KEY `batch_num` (`batch_num`),
   KEY `status` (`status`),
   KEY `born_time` (`born_time`)
-) ENGINE=InnoDB AUTO_INCREMENT=119 DEFAULT CHARSET=utf8 COMMENT='支付宝提现批次表（佣金）';
+) ENGINE=InnoDB AUTO_INCREMENT=132 DEFAULT CHARSET=utf8 COMMENT='支付宝提现批次表（佣金）';
 
 -- ----------------------------
 -- Table structure for cash_take_out_batch_tb
@@ -1297,7 +1315,7 @@ CREATE TABLE `cash_take_out_batch_tb` (
   KEY `batch_num` (`batch_num`),
   KEY `status` (`status`),
   KEY `born_time` (`born_time`)
-) ENGINE=InnoDB AUTO_INCREMENT=310 DEFAULT CHARSET=utf8 COMMENT='支付宝提现批次表（佣金）';
+) ENGINE=InnoDB AUTO_INCREMENT=337 DEFAULT CHARSET=utf8 COMMENT='支付宝提现批次表（佣金）';
 
 -- ----------------------------
 -- Table structure for cash_take_out_logs
@@ -1330,7 +1348,7 @@ CREATE TABLE `cash_take_out_logs` (
   KEY `account_name` (`account_name`),
   KEY `status` (`status`),
   KEY `batch_num` (`batch_num`)
-) ENGINE=InnoDB AUTO_INCREMENT=14786230 DEFAULT CHARSET=utf8 COMMENT='提现记录';
+) ENGINE=InnoDB AUTO_INCREMENT=14789617 DEFAULT CHARSET=utf8 COMMENT='提现记录';
 
 -- ----------------------------
 -- Table structure for cash_to_month_fee_logs
@@ -1431,7 +1449,7 @@ CREATE TABLE `company_money_today_total` (
   `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',
   PRIMARY KEY (`id`),
   UNIQUE KEY `create_time` (`create_time`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=292 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=383 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for config_site
@@ -1469,7 +1487,7 @@ CREATE TABLE `cron_doing` (
   `false_count` int(11) DEFAULT '0' COMMENT 'return false 次数',
   PRIMARY KEY (`id`),
   UNIQUE KEY `cron_name` (`cron_name`)
-) ENGINE=InnoDB AUTO_INCREMENT=5925646 DEFAULT CHARSET=utf8 COMMENT='正在执行中的计划任务表。';
+) ENGINE=InnoDB AUTO_INCREMENT=5968590 DEFAULT CHARSET=utf8 COMMENT='正在执行中的计划任务表。';
 
 -- ----------------------------
 -- Table structure for cron_status
@@ -1484,7 +1502,7 @@ CREATE TABLE `cron_status` (
   `create_time` datetime NOT NULL ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `type` (`type`) USING BTREE COMMENT '类型'
-) ENGINE=InnoDB AUTO_INCREMENT=575 DEFAULT CHARSET=utf8 COMMENT='队列执行状态表';
+) ENGINE=InnoDB AUTO_INCREMENT=669 DEFAULT CHARSET=utf8 COMMENT='队列执行状态表';
 
 -- ----------------------------
 -- Table structure for daily_bonus_elite
@@ -1530,7 +1548,7 @@ CREATE TABLE `debug_logs` (
   `content` text,
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=127522 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=143534 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
 
 -- ----------------------------
 -- Table structure for debug_rx
@@ -1545,7 +1563,7 @@ CREATE TABLE `debug_rx` (
   `content3` text COMMENT '自定义字段',
   `content4` text COMMENT '自定义字段',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1167694 DEFAULT CHARSET=utf8 COMMENT='RX调试记录表（仅调试记录用）';
+) ENGINE=InnoDB AUTO_INCREMENT=1167769 DEFAULT CHARSET=utf8 COMMENT='RX调试记录表（仅调试记录用）';
 
 -- ----------------------------
 -- Table structure for delete_users_logs
@@ -1558,7 +1576,7 @@ CREATE TABLE `delete_users_logs` (
   `admin_id` int(11) DEFAULT NULL COMMENT '操作admin',
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=274241 DEFAULT CHARSET=utf8 COMMENT='刪除免費用戶記錄';
+) ENGINE=InnoDB AUTO_INCREMENT=289127 DEFAULT CHARSET=utf8 COMMENT='刪除免費用戶記錄';
 
 -- ----------------------------
 -- Table structure for dts_increment_trx
@@ -1619,7 +1637,7 @@ CREATE TABLE `exchange_rate_history` (
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '更新时间',
   PRIMARY KEY (`id`),
   KEY `currency` (`currency`) USING HASH
-) ENGINE=InnoDB AUTO_INCREMENT=7461 DEFAULT CHARSET=utf8 COMMENT='汇率记录表';
+) ENGINE=InnoDB AUTO_INCREMENT=12657 DEFAULT CHARSET=utf8 COMMENT='汇率记录表';
 
 -- ----------------------------
 -- Table structure for execute_sql_log
@@ -1639,6 +1657,22 @@ CREATE TABLE `execute_sql_log` (
 ) ENGINE=InnoDB AUTO_INCREMENT=501 DEFAULT CHARSET=utf8 COMMENT='sql执行操作记录';
 
 -- ----------------------------
+-- Table structure for export_customs_orders
+-- ----------------------------
+DROP TABLE IF EXISTS `export_customs_orders`;
+CREATE TABLE `export_customs_orders` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '主键ID',
+  `fifter_array` text COMMENT '查询条件',
+  `file_name` varchar(50) DEFAULT NULL COMMENT '文件名称',
+  `file_path` varchar(255) DEFAULT NULL COMMENT '文件路径',
+  `status` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '状态:0=》未开始 1=》处理中 2=》处理完成 3=》已操作 4=》处理失败 5=》数据为空',
+  `admin_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '操作人ID',
+  `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=utf8 COMMENT='导出订单到海关、银行的记录表';
+
+-- ----------------------------
 -- Table structure for export_order_tmp
 -- ----------------------------
 DROP TABLE IF EXISTS `export_order_tmp`;
@@ -1653,7 +1687,7 @@ CREATE TABLE `export_order_tmp` (
   `system_time` timestamp NULL DEFAULT NULL,
   `update_path` text,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=95798 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=112049 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for generation_sales_logs
@@ -1674,7 +1708,7 @@ CREATE TABLE `generation_sales_logs` (
   KEY `parent_id` (`parent_id`),
   KEY `child_id` (`child_id`),
   KEY `sales` (`sales`)
-) ENGINE=InnoDB AUTO_INCREMENT=14975364 DEFAULT CHARSET=utf8 COMMENT='团队销售提成表';
+) ENGINE=InnoDB AUTO_INCREMENT=15122940 DEFAULT CHARSET=utf8 COMMENT='团队销售提成表';
 
 -- ----------------------------
 -- Table structure for grant_bonus_138_every_param
@@ -1689,7 +1723,7 @@ CREATE TABLE `grant_bonus_138_every_param` (
   `x` int(11) NOT NULL DEFAULT '0' COMMENT 'X 轴',
   `y` int(11) NOT NULL DEFAULT '0' COMMENT 'Y 轴',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=84 DEFAULT CHARSET=utf8 COMMENT='每天138分红参数记录表';
+) ENGINE=InnoDB AUTO_INCREMENT=93 DEFAULT CHARSET=utf8 COMMENT='每天138分红参数记录表';
 
 -- ----------------------------
 -- Table structure for grant_bonus_elite_every_param
@@ -1701,7 +1735,7 @@ CREATE TABLE `grant_bonus_elite_every_param` (
   `total_weight` bigint(11) unsigned NOT NULL DEFAULT '0' COMMENT '统计发奖人员总权重点',
   `create_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=82 DEFAULT CHARSET=utf8 COMMENT='每日销售精英分红参数记录表';
+) ENGINE=InnoDB AUTO_INCREMENT=91 DEFAULT CHARSET=utf8 COMMENT='每日销售精英分红参数记录表';
 
 -- ----------------------------
 -- Table structure for grant_bonus_user_logs
@@ -1719,7 +1753,7 @@ CREATE TABLE `grant_bonus_user_logs` (
   `create_time` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `uid` (`uid`,`type`,`item_type`,`create_time`) USING HASH
-) ENGINE=InnoDB AUTO_INCREMENT=711789 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=714740 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for grant_pre_138_bonus
@@ -1731,7 +1765,7 @@ CREATE TABLE `grant_pre_138_bonus` (
   `amount` decimal(20,0) DEFAULT '0' COMMENT '发奖金额,单位:美分',
   `create_time` int(11) DEFAULT '0' COMMENT '创建时间，格式时间戳',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1322755 DEFAULT CHARSET=utf8 COMMENT='预发奖138分红    预发表';
+) ENGINE=InnoDB AUTO_INCREMENT=1325809 DEFAULT CHARSET=utf8 COMMENT='预发奖138分红    预发表';
 
 -- ----------------------------
 -- Table structure for grant_pre_bonus_state
@@ -1785,7 +1819,7 @@ CREATE TABLE `grant_pre_every_week_team_bonus` (
   `create_time` int(11) DEFAULT '0' COMMENT '创建时间，格式时间戳',
   PRIMARY KEY (`id`),
   KEY `idx_uid` (`uid`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=185501 DEFAULT CHARSET=utf8 COMMENT='预发奖表每周团队分红奖    预发表';
+) ENGINE=InnoDB AUTO_INCREMENT=186851 DEFAULT CHARSET=utf8 COMMENT='预发奖表每周团队分红奖    预发表';
 
 -- ----------------------------
 -- Table structure for grant_pre_sales_executive_bonus
@@ -1813,7 +1847,7 @@ CREATE TABLE `grant_pre_users_daily_bonus` (
   PRIMARY KEY (`id`),
   KEY `idx_uid` (`uid`) USING BTREE,
   KEY `idx_bonus_time` (`bonus_time`)
-) ENGINE=InnoDB AUTO_INCREMENT=1402157 DEFAULT CHARSET=utf8 COMMENT='全球日分红 预发奖 ';
+) ENGINE=InnoDB AUTO_INCREMENT=1402289 DEFAULT CHARSET=utf8 COMMENT='全球日分红 预发奖 ';
 
 -- ----------------------------
 -- Table structure for grant_pre_users_new_member_bonus
@@ -1830,7 +1864,7 @@ CREATE TABLE `grant_pre_users_new_member_bonus` (
   UNIQUE KEY `idex_uid_bonus_time` (`uid`,`bonus_time`),
   KEY `idx_uid` (`uid`) USING BTREE,
   KEY `idx_bonus_time` (`bonus_time`)
-) ENGINE=InnoDB AUTO_INCREMENT=321958 DEFAULT CHARSET=utf8 COMMENT='新用户分红预发奖 ';
+) ENGINE=InnoDB AUTO_INCREMENT=345864 DEFAULT CHARSET=utf8 COMMENT='新用户分红预发奖 ';
 
 -- ----------------------------
 -- Table structure for infinity_generation_count
@@ -1888,7 +1922,21 @@ CREATE TABLE `ip_user_login_info` (
   KEY `uid` (`uid`),
   KEY `create_time` (`create_time`),
   KEY `ip` (`ip`)
-) ENGINE=InnoDB AUTO_INCREMENT=133957860 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=139480116 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for is_customs_bank
+-- ----------------------------
+DROP TABLE IF EXISTS `is_customs_bank`;
+CREATE TABLE `is_customs_bank` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `order_id` char(19) NOT NULL,
+  `type` int(1) NOT NULL DEFAULT '0' COMMENT '1：海关  2：银行',
+  `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `expand` text COMMENT '预留字段',
+  PRIMARY KEY (`id`),
+  KEY `UQE_is_order_id` (`order_id`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=102 DEFAULT CHARSET=utf8 COMMENT='导出报文记录表';
 
 -- ----------------------------
 -- Table structure for language
@@ -1917,7 +1965,7 @@ CREATE TABLE `logs_bonus_special` (
   `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '操作时间',
   `admin_email` varchar(50) NOT NULL DEFAULT '' COMMENT '操作的邮件',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=36722 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=39204 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for logs_cron
@@ -1928,7 +1976,7 @@ CREATE TABLE `logs_cron` (
   `content` text,
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1029884 DEFAULT CHARSET=utf8 COMMENT='计划任务日志表';
+) ENGINE=InnoDB AUTO_INCREMENT=1400576 DEFAULT CHARSET=utf8 COMMENT='计划任务日志表';
 
 -- ----------------------------
 -- Table structure for logs_interface
@@ -1951,7 +1999,7 @@ CREATE TABLE `logs_interface_walhao` (
   `content` text NOT NULL,
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4349019 DEFAULT CHARSET=utf8 COMMENT='计划任务日志表';
+) ENGINE=InnoDB AUTO_INCREMENT=4523351 DEFAULT CHARSET=utf8 COMMENT='计划任务日志表';
 
 -- ----------------------------
 -- Table structure for logs_new_member_bonus
@@ -1974,7 +2022,7 @@ CREATE TABLE `logs_orders` (
   `content` text,
   `create_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=655024 DEFAULT CHARSET=utf8 COMMENT='订单创建失败或支付异步通知失败记录';
+) ENGINE=InnoDB AUTO_INCREMENT=690381 DEFAULT CHARSET=utf8 COMMENT='订单创建失败或支付异步通知失败记录';
 
 -- ----------------------------
 -- Table structure for logs_orders_notify
@@ -1987,7 +2035,7 @@ CREATE TABLE `logs_orders_notify` (
   `content` text NOT NULL,
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6030498 DEFAULT CHARSET=utf8 COMMENT='支付异步通知日志表';
+) ENGINE=InnoDB AUTO_INCREMENT=6414436 DEFAULT CHARSET=utf8 COMMENT='支付异步通知日志表';
 
 -- ----------------------------
 -- Table structure for logs_orders_rollback
@@ -2004,7 +2052,7 @@ CREATE TABLE `logs_orders_rollback` (
   UNIQUE KEY `order_id` (`order_id`),
   KEY `status` (`status`),
   KEY `process_num` (`process_num`)
-) ENGINE=InnoDB AUTO_INCREMENT=2506495 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2615047 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for logs_unfrost_user
@@ -2016,7 +2064,7 @@ CREATE TABLE `logs_unfrost_user` (
   `account` varchar(25) NOT NULL DEFAULT '' COMMENT '解冻账号',
   `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=993 DEFAULT CHARSET=utf8 COMMENT='用户登录解冻记录';
+) ENGINE=InnoDB AUTO_INCREMENT=1069 DEFAULT CHARSET=utf8 COMMENT='用户登录解冻记录';
 
 -- ----------------------------
 -- Table structure for logs_wohao_api
@@ -2029,7 +2077,7 @@ CREATE TABLE `logs_wohao_api` (
   `ip` varchar(40) NOT NULL DEFAULT '' COMMENT 'ip地址',
   `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=69221 DEFAULT CHARSET=utf8 COMMENT='沃好接口调用日志';
+) ENGINE=InnoDB AUTO_INCREMENT=79204 DEFAULT CHARSET=utf8 COMMENT='沃好接口调用日志';
 
 -- ----------------------------
 -- Table structure for log_erp_hg
@@ -2044,7 +2092,7 @@ CREATE TABLE `log_erp_hg` (
   `content3` text COMMENT '自定义字段',
   `content4` text COMMENT '自定义字段',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7933 DEFAULT CHARSET=utf8 COMMENT='海关ERP记录';
+) ENGINE=InnoDB AUTO_INCREMENT=21792 DEFAULT CHARSET=utf8 COMMENT='海关ERP记录';
 
 -- ----------------------------
 -- Table structure for ly_fix_parent_id
@@ -2116,8 +2164,11 @@ CREATE TABLE `mall_feedback` (
   `add_time` int(11) unsigned NOT NULL DEFAULT '0',
   `user_id` int(11) unsigned NOT NULL DEFAULT '0',
   `state` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '处理状态',
+  `name` varchar(30) NOT NULL DEFAULT '',
+  `mobile` varchar(30) NOT NULL DEFAULT '',
+  `title` varchar(200) NOT NULL DEFAULT '',
   PRIMARY KEY (`feed_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=66 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
 
 -- ----------------------------
 -- Table structure for mall_goods
@@ -2136,11 +2187,11 @@ CREATE TABLE `mall_goods` (
   `price` decimal(10,2) unsigned NOT NULL DEFAULT '0.00' COMMENT '私有价格，如果设置了优先使用',
   `purchase_price` decimal(10,2) unsigned NOT NULL DEFAULT '0.00' COMMENT '进货价',
   `is_lock` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '库存锁定 0：非锁定 1：锁定',
-  `goods_currency` decimal(10,2) unsigned NOT NULL DEFAULT '0.00' COMMENT '本币供货价',
+  `goods_currency` decimal(10,2) unsigned DEFAULT '0.00' COMMENT '本币供货价',
   PRIMARY KEY (`product_id`),
   KEY `goods_sn_main` (`goods_sn_main`),
   KEY `goods_sn` (`goods_sn`)
-) ENGINE=InnoDB AUTO_INCREMENT=135443 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=140247 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for mall_goods_ads
@@ -2214,7 +2265,7 @@ CREATE TABLE `mall_goods_category` (
   KEY `sort_order` (`sort_order`),
   KEY `cat_sn` (`cate_sn`),
   KEY `ind_mall_goods_category` (`language_id`,`status`,`sort_order`)
-) ENGINE=InnoDB AUTO_INCREMENT=1929 DEFAULT CHARSET=utf8 COMMENT='产品分类';
+) ENGINE=InnoDB AUTO_INCREMENT=1940 DEFAULT CHARSET=utf8 COMMENT='产品分类';
 
 -- ----------------------------
 -- Table structure for mall_goods_comments
@@ -2231,7 +2282,7 @@ CREATE TABLE `mall_goods_comments` (
   PRIMARY KEY (`com_id`),
   KEY `idx_goods_sn_main` (`goods_sn_main`) USING BTREE,
   KEY `idx_goods_id` (`goods_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2905594 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3109237 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for mall_goods_customs
@@ -2262,7 +2313,7 @@ CREATE TABLE `mall_goods_detail_img` (
   `img_order` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '图片排序',
   PRIMARY KEY (`img_id`),
   KEY `goods_sn` (`goods_sn_main`)
-) ENGINE=InnoDB AUTO_INCREMENT=414369 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=438875 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for mall_goods_effect
@@ -2288,7 +2339,24 @@ CREATE TABLE `mall_goods_gallery` (
   `img_order` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '图片排序',
   PRIMARY KEY (`img_id`),
   KEY `goods_sn` (`goods_sn`)
-) ENGINE=InnoDB AUTO_INCREMENT=1362706 DEFAULT CHARSET=utf8 COMMENT='产品相册';
+) ENGINE=InnoDB AUTO_INCREMENT=1380022 DEFAULT CHARSET=utf8 COMMENT='产品相册';
+
+-- ----------------------------
+-- Table structure for mall_goods_goods_number_logs
+-- ----------------------------
+DROP TABLE IF EXISTS `mall_goods_goods_number_logs`;
+CREATE TABLE `mall_goods_goods_number_logs` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `product_id` int(11) DEFAULT '0' COMMENT 'SKU 的PRODUCT_ID ',
+  `log` varchar(500) DEFAULT NULL COMMENT '日志内容',
+  `operator` char(4) DEFAULT NULL COMMENT '库存操作符，加号用于表示增加，减号用于表示减少，等于号用于表示直接设置库存值',
+  `original_num` int(11) DEFAULT '0' COMMENT '原库存',
+  `new_num` int(11) DEFAULT '0' COMMENT '新库存',
+  `order_id` varchar(40) DEFAULT NULL COMMENT '记录的关联订单ID',
+  `created_time` timestamp NULL DEFAULT NULL COMMENT '日志入库时间',
+  `opera_time` timestamp NULL DEFAULT NULL COMMENT '库存操作时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1890769 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for mall_goods_group
@@ -2298,7 +2366,7 @@ CREATE TABLE `mall_goods_group` (
   `group_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `group_goods` varchar(255) NOT NULL DEFAULT '' COMMENT '逗号分开的goods_id',
   PRIMARY KEY (`group_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=865 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=911 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for mall_goods_keyword
@@ -2402,6 +2470,8 @@ CREATE TABLE `mall_goods_main` (
   `home_note` varchar(128) NOT NULL DEFAULT '' COMMENT '首页副标题',
   `is_for_app` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '移动端首页独立标识',
   `is_hg` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '是否海关',
+  `country_code` char(3) NOT NULL DEFAULT '' COMMENT '产地编号',
+  `goods_unit` varchar(20) NOT NULL DEFAULT '7' COMMENT '商品单位',
   PRIMARY KEY (`goods_id`),
   UNIQUE KEY `goods_sn_main` (`goods_sn_main`) USING BTREE,
   KEY `doba_item_id` (`doba_item_id`),
@@ -2421,7 +2491,7 @@ CREATE TABLE `mall_goods_main` (
   KEY `IDX_CA_LA_SA` (`cate_id`,`language_id`,`sale_country`),
   KEY `IDX_LA_SA_GO` (`language_id`,`sale_country`,`goods_sn_main`,`is_free_shipping`) USING BTREE,
   FULLTEXT KEY `goods_tags` (`goods_tags`)
-) ENGINE=InnoDB AUTO_INCREMENT=99261 DEFAULT CHARSET=utf8 COMMENT='商品主表';
+) ENGINE=InnoDB AUTO_INCREMENT=100894 DEFAULT CHARSET=utf8 COMMENT='商品主表';
 
 -- ----------------------------
 -- Table structure for mall_goods_main_detail
@@ -2438,7 +2508,7 @@ CREATE TABLE `mall_goods_main_detail` (
   `doba_details` text COMMENT 'doba产品附加描述2',
   PRIMARY KEY (`detail_id`),
   KEY `main_id` (`goods_main_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=99254 DEFAULT CHARSET=utf8 COMMENT='商品主表详细';
+) ENGINE=InnoDB AUTO_INCREMENT=100887 DEFAULT CHARSET=utf8 COMMENT='商品主表详细';
 
 -- ----------------------------
 -- Table structure for mall_goods_number_exception
@@ -2467,7 +2537,7 @@ CREATE TABLE `mall_goods_origin` (
   PRIMARY KEY (`id`),
   KEY `country_flag` (`country_flag`),
   KEY `lan` (`language`)
-) ENGINE=InnoDB AUTO_INCREMENT=233 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=249 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for mall_goods_promote
@@ -2480,7 +2550,7 @@ CREATE TABLE `mall_goods_promote` (
   `promote_price` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '促销价格。货币美元，单位分',
   `start_time` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '促销开始时间',
   `end_time` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '促销结束时间',
-  `promote_currency` decimal(10,2) unsigned NOT NULL DEFAULT '0.00' COMMENT '本币供货价',
+  `promote_currency` decimal(10,2) unsigned DEFAULT '0.00' COMMENT '本币供货价',
   PRIMARY KEY (`goods_sn_main`,`goods_sn`),
   KEY `goods_sn` (`goods_sn`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='商品促销表';
@@ -2517,7 +2587,7 @@ CREATE TABLE `mall_goods_shipper` (
   `store_location_code` int(11) NOT NULL DEFAULT '0' COMMENT '中国仓库的始发地省份code',
   PRIMARY KEY (`Id`),
   KEY `shipper_id` (`shipper_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2483 DEFAULT CHARSET=utf8 COMMENT='发货商运费表';
+) ENGINE=InnoDB AUTO_INCREMENT=2653 DEFAULT CHARSET=utf8 COMMENT='发货商运费表';
 
 -- ----------------------------
 -- Table structure for mall_goods_storehouse
@@ -2589,7 +2659,7 @@ CREATE TABLE `mall_orders_paypal_info` (
   `company_name` varchar(255) NOT NULL DEFAULT '0' COMMENT '物流公司',
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '訂單生成時間',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=79009 DEFAULT CHARSET=utf8 COMMENT='paypal order 跟踪號';
+) ENGINE=InnoDB AUTO_INCREMENT=82245 DEFAULT CHARSET=utf8 COMMENT='paypal order 跟踪號';
 
 -- ----------------------------
 -- Table structure for mall_orders_paypal_refund
@@ -2619,7 +2689,7 @@ CREATE TABLE `mall_order_user_monthly_list` (
   `uid` int(11) NOT NULL COMMENT '用户id',
   PRIMARY KEY (`id`),
   UNIQUE KEY `idx_uid` (`uid`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=2048 DEFAULT CHARSET=utf8 COMMENT='沃好会员下单队列';
+) ENGINE=InnoDB AUTO_INCREMENT=4096 DEFAULT CHARSET=utf8 COMMENT='沃好会员下单队列';
 
 -- ----------------------------
 -- Table structure for mall_payment
@@ -2686,7 +2756,7 @@ CREATE TABLE `mall_supplier` (
   `addr_lv2` varchar(50) NOT NULL DEFAULT '0' COMMENT '省份code',
   `addr_lv3` varchar(50) NOT NULL DEFAULT '0' COMMENT '市级/县级code',
   PRIMARY KEY (`supplier_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3976 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4176 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for mall_wish
@@ -2703,7 +2773,7 @@ CREATE TABLE `mall_wish` (
   KEY `add_time` (`add_time`),
   KEY `goods_id` (`goods_id`),
   KEY `goods_sn_main` (`goods_sn_main`)
-) ENGINE=InnoDB AUTO_INCREMENT=2559819 DEFAULT CHARSET=utf8 COMMENT='收藏夹';
+) ENGINE=InnoDB AUTO_INCREMENT=2756110 DEFAULT CHARSET=utf8 COMMENT='收藏夹';
 
 -- ----------------------------
 -- Table structure for mass_pay_trade_no
@@ -2763,7 +2833,7 @@ CREATE TABLE `mobile_message_log` (
   KEY `index_status` (`status`),
   KEY `index_create_time` (`create_time`),
   KEY `index_is_verify` (`is_verify`)
-) ENGINE=InnoDB AUTO_INCREMENT=366460 DEFAULT CHARSET=utf8 COMMENT='短信验证码发送记录';
+) ENGINE=InnoDB AUTO_INCREMENT=382197 DEFAULT CHARSET=utf8 COMMENT='短信验证码发送记录';
 
 -- ----------------------------
 -- Table structure for monthly_fee_coupon
@@ -2775,7 +2845,7 @@ CREATE TABLE `monthly_fee_coupon` (
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `uid` (`uid`)
-) ENGINE=InnoDB AUTO_INCREMENT=5923027 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6116689 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for month_eminent_store_preview
@@ -2823,7 +2893,7 @@ CREATE TABLE `month_fee_change` (
   KEY `user_id` (`user_id`),
   KEY `type` (`type`),
   KEY `create_time` (`create_time`)
-) ENGINE=InnoDB AUTO_INCREMENT=4709440 DEFAULT CHARSET=utf8 COMMENT='月费转现金池log';
+) ENGINE=InnoDB AUTO_INCREMENT=4774019 DEFAULT CHARSET=utf8 COMMENT='月费转现金池log';
 
 -- ----------------------------
 -- Table structure for month_fee_level_change
@@ -3030,7 +3100,7 @@ CREATE TABLE `my_order_exchange_log` (
   PRIMARY KEY (`id`),
   KEY `uid` (`uid`,`create_time`) USING BTREE,
   KEY `status` (`order_id`,`status`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=10351411 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10357201 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for my_order_exchange_time
@@ -3044,7 +3114,7 @@ CREATE TABLE `my_order_exchange_time` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `order_id` (`order_id`) USING BTREE,
   KEY `create_time` (`uid`,`create_time`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=7517769 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7520513 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for news
@@ -3107,7 +3177,7 @@ CREATE TABLE `new_member_bonus_total_weight` (
   `total_weight` bigint(20) NOT NULL DEFAULT '0' COMMENT ' 某日的新会员奖总权重',
   PRIMARY KEY (`id`),
   UNIQUE KEY `uni_create_time` (`create_time`) USING BTREE COMMENT '时间唯一索引'
-) ENGINE=InnoDB AUTO_INCREMENT=136 DEFAULT CHARSET=utf8 COMMENT='用户每日新会员奖总权重';
+) ENGINE=InnoDB AUTO_INCREMENT=158 DEFAULT CHARSET=utf8 COMMENT='用户每日新会员奖总权重';
 
 -- ----------------------------
 -- Table structure for new_order_trigger_queue
@@ -3134,7 +3204,7 @@ CREATE TABLE `new_order_trigger_queue_admin_log` (
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '操作时间',
   PRIMARY KEY (`log_id`),
   UNIQUE KEY `UQE_oid` (`oid`)
-) ENGINE=InnoDB AUTO_INCREMENT=3693 DEFAULT CHARSET=utf8 COMMENT='管理员手动发奖日志列表';
+) ENGINE=InnoDB AUTO_INCREMENT=3846 DEFAULT CHARSET=utf8 COMMENT='管理员手动发奖日志列表';
 
 -- ----------------------------
 -- Table structure for new_order_trigger_queue_err_log
@@ -3150,7 +3220,7 @@ CREATE TABLE `new_order_trigger_queue_err_log` (
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`err_id`),
   UNIQUE KEY `UQE_oid` (`oid`)
-) ENGINE=InnoDB AUTO_INCREMENT=116 DEFAULT CHARSET=utf8 COMMENT='个人,团队发奖错误日志表';
+) ENGINE=InnoDB AUTO_INCREMENT=142 DEFAULT CHARSET=utf8 COMMENT='个人,团队发奖错误日志表';
 
 -- ----------------------------
 -- Table structure for one_direct_orders
@@ -3197,7 +3267,20 @@ CREATE TABLE `order_cancel_log` (
   `content` text,
   `system_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=94377 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=113383 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for order_pay_url
+-- ----------------------------
+DROP TABLE IF EXISTS `order_pay_url`;
+CREATE TABLE `order_pay_url` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `order_id` char(19) NOT NULL,
+  `pay_url` varchar(250) NOT NULL COMMENT '支付地址',
+  `time` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '过期时间',
+  PRIMARY KEY (`id`),
+  KEY `UQE_order_id` (`order_id`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8 COMMENT='快付通订单支付地址,用于第二次支付';
 
 -- ----------------------------
 -- Table structure for order_prize_queue_log
@@ -3216,7 +3299,7 @@ CREATE TABLE `order_prize_queue_log` (
   PRIMARY KEY (`log_id`),
   UNIQUE KEY `UQD_order_id` (`order_id`),
   KEY `IDX_exec_time` (`exec_time`,`exec_result`)
-) ENGINE=InnoDB AUTO_INCREMENT=6642529 DEFAULT CHARSET=utf8 COMMENT='发奖订单执行日志记录表';
+) ENGINE=InnoDB AUTO_INCREMENT=7423678 DEFAULT CHARSET=utf8 COMMENT='发奖订单执行日志记录表';
 
 -- ----------------------------
 -- Table structure for order_query_num
@@ -3244,7 +3327,7 @@ CREATE TABLE `order_repair_log` (
   `item_type` tinyint(4) NOT NULL DEFAULT '0' COMMENT '奖金类型',
   `amount` int(11) NOT NULL DEFAULT '0' COMMENT '补单金额',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=17036 DEFAULT CHARSET=utf8 COMMENT='佣金补单日志表';
+) ENGINE=InnoDB AUTO_INCREMENT=21625 DEFAULT CHARSET=utf8 COMMENT='佣金补单日志表';
 
 -- ----------------------------
 -- Table structure for paypal_log
@@ -3256,7 +3339,7 @@ CREATE TABLE `paypal_log` (
   `paypal_email` varchar(50) DEFAULT NULL COMMENT 'paypal邮箱',
   `time` datetime DEFAULT NULL COMMENT '绑定时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=19301 DEFAULT CHARSET=utf8 COMMENT='paypal绑定记录表';
+) ENGINE=InnoDB AUTO_INCREMENT=19427 DEFAULT CHARSET=utf8 COMMENT='paypal绑定记录表';
 
 -- ----------------------------
 -- Table structure for paypal_pending_log
@@ -3270,7 +3353,7 @@ CREATE TABLE `paypal_pending_log` (
   `expand` varchar(255) DEFAULT NULL COMMENT '扩展字段',
   `status` int(1) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8 COMMENT='paypal已延迟过账状态订单记录';
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8 COMMENT='paypal已延迟过账状态订单记录';
 
 -- ----------------------------
 -- Table structure for paypal_remark_list
@@ -3301,7 +3384,7 @@ CREATE TABLE `profit_sharing_point_add_log` (
   KEY `uid` (`uid`),
   KEY `add_source` (`add_source`),
   KEY `create_time` (`create_time`)
-) ENGINE=InnoDB AUTO_INCREMENT=66581720 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=69618332 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for profit_sharing_point_proportion
@@ -3326,7 +3409,7 @@ CREATE TABLE `profit_sharing_point_reduce_log` (
   `create_time` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '转化的时间戳',
   PRIMARY KEY (`id`),
   KEY `uid` (`uid`)
-) ENGINE=InnoDB AUTO_INCREMENT=426474 DEFAULT CHARSET=utf8 COMMENT='分红点转出日志表';
+) ENGINE=InnoDB AUTO_INCREMENT=445678 DEFAULT CHARSET=utf8 COMMENT='分红点转出日志表';
 
 -- ----------------------------
 -- Table structure for profit_stat
@@ -3383,7 +3466,7 @@ CREATE TABLE `save_user_for_138` (
   `create_time` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`Id`),
   KEY `user_id` (`user_id`) USING HASH
-) ENGINE=InnoDB AUTO_INCREMENT=2502857 DEFAULT CHARSET=utf8 COMMENT='保存138排序的用户';
+) ENGINE=InnoDB AUTO_INCREMENT=2646562 DEFAULT CHARSET=utf8 COMMENT='保存138排序的用户';
 
 -- ----------------------------
 -- Table structure for sequence
@@ -3503,7 +3586,7 @@ CREATE TABLE `sync_ip_to_address` (
   `is_english` int(11) DEFAULT '0' COMMENT '国外同步',
   PRIMARY KEY (`id`),
   KEY `ip` (`ip`)
-) ENGINE=InnoDB AUTO_INCREMENT=133911998 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=139433929 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for sync_month_fee_fail_info
@@ -3529,7 +3612,7 @@ CREATE TABLE `sync_send_receipt_email` (
   `type` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '0：默认收据邮件 1：上传运单号，发货通知，2：4月份活动订单 ，3：当天欠月份 ，4：6天仍未付费的会员发送提醒邮件，5：给7天以上90天内为支付月费的会员发送提醒邮件，每周发送一次（第8天单独发送一次）',
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=615116 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=638173 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for sync_to_wohao
@@ -3541,7 +3624,7 @@ CREATE TABLE `sync_to_wohao` (
   `sync_item` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '0代表同步所有；1 email；2 pwd；3 pwd_token；4 parent_id；5 languageid；6 name；7 mobile；8 country_id；9 address；10 store_prefix；11 store_level；12 create_time；13 status',
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8157380 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8517024 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for system_rebate_conf
@@ -3743,7 +3826,7 @@ CREATE TABLE `trade_freight_fee` (
   KEY `dest_code` (`dest_code`),
   KEY `goods_sn_main` (`goods_sn_main`),
   KEY `begin_code` (`begin_code`,`country_code`,`dest_code`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=221528 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=233370 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for trade_freight_fee_international
@@ -3779,7 +3862,7 @@ CREATE TABLE `trade_inovice_order` (
   KEY `innvoce_num` (`invoice_num`) USING BTREE,
   KEY `status` (`order_type`,`status`,`mark`) USING BTREE,
   KEY `order_id` (`order_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=2077 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2616 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for trade_invoice
@@ -3816,11 +3899,12 @@ CREATE TABLE `trade_invoice` (
   `update_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   `invoice_type_2` tinyint(4) NOT NULL DEFAULT '1' COMMENT '发票类型 1 普通发票 2 增值税发票',
   `invoice_type_2_content` text COMMENT '发票类型内容',
+  `invoice_taxpayer_id_number` varchar(100) NOT NULL DEFAULT '0' COMMENT '纳税识别号',
   PRIMARY KEY (`id`),
   UNIQUE KEY `invoice_num` (`invoice_num`) USING BTREE,
   KEY `invoice_group` (`uid`,`invoice_start_time`,`invoice_end_time`) USING BTREE,
   KEY `express_num` (`express_num`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=579 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=700 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for trade_invoice_log
@@ -3834,7 +3918,7 @@ CREATE TABLE `trade_invoice_log` (
   `remark` text NOT NULL COMMENT '备注',
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1718 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2104 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for trade_invoice_sf_free
@@ -3999,7 +4083,7 @@ CREATE TABLE `trade_orders_1706` (
   KEY `txn_id` (`txn_id`),
   KEY `idx_order_prop` (`order_prop`),
   KEY `order_id` (`order_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4365958 DEFAULT CHARSET=utf8 COMMENT='订单表';
+) ENGINE=InnoDB AUTO_INCREMENT=4365959 DEFAULT CHARSET=utf8 COMMENT='订单表';
 
 -- ----------------------------
 -- Table structure for trade_orders_1707
@@ -4058,7 +4142,7 @@ CREATE TABLE `trade_orders_1707` (
   KEY `deliver_time` (`deliver_time`),
   KEY `txn_id` (`txn_id`),
   KEY `idx_order_prop` (`order_prop`,`order_type`,`pay_time`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=887096 DEFAULT CHARSET=utf8 COMMENT='订单表';
+) ENGINE=InnoDB AUTO_INCREMENT=2256047 DEFAULT CHARSET=utf8 COMMENT='订单表';
 
 -- ----------------------------
 -- Table structure for trade_orders_doba_order_info
@@ -4077,7 +4161,7 @@ CREATE TABLE `trade_orders_doba_order_info` (
   PRIMARY KEY (`id`),
   KEY `order_id` (`order_id`),
   KEY `doba_order_id` (`doba_order_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=29892 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=30248 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for trade_orders_goods
@@ -4157,7 +4241,7 @@ CREATE TABLE `trade_orders_goods_1707` (
   KEY `goods_sn_main` (`goods_sn_main`),
   KEY `store_code` (`store_code`),
   KEY `supplier_id` (`supplier_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1205517 DEFAULT CHARSET=utf8 COMMENT='订单商品表';
+) ENGINE=InnoDB AUTO_INCREMENT=3056528 DEFAULT CHARSET=utf8 COMMENT='订单商品表';
 
 -- ----------------------------
 -- Table structure for trade_orders_info
@@ -4226,7 +4310,7 @@ CREATE TABLE `trade_orders_info_1707` (
   `ID_reverse` varchar(50) DEFAULT '' COMMENT '身份证背面',
   PRIMARY KEY (`id`,`order_id`),
   UNIQUE KEY `UQE_order_id` (`order_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=887100 DEFAULT CHARSET=utf8 COMMENT='订单详情表';
+) ENGINE=InnoDB AUTO_INCREMENT=2256049 DEFAULT CHARSET=utf8 COMMENT='订单详情表';
 
 -- ----------------------------
 -- Table structure for trade_orders_log
@@ -4242,7 +4326,7 @@ CREATE TABLE `trade_orders_log` (
   PRIMARY KEY (`id`),
   KEY `KEY_ORDER_ID` (`order_id`),
   KEY `ind_trade_orders_log` (`update_time`)
-) ENGINE=InnoDB AUTO_INCREMENT=51931559 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=55170418 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for trade_orders_type
@@ -4270,7 +4354,7 @@ CREATE TABLE `trade_order_cron_import` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `ORDER_ID_INDEX` (`order_id`) USING BTREE,
   KEY `UID_INDEX` (`uid`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=6267651 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7269982 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for trade_order_doba_log
@@ -4306,7 +4390,7 @@ CREATE TABLE `trade_order_import_log` (
   `create_time` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP COMMENT '创建时间',
   PRIMARY KEY (`id`),
   KEY `uid` (`uid`,`create_time`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=38274 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=45096 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for trade_order_remark_record
@@ -4325,7 +4409,7 @@ CREATE TABLE `trade_order_remark_record` (
   KEY `type_index` (`type`),
   KEY `index_admin_id` (`admin_id`),
   KEY `idx_create_at` (`created_at`)
-) ENGINE=InnoDB AUTO_INCREMENT=498921 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=520334 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for trade_order_status_rollback_logs
@@ -4358,7 +4442,7 @@ CREATE TABLE `trade_order_to_erp_inventory_queue` (
   `order_id` char(19) NOT NULL DEFAULT '' COMMENT '订单号',
   `oper_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '操作时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=32205693 DEFAULT CHARSET=utf8 COMMENT='订单推送ERP库存队列';
+) ENGINE=InnoDB AUTO_INCREMENT=33443446 DEFAULT CHARSET=utf8 COMMENT='订单推送ERP库存队列';
 
 -- ----------------------------
 -- Table structure for trade_order_to_erp_logs
@@ -4385,7 +4469,7 @@ CREATE TABLE `trade_order_to_erp_oper_queue` (
   `oper_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '操作时间',
   PRIMARY KEY (`id`),
   KEY `IDX_order_id` (`order_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=94800487 DEFAULT CHARSET=utf8 COMMENT='订单推送ERP业务队列';
+) ENGINE=InnoDB AUTO_INCREMENT=100562315 DEFAULT CHARSET=utf8 COMMENT='订单推送ERP业务队列';
 
 -- ----------------------------
 -- Table structure for trade_order_user_monthly_list
@@ -4426,7 +4510,7 @@ CREATE TABLE `trade_user_address` (
   `ID_reverse` varchar(150) NOT NULL DEFAULT '' COMMENT '反面',
   PRIMARY KEY (`id`),
   KEY `INDEX_UID` (`uid`)
-) ENGINE=InnoDB AUTO_INCREMENT=3110688 DEFAULT CHARSET=utf8 COMMENT='记录订单页用户收货信息';
+) ENGINE=InnoDB AUTO_INCREMENT=3250619 DEFAULT CHARSET=utf8 COMMENT='记录订单页用户收货信息';
 
 -- ----------------------------
 -- Table structure for unbinding_account_log
@@ -4440,7 +4524,7 @@ CREATE TABLE `unbinding_account_log` (
   `type` tinyint(4) NOT NULL DEFAULT '0' COMMENT '解绑类型，1:支付宝,2:paypal,3:手机号',
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=779 DEFAULT CHARSET=utf8 COMMENT='解绑支付宝，paypal,手机号  log';
+) ENGINE=InnoDB AUTO_INCREMENT=832 DEFAULT CHARSET=utf8 COMMENT='解绑支付宝，paypal,手机号  log';
 
 -- ----------------------------
 -- Table structure for users
@@ -4534,7 +4618,7 @@ CREATE TABLE `users` (
   KEY `mobile` (`mobile`),
   KEY `profit_sharing_point` (`profit_sharing_point`),
   KEY `store_url` (`store_url`)
-) ENGINE=InnoDB AUTO_INCREMENT=1384159326 DEFAULT CHARSET=utf8 COMMENT='用户表';
+) ENGINE=InnoDB AUTO_INCREMENT=1384456502 DEFAULT CHARSET=utf8 COMMENT='用户表';
 
 -- ----------------------------
 -- Table structure for users_april_plan
@@ -4559,6 +4643,22 @@ CREATE TABLE `users_april_plan_order` (
   `order_id` varchar(40) NOT NULL DEFAULT '0' COMMENT '订单ID号',
   PRIMARY KEY (`order_id`,`uid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='4月份活动订单，是不能取消的。';
+
+-- ----------------------------
+-- Table structure for users_bank_card
+-- ----------------------------
+DROP TABLE IF EXISTS `users_bank_card`;
+CREATE TABLE `users_bank_card` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `uid` int(11) NOT NULL DEFAULT '0' COMMENT '用户id',
+  `bank_name` varchar(50) NOT NULL DEFAULT '' COMMENT '开户行名称',
+  `bank_branch_name` varchar(50) NOT NULL DEFAULT '' COMMENT '开户支行名称',
+  `bank_number` varchar(50) NOT NULL DEFAULT '' COMMENT '银行账号',
+  `bank_user_name` varchar(50) NOT NULL DEFAULT '' COMMENT '开户人名称',
+  `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  PRIMARY KEY (`id`),
+  KEY `uid` (`uid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='用户银行卡表';
 
 -- ----------------------------
 -- Table structure for users_cash_bonus
@@ -4617,7 +4717,7 @@ CREATE TABLE `users_credit` (
   `created_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   `updated_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '更新时间',
   PRIMARY KEY (`uid`)
-) ENGINE=InnoDB AUTO_INCREMENT=1384159326 DEFAULT CHARSET=utf8 COMMENT='用户积分表';
+) ENGINE=InnoDB AUTO_INCREMENT=1384456498 DEFAULT CHARSET=utf8 COMMENT='用户积分表';
 
 -- ----------------------------
 -- Table structure for users_credit_log_201707
@@ -4632,7 +4732,7 @@ CREATE TABLE `users_credit_log_201707` (
   `remark` varchar(255) NOT NULL DEFAULT '' COMMENT '说明',
   `child_uid` varchar(25) NOT NULL DEFAULT '' COMMENT '影响该次变动的用户',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3962578 DEFAULT CHARSET=utf8 COMMENT='积分变动日志表';
+) ENGINE=InnoDB AUTO_INCREMENT=4740119 DEFAULT CHARSET=utf8 COMMENT='积分变动日志表';
 
 -- ----------------------------
 -- Table structure for users_credit_queue_sale_rank
@@ -4647,7 +4747,7 @@ CREATE TABLE `users_credit_queue_sale_rank` (
   `type` tinyint(4) unsigned NOT NULL DEFAULT '1' COMMENT '积分变化类型，负数的时候，1.升级增加积分，2 降级或者退会减少积分',
   PRIMARY KEY (`id`),
   UNIQUE KEY `uni_uid_before_after` (`uid`,`before_sale_rank`,`after_sale_rank`)
-) ENGINE=InnoDB AUTO_INCREMENT=2929 DEFAULT CHARSET=utf8 COMMENT='职称变动队列表';
+) ENGINE=InnoDB AUTO_INCREMENT=23643 DEFAULT CHARSET=utf8 COMMENT='职称变动队列表';
 
 -- ----------------------------
 -- Table structure for users_credit_queue_user_rank
@@ -4662,7 +4762,7 @@ CREATE TABLE `users_credit_queue_user_rank` (
   `type` tinyint(4) NOT NULL DEFAULT '1' COMMENT '1升级 2 降级或者退会',
   PRIMARY KEY (`id`),
   UNIQUE KEY `uni_uid_before_after` (`uid`,`before_user_rank`,`after_user_rank`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=12939 DEFAULT CHARSET=utf8 COMMENT='等级变化队列';
+) ENGINE=InnoDB AUTO_INCREMENT=86706 DEFAULT CHARSET=utf8 COMMENT='等级变化队列';
 
 -- ----------------------------
 -- Table structure for users_frozen_remark
@@ -4677,7 +4777,7 @@ CREATE TABLE `users_frozen_remark` (
   `optiontype` int(4) DEFAULT '1',
   PRIMARY KEY (`id`),
   KEY `uid` (`uid`)
-) ENGINE=InnoDB AUTO_INCREMENT=3654 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3703 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for users_level_change_log
@@ -4696,7 +4796,7 @@ CREATE TABLE `users_level_change_log` (
   KEY `create_time` (`create_time`),
   KEY `new_level` (`new_level`),
   KEY `create_time_2` (`create_time`)
-) ENGINE=InnoDB AUTO_INCREMENT=2278494 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2352268 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for users_level_statistics_en
@@ -4916,7 +5016,7 @@ CREATE TABLE `users_sharing_point_reward` (
   PRIMARY KEY (`id`),
   KEY `uid` (`uid`),
   KEY `end_time` (`end_time`)
-) ENGINE=InnoDB AUTO_INCREMENT=2302597 DEFAULT CHARSET=utf8 COMMENT='用户奖励分红点';
+) ENGINE=InnoDB AUTO_INCREMENT=2376364 DEFAULT CHARSET=utf8 COMMENT='用户奖励分红点';
 
 -- ----------------------------
 -- Table structure for users_status_log
@@ -4999,7 +5099,7 @@ CREATE TABLE `user_bind_mobile_log` (
   `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '创建时间',
   `remark` varchar(255) NOT NULL DEFAULT '' COMMENT '解绑备注',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=208671 DEFAULT CHARSET=utf8 COMMENT='用户绑定手机号记录';
+) ENGINE=InnoDB AUTO_INCREMENT=214035 DEFAULT CHARSET=utf8 COMMENT='用户绑定手机号记录';
 
 -- ----------------------------
 -- Table structure for user_cart
@@ -5025,7 +5125,7 @@ CREATE TABLE `user_cart` (
   KEY `goods_sn_main` (`goods_sn_main`),
   KEY `country_id` (`country_id`),
   KEY `customer_id` (`customer_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=24295723 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=25631612 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for user_comm_stat
@@ -5086,7 +5186,7 @@ CREATE TABLE `user_coordinates` (
   UNIQUE KEY `user_id` (`user_id`),
   KEY `x` (`x`),
   KEY `y` (`y`)
-) ENGINE=InnoDB AUTO_INCREMENT=2785885 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2929590 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for user_coordinates_temp
@@ -5137,7 +5237,7 @@ CREATE TABLE `user_frost_list` (
   `end_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '结束时间',
   PRIMARY KEY (`id`),
   KEY `end_time` (`end_time`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COMMENT='用户冻结列表';
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8 COMMENT='用户冻结列表';
 
 -- ----------------------------
 -- Table structure for user_id_card_info
@@ -5192,7 +5292,7 @@ CREATE TABLE `user_march_monthly_logs` (
   `back_monthly` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '修复后的月绩,单位美分',
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4642 DEFAULT CHARSET=utf8 COMMENT='销售月绩修复记录表';
+) ENGINE=InnoDB AUTO_INCREMENT=4701 DEFAULT CHARSET=utf8 COMMENT='销售月绩修复记录表';
 
 -- ----------------------------
 -- Table structure for user_month_fee_log
@@ -5280,7 +5380,7 @@ CREATE TABLE `user_pwd_error_num` (
   `time` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '错误时间',
   `expand` int(11) DEFAULT NULL COMMENT '预留可扩展字段',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1079600 DEFAULT CHARSET=utf8 COMMENT='资金密码错误次数表';
+) ENGINE=InnoDB AUTO_INCREMENT=1175969 DEFAULT CHARSET=utf8 COMMENT='资金密码错误次数表';
 
 -- ----------------------------
 -- Table structure for user_qualified_for_138
@@ -5296,7 +5396,7 @@ CREATE TABLE `user_qualified_for_138` (
   `create_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   PRIMARY KEY (`id`),
   UNIQUE KEY `user_id` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1311643 DEFAULT CHARSET=utf8 COMMENT='获得138合格人数';
+) ENGINE=InnoDB AUTO_INCREMENT=1314365 DEFAULT CHARSET=utf8 COMMENT='获得138合格人数';
 
 -- ----------------------------
 -- Table structure for user_rank
@@ -5343,7 +5443,7 @@ CREATE TABLE `user_reduce_commission_logs` (
   KEY `uid` (`uid`),
   KEY `type` (`type`),
   KEY `pay_user_id` (`pay_user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=145585 DEFAULT CHARSET=utf8 COMMENT='用戶佣金抽回記錄  （各大獎項的抽回）';
+) ENGINE=InnoDB AUTO_INCREMENT=149034 DEFAULT CHARSET=utf8 COMMENT='用戶佣金抽回記錄  （各大獎項的抽回）';
 
 -- ----------------------------
 -- Table structure for user_sale_rank_repair_log
@@ -5356,7 +5456,7 @@ CREATE TABLE `user_sale_rank_repair_log` (
   `after_rank` tinyint(4) NOT NULL COMMENT '修复后职称',
   `repair_time` datetime NOT NULL COMMENT '修复时间',
   PRIMARY KEY (`log_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=835 DEFAULT CHARSET=utf8 COMMENT='会员职称修复日志表';
+) ENGINE=InnoDB AUTO_INCREMENT=36284 DEFAULT CHARSET=utf8 COMMENT='会员职称修复日志表';
 
 -- ----------------------------
 -- Table structure for user_sort
@@ -5388,7 +5488,7 @@ CREATE TABLE `user_sort_2x5` (
   `child_count` int(11) DEFAULT '0',
   PRIMARY KEY (`Id`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=91595 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=91596 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for user_suite_exchange_coupon
@@ -5405,7 +5505,7 @@ CREATE TABLE `user_suite_exchange_coupon` (
   KEY `face_value` (`face_value`),
   KEY `uid` (`uid`),
   KEY `status` (`status`)
-) ENGINE=InnoDB AUTO_INCREMENT=78566886 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=78573020 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for user_transfer_account_waring
@@ -5439,7 +5539,7 @@ CREATE TABLE `user_transfer_refund_logs` (
   PRIMARY KEY (`id`),
   KEY `uid` (`uid`),
   KEY `type_idx` (`type`)
-) ENGINE=InnoDB AUTO_INCREMENT=43870 DEFAULT CHARSET=utf8 COMMENT='用户账号转让或者退款';
+) ENGINE=InnoDB AUTO_INCREMENT=46912 DEFAULT CHARSET=utf8 COMMENT='用户账号转让或者退款';
 
 -- ----------------------------
 -- Table structure for user_upgrade_log
@@ -5451,7 +5551,7 @@ CREATE TABLE `user_upgrade_log` (
   `upgrade_rank` tinyint(3) NOT NULL DEFAULT '0' COMMENT '用户等级, 4：免费会员.....',
   `create_time` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2222484 DEFAULT CHARSET=utf8 COMMENT='用户等级信息表';
+) ENGINE=InnoDB AUTO_INCREMENT=2296250 DEFAULT CHARSET=utf8 COMMENT='用户等级信息表';
 
 -- ----------------------------
 -- Table structure for user_upgrade_month_order
@@ -5492,7 +5592,7 @@ CREATE TABLE `user_upgrade_order` (
   `pay_time` timestamp NULL DEFAULT NULL COMMENT '付款时间',
   `notify_num` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '该订单的接口通知次数',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15000 DEFAULT CHARSET=utf8 COMMENT='用戶升級的訂單';
+) ENGINE=InnoDB AUTO_INCREMENT=15005 DEFAULT CHARSET=utf8 COMMENT='用戶升級的訂單';
 
 -- ----------------------------
 -- Table structure for user_week_bonus_qualified_list
@@ -5529,7 +5629,7 @@ CREATE TABLE `voucher_manage_logs` (
   `reason` text COMMENT '原因',
   `create_time` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1235 DEFAULT CHARSET=utf8 COMMENT='代品券管理日志';
+) ENGINE=InnoDB AUTO_INCREMENT=1257 DEFAULT CHARSET=utf8 COMMENT='代品券管理日志';
 
 -- ----------------------------
 -- Table structure for walmart_orders
@@ -5602,7 +5702,7 @@ CREATE TABLE `week_leader_preview` (
   PRIMARY KEY (`id`),
   KEY `uid` (`uid`),
   KEY `date` (`date`)
-) ENGINE=InnoDB AUTO_INCREMENT=128894 DEFAULT CHARSET=utf8 COMMENT='周领导对等奖预览';
+) ENGINE=InnoDB AUTO_INCREMENT=128935 DEFAULT CHARSET=utf8 COMMENT='周领导对等奖预览';
 
 -- ----------------------------
 -- Table structure for week_share_qualified_list
@@ -5688,7 +5788,7 @@ CREATE TABLE `__drds__system__lock__` (
   `operator` varchar(255) NOT NULL COMMENT 'operator',
   PRIMARY KEY (`id`),
   UNIQUE KEY `UNIQ_NAME` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=3252 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3254 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- View structure for amount_log_sum
