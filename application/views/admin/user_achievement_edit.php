@@ -128,7 +128,7 @@
     function errboxHtml(msg) {
         return "<div class=\"thinkbox-tips thinkbox-tips-error\">" + msg + "</div>";
     }
-/*
+
     $('#upload_form').submit(function() {
 
         if ($('[name=excelfile]').val() == '') {
@@ -171,6 +171,6 @@
 
         return false;
     });
-*/
+
 
 </script>
