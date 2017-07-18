@@ -31,6 +31,7 @@ class m_profit_sharing extends CI_Model {
         $this->db->query("delete from month_sharing_members"); //清空上个月的参加《每月杰出店铺分红奖》会员列表。
 
         $lastYearMonth = date('Ym', strtotime('-1 month', time()));
+        $thisMonth = date('Y-m-01');
         $resMemFinal = $this->db->query("select a.id id,a.profit_sharing_point profit_sharing_point from users a left join users_store_sale_info_monthly b on a.id=b.uid where a.user_rank<4 and a.sale_rank>0 and b.year_month='".$lastYearMonth."' and b.sale_amount>=10000 group by a.id")->result_array();
 
         foreach ($resMemFinal as $v) {
@@ -89,10 +90,7 @@ class m_profit_sharing extends CI_Model {
      * @author Terry
      */
     public function getCurMonthWeekLeaderMem(){
-
         $lastYearMonth = date('Ym', strtotime('-1 month', time()));
-        $thisMonthFirstDay = date('Y-m-01');
-
         $this->db->trans_start();
         $this->db->query("delete from week_leader_members"); //清空上个月参加周领导对等奖的会员列表。
 
@@ -100,10 +98,9 @@ class m_profit_sharing extends CI_Model {
         $max_id = 0;
         for ($i=0; $i<1000; $i++) {
             $sql = "select a.id from users a left join users_store_sale_info_monthly b";
-            $sql .= " on a.id=b.uid left join users_level_change_log c on a.id=c.uid";
-            $sql .= " where a.id=b.uid and a.user_rank=1 and a.sale_rank>1 and a.sale_rank_up_time<'".$thisMonthFirstDay."'";
+            $sql .= " on a.id=b.uid";
+            $sql .= " where a.id=b.uid and a.user_rank=1 and a.sale_rank>1";
             $sql .= " and a.status=1 and b.`year_month`=".$lastYearMonth." and b.sale_amount>=10000";
-            $sql .= " and c.level_type=2 and c.create_time<'".$thisMonthFirstDay."'";
             $sql .= " and a.id>" . $max_id;
             $sql .= " group by a.id order by a.id limit ".$num;
             $resMemFinal = $this->db->query($sql)->result_array();

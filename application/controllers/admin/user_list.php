@@ -101,7 +101,48 @@ class User_list extends MY_Controller {
         $this->_viewData['searchData'] = $searchData;
         parent::index('admin/');
     }
-    
+
+    /**
+     * @author brady.wang
+     * @desc 用户支付宝后台解绑
+     */
+    public function alipay_account_unbind()
+    {
+        header("content-type:text/html;charset=utf-8");
+        $admin_info = $this->_adminInfo;
+        if ($admin_info['id'] == 160) {
+            $uid = trim($this->input->get("id",true));
+            if (empty($uid)) {
+                echo "缺少参数用户id";
+            } else {
+                $this->load->model("tb_users");
+                $param = [
+                    'select'=>"id,alipay_account,alipay_name",
+                    'where'=>[
+                        'id'=>$uid
+                    ],
+                    'limit'=>1
+
+                ];
+                $res = $this->tb_users->get($param,false,true,true);
+                if (empty($res)) {
+                    echo "用户不存在";
+                } else {
+                    $this->load->model("m_user");
+                    $res = $this->m_user->alipay_unbinding($uid);
+                    echo $this->db->last_query();
+                    echo "<br>";
+                    if ($res >0) {
+                        echo "解绑成功";
+                    } else {
+                        echo "解绑失败";
+                    }
+                }
+            }
+        } else {
+            echo "hacker";
+        }
+    }
     
     public function get_user_info_detail(){
         $id = $this->input->post('id', true);
@@ -773,13 +814,18 @@ class User_list extends MY_Controller {
 				echo json_encode(array('code' => 0, 'message' => lang('user_id_list_requied')));
 				exit;
 			}
+                        $this->load->model('tb_users_child_group_info');
+                        $group_user = $this->tb_users_child_group_info->find_by_group_id($user_id);
+                        $list_user = $this->tb_users_child_group_info->find_by_user_id($user_id);
 			$this->load->model('o_queen');
-			if ($type == 1) {
+			if ($type == 1) {//修复职称等级
 				$this->o_queen->en_unique_queue(o_queen::QUEEN_USER_RANK_TITLE, $user_id);
-			} else {
+			} elseif($type == 2) {//修复职称变动时间
 				$this->o_queen->en_unique_queue(o_queen::QUEEN_USER_SALE_RANK_UP_TIME, $user_id);
-			}
-			echo json_encode(array('code' => 1, 'message' => lang('fix_user_rank_later')));
+                        }else{//修复会员对应关系
+                            $this->o_queen->en_unique_queue(o_queen::QUEEN_USER_LOGIC, $user_id);
+                        }
+			echo json_encode(array('code' => 1, 'message' => lang('fix_user_rank_later'),'group_user'=>$group_user,'list_user'=>$list_user));
 			exit;
 		}
 	}

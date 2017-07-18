@@ -52,7 +52,7 @@
    </div>
 </div>
 </form>
-<script src="<?php echo base_url('themes/mall/js/pay_order.js?v=1'); ?>"></script>
+<script src="<?php echo base_url('themes/mall/js/pay_order.js?v=2'); ?>"></script>
 <?php }else{ ?>
     <?php echo $pay_str; ?>
 <?php } ?>

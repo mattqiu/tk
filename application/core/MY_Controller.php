@@ -280,15 +280,15 @@ class MY_Controller extends CI_Controller {
     private function __checkSubdomain(){
         if($this->_curControlName!='cron'){
             if(!$this->m_global->checkSubdomain(get_domain_prefix())){
-                redirect('http://www.'.get_public_domain_port());
+                redirect('http://mall.'.get_public_domain_port());
             }
         }
     }
 
 	/*管理员后台禁止子域名。*/
 	private function __subdomainForbiddenInAdmin(){
-		if(get_domain_prefix()!=='www' && get_domain_prefix()!=='mall'){
-			redirect('http://www.'.get_public_domain_port().'/admin');
+		if(get_domain_prefix()!=='mall' && get_domain_prefix()!=='pay'){
+			redirect('http://mall.'.get_public_domain_port().'/admin');
 		}
 	}
 

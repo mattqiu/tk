@@ -116,17 +116,10 @@ class Change_funds_pwd extends MY_Controller {
             if ($old_pwd !== $this->_userInfo['pwd']) {
                 throw new Exception(lang("old_pwd_error"));
             }
-
-            //短信验证码验证
-            $phone_session = $this->session->userData($this->_userInfo['mobile']);
-            if (empty($phone_session)) {
-                throw new Exception(lang("mobile_code_error"));
-            }
-            $verify_phone_res = $this->m_user->verify_phone_code($phone_code, $phone_session);
-            $verify_phone_res = json_decode($verify_phone_res, true);
-            if ($verify_phone_res['error'] == true) {
-                throw new Exception($verify_phone_res['msg']);
-            }
+            
+            //验证短信验证码是否正确
+            $this->load->model("tb_mobile_message_log");
+            $this->tb_mobile_message_log->verify_mobile_code($this->_userInfo['mobile'], $phone_code);
 
             $affected_rows = $this->m_user->updateTakeCashPwd($this->_userInfo['id'], $this->_userInfo['token'], $new_pwd);
             if($affected_rows > 0){//重置密码时，清空密码错误次数
@@ -143,7 +136,13 @@ class Change_funds_pwd extends MY_Controller {
         } catch (Exception $e) {
             $error = true;
             $msg = $e->getMessage();
-            echo json_encode(array('error' => $error, 'msg' => $msg));
+            if (is_numeric($msg)) {
+               $this->load->model("service_message_model");
+                $this->service_message_model->error_response($e->getMessage());
+            } else {
+                echo json_encode(array('error' => $error, 'msg' => $msg));
+            }
+
         }
 
 
@@ -253,7 +252,7 @@ class Change_funds_pwd extends MY_Controller {
             throw new Exception("10501032");
         }
         //验证码不符合规则
-        if (!preg_match('/^\d{3,5}$/',$data['email_code'])) {
+        if (!preg_match('/^\d{3,6}$/',$data['email_code'])) {
             throw new Exception("10501031");
         }
         //验证原密码是否正确

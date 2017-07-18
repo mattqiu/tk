@@ -1026,6 +1026,12 @@ class Account_info extends MY_Controller {
         }
     }
 
+    /**
+     * @author brady.wang
+     * @desc 绑定用户手机号码
+     * @param binding_mobile_phone 手机号
+     * @param binding_mobile_code 验证码
+     */
     public function binding_user_mobile()
     {
         $this->load->model("service_message_model");
@@ -1035,40 +1041,49 @@ class Account_info extends MY_Controller {
         $this->load->model('m_user');
 
         try {
-            if($this->input->is_ajax_request()) {
+            if ($this->input->is_ajax_request()) {
                 $mobile = trim($this->input->post("binding_mobile_phone", true));
                 $code = trim($this->input->post('binding_mobile_code', true));
                 //数据验证
                 //手机号码非空验证
-                if(empty($mobile)) {
+                if (empty($mobile)) {
                     throw new Exception("10501001");
                 }
                 //手机号码格式验证
-                if(!preg_match('/^1[34578]\d{9}$/', $mobile)) {
+                if (!preg_match('/^1[34578]\d{9}$/', $mobile)) {
                     throw new Exception("10501002");
                 }
                 //短信验证码验证
-                if(empty($code)) {
+                if (empty($code)) {
                     throw new Exception("10501003");
                 }
 
                 //验证手机号是否被使用
                 $mobile_res = $this->m_user->check_mobile_exists($mobile);
-                if(!empty($mobile_res)) {
+                if (!empty($mobile_res)) {
                     throw new Exception("10501007");
                 }
                 //验证短信验证码是否正确
                 $this->tb_mobile_message_log->verify_mobile_code($mobile, $code);
+
+                //事物开始
                 $this->db->trans_start();
                 $affected_rows = $this->tb_users->binding_mobile_or_email($this->_userInfo['id'], $mobile);
-                $this->tb_users->unbind_mobile($this->_userInfo['id'], $mobile);
+               // $this->tb_users->unbind_mobile($this->_userInfo['id'], $mobile);
                 if($affected_rows > 0) {
                     $this->m_user->addInfoToWohaoSyncQueue($this->_userInfo['id'], array(0));
+
+                    //更新有该手机号的，其他用户
+                    $this->load->model("tb_users");
+                    $remark = $this->tb_users->update_user_mobile_batch($mobile, $this->_userInfo['id']);
+
                     $logs = [
                         'type' => "bind_mobile",
+                        'uid'=>$this->_userInfo['id'],
                         'old_mobile' => '',
                         'new_mobile' => $mobile,
-                        'create_time' => time()
+                        'create_time' => time(),
+                        'remark' => substr($remark, 0, 254)
                     ];
                     $this->tb_user_mobile_bind_log->add_log($logs);
                     $this->tb_mobile_message_log->delete_code($mobile); //删除验证码
@@ -1087,7 +1102,8 @@ class Account_info extends MY_Controller {
     }
 
     /**
-     * 解绑手机 验证老手机号码
+     * @author brady
+     * @desc 解绑手机 验证老手机号码
      */
     public function verify_old_mobile()
     {
@@ -1100,15 +1116,15 @@ class Account_info extends MY_Controller {
             $mobile = trim($this->input->post('mobile', true));
             $code = trim($this->input->post("code", true));
             //手机号码非空验证
-            if(empty($mobile)) {
+            if (empty($mobile)) {
                 throw new Exception("10501001");
             }
             //手机号码格式验证
-            if(!preg_match('/^1[34578]\d{9}$/', $mobile)) {
+            if (!preg_match('/^1[34578]\d{9}$/', $mobile)) {
                 throw new Exception("10501002");
             }
             //短信验证码验证
-            if(empty($code)) {
+            if (empty($code)) {
                 throw new Exception("10501003");
             }
 
@@ -1126,7 +1142,8 @@ class Account_info extends MY_Controller {
     }
 
     /**
-     * 换绑手机
+     * @author brady
+     * @desc 换绑手机
      */
     public function modify_mobile_bind()
     {
@@ -1142,21 +1159,21 @@ class Account_info extends MY_Controller {
             $old_mobile = trim($this->input->post('old_phone', true));
             $code = trim($this->input->post("code", true));
             //手机号码非空验证
-            if(empty($mobile)) {
+            if (empty($mobile)) {
                 throw new Exception("10501001");
             }
             //手机号码格式验证
-            if(!preg_match('/^1[34578]\d{9}$/', $mobile)) {
+            if (!preg_match('/^1[34578]\d{9}$/', $mobile)) {
                 throw new Exception("10501002");
             }
 
             //验证手机号是否被使用
             $mobile_res = $this->m_user->check_mobile_exists($mobile);
-            if(!empty($mobile_res)) {
+            if (!empty($mobile_res)) {
                 throw new Exception("10501007");
             }
             //短信验证码验证
-            if(empty($code)) {
+            if (empty($code)) {
                 throw new Exception("10501003");
             }
 
@@ -1164,7 +1181,7 @@ class Account_info extends MY_Controller {
             $this->tb_mobile_message_log->verify_mobile_code($mobile, $code);
             $this->db->trans_start();
             $affected_rows = $this->tb_users->binding_mobile_or_email($this->_userInfo['id'], $mobile);
-            if($affected_rows > 0) {
+            if ($affected_rows > 0) {
                 $this->m_user->addInfoToWohaoSyncQueue($this->_userInfo['id'], array(7)); //同步信息
                 //日志
                 $logs = [
@@ -1186,40 +1203,5 @@ class Account_info extends MY_Controller {
         }
     }
 
-    public function test()
-    {
-        $this->load->model("m_user");
-        $userInfo = $this->_userInfo;
-        $this->m_user->dayProfitShareForNewMem($userInfo);//当新加入的会员满足日分红时，立即加入日分红用户表开始分红。
-    }
-
-    public function test1()
-    {
-        $this->load->model("m_user");
-        $userInfo = $this->_userInfo;
-        $this->load->model("m_forced_matrix");
-        $this->m_forced_matrix->join_qualified_for_138($userInfo['id']);//当新加入的会员满足日分红时，立即加入日分红用户表开始分红。
-    }
-
-    public function test2()
-    {
-        $this->load->model("m_overrides");
-        $this->m_overrides->generationSalesOverridesNew($this->_userInfo['id'],400);
-    }
-
-    public function test3()
-    {
-        $this->load->model("m_bulletin_unread");
-        $res = $this->m_bulletin_unread->get_list('*',['id>'=>10]);
-    }
-
-    //新会员专享奖
-    public function test4()
-    {
-        $this->load->model("tb_new_member_bonus");
-        $user  = $this->_userInfo;
-        $this->tb_new_member_bonus->new_member_bonus($user);
-
-    }
 }
 

@@ -1259,6 +1259,19 @@ function generate_code($length = 6) {
 	return rand(1001,9999);
 }
 
+/**
+ * @author brady.wang
+ * @desc 给用户发送手机验证码
+ * @param $number 验证码位数
+ * @param int $type 默认类型 1：全数字  2：数字字母 3：全字母
+ * @return array
+ */
+function generate_verify_code($number = 4,$type='1')
+{
+	$arr = range(0, 9);
+	return $str = substr(str_shuffle(join('', $arr)), 0, $number);
+}
+
 function aliapy_withdrawal_fee($cash){
 	$withdrawal_fee  = $cash * 0.005;
 	$withdrawal_fee = $withdrawal_fee <= 5 ? $withdrawal_fee : 5;

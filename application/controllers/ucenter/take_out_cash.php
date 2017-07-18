@@ -22,22 +22,27 @@ class Take_out_cash extends MY_Controller {
             unset($take_out_type[5]);
         } else if ($this->_userInfo['country_id'] == 2) {
             unset($take_out_type[3]);
-            unset($take_out_type[2]);
+           // unset($take_out_type[2]);
             unset($take_out_type[4]);
+            unset($take_out_type[6]);
         } else if ($this->_userInfo['country_id'] == 3) {
             unset($take_out_type[4]);
             unset($take_out_type[3]);
+            unset($take_out_type[6]);
             if ($this->_userInfo['id'] !== '1380100266') {
-                unset($take_out_type[2]);
+            //    unset($take_out_type[2]);
+                unset($take_out_type[6]);
             }
 
         } else if ($this->_userInfo['country_id'] == 4) {
             unset($take_out_type[4]);
             unset($take_out_type[3]);
+            unset($take_out_type[6]);
         } else {
             unset($take_out_type[4]);
             unset($take_out_type[3]);
-            unset($take_out_type[2]);
+           // unset($take_out_type[2]);
+            unset($take_out_type[6]);
         }
         $this->load->model('m_paypal_log');
         $paypal = $this->m_paypal_log->get_paypal($this->_userInfo['id']);
@@ -60,9 +65,27 @@ class Take_out_cash extends MY_Controller {
         $this->_viewData['country_arr'] = $country_arr;
         //$this->_userInfo用这个的话 修改完用户资料显示的还是修改之前的信息
         $this->load->model('m_user');
-        $this->_viewData['user'] = $this->m_user->getUserByIdOrEmail($this->_userInfo['id']);
+        $user_info = $this->m_user->getUserByIdOrEmail($this->_userInfo['id']);
+
+        $this->_viewData['user'] = $user_info;
         $this->_viewData['country_id'] = $this->_userInfo['country_id']; //当前国家id
-        parent::index();
+        //获取用户绑定的银行卡
+        $param = [
+            'where'=>[
+                'uid'=>$this->_userInfo['id']
+            ],
+            'limit'=>1
+        ];
+        $this->load->model("tb_users_bank_card");
+        $user_card = $this->tb_users_bank_card->get($param,false,true,true);
+        $this->_viewData['user_card'] = $user_card;
+
+        if ($user_info['country_id'] == '1') {
+            parent::index("ucenter/",'china_withdrow');
+        } else {
+            parent::index();
+        }
+
     }
 
     public function submit(){
@@ -92,6 +115,21 @@ class Take_out_cash extends MY_Controller {
             $msg= lang("withdorw_list_not_null");
             echo json_encode(array('success'=>$success,'msg'=>$msg));exit;
         }
+
+        //银行卡提现判断
+       if($postData['take_cash_type'] == 6) {
+           if((!$postData['bank_name'] || !$postData['bank_branch_name'] || !$postData['bank_number'] ||!$postData['bank_user_name'])){
+               $success=false;
+               $msg= lang("bank_card_infomation_lose");
+               echo json_encode(array('success'=>$success,'msg'=>$msg));exit;
+           }
+
+           if($postData['take_out_amount'] > 12000) {
+               $success=false;
+               $msg= lang("beyond_amount_fee");
+               echo json_encode(array('success'=>$success,'msg'=>$msg));exit;
+           }
+       }
 
         if (!$status || $status['check_status'] != 2) {
             $success = FALSE;
@@ -133,7 +171,7 @@ class Take_out_cash extends MY_Controller {
             //添加一个会员状态 退会中: 6 ；User:Ckf,改状态下不能提现
             $success=false;
             $msg=lang('signouting_not_withdrawals');
-        } else{
+        }else{
             $this->db->trans_begin();
 
             $this->load->model('m_user');
@@ -144,8 +182,8 @@ class Take_out_cash extends MY_Controller {
 				$postData['card_number'] = $this->_userInfo['alipay_account'];
 				$postData['account_name'] = $this->_userInfo['alipay_name'];
 			}else if($postData['take_cash_type'] == 5){
-                            $postData['card_number'] =$paypal_email['paypal_email'];
-                        }
+                $postData['card_number'] =$paypal_email['paypal_email'];
+            }
             $this->m_user->takeOutCash($this->_userInfo['id'],$postData);
             $this->m_commission->commissionLogs($this->_userInfo['id'],10,-1 * $postData['take_out_amount']);
             if ($this->db->trans_status() === FALSE)
@@ -350,4 +388,41 @@ class Take_out_cash extends MY_Controller {
         }
     }
 
+    //发送手机验证码
+    public function send_sms_mssage() {
+        $action_id = $this->input->post('reg_type') ? $this->input->post('reg_type') : 1;
+        $email_or_phone = trim($this->input->post('email_or_phone'));
+
+        if(!$email_or_phone){
+            die(json_encode(array('success'=>0,'msg'=>lang("not_bind_mobile"))));
+        }
+        //手机号是否验证
+        $this->load->model("tb_users");
+        $param = [
+            'select'=>'id,mobile,is_verified_mobile',
+            'where'=>[
+                'mobile'=>$email_or_phone
+            ],
+            'limit'=>1
+        ];
+        $user_info = $this->tb_users->get($param,false,true,true);
+        if ($user_info['is_verified_mobile'] != 1){
+            die(json_encode(array('success' => 0, 'msg' => lang("mobile_verify_not"))));
+        }
+        if (is_numeric(preg_match('/^1[34578]{1}\d{9}$/', $email_or_phone))) { //手机注册
+            //$boolean = $this->publicSMSMssage($email_or_phone,$action_id);
+            $this->load->model("tb_mobile_message_log");
+            $send_res = $this->tb_mobile_message_log->send_mobile_code($email_or_phone,$action_id);
+            if($send_res['error'] == true) {
+                die(json_encode(array('success' => 0, 'msg' => $send_res['msg'])));
+            }
+            if ($send_res['error'] == false) {
+                die(json_encode(array('success' => 1)));
+            } else {
+                die(json_encode(array('success' => 0, 'msg' => $send_res['msg'])));
+            }
+        }else{
+            die(json_encode(array('success' => 0, 'msg' => lang('try_again'))));
+        }
+    }
 }

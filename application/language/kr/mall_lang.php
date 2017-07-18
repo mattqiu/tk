@@ -423,6 +423,7 @@ $lang['payment_107'] = 'PayPal';
 $lang['payment_108'] = 'eWallet';
 $lang['payment_109'] = 'YINSHENG E-PAY';
 $lang['payment_110'] = 'Cash Bucket';
+$lang['payment_113'] = '를 지불 빠른';
 $lang['payment_111'] = 'Union Pay International';
 $lang['goods_deliver']="상품발송";
 $lang['goods_deliver_2']="(배송확인)완성";

@@ -25,7 +25,7 @@ class Cash_take_out_logs extends MY_Controller {
         $perPage = 10;
         $uid = $this->_userInfo['id'];
         $start = !empty($getData['start']) ? $getData['start'] : '';
-        $end = !empty($getData['end']) ?  $getData['end'] : '';
+        $end = !empty($getData['end']) ?  $getData['end'] : date("Y-m-d",time());
 
         $redis_key = config_item("redis_key")['cash_take_out_logs'].$uid.":".$page;
 
@@ -47,7 +47,7 @@ class Cash_take_out_logs extends MY_Controller {
             }
 
         } else {
-            echo "走数据库";
+            //echo "走数据库";
             $res = $this->get_cash_account_logs_by_db($start,$end,$uid,$page,$perPage);
         } //未打开redis 否则走数据库
 

@@ -1,0 +1,5 @@
+order_id,customer_id,shopkeeper_id,order_amount,order_profit,currency,vendor
+test-5405,1380100287,1380100287,50,17.5,USD,1direct
+test-5412,1380100287,1380100287,108.99,28.54,USD,1direct
+test-2780,1380100287,1380100287,112,29.4,USD,Incentibuys
+test-2740,1380100287,1380100287,66,17.33,USD,Incentibuys

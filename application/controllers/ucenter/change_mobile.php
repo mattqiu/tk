@@ -45,7 +45,7 @@ class Change_mobile extends MY_Controller
 
         $output = array();
         $html = '<div class="code_msg" style="height:300px;"><div style="margin-bottom:25px"><p style="float:left;width:80px">'.lang('new_phone').'</p><input type="text" id="new_phone" name="new_phone"  placeholder="'.lang('new_phone').'" maxlength="15"  onkeyup="value=value.replace(/[^\d]/g,\'\') "onbeforepaste="clipboardData.setData(\'text\',clipboardData.getData(\'text\').replace(/[^\d]/g,\'\'))"/></div>
-                <div><p style="float:left;width:80px">'.lang('alipay_binding_vcode').'</p><input type="text" name="new_code" maxlength="4" id="new_code" placeholder="'.lang('alipay_binding_vcode').'"/><input type="button" value="'.lang('tps_get_captcha').'" style="margin-left:15px" id="get_new_code"/></div></div>
+                <div><p style="float:left;width:80px">'.lang('alipay_binding_vcode').'</p><input type="text" name="new_code" maxlength="6" id="new_code" placeholder="'.lang('alipay_binding_vcode').'"/><input type="button" value="'.lang('tps_get_captcha').'" style="margin-left:15px" id="get_new_code"/></div></div>
                 <input type="button" class="next_btn1"  id="info_submit" value = "'.lang('submit').'" >';
         $output['message'] = $html;
         $uid = $this->_userInfo['id'];
@@ -96,7 +96,7 @@ class Change_mobile extends MY_Controller
 
        $output = [];
        $html = '<div class="code_msg" style="height:300px;"><div style="margin-bottom:25px"><p style="float:left;width:80px">'.lang('new_phone').'</p><input type="text" id="new_phone" name="new_phone"  placeholder="'.lang('new_phone').'" maxlength="15"  onkeyup="value=value.replace(/[^\d]/g,\'\') "onbeforepaste="clipboardData.setData(\'text\',clipboardData.getData(\'text\').replace(/[^\d]/g,\'\'))"/></div>
-                <div><p style="float:left;width:80px">'.lang('alipay_binding_vcode').'</p><input type="text" name="new_code" maxlength="4" id="new_code" placeholder="'.lang('alipay_binding_vcode').'"/><input type="button" value="'.lang('tps_get_captcha').'" style="margin-left:15px" id="get_new_code"/></div></div>
+                <div><p style="float:left;width:80px">'.lang('alipay_binding_vcode').'</p><input type="text" name="new_code" maxlength="6" id="new_code" placeholder="'.lang('alipay_binding_vcode').'"/><input type="button" value="'.lang('tps_get_captcha').'" style="margin-left:15px" id="get_new_code"/></div></div>
                 <input type="button" class="next_btn1"  id="info_submit" value = "'.lang('submit').'" >';
        $output['message'] = $html;
 

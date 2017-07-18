@@ -388,6 +388,7 @@ class o_month_leader_bonus_option extends CI_Model {
     {
         
         $sql = "select sum(sale_amount_weight) as sale_amount_weight,sum(sale_rank_weight) as sale_rank_weight,sum(share_point_weight) as share_point_weight,sum(store_rank_weight) as store_rank_weight from week_share_qualified_list";
+        
         $query = $this->db->query($sql);
         return $query->row_array();        
     }
@@ -399,6 +400,7 @@ class o_month_leader_bonus_option extends CI_Model {
      */
     public function week_weight_total_par_time($c_time)
     {
+       
         $return_value = array();
         if($c_time==date('Ym'))
         {
@@ -751,7 +753,7 @@ class o_month_leader_bonus_option extends CI_Model {
                 $this->tb_grant_pre_bonus_state->edit_state(1,1,"");  //预发奖状态初始化
                 for($i=0; $i < $page_total; $i++)
                 {
-                    $user_sql = " select uid,sale_amount_weight,sale_rank_weight,store_rank_weight from month_group_share_list order by uid asc limit ".$i*$page_nb.",".$page_nb;;
+                    $user_sql = " select uid,sale_amount_weight,sale_rank_weight,store_rank_weight from month_group_share_list order by uid asc limit ".$i*$page_nb.",".$page_nb;
                     $user_query = $this->db->query($user_sql);
                     $month_share_list = $user_query->result_array();                  
                     if(!empty($month_share_list))
@@ -759,14 +761,14 @@ class o_month_leader_bonus_option extends CI_Model {
                         $users_info_data = array();
                         foreach($month_share_list as $sult)
                         {
-                                                        
-                            $check_sql = "select uid from users_level_change_log where uid = ".$sult['id']." and new_level=1 and level_type =2 and create_time > '".$sale_time."'";
-                            $check_query = $this->db->query($check_sql)->row_array();
-                            if(!empty($check_query))
-                            {
-                                //升级时间大于每月1号 时，此用户不满足队列
-                                continue;
-                            }
+                            
+//                             $check_sql = "select uid from users_level_change_log where uid = ".$sult['id']." and new_level=1 and level_type =2 and create_time > '".$sale_time."'";
+//                             $check_query = $this->db->query($check_sql)->row_array();
+//                             if(!empty($check_query))
+//                             {
+//                                 //升级时间大于每月1号 时，此用户不满足队列
+//                                 continue;
+//                             }
                             
                             $user_sql = "SELECT id FROM users WHERE id=".$sult['uid']." AND status = 1";
                             $user_query = $this->db->query($user_sql);

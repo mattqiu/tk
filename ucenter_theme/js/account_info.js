@@ -634,7 +634,7 @@ $(function(){
         add_v2(60);
         $.ajax({
             type: "POST",
-            url: "mobile/get_mobile_code",
+            url: "/ucenter/mobile/get_mobile_code",
             data:data,
             dataType: "json",
             success: function (res) {

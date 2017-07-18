@@ -3,6 +3,7 @@
 class M_trade extends MY_Model
 {
     private $err_code = 0;
+    private $DEBUG = true;
     public function __construct()
     {
         parent::__construct();
@@ -958,18 +959,24 @@ class M_trade extends MY_Model
         return $checkout_data;
     }
 
+    /**
+     * 创建订单的调试信息，如果事务出错，记录
+     * @param string $postdata
+     * @param string $msg1
+     * @param string $msg2
+     */
     public function make_order_debug($postdata='',$msg1='',$msg2='')
     {
-        return;
-        $this->load->model("m_debug");
-        if($postdata['customer_id'] == "1380641198")
+        if(!$this->db->trans_status())
         {
-            $this->m_debug->log($msg1);
-            if($msg2)
-            {
-                $this->m_debug->log($msg2);
+            if ($this->DEBUG) {
+                $redis_key = "m_trade:make_order:debug:" . date("YmdHi");
+                $this->redis_lPush($redis_key, $msg1 . "," . $msg2);
+                $this->redis_lPush($redis_key,$this->db->last_query());
+                if ($this->redis_ttl($redis_key) == -1) {
+                    $this->redis_setTimeout($redis_key, 60 * 60);
+                }
             }
-            @file_put_contents("/tmp/m_trade.log",$msg1."\n",8);
         }
     }
 
@@ -1046,7 +1053,6 @@ class M_trade extends MY_Model
         $insert_attr['consignee'] = $addr_info['consignee'];
         $insert_attr['phone'] = $addr_info['phone'];
         $insert_attr['reserve_num'] = $addr_info['reserve_num'];
-        $this->make_order_debug($attr,__FILE__.",".__LINE__);
         $this->load->model("tb_trade_addr_linkage");
         $address_arr = $this->tb_trade_addr_linkage->implode_detail_address_by_attr($addr_info);
 
@@ -1094,7 +1100,6 @@ class M_trade extends MY_Model
         //主订单ID
         $component_id = $this->m_split_order->create_component_id('P');
 
-        $this->make_order_debug($attr,__FILE__.",".__LINE__);
         $this->db->trans_begin();//事务开始
 
         $this->make_order_debug($attr,__FILE__.",".__LINE__);
@@ -1178,6 +1183,8 @@ class M_trade extends MY_Model
                 if (empty($goods_main_info)) {
                     continue;
                 }
+
+                $this->make_order_debug($attr,__FILE__.",".__LINE__);
 
                 $item['doba_item_id'] = $goods_main_info['doba_item_id'];
 

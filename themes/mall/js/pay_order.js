@@ -93,7 +93,11 @@ function choosePayment(){
     if(payment == '110'){
         $('#mall_form_submit').attr('action','/order/go_amount_pay');
         $('.pay_p').show();
-    }else{
+    }
+    else if(payment == '113'){
+        $('#mall_form_submit').attr('action','https://pay.tps138.com/respond/go_order_pay');
+    }
+    else{
         $('.pay_p').hide();
         $('.pay_pwd').val('');
         $('#mall_form_submit').attr('action','/respond/go_order_pay');

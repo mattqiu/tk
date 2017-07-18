@@ -4,7 +4,7 @@ if (!defined('BASEPATH')) {
     exit('No direct script access allowed');
 }
 
-$config['subdomain_reserved'] = array('www', 'cs', 'kr', 'mall');
+$config['subdomain_reserved'] = array('cs', 'kr', 'mall','pay');
 $config['tps138mallgoods'] = 'mall';
 $config['mall_redis_time'] = 300;
 
@@ -66,6 +66,16 @@ $config['brouns_param_numbers'] = array(
     27 => 'supplier_recommendation', //供应商推荐奖
 );
 
+/*短信验证码有效时间*/
+$config['verify_code_expire_time'] = [
+    'mobile'=>5*60,
+    'email'=>30*60,
+];
+/*验证码位数*/
+$config['verify_code_counts'] = [
+    'mobile'=>6,
+    'email'=>6,
+];
 
 //用户职称对应需要达到的积分点
 $config['users_credit_config'] = [
@@ -189,10 +199,11 @@ $config['countrys_and_areas'] = array(
 /* 提现方式 */
 $config['take_out_type'] = array(
 //    1 => 'bank_card',
-    2 => 'type_alipay',
+   // 2 => 'type_alipay',
     3 => 'type_tps',
     4 => 'maxie_mobile',
     5 => 'paypal',
+    6 =>'debit_card'//银行卡提现 add by brady.wang 2017/07/05
 );
 
 /* 會員等級相关配置 */
@@ -1177,4 +1188,4 @@ $config['admin_login_captcha'] = array('switch'=>1);
 $config['Time_too_early'] = '2017-06-20 10:45:59';
 
 //输入真实姓名敏感词开关
-$config['name_sensitive'] = array('switch'=>1);
+$config['name_sensitive'] = array('switch'=>0);

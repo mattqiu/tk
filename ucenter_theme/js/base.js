@@ -190,22 +190,32 @@ $(document).ready(function () {
 });
 
 function change_take_type($type){
-    if($type == 5){
+    if($type == 6) {
+        $(".debit_card").removeClass('hidden');
+        $('.manually').addClass('hidden');
+        $('.alipay').addClass('hidden');
+        $('.maxie').addClass('hidden');
+        $('.paypal').addClass('hidden');
+    }else if($type == 5){
+        $(".debit_card").addClass('hidden');
         $('.manually').addClass('hidden');
         $('.alipay').addClass('hidden');
         $('.maxie').addClass('hidden');
         $('.paypal').removeClass('hidden');
     }else if($type == 4){
+        $(".debit_card").addClass('hidden');
         $('.paypal').addClass('hidden');
         $('.manually').addClass('hidden');
         $('.alipay').addClass('hidden');
         $('.maxie').removeClass('hidden');
     }else if ($type == 3){
+        $(".debit_card").addClass('hidden');
         $('.paypal').addClass('hidden');
         $('.maxie').addClass('hidden');
         $('.alipay').addClass('hidden');
         $('.manually').removeClass('hidden');
     }else if ($type == 2){
+        $(".debit_card").addClass('hidden');
         $('.paypal').addClass('hidden');
         $('.maxie').addClass('hidden');
         $('.manually').addClass('hidden');
@@ -993,7 +1003,6 @@ $(document).ready(function () {
         var take_out_pwd=$('input[name="take_out_pwd"]').val();
         var take_out_amount=$('input[name="take_out_amount"]').val();
         var paypal_email=$('.paypal_email').val();
-
         if(take_cash_type == ''){
             $('#cash_submit_msg').text(' ×'+$('#pls_sel_take_out_type').val()).removeClass('success');
             return;
@@ -1058,6 +1067,14 @@ $(document).ready(function () {
                 return;
             }
             self_confirm(prints($('#confirm_paypal_info').val(),paypal_account),confirm_take_cash,confirm_cancel);
+        }else if(take_cash_type == 6) {
+            var bank_name=$('input[name="bank_name"]').val();
+            var bank_number=$('input[name="bank_number"]').val();
+            if (bank_name.length <= 0 || bank_number.length <= 0 ) {
+                $('#cash_submit_msg').text(' ×'+$('#has_not_bind_bank_1').val()).removeClass('success');
+                return ;
+            }
+            self_confirm(prints($('#confirm_banks_info').val(),bank_number),confirm_take_cash,confirm_cancel);
         }
 
     });
@@ -1067,10 +1084,22 @@ $(document).ready(function () {
             var oldSubVal = curEle.val();
             curEle.val($('#loadingTxt').val());
             curEle.attr("disabled", "disabled");
+            var data = $('#take_out_form').serialize();
+
+            var bank_name = $.trim($("input[name='bank_name']").val());
+            var bank_branch_name = $.trim($("input[name='bank_branch_name']").val());
+            var bank_number = $.trim($("input[name='bank_number']").val());
+            var bank_user_name = $.trim($("input[name='bank_user_name']").val());
+
+            data +="&bank_name="+bank_name;
+            data +="&bank_branch_name="+bank_branch_name;
+            data +="&bank_number="+bank_number;
+            data +="&bank_user_name="+bank_user_name;
+            console.log(data);
             $.ajax({
                 type: "POST",
                 url: "/ucenter/take_out_cash/submit",
-                data: $('#take_out_form').serialize(),
+                data:data ,
                 dataType: "json",
                 success: function (res) {
                     $('#cash_submit_msg').text(' ×'+res.msg);

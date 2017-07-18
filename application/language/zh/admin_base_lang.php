@@ -83,7 +83,8 @@ $lang['admin_remark_option_time'] = '备注时间';
 $lang['grant_user_hand_bonus_option'] = '手动发奖';
 $lang['user_order_achievement_repair'] = '订单延迟业绩修复';
 $lang['user_sale_up_time'] = '职称升级时间';
-
+$lang['user_up_time'] = '用户级别升级时间';
+$lang['admin_user_rank'] = '用户级别';
 $lang['users_amount_check'] = '提现用户转账记录检测';
 $lang['users_check_btn'] = '检测';
 
@@ -209,7 +210,9 @@ $lang['admin_as_upload_info'] = '上传回执单';
 $lang['admin_as_del_upload_info'] = '删除回执单';
 $lang['admin_after_sale_coupons'] = '注意：扣减代品券不足以支持降级，部分退款金额需要抵掉代品券。';
 $lang['is_grant_generation'] = '发放团队销售佣金';
-
+$lang['admin_after_sale_brank_name'] = '开户行不能输入特殊字符，不能为空，最多能输入50个中文字。';
+$lang['admin_after_sale_brank_num'] = '银行账户只能输入数字，不能为空，最多能输入50个数字。';
+$lang['admin_after_sale_brank_pop'] = '开户名只能输入数字，不能为空，最多能输入50个数字。';
 
 /** 导入运单号 */
 $lang['admin_no_lock'] = '未锁定订单';
@@ -284,6 +287,8 @@ $lang['ewallet_login'] = '电子钱包登陆地址';
 $lang['alipay_account'] = '支付宝账号';
 $lang['alipay_key'] = '支付宝密钥';
 $lang['alipay_partner'] = '支付宝合作者ID';
+$lang['kuaifupay_account'] = '账户';
+$lang['kuaifupay_key'] = '密钥';
 
 $lang['old_month'] = '旧月费池';
 $lang['user_not_free'] = '用户必须是免费用户并且没有分店';
@@ -538,6 +543,13 @@ $lang['reject_confirm']='您将驳回该笔提现，请填写驳回原因！';
 $lang['cause']='原因';
 $lang['view_batch']='查看批次';
 $lang['alipay_withdraw'] = '支付宝提现列表';
+$lang['bank_withdraw'] = '提现列表';
+$lang['payment_interface'] = '代付接口';
+$lang['payment_type_1'] = '银联';
+$lang['payment_type_2'] = '财付通';
+$lang['payment_type_3'] = '快付通';
+$lang['payment_type_4'] = '汇元支付';
+$lang['submit_pay_tyep'] = '提交代付付款';
 //$lang['batch_list'] = '查看批次';
 $lang['batch_xq'] = '批次详情';
 $lang['process']='查看';
@@ -1492,6 +1504,7 @@ $lang['is_certificate'] = '发放代品券';
 $lang['no_time'] = '开始日期和结束日期不能跨月份查询';
 $lang['no_search'] = '请输入用户ID并查询';
 $lang['no_time_null'] = '开始日期不能为空';
+$lang['no_time_all_null'] = '日期不能为空';
 $lang['is_certificate'] = '发放代品券';
 $lang['limit_query_month'] = '抱歉,当前仅支持您查询当月的数据!';
 
@@ -1689,5 +1702,17 @@ $lang['export_bank_time_period'] = "时段";
 $lang['time_period1'] = "晚上";
 $lang['time_period2'] = "白天";
 
+//补发佣金信息
+$lang['admin_show_user_monthly'] = "是否显示用户业绩&nbsp;&nbsp;(默认显示最近3个月的数据)";
+$lang['admin_show_day_bonsu_monthly'] = "显示每天全球利润分红队列信息";
+$lang['admin_show_week_bonsu_monthly'] = "显示每周团队销售分红队列信息";
+$lang['admin_show_month_bonsu_monthly'] = "显示每月团队销售分红队列信息";
+$lang['admin_day_bonus_list'] = "每天全球利润分红队列";
+$lang['admin_week_bonus_list'] = "每周团队销售分红队列";
+$lang['admin_month_bonus_list'] = "每月团队销售分红队列";
+
 //导出需要过海关的订单
 $lang['export_customs_orders'] = "导出要过海关的订单";
+
+$lang['users_bonus_list_check'] = "用户佣金队列异常";
+$lang['import_third_order_tips'] = '上传文档前，必须先删除模板数据!!!';

@@ -30,7 +30,7 @@ class m_coupons extends CI_Model
                 "customer_id"=>$uid,
             ]
         ]);
-        $use_sum = $use_result['discount_amount_usd'] ? $use_result['discount_amount_usd']/100 : 0;
+        $use_sum = isset($use_result['discount_amount_usd']) ? $use_result['discount_amount_usd']/100 : 0;
 
 		$remain =  $this->get_coupons_list($uid)['total_money'];
 

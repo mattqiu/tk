@@ -288,8 +288,7 @@ class tb_week_leader_members extends CI_Model {
      */
     public function getRessiueWeekTeamAutoAmount_new_check($s_time,$item_type,$uid)
     {
-         
-    
+        
         $this->load->model('o_company_money_today_total');
         $this->load->model('o_month_leader_bonus_option');
     
@@ -297,13 +296,14 @@ class tb_week_leader_members extends CI_Model {
         $start_time = date('Ymd',strtotime($s_time)-7*24*3600);
         $end_time = date('Ymd',strtotime($s_time));
         $last_month_time = date('Ym',strtotime($s_time));
-    
+        
         //获取利润
         $last_week_total = $this->o_company_money_today_total->get_last_week_profit_pare($start_time,$end_time);
          
         //每周团队销售组织分红奖的权重统计
+        
         $week_weight = $this->o_month_leader_bonus_option->week_weight_total_par_time($last_month_time); //有些问题， 需要做以前的记录
-         
+       
         //获取发奖比率
         $grant_lv_sql = "SELECT * FROM system_rebate_conf WHERE category_id=".$item_type." limit 1";
         $grant_lv_query = $this->db->query($grant_lv_sql);
@@ -317,7 +317,7 @@ class tb_week_leader_members extends CI_Model {
                 $rank_weight = round($last_week_total['money'] * $grant_lv_value['rate_a'] * $grant_lv_value['rate_c']); // 职称权重
                 $sahre_point_weight = round($last_week_total['money'] * $grant_lv_value['rate_a'] * $grant_lv_value['rate_d']); //分红点权重
                 $store_weight = round($last_week_total['money'] * $grant_lv_value['rate_a'] * $grant_lv_value['rate_e']); //店铺等级权重
-    
+               
                 $user_query_value = $this->getUserAmountInfo_check($uid,$last_month_time);
                
                 if(!empty($user_query_value['uid']))
@@ -341,8 +341,20 @@ class tb_week_leader_members extends CI_Model {
                     );
                 }
             }
-        }       
+        } 
+        
         return $users_info_data;
+    }
+    
+    /**
+     * 获取用户当月在每周团队销售分红队列表中的信息
+     * @param 用户id $uid
+     */
+    public function get_user_week_bonus_info($uid)
+    {
+        $sql = "select * from week_share_qualified_list where uid = ".$uid;
+        $query = $this->db->query($sql);
+        return $query->row_array();
     }
     
 }

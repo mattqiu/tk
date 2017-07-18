@@ -164,7 +164,7 @@ class Cron_queen extends CI_Controller {
 	 */
 	public function recheck_user_rank() {
 		set_time_limit(0);
-                ini_set('memory_limit', '1024M');
+                ini_set('memory_limit', '5000M');
 		$this->load->model(array('o_queen', 'tb_users_child_group_info'));
 		//修复职称错误
 		while ($user_id = $this->o_queen->de_unique_queue(o_queen::QUEEN_USER_RANK_TITLE)) {
@@ -173,6 +173,11 @@ class Cron_queen extends CI_Controller {
 		//修复职称更新时间错误
 		while ($user_id = $this->o_queen->de_unique_queue(o_queen::QUEEN_USER_SALE_RANK_UP_TIME)) {
 			$this->tb_users_child_group_info->fix_user_sale_rank_up_time($user_id);
+                }
+		
+                //修复会员上下级对应关系错误
+		while ($user_id = $this->o_queen->de_unique_queue(o_queen::QUEEN_USER_LOGIC)) {
+			$this->tb_users_child_group_info->fix_user_logic($user_id);
 		}
 		exit('done');
 	}

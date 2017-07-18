@@ -116,10 +116,11 @@
 						<?php echo lang('admin_after_sale_method_'.$as_info['refund_method'])?>
 					</strong>
 				<?php }else{?>
-                <!--
-				<label class="modal_main" style="display: inline"><input type="radio" value="0" checked <?php echo isset($as_info)&&$as_info['refund_method'] == '0' ? 'checked':'' ?> name="method"><?php echo lang('admin_after_sale_method_0')?></label>
-				-->
+                
+				
+				
 				<label class="modal_main" style="display: inline"><input type="radio" value="1" checked<?php echo isset($as_info)&&$as_info['refund_method'] == '1' ? 'checked':'' ?> name="method"><?php echo lang('admin_after_sale_method_1')?></label>
+                                <label class="modal_main" style="display: inline"><input type="radio" value="0" checked <?php echo isset($as_info)&&$as_info['refund_method'] == '0' ? 'checked':'' ?> name="method"><?php echo lang('admin_after_sale_method_0')?></label>
                 <label class="modal_main" style="<?php echo isset($as_info)&&$as_info['refund_method'] == '2' ? 'display: inline':'display: none' ?>"><input type="radio" value="2" <?php echo isset($as_info)&&$as_info['refund_method'] == '2' ? 'checked':'' ?> name="method"><?php echo lang('admin_after_sale_method_2')?></label>
                 <?php }?>
 			</td>
@@ -130,30 +131,49 @@
 				<input name="transfer_uid" type="text" value="<?php echo isset($as_info) ? $as_info['transfer_uid'] : ''?>"  autocomplete="off" placeholder="<?php echo lang('member_id')?>" >
 			</td>
 		</tr>
-		
-        <tr class="alipay <?php echo isset($as_info)&&$as_info['refund_method'] != 2 ? 'hidden' : '' ?>">
+                <tr class="title manually <?php echo isset($as_info)&&$as_info['refund_method'] != 0 ? 'hidden' : '' ?>">
+			<td><img src="<?php echo base_url('img/new/reg_icon.jpg');?>"><?php echo lang('payee_info');?>:</td>
+			<td>
+				<input class="bank_name" name="account_bank" type="text" value="<?php echo isset($as_info) ? $as_info['account_bank'] : ''?>"  autocomplete="off" placeholder="<?php echo lang('bank_name').lang('example1').'  '.lang('subbranch');?>" >
+			</td>
+		</tr>
+		<tr class="manually <?php echo isset($as_info)&&$as_info['refund_method'] != 0 ? 'hidden' : '' ?>">
+			<td></td>
+			<td>
+				<input class="brank_num" id="card_number" name="card_number" value="<?php echo isset($as_info) ? $as_info['card_number'] : ''?>" type="text"  autocomplete="off" placeholder="<?php echo lang('bank_card_number');?>">
+			</td>
+		</tr>
+		<tr class="manually <?php echo isset($as_info)&&$as_info['refund_method'] != 0 ? 'hidden' : '' ?>">
+			<td></td>
+			<td>
+				<input class="brank_pop" name="account_name" type="text" value="<?php echo isset($as_info) ? $as_info['account_name'] : ''?>"  autocomplete="off" placeholder="<?php echo lang('card_holder_name');?>">
+			</td>
+		</tr>
+                <!-- 支付宝取消
+        <tr class="alipay <?php //echo isset($as_info)&&$as_info['refund_method'] != 2 ? 'hidden' : '' ?>">
             <td></td>
             <td>
-                <input id="card_number" name="card_number" value="<?php echo isset($as_info) ? $as_info['card_number'] : ''?>" type="text"  autocomplete="off" placeholder="<?php echo lang('withdrawal_alipay_');?>">
+                <input id="card_number" name="card_number" value="<?php //echo isset($as_info) ? $as_info['card_number'] : ''?>" type="text"  autocomplete="off" placeholder="<?php //echo lang('withdrawal_alipay_');?>">
             </td>
         </tr>
-        <tr class="alipay <?php echo isset($as_info)&&$as_info['refund_method'] != 2 ? 'hidden' : '' ?>">
+        <tr class="alipay <?php //echo isset($as_info)&&$as_info['refund_method'] != 2 ? 'hidden' : '' ?>">
             <td></td>
             <td>
-                <input name="account_name" type="text" value="<?php echo isset($as_info) ? $as_info['account_name'] : ''?>"  autocomplete="off" placeholder="<?php echo lang('alipay_actual_name');?>">
+                <input name="account_name" type="text" value="<?php //echo isset($as_info) ? $as_info['account_name'] : ''?>"  autocomplete="off" placeholder="<?php //echo lang('alipay_actual_name');?>">
             </td>
         </tr>
-        <tr style="height: 40px;">
-            <td class="title">
-                <img src="<?php echo base_url('img/new/reg_icon.jpg');?>"><?php echo lang('admin_after_sale_amount')?>:
-            </td>
-            <td class="content">
-                <input name="refund_amount" id="refund_amount" type="text" autocomplete="off" value="" placeholder="">
-            </td>
-            <td>
-                <strong class="alipay_tip text-error hidden">(支付宝退款金额是￥人民币)，程序将自动减去%0.5的手续费:<span class="alipay_amount"></span></strong>
-            </td>
-        </tr>
+                -->
+                <tr style="height: 40px;">
+                    <td class="title">
+                        <img src="<?php echo base_url('img/new/reg_icon.jpg');?>"><?php echo lang('admin_after_sale_amount')?>:
+                    </td>
+                    <td class="content">
+                        <input name="refund_amount" id="refund_amount" type="text" autocomplete="off" value="" placeholder="">
+                    </td>
+                    <td>
+                        <strong class="alipay_tip text-error hidden"><span class="alipay_amount"></span></strong>
+                    </td>
+                </tr>
 		<tr style="height: 50px;" >
 			<td class="title">
 				<img src="<?php echo base_url('img/new/reg_icon.jpg');?>"><?php echo lang('admin_after_sale_remark')?>:
@@ -179,6 +199,7 @@
 </style>
 <script>
     chooseRadio();
+    chooseSelectType();
     $("[name='method']:radio").click(chooseRadio);
     <?php if(isset($as_info["order_id"]) && $as_info["order_id"]){ ?>
             $("#order_id").val('<?php echo $as_info["order_id"];?>');
@@ -226,13 +247,15 @@
                                 html +='<td>'+result.status_name+'</td><td>';
                                 if(((result.order_id).substr(0,1))!="P"){
                                     html +='<input class="checkbox" onclick="chb_is_checked()" type="checkbox" checked="checked">';
+                                    cancel_order_info +=result.order_id+"#";//默认全部要取消的订单
                                 }
                                 html +='</td></tr>';
                                 if(((result.order_id).substr(0,1))=="P" || ((result.order_id).substr(0,1))=="N"){//发放过佣金的订单
                                     order_check_info +=result.order_id+"#";
-                                }else{
-                                    cancel_order_info +=result.order_id+"#";
                                 }
+                               // if(((result.order_id).substr(0,1)) !="P"){//发放过佣金的订单
+                              //      cancel_order_info +=result.order_id+"#";
+                              //  }
                             })
                         }else{
                               html +='<tr>';
@@ -313,7 +336,7 @@
     $('#after_sale').click(function(){
             var oldSubVal = $('#after_sale').val();
            // $('#after_sale').val($('#loadingTxt').val());
-          //  $('#after_sale').attr("disabled","disabled");
+            $('#after_sale').attr("disabled","disabled");
             $.ajax({
                     type: "POST",
                     url: "/admin/three_month_days_order/do_add_after_sale",
@@ -335,20 +358,49 @@
                     }
             });
     });
+    function chooseSelectType(){
+		var type = $("[name='type'] option:selected").val();
+		if(type == 1){
+			$('.demote_level').removeClass('hidden');
+			$('.no_tui').removeClass('hidden');
+			$('.order_input').addClass('hidden');
+                        $('.demote_info').removeClass('hidden');
+		}else if(type == 0){
+			$('.demote_level').addClass('hidden');
+			$('.no_tui').removeClass('hidden');
+			$('.order_input').addClass('hidden');
+                        $('.demote_info').addClass('hidden');
+		}else if(type == 2 || type == 3){
+			$('.order_input').removeClass('hidden');
+			$('.demote_level').addClass('hidden');
+			$('.no_tui').addClass('hidden');
+                        $('.demote_info').addClass('hidden');
+		}
+	}
     function chooseRadio(){
             var type = $("[name='method']").filter(":checked").val();
             if(type == 1){
-                $('#refund_amount').attr('placeholder','请输入美金（$）');
-                if($('#meiyuan').val()){
-                    $('#refund_amount').val(Number($('#meiyuan').val()).toFixed(2));
-                }
-                $('.transfer').removeClass('hidden');
-                $('.alipay').addClass('hidden');
+                    $('#refund_amount').attr('placeholder','请输入美金（$）');
+                    if($('#meiyuan').val()){
+                        $('#refund_amount').val(Number($('#meiyuan').val()).toFixed(2));
+                    }
+                    $('.manually').addClass('hidden');
+                    $('.transfer').removeClass('hidden');
+                    $('.alipay').addClass('hidden');
+                    $('.alipay_tip').addClass('hidden')
+            }else if (type == 0){
+                    $('#refund_amount').attr('placeholder','请输入人民币（￥）');
+                    $('.transfer').addClass('hidden');
+                    $('.manually').removeClass('hidden');
+                    $('.alipay').addClass('hidden');
+                    $('.alipay_tip').removeClass('hidden').text("(退款到银行卡金额是￥人民币)，系统将自动减去0.5%的手续费.");
             }else if(type == 2){
-            $('#refund_amount').attr('placeholder','请输入人民币（￥）');
-            $('#refund_amount').val('');
-            $('.transfer').addClass('hidden');
-            $('.alipay,.alipay_tip,.demote_info').removeClass('hidden');
-        }
-    }
+                $('#refund_amount').attr('placeholder','请输入人民币（￥）');
+                $('#refund_amount').val('');
+                $('.transfer').addClass('hidden');
+                $('.alipay').removeClass('hidden');
+                $('.manually').addClass('hidden');
+                $('.alipay_tip').removeClass('hidden').text("(退款到支付宝金额是￥人民币)，系统将自动减去0.5%的手续费.");
+                }
+	}
 </script>

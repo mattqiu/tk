@@ -1059,7 +1059,8 @@ left join trade_orders_goods tos on ts.order_id=tos.order_id where tos.order_id 
                 //而且查询了副表数据,如果是数组要大于1，如果是字符串*号也要查副表数据
                 if((isset($select_array[$this->tb_trade_orders_info->get_table_name()]) &&
                     count($select_array[$this->tb_trade_orders_info->get_table_name()]) > 1) ||
-                    $select_array[$this->tb_trade_orders_info->get_table_name()] == "*")
+                    ( isset($select_array[$this->tb_trade_orders_info->get_table_name()]) &&
+                        $select_array[$this->tb_trade_orders_info->get_table_name()] == "*"))
                 {
                     $trade_order_info_table_name = $this->tb_trade_orders_info->get_table_name();
                     //根据order_id拿出所有需要查询的副表数据

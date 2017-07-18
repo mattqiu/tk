@@ -247,6 +247,9 @@ td{border:0px solid #039;}
                     </td>
                 </tr>
             </table>
+            <input type="hidden" value="<?php echo lang('resend_captcha')?>" id="resend_captcha_1">
+            <input type="hidden" value="<?php echo lang('get_captcha')?>" id="get_captcha_1">
+            <input type="hidden" value="<?php echo $userInfo['mobile'] ;?>" name="mobile">
         </form>
     </div>
 </div>

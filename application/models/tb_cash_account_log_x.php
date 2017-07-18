@@ -58,6 +58,29 @@ class tb_cash_account_log_x extends MY_Model {
     }
 
     /**
+     * @author brady
+     * @desc 检查某个用户某天，是否拿某种分红
+     * @param $uid 用户id
+     * @param $item_type 6
+     * @param $day 2017-05-01
+     */
+    public function  check_exits_by_days($uid,$item_type,$day)
+    {
+        $year_month = date("Ym",strtotime($day));
+        $table = get_cash_account_log_table($uid,$year_month);   
+        $sql = "select * from ".$table." where uid = ".uid." and item_type=".$item_type." and create_time between '".$day." 00:00:00"."' and '".$day." 00:00:00'";
+        $query = $this->db->query($sql)->row_array();
+        if(!empty($query)){
+            return true;
+        }
+        else {
+            return false;
+        }
+    
+    
+    }
+    
+    /**
      * @author brady.wang
      * @desc  获取cash_account_log_x 用户的所有amount和
      * @param $uid

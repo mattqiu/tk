@@ -77,7 +77,15 @@ class Admin_as_refund_list extends MY_Controller {
 			$table_str .= "<tr><td style='width:150px'>{$item['create_time']}</td><td style='width:150px'>{$item['email']}</td><td style='width:180px'>{$item['remark']}</td></tr>";
 		}
 		$table_str .= '</table>';
-		die(json_encode(array('success'=>1,'result'=>array('table_str'=>$table_str,'as_id'=>$as_id))));
+                $order = $this->db->select('refund_method,card_number,account_bank,account_name')->where('as_id',$as_id)->get('admin_after_sale_order')->row_array();
+                $payee_str ="";
+                if(isset($order["refund_method"]) && $order["refund_method"] ==0){
+                    $payee_str = '<div style="text-align:center">收款人信息</div>';
+                    $payee_str .= '<div>开户行名称:'.$order["account_bank"].'</div>';
+                    $payee_str .= '<div>银行账号:'.$order["card_number"].'</div>';
+                    $payee_str .= '<div>开户名:'.$order["account_name"].'</div>';
+                }    
+		die(json_encode(array('success'=>1,'result'=>array('table_str'=>$table_str,'payee_str'=>$payee_str,'as_id'=>$as_id))));
 	}
 
 	/** 添加备注信息 */

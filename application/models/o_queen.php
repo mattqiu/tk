@@ -52,6 +52,13 @@ class o_queen extends MY_Model {
 	 */
 	CONST QUEEN_USER_SALE_RANK_UP_TIME = 'TASK_QUEEN_FOR_USER_SALE_RANK_UP_TIME';
 	
+        /**
+	 * 修复用户上下级对应关系
+	 * 队列数据格式为: uid
+	 */
+	CONST QUEEN_USER_LOGIC = 'TASK_QUEEN_USER_LOGIC';
+        
+        
 	function __construct() {
 		parent::__construct();
 	}

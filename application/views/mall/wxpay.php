@@ -22,13 +22,18 @@
 	});
 </script>
 <div class="wx_content">
-	<div class="con_top">
-		<div class="title"></div>
+                <?php if(isset($class)){ ?>
+    <div class="con_top" style="background-color: #01a9f2;">
+        <div class="title" style="background: url(/img/paymentMethod/<?php echo $class;?>.gif) no-repeat;"></div>
+                <?php }else { ?>
+            <div class="con_top">
+                    <div class="title"></div>
+                <?php }?>
 		<div class="dbcode">
 			<?php if(isset($msg)){ ?>
 				<span><?php echo $msg?></span>
 			<?php }else{?>
-				<img src="<?php echo base_url('common/get_wx_code?data='.urlencode($url))?>"/>
+                                <img width="246" height="246" src="<?php echo base_url('common/get_wx_code?data='.urlencode($url))?>"/>
 			<?php }?>
 		</div>
 	</div>

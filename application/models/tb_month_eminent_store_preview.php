@@ -294,4 +294,94 @@ class tb_month_eminent_store_preview extends CI_Model {
             }
         }
     }
+
+    /**
+     * 修复2017-07月杰出店铺奖漏发
+     * @return bool
+     */
+    public function FixMonthEminentStoreRewardTemp(){
+        $item_type = $this->bonus_type;
+        $time = time();
+        $lastMonth = date('Ym', strtotime('-1 month', $time));
+        $sql = "select a.id,a.profit_sharing_point,a.sale_rank,a.sale_rank_up_time from users a";
+        $sql .= " left join users_store_sale_info_monthly b on a.id=b.uid";
+        $sql .= " where a.user_rank<4 and a.sale_rank>0";
+        $sql .= " and a.id not in (select uid from month_sharing_members)";
+        $sql .= " and b.year_month='".$lastMonth."' and b.sale_amount>=10000 group by a.id";#echo $sql;exit;
+        $resMemFinal = $this->db->query($sql)->result_array();
+
+        $this->load->model('td_system_rebate_conf');
+        $this->load->model('o_bonus');
+
+        $conf = $this->td_system_rebate_conf->getBonusData($item_type);
+        if (empty($conf[0]) || !is_array($conf[0])) {
+            return false;
+        }
+        $conf = $conf[0];
+
+        $bonus_percent = $conf['rate_a'] > 0 ? floatval($conf['rate_a']) : 0;
+        $average_percent = $conf['rate_b'] > 0 ? floatval($conf['rate_b']) : 0;
+
+        if ($bonus_percent==0 || $average_percent==0) {
+            return false;
+        }
+
+        //上月总利润
+        $sql = 'select money from company_money_today_total where create_time='.$lastMonth;
+        $total_info = $this->db->query($sql)->row_array();
+
+        $total_reward = isset($total_info['money']) ? $total_info['money'] : 0;
+
+        if ($total_reward <= 0) {
+            return;
+        }
+
+        $sql = 'select count(uid) as total_num, sum(sharing_point) as total_point from month_sharing_members';
+        $point_result = $this->db->query($sql)->row_array();
+        //参与分红总人数
+        $total_num = $point_result['total_num'];
+        //参与分红的总分红点
+        $total_point = $point_result['total_point'];
+
+        //总利润的一部分拿出来作为奖金
+        $total_bonus = $total_reward * $bonus_percent;
+
+        //所有人平均分享总奖金的20%
+        $average_bonus = $total_bonus * $average_percent / $total_num;
+
+        //总奖金的剩余部分根据个人分红点分配
+        $last_reward = $total_bonus * (1 - $average_percent);
+
+        $num = 0;
+        foreach ($resMemFinal as $v) {
+            if ($v['sale_rank']==1 && $v['sale_rank_up_time']>='2017-07-01') {
+                continue;
+            }
+            $uid = $v['id'];
+
+            $yearMonth = '201707';
+            $table = get_cash_account_log_table($uid,$yearMonth);
+            $sql = "select count(*) as num from {$table} ";
+            $sql .= " where uid=" . $uid . " and item_type=" . $item_type;
+            $res = $this->db->force_master()->query($sql)->row_array();
+            if (!empty($res['num'])) {
+                continue;
+            }
+            $reward_total = $this->db->query("select sum(a.point) reward_total from users_sharing_point_reward a where a.uid=".$uid." and a.end_time>='2017-07-01'")->row_object()->reward_total;
+            $sharing_point = $v['profit_sharing_point'] + $reward_total;
+            if ($sharing_point>0) {
+                $personal_bonus = $last_reward * $sharing_point / $total_point;
+            } else {
+                $personal_bonus = 0;
+            }
+            $bonus = round($average_bonus + $personal_bonus);
+            if ($bonus<0) {
+                $bonus = 0;
+            }
+            $amountList[] = ['uid' => $uid, 'money' => round($bonus)];
+            $this->o_bonus->assign_bonus_batch_fix($amountList, $item_type, '2017-07-15');
+            $num++;
+        }
+        echo "create {$num} records\n";
+    }
 }

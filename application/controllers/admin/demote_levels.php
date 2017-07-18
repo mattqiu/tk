@@ -228,7 +228,7 @@ class Demote_levels extends MY_Controller {
                      * 
                      */
 
-                    // 减去分红点 
+                    
                     $is_true = $this->m_user->is_first_upgrade_time_1_1($user["id"]);//检查用户是否是一月一日前的用户，因月费等级有变,查询月费
 
                     if($is_true){
@@ -242,8 +242,10 @@ class Demote_levels extends MY_Controller {
                     }
                     //echo $this->db->last_query();exit;
                     $refund_amount = $point[$user['user_rank']]["join_fee"] - $point[$store_level]["join_fee"];//所抽金额根据会员当前等级和下降目标等级之间的升级费用差额来计算
-                    $this->m_overrides->reduce_sharing_point($order['uid'],(int)$refund_amount);//抽回奖励分红
-                   // $this->m_overrides->reduceDailyBonus($order['uid'],$store_level,$user,$point);//抽回日分红
+                    $this->m_overrides->reduce_sharing_point($order['uid'],(int)$refund_amount);//// 减去分红点 
+                    if($store_level > $user['user_rank'] || ($store_level==4 && $user['user_rank'] ==5) ){ /** 降級，等级有变化的时候抽回各项奖金 */
+                        $this->m_overrides->back_bonus($user["id"],$store_level,$user,1);//抽回分红类奖金
+                    }
                     /*用户等级相关，月费相关，更新日志等*/
                     $this->m_overrides->new_updateUsersAllStatus($user["id"],$user,$store_level,$point,$user['user_rank']);
              //   }

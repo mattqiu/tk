@@ -413,6 +413,7 @@ $lang['payment_108'] = 'eWallet';
 $lang['payment_109'] = '銀盛支付';
 $lang['payment_110'] = '餘額支付';
 $lang['payment_111'] = '銀聯國際';
+$lang['payment_113'] = '快付通';
 $lang['goods_deliver']="商品發貨";
 $lang['goods_deliver_2']="(等待收貨)完成";
 $lang['sales_order']="我的店鋪訂單";

@@ -24,8 +24,8 @@
         <![endif]-->
 
         <!-- Le fav and touch icons -->
-        <script src="<?php echo base_url('js/base.js?v=10'); ?>"></script>
-        <script src="<?php echo base_url('ucenter_theme/js/base.js?v=44'); ?>"></script>
+        <script src="<?php echo base_url('js/base.js?v=18'); ?>"></script>
+        <script src="<?php echo base_url('ucenter_theme/js/base.js?v=45'); ?>"></script>
         
         <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/msdropdown/dd.css?v=2'); ?>" />
         <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/msdropdown/flags.css?v=2'); ?>" />

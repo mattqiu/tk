@@ -425,6 +425,7 @@ $lang['payment_108'] = 'eWallet';
 $lang['payment_109'] = '银盛支付';
 $lang['payment_110'] = '余额支付';
 $lang['payment_111'] = '银联国际';
+$lang['payment_113'] = '快付通';
 $lang['goods_deliver']="商品发货";
 $lang['goods_deliver_2']="(等待收货)完成";
 $lang['sales_order']="我的店铺订单";

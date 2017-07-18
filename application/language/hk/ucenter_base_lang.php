@@ -5,6 +5,12 @@ $lang['paypal_withdraw'] = 'paypal提現';
 $lang['confirm_paypal_info'] = '確認paypal信息，paypal帳戶：{0}';
 $lang['account'] = '帳戶';
 $lang['account_name'] = '帳戶名稱';
+//转账提现增加短信验证功能
+$lang['mobile_verify_not'] = "手機號未認證";
+$lang['not_bind_mobile'] = "您未綁定手機號碼，請至<a href = '/ucenter/account_info/index'>賬戶信息</a>欄目進行驗證";
+$lang['not_verify_mobile'] = "您的手機號未認證,請至賬戶信息欄目進行驗證";
+$lang['mobile_not_confirm'] = "手機號未認證";
+
 /*paypal提现*/
 $lang['paypal_prompt1'] = '手續費為提現金額的2%，最高不超過$50';
 $lang['paypal_email'] = 'paypal郵箱';
@@ -16,6 +22,7 @@ $lang['prompt_2sa']='1、請登錄該郵箱查看。 ';
 $lang['paypal_tishi']='未綁定paypal';
 $lang['where_code']='驗證碼在哪裡？';
 $lang['withdrawal_paypal_tip']='單筆提現金額最大不超過：$60000';
+$lang['withdrawal_bank_tip']='(單筆提現金額最大不超過：$12000)';
 $lang['withdrawal_paypal_tip2']='導出文件的提現總金額不能超過$60000';
 $lang['withdrawal_paypal_tip3']='導出文件的筆數不能超过250筆';
 /** 4月份休眠用户活动*/
@@ -1142,10 +1149,34 @@ $lang['not_receive_code'] = "未收到驗證碼?";
 $lang['not_receive_reason'] = "可能原因：<br/>1、請檢查您的手機號是否填寫正確;<br/>2、請檢查手機短信是否設置攔截功能;<br/>3、短信可能發放延遲，請等待3-5分鐘;";
 $lang['mobile_can_not_same'] = "新手機號不能和原手機號一樣";
 
-$lang['bind_success'] = "绑定成功";
+$lang['bind_success'] = "綁定成功";
+//银行卡提现页面
+$lang['debit_card'] = "銀行卡提現";
+$lang['bank_name'] = "開戶行名稱";
+$lang['bank_branch_name'] = "開戶行支行名稱";
+$lang['bank_number'] = "銀行稱號";
+$lang['confirm_bank_number'] = "確認銀行賬號";
+$lang['bank_user_name'] = "開戶人名稱";
+$lang['please_input_bank_name'] = "請填寫開戶行名稱";
+$lang['please_input_bank_branch_name'] = "請填寫開戶行支行名稱";
+$lang['please_input_bank_number'] = "請填寫銀行賬號";
+$lang['please_input_password'] = "請填寫資金密碼";
+$lang['please_bind_mobile'] = "請先綁定手機號";
+$lang['please_verify_mobile'] = "請先驗證手機號";
+$lang['bank_number_not_same'] = "兩次銀行賬號輸入不一致";
+$lang['unbind_bank_card'] = "解綁銀行卡";
+$lang['bind_bank_card'] = "綁定銀行卡";
+$lang['bank_card_infomation_lose'] = "銀行卡綁定信息不完整";
+$lang['beyond_amount_fee'] = "超過提現最大金額";
 
-$lang['bind_success'] = "绑定成功";
-$lang['bind_success'] = "绑定成功";
+$lang['bind_bank_needname'] = "注意：綁定的銀行賬號必須是用：‘:name:’名義開得銀行賬戶！";
+$lang['not_beyond_50'] = "不能超過50個字符！";
+$lang['bank_name_china_only'] = "開戶行名稱只能輸入漢字";
+$lang['bank_branch_name_china_only'] = "開戶行支行名稱只能輸入漢字";
+$lang['bank_number_only_number'] = "銀行賬號只能是數字";
+
+$lang['bank_take_cash_fee'] = "銀行卡提現手續費，單筆最大不超過：$5";
+$lang['not_bind_bank_card'] = "未绑定银行卡";
 
 //收货地址管理 m by brady.wang
 $lang['my_addresses'] = "我的收貨地址";

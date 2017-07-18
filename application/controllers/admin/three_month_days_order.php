@@ -201,16 +201,29 @@ class Three_month_days_order extends MY_Controller {
                 if($data["method"]==2){
                     $data["refund_amount"] = sprintf("%.2f",$data["refund_amount"]);
                 }
-               // fout($data);exit;
+                
                 if(isset($data["order_cance_amount"]) && empty($data["order_cance_amount"])){
                     die(json_encode(array('success'=>0,'msg'=>"请选择要取消的订单")));
                 }
                 if(isset($data["demote_level"]) && empty($data["demote_level"])){
                     die(json_encode(array('success'=>0,'msg'=>"请选择降级等级")));
                 }
-
+                
+                if($data['method'] == 0 && (preg_match('/^[\x{4E00}-\x{9FA5}]+$/u', $data['account_bank'])==false || $data['account_bank']=="" || iconv_strlen($data['account_bank'],"UTF-8")> 50)){//退款到银行卡
+                    die(json_encode(array('success'=>0,'msg'=>lang('admin_after_sale_brank_name'))));
+                }
+                if($data['method'] == 0 && (is_numeric($data['card_number'])==false || $data['card_number']=="" || iconv_strlen($data['card_number'],"UTF-8")> 50)){//卡号
+                    die(json_encode(array('success'=>0,'msg'=>lang('admin_after_sale_brank_num'))));
+                }
+                if($data['method'] == 0 && (preg_match("/[\'.,:;*?~`!@#$%^&+=)(<>{}]|\]|\[|\/|\\\|\"|\|/",$data['account_name']) || $data['account_name']=="" || iconv_strlen($data['account_name'],"UTF-8")> 50)){//退款到银行卡
+                    die(json_encode(array('success'=>0,'msg'=>lang('admin_after_sale_brank_pop'))));
+                }
+                if($data['refund_amount'] == ""){
+			die(json_encode(array('success'=>0,'msg'=>lang('refund_amount_error'))));
+		}
 		$is_edit = FALSE;
 		$as_order = $this->db->from('admin_after_sale_order')->where('as_id',$data['id'])->get()->row_array();
+                
                 if($as_order && isset($data['edit_as_id']) && $data['edit_as_id']){
 			$is_edit = TRUE;
 		}
@@ -223,6 +236,10 @@ class Three_month_days_order extends MY_Controller {
                     $is_dup2 = $this->db->from('admin_after_sale_order')->where('uid',$data['uid'])->where_in('status',array('0','1','4','5'))->count_all_results();
                     if($is_dup2){
                             die(json_encode(array('success'=>0,'msg'=>lang('admin_after_sale_demote_info'))));
+                    }
+                    $is_dup1 = $this->db->from('admin_after_sale_order')->where('order_id',$data['order_id'])->where_in('status',array('2','3','1'))->count_all_results();
+                    if($is_dup1){
+                            die(json_encode(array('success'=>0,'msg'=>'此订单已经取消并抽回,不允许重复提交')));
                     }
 
                 }
@@ -250,8 +267,23 @@ class Three_month_days_order extends MY_Controller {
                         'order_count_amount'=>$data['dd_count'],
                         'order_cance_amount'=>$data['order_cance_amount'],
 		);
-                //转入支付宝
-                if($add_data_arr['refund_method'] == '2'){
+                //转入银行卡
+                if($add_data_arr['refund_method'] == '0'){
+			if($is_edit){
+				$update_arr['account_bank'] = $data['account_bank'];
+				$update_arr['card_number'] = $data['card_number'];
+				$update_arr['account_name'] = $data['account_name'];
+			}else{
+				$add_data_arr['account_bank'] = $data['account_bank'];
+				$add_data_arr['card_number'] = $data['card_number'];
+				$add_data_arr['account_name'] = $data['account_name'];
+			}
+			if(!$data['account_bank'] || !$data['card_number'] ||!$data['account_name'] ){
+				die(json_encode(array('success'=>0,'msg'=>"请输入银行卡信息")));
+			}
+                        $add_data_arr['refund_amount'] = $add_data_arr['refund_amount'] - round($add_data_arr['refund_amount']*0.005,2);
+                     //转入支付宝
+		}else if($add_data_arr['refund_method'] == '2'){
                             $add_data_arr['card_number'] = $data['card_number'];
                             $add_data_arr['account_name'] = $data['account_name'];
                         if(!$data['card_number'] ||!$data['account_name'] ){
@@ -284,8 +316,10 @@ class Three_month_days_order extends MY_Controller {
                
 		$this->db->trans_start();
 		if($is_edit){
-                    $update_arr = $add_data_arr;
-                    unset($update_arr["as_id"]);//删除主键
+                    $update_arr['transfer_uid'] = $data['transfer_uid'];
+                    $update_arr['demote_level'] = $data['demote_level'];
+                    $update_arr['remark'] = $data['check_info'];
+                    $update_arr['refund_amount'] =$add_data_arr['refund_amount'];
                     if($as_order['status'] == 5){
                             $update_arr['status'] = 1;
                     }else if($as_order['status'] == 4){

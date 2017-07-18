@@ -25,8 +25,26 @@ class tb_users extends MY_Model {
 		} else {
             return false;
         }
-		//$res = $this->db_slave->from('users')->where('id', $idOrEmail)->or_where("(email='$idOrEmail' and is_verified_email=1)")->or_where("(mobile='$idOrEmail' and is_verified_mobile=1)")->get()->row_array();
 		return $res;
+	}
+
+	/**
+	 * @author brady.wang
+	 * @desc 用户绑定手机号的时候，剔除其他用户mobile字段为该手机号的，并且未验证的
+	 * @param $mobile
+	 * @param $uid
+	 */
+	public function update_user_mobile_batch($mobile,$uid)
+	{
+		$sql = "select id,mobile from users where mobile = '{$mobile}' and id !={$uid} and is_verified_mobile = 0";
+		$res = $this->db->query($sql)->result_array();
+		if (!empty($res)) {
+			$sql = "update users set mobile = '' where mobile = '{$mobile}' and is_verified_mobile = 0 and id !={$uid}";
+			$this->db->query($sql);
+			return json_encode($res).$this->db->last_query();
+		}
+		return '';
+
 	}
 
 	/**
@@ -739,36 +757,22 @@ class tb_users extends MY_Model {
 	 * @param unknown $idOrEmail   账户（ID，邮箱，手机号）
 	 * @return unknown             账户信息
 	 */
-	public function getUserByIdOrEmail_v1($idOrEmail) {
-
-		$idOrEmail = trim($idOrEmail);
-		if( is_email($idOrEmail) ){
-			$res = $this->db_slave->from('users')->where("(email='$idOrEmail' and is_verified_email=1)")->get()->row_array();
-		}elseif( strlen($idOrEmail) > 10 ){
-			$res = $this->db_slave->from('users')->where("(mobile='$idOrEmail')")->get()->row_array();
-		}else{
-			$res = $this->db_slave->from('users')->where('id', $idOrEmail)->get()->row_array();
-		}
-		
-		if (empty($res)) {
-			return array();
-		}
-
-		//$res = $this->db_slave->from('users')->where('id', $idOrEmail)->or_where("(email='$idOrEmail' and is_verified_email=1)")->or_where("(mobile='$idOrEmail')")->get()->result_array();
-	    if (count($res) > 1) {
-			if( is_email($idOrEmail) ){
-				$res = $this->db_slave->from('users')->where("(email='$idOrEmail' and is_verified_email=1)")->get()->row_array();
-			}elseif( strlen($idOrEmail) > 10 ){
-				$res = $this->db_slave->from('users')->where("(mobile='$idOrEmail' and is_verified_mobile=1)")->get()->row_array();
-			}else{
-				$res = $this->db_slave->from('users')->where('id', $idOrEmail)->get()->row_array();
-			}
-			return $res;
-			//return $res = $this->db_slave->from('users')->where('id', $idOrEmail)->or_where("(email='$idOrEmail' and is_verified_email=1)")->or_where("(mobile='$idOrEmail' and is_verified_mobile=1)")->get()->row_array();
-	    } else {
-	        return $res[0];
-	    }
-	}
+//	public function getUserByIdOrEmail_v1($idOrEmail) {
+//
+//		$idOrEmail = trim($idOrEmail);
+//		if( is_email($idOrEmail) ){
+//			$res = $this->db_slave->from('users')->where("(email='$idOrEmail' and is_verified_email=1)")->get()->row_array();
+//		}elseif( strlen($idOrEmail) > 10 ){
+//			$res = $this->db->from('users')->where("(mobile='$idOrEmail' and is_verified_mobile=1)")->get()->row_array();
+//		}else{
+//			$res = $this->db->from('users')->where('id', $idOrEmail)->get()->row_array();
+//		}
+//
+//		if (empty($res)) {
+//			return array();
+//		}
+//		return $res;
+//	}
 
 	/**
 	 * 验证用户密码 --- leon
@@ -1858,4 +1862,101 @@ class tb_users extends MY_Model {
 		//$special_no = $special_no <= 1 ? 1 : $special_no;
 		//return $this->db->select($field)->where_in('id', $users)->order_by("sale_rank", "DESC")->order_by("sale_rank_up_time", "ASC")->limit(1, $special_no - 1)->get($this->table_name)->row_array();
 	}
+	
+	
+	/**
+	 * 修改每天全球，每周分红，每月团队队列中的业绩和职称权重
+	 * @param 用户id $uid
+	 * @param 佣金类型 $item_type
+	 * @param 1.业绩；2.职称 $user_monthly
+	 * @param 职称 $sale_rank
+	 */
+	public function users_bonus_list_edit($uid,$item_type,$user_monthly,$sale_rank)
+	{
+	    $this->load->model('o_cron');
+	    
+	    $year_month = date("Ym", strtotime("-1 month")); 
+	    
+	    switch($item_type)
+	    {
+	        case 1:
+	            $table_name = "month_group_share_list";	           
+	            break;
+	        case 25:
+	            $table_name = "week_share_qualified_list";
+	            break;
+	        case 6:
+	            $table_name = "daily_bonus_qualified_list";
+	            break;
+	        case 24:
+	            $table_name = "daily_bonus_elite_qualified_list";
+	            break;
+	    }
+
+	    if($item_type==6 && $user_monthly==1)
+	    {
+	        //修复每天全球利润分红中，队列中本月业绩
+	        $this->o_cron->count_monthly($uid,null);
+	        $get_user_monthly_sql = "SELECT sale_amount FROM `users_store_sale_info_monthly` where uid = ".$uid." and `year_month`='".$year_month."'";
+	       
+	        $get_user_monthly_query = $this->db->query($get_user_monthly_sql)->row_array();
+	        if(!empty($get_user_monthly_query))
+	        {
+	            $monthly_sql = "update daily_bonus_qualified_list set amount = ".$get_user_monthly_query['sale_amount']." where uid = ".$uid;	            
+	            $this->db->query($monthly_sql);
+	        }
+	    }
+	    else
+	    {
+	        if($user_monthly==1)
+	        {
+	            //修正业绩
+	            $this->o_cron->count_monthly($uid,null);
+	            $get_user_monthly_sql = "SELECT sale_amount FROM `users_store_sale_info_monthly` where uid = ".$uid." and `year_month`='".$year_month."'";
+	            $get_user_monthly_query = $this->db->query($get_user_monthly_sql)->row_array();
+	            if(!empty($get_user_monthly_query))
+	            {
+	                if($item_type==25)
+	                {
+	                    $monthly_sql = "update week_share_qualified_list set sale_amount_weight = ".$get_user_monthly_query['sale_amount']." where uid = ".$uid;
+	                    $this->db->query($monthly_sql);
+	                }
+	                else if($item_type==1)
+	                {
+	                    $monthly_sql = "update month_group_share_list set sale_amount_weight = ".$get_user_monthly_query['sale_amount']." where uid = ".$uid;
+	                    $this->db->query($monthly_sql);
+	                }	                
+	            }	            
+	        }
+	        else 
+	        {
+	            $sale_rank_s = 0;
+	            $sale_rank_sql="";
+	            //修正职称权重
+	            if($item_type==25)
+	            {
+	                $sale_rank_s = $sale_rank * $sale_rank;
+	                $sale_rank_sql = "update ".$table_name." set sale_rank_weight=".$sale_rank_s." where uid = ".$uid;
+	            }
+	            else if($item_type==1)
+	            {
+	                $sale_rank_s = ($sale_rank+1) * ($sale_rank+1);
+	                if($sale_rank_s>=16)
+	                {
+	                    $sale_rank_s = $sale_rank_s * 10;
+	                }
+	                $sale_rank_sql = "update ".$table_name." set sale_rank_weight=".$sale_rank_s." where uid = ".$uid;
+	            }
+	            else 
+	            {
+	                $sale_rank_sql = "update ".$table_name." set bonus_shar_weight = ".$sale_rank." where uid = ".$uid;
+	            }
+	            
+	            
+	            $this->db->query($sale_rank_sql);
+	        }
+	    }   
+	}
+	
+	
 }

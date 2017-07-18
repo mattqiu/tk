@@ -656,4 +656,26 @@ class tb_users_store_sale_info_monthly extends CI_Model {
     	$data = $this->db->select("count(uid) as count")->get($this->table_name)->row_array();
         return isset($data["count"]) ? $data["count"] : 0;
     }
+    
+    /**
+     * 获取用户业绩
+     * @param unknown $uid
+     */
+    public function get_user_monthly($uid,$limit)
+    {
+        $sql = "select * from users_store_sale_info_monthly where uid = ".$uid." order by `year_month` desc limit ".$limit;
+        $query = $this->db->query($sql)->result_array();
+        return $query;
+    }
+    
+    /**
+     * 获取用户业绩
+     * @param unknown $uid
+     */
+    public function get_user_monthly_by_time($uid,$year_month)
+    {
+        $sql = "select * from users_store_sale_info_monthly where uid = ".$uid." and  `year_month`='".$year_month."' ";
+        $query = $this->db->query($sql)->row_array();
+        return $query;
+    }
 }

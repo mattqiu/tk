@@ -152,7 +152,6 @@ class tb_user_transfer_account_waring extends MY_Model {
         foreach($idList as $uidInfo) {
             $uid = $uidInfo['uid'];
             $year_month=201607;
-            $year_month=201707;
             while($year_month<=$curr_year) {
                 //获取用户在时间段内的所有转账记录
                 if ($year_month>=201707) {    //月分表的同时按id分表

@@ -150,13 +150,14 @@ class tb_month_leader_bonus extends CI_Model {
         $users_info_data = array();
         $start_time = date('Ym',strtotime($s_time));
         $month_time = date('Ym',(strtotime(date('Ym05',strtotime($s_time)))-30*24*3600));
-        $this->m_debug->log($uid.':153_tb_month');
+        
         //获取利润
         $last_month_total = $this->o_company_money_today_total->get_month_profit_pare($month_time);
-        $this->m_debug->log($uid.':156_tb_month');
+        
         //每周团队销售组织分红奖的权重统计
+       
         $user_weight = $this->o_month_leader_bonus_option->month_weight_total_pre_time($start_time);
-        $this->m_debug->log($uid.':159_tb_month');
+       
         //获取发奖比率
         $grant_lv_sql = "SELECT * FROM system_rebate_conf WHERE category_id=1";
         $grant_lv_query = $this->db->query($grant_lv_sql);
@@ -186,10 +187,8 @@ class tb_month_leader_bonus extends CI_Model {
             {
                 $amount_weight = round($last_month_total['money'] * $global * $sale_amount_w); //个人销售权重
                 $rank_weight = round($last_month_total['money'] * $global * $rank_amount_w); // 职称权重
-                $user_store_weight = round($last_month_total['money'] * $global * $store_amount_w); //店铺权重
-                $this->m_debug->log($uid.':190_tb_month');
-                $user_value = $this->getUserAmountInfo($uid,$month_time);
-                $this->m_debug->log($uid.':192_tb_month');
+                $user_store_weight = round($last_month_total['money'] * $global * $store_amount_w); //店铺权重                
+                $user_value = $this->getUserAmountInfo($uid,$month_time);                
                 if(!empty($user_value))
                 {
                     $sale_rank_weights = 0;

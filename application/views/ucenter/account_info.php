@@ -256,24 +256,22 @@
                     <tr id="phone_yz">
                         <td class="tab_name"><?php echo lang('mobile') ?>:</td>
                         <td>
-
-
-
                             <?php
-                            $user['mobile'] = isset($user['mobile']) ?$user['mobile'] : '';
-                            $user['mobile_encrypt'] = isset($user['mobile_encrypt']) ? $user['mobile_encrypt'] : '';
-                            if($user['country_id'] != 1) {
-                                echo  '<input type="text" id="mobile_input" name="mobile" value="'.$user['mobile_encrypt'].'" class="input-xlarge">';
+                            $user['mobile'] = isset($user['mobile']) ? $user['mobile'] : '';
+                            $user['mobile_encrypt'] = isset($user['mobile_encrypt']) ? $user['mobile_encrypt'] : $user['mobile'];
+                            if ($user['country_id'] != 1) {
+                                echo '<input type="text" id="mobile_input" name="mobile" value="' . $user['mobile_encrypt'] . '" class="input-xlarge">';
                             } else {
-                                echo isset($user['mobile_encrypt']) ? $user['mobile_encrypt'] :'';
+                                echo $user['mobile_encrypt'];
                                 if (empty($user['mobile']) || (!empty($user['mobile']) && $user['is_verified_mobile'] != 1)) {
-                                    echo ' <a href="javaScript:binding_info()">'. lang('binding_mobile').'</a>';
+                                    echo ' <a href="javaScript:binding_info()">' . lang('binding_mobile') . '</a>';
                                 } elseif (!empty($user['mobile']))
-                                    if(!empty($user['mobile']) && $user['is_verified_mobile'] == 1) {
-                                        echo  '<strong style="color: #008000">'.lang('is_binding').'</strong>';
-                                        echo '<a href="'.base_url('ucenter/change_mobile').'" class="modify_mobile_bind">'. lang('modify_mobile_number').'</a>';
+                                    if (!empty($user['mobile']) && $user['is_verified_mobile'] == 1) {
+                                        echo '<strong style="color: #008000">' . lang('is_binding') . '</strong>';
+                                        echo '<a href="' . base_url('/ucenter/change_mobile') . '" class="modify_mobile_bind">' . lang('modify_mobile_number') . '</a>';
                                     }
                             }
+
 
                             ?>
 
@@ -672,7 +670,7 @@
                     <tr style="height:50px;">
                         <td class=""><?php echo lang('mobile'); ?>:</td>
                         <td class="main">
-                            <input type="text" value="<?php echo $user['mobile']?$user['mobile']:'';?>" autocomplete="off" name="binding_mobile_phone" placeholder="<?php echo lang('mobile');?>" onkeyup="this.value=this.value.replace(/\D/g,'')" maxlength="11" onafterpaste="this.value=this.value.replace(/\D/g,'')" >
+                            <input type="text" value="<?php echo isset($user['mobile'])?$user['mobile']:'';?>" autocomplete="off" name="binding_mobile_phone" placeholder="<?php echo lang('mobile');?>" onkeyup="this.value=this.value.replace(/\D/g,'')" maxlength="11" onafterpaste="this.value=this.value.replace(/\D/g,'')" >
                         </td>
                     </tr>
 
@@ -708,6 +706,7 @@
                     <tr>
                         <td class=""><?php echo lang('email_text'); ?>:</td>
                         <td class="main">
+                            <input type="text" value="<?php echo $user['email']?$user['email']:'';?>" autocomplete="off" name="email" placeholder="<?php echo lang('email');?>" >
                             <input type="text" value="<?php echo $user['email']?$user['email']:'';?>" autocomplete="off" name="email" placeholder="<?php echo lang('email');?>" >
                         </td>
                     </tr>

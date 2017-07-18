@@ -5,17 +5,8 @@
 				<ul>
 				<?php 
 				$mall_ads = $mall_ads_list[$mall_ads_title[$curLocation_id]['ads']];
-					//print_r($mall_ads);exit;
 					if ($mall_ads[0]) {
 						foreach($mall_ads as $ad) {
-							//2017-07-07 leon  修改图片地址为当前登陆人的店铺ID
-							// if($store_id != 0){
-							// 	$action_val = $ad['action_val'];
-							// 	$action_val_array = explode('www',$action_val);
-							// 	$action_val_url = $action_val_array[0].$store_id.$action_val_array[1];
-							// }else{
-							// 	$action_val_url = $ad['action_val'];
-							// }
 				?>
 					<li _src="url(<?php echo  $img_host.'/'.$ad['ad_img'];?>)" style="background: <?php echo $ad['img_subhead']?> no-repeat center;"><a target="_blank" href="<?php echo $ad['action_val'];?>" ></a></li>
 
@@ -35,7 +26,8 @@
 		<div class="w1200">
 			<!--x-banner start-->
 			<?php
-				$mall_ads_activity = $mall_ads_list[$mall_ads_title[$curLocation_id]['activity']];
+				$mall_activity_key = !empty($mall_ads_title[$curLocation_id]['activity']) ? $mall_ads_title[$curLocation_id]['activity'] : '';
+				$mall_ads_activity = !empty($mall_ads_list[$mall_activity_key]) ? $mall_ads_list[$mall_activity_key] : '';
 				$mall_ads_activity_count = count($mall_ads_activity);
 			?>
 			<div class="x-banner clear">
@@ -104,7 +96,7 @@
 
 			<!--特惠促销 start-->
 			<?php
-				$promote_goods_count = count($promote_goods);
+				$promote_goods_count = isset($promote_goods) ? count($promote_goods) : 0;
 				if ($promote_goods_count >= 5) {
 			?>
 			<div class="tps-line">
@@ -438,7 +430,7 @@
 
 			<!--浏览历史 start-->
 			<?php
-				if ($history_goods) {
+				if (!empty($history_goods)) {
 			?>
 			<div class="tps-line ls">
 				<div class="tc mb-10"><b class="d-ib"><?php echo lang('label_goods_history');?></b><em class="d-ib fs-18 mfr-10"></em><span class="d-ib c-99 fs-14"></span><!-- <a class="fs-14 c-66 fr" href="">更多></a> --></div>

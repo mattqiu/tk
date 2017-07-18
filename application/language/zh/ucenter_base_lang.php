@@ -5,6 +5,18 @@ $lang['paypal_withdraw'] = 'paypal提现';
 $lang['confirm_paypal_info'] = '确认paypal信息，paypal账号：{0}';
 $lang['account'] = '帐号';
 $lang['account_name'] = '帐号名称';
+
+//转账提现增加短信验证功能
+$lang['mobile_verify_not'] = "手机号未认证";
+$lang['not_bind_mobile'] = "您未绑定手机号码，请至<a href = '/ucenter/account_info/index' class='go_modify_PIN'>账户信息</a>栏目进行验证";
+$lang['not_verify_mobile'] = "您的手机号未认证，请至<a href = '/ucenter/account_info/index' class='go_modify_PIN'>账户信息</a>栏目进行验证";
+$lang['mobile_not_confirm'] = "手机号未认证";
+
+
+
+
+
+
 /*paypal提现*/
 $lang['paypal_prompt1'] = '手续费为提现金额的2%，最高不超过$50';
 $lang['paypal_email'] = 'paypal邮箱';
@@ -17,6 +29,7 @@ $lang['prompt_2sa']='1、请登录该邮箱查看。';
 $lang['paypal_tishi']='未绑定paypal';
 $lang['where_code']='验证码在哪里？';
 $lang['withdrawal_paypal_tip']='单笔提现金额最大不超过：$60000';
+$lang['withdrawal_bank_tip']='(单笔提现金额最大不超过：$12000)';
 $lang['withdrawal_paypal_tip2']='导出文件的提现总金额不能超过$60000';
 $lang['withdrawal_paypal_tip3']='导出文件的笔数不能超过250笔';
 /** 4月份休眠用户活动*/
@@ -1129,6 +1142,36 @@ $lang['not_receive_code'] = "未收到验证码?";
 $lang['not_receive_reason'] = "可能原因：<br/>1、请检查你的手机号是否填写正确;<br/>2、请检查手机短信是否设置拦截功能;<br/>3、短信可能发放延迟，请等待3-5分钟;";
 $lang['mobile_can_not_same'] = "新手机不能和原手机一样";
 $lang['bind_success'] = "绑定成功";
+
+//银行卡提现页面
+$lang['debit_card'] = "银行卡提现";
+$lang['bank_name'] = "开户行名称";
+$lang['bank_branch_name'] = "开户行支行名称";
+$lang['bank_number'] = "银行账号";
+$lang['confirm_bank_number'] = "确认银行账号";
+$lang['bank_user_name'] = "开户人名称";
+$lang['please_input_bank_name'] = "请填写开户行名称";
+$lang['please_input_bank_branch_name'] = "请填写开户行支行名称";
+$lang['please_input_bank_number'] = "请填写银行账号";
+$lang['please_input_password'] = "请填写资金密码";
+$lang['please_bind_mobile'] = "请先绑定手机号";
+$lang['please_verify_mobile'] = "请先验证手机号";
+$lang['bank_number_not_same'] = "两次银行账号输入不一致";
+$lang['unbind_bank_card'] = "解绑银行卡";
+$lang['bind_bank_card'] = "绑定银行卡";
+$lang['bank_card_infomation_lose'] = "银行卡绑定信息不完整";
+$lang['beyond_amount_fee'] = "超过提现最大金额";
+
+$lang['bind_bank_needname'] = "注意：绑定的银行帐号必须是用 ‘:name:’名义开的银行账户！";
+$lang['not_beyond_50'] = "不能超过50个字符！";
+$lang['bank_name_china_only'] = "开户行名称只能输入汉字";
+$lang['bank_branch_name_china_only'] = "开户行支行名称只能输入汉字";
+$lang['bank_number_only_number'] = "银行账号只能是数字";
+
+$lang['bank_take_cash_fee'] = "(银行卡提现手续费，0.5% 单笔最大不超过：$5)";
+$lang['not_bind_bank_card'] = "未绑定银行卡";
+
+
 
 
 

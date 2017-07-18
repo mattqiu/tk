@@ -35,4 +35,16 @@ class tb_month_group_share_list extends CI_Model {
         }
     }
     
+    /**
+     * 获取用户当月在每周团队销售分红队列表中的信息
+     * @param 用户id $uid
+     */
+    public function get_user_month_bonus_info($uid)
+    {
+        $sql = "select * from month_group_share_list where uid = ".$uid;
+        $query = $this->db->query($sql);
+        return $query->row_array();
+    }
+    
+    
 }

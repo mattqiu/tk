@@ -144,6 +144,7 @@
 				if (res.success) {
 					$('#table_str').html(res.result.table_str);
 					$('.as_id').html(res.result.as_id);
+                                        $('.payee').html(res.result.payee_str);
 					$('#as_remark_modal').modal();
 				}
 			}
@@ -226,7 +227,7 @@
                     <td width="5%"><?php echo $item['name'] ?></td>
                     <td width="5%"><?php echo lang('admin_after_sale_type_'.$item['type']); echo $item['demote_level'] ? '->'.lang('level_'.$item['demote_level']) : '' ?></td>
                     <td width="5%"><?php echo lang('admin_after_sale_method_'.$item['refund_method']) ?></td>
-                    <td width="5%"><?php if(in_array($item['refund_method'],array(0,2))){if ($item['account_bank']) {echo $item['account_bank'].'<br />';}echo $item['card_number'].'<br />'.$item['account_name'];}else{echo $item['transfer_uid'];}?></td>
+                    <td width="5%"><?php if(in_array($item['refund_method'],array(0,2))){echo $item['account_name'];}else{echo $item['transfer_uid'];}?></td>
                     <td width="5%""><?php  echo $item['refund_method'] == 2 ? '￥'.round($item['refund_amount'],2) : '$'.round($item['refund_amount'],2);?></td>
                     <td width="50%" style="word-break:break-all"><?php echo $item['remark'];?></td>
                     <td width="5%"><?php echo lang('admin_after_sale_status_'.$item['status']);if(in_array($item['status'],array(4,5))){echo '<br><span style="color:red;">'. $item['reject_remark'].'<span>'; } ?></td>
@@ -296,7 +297,7 @@
 	</div>
 
 	<div class="modal-body">
-			<table class="enable_level_tb">
+			<table class="enable_level_tb" style="float:left;">
 				<tr>
 					<td><?php echo lang('admin_after_sale_id') ?>:</td>
 					<td><span class="as_id"></span></td>
@@ -310,8 +311,13 @@
 					<td><input autocomplete="off" class="btn btn-primary as_order_submit" value="<?php echo lang('submit'); ?>"></td>
 				</tr>
 			</table>
-		<?php echo lang('admin_as_action_log') ?>
-		<div id="table_str"></div>
+            <div class="payee" style="width:330px;float:right;border:1px;">
+                
+                
+            </div>
+            <div style="clear: both"></div>
+            <div style="float:left"><?php echo lang('admin_as_action_log') ?></div><br>
+            <div id="table_str"></div>
 	</div>
 
 </div>

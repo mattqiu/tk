@@ -222,7 +222,7 @@ class Login extends MY_Controller {
      */
     public function logoutApiWoHao()
     {
-            header("Access-Control-Allow-Origin:http://www.walhao.com");
+            header("Access-Control-Allow-Origin:*");
             require_once APPPATH.'third_party/AES/AES.php';
             $url = $_SERVER['REQUEST_URI'];
             $aes = new aes();
@@ -247,13 +247,14 @@ class Login extends MY_Controller {
      */
     public function loginApiWoHao()
     {
-        header("Access-Control-Allow-Origin:http://www.walhao.com");
+        header("Access-Control-Allow-Origin:*");
         require_once APPPATH.'third_party/AES/AES.php';
         $url = $_SERVER['REQUEST_URI'];
         $aes = new aes();
         $encrypt_id = trim($_GET['uid']);
         $key = '4svp+!A138FS+d_O';
         $uid  = $aes->aes256ecbDecrypt($encrypt_id,'', $key);
+        $this->load->model("tb_users");
         $res = $this->tb_users->get_user_info($uid);
         $this->load->model("tb_logs_wohao_api");
         if (!empty($res)) {

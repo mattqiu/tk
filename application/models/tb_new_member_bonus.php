@@ -357,5 +357,15 @@ class tb_new_member_bonus extends MY_Model
 		));
 	}
 
+	/**
+	 * 获取用户当月在每天全球利润分红队列表中的信息
+	 * @param 用户id $uid
+	 */
+	public function get_user_new_member_bonus_info($uid)
+	{
+	    $sql = "select * from daily_bonus_qualified_list where uid = ".$uid;
+	    $query = $this->db->query($sql);
+	    return $query->row_array();
+	}
 
 }

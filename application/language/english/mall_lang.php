@@ -472,6 +472,7 @@ $lang['payment_107'] = 'PayPal';
 $lang['payment_108'] = 'eWallet';
 $lang['payment_109'] = 'Yspay';
 $lang['payment_110'] = 'TPS Amount';
+$lang['payment_113'] = 'Fast delivery';
 $lang['payment_111'] = 'Unionpay International';
 $lang['goods_deliver']="Shipment";
 $lang['goods_deliver_2']="(Pending receive)Complete";

@@ -149,12 +149,16 @@
 
 <?php if(in_array($adminInfo['role'],array(0,1,2,4,5,122,153))){?>
 	<div class="nav-header" data-toggle="collapse" data-target="#team"><i class="icon-money"></i><?php echo lang('commission') ?></div>
-	<ul id="team" class="nav nav-list collapse<?php echo in_array($curControlName, array('commission_report','commission_admin','commission_month','monthfee_pool_admin','sharing_point_to_cash','cash_withdrawal_list','month_fee_to_amount','demote_levels','withdraw_table','withdraw_table_batch','withdraw_table_batch_detail','return_back','cash_to_sharing_point','order_repair_of_comm','commission_special_do','paypal_withdrawal_list','incentive_system_management','users_amount_check','bonus_plan_control')) ? ' in' : '' ?>">
+
+
+	<ul id="team" class="nav nav-list collapse<?php echo in_array($curControlName, array('commission_report','commission_admin','commission_month','monthfee_pool_admin','sharing_point_to_cash','cash_withdrawal_list','month_fee_to_amount','demote_levels','withdraw_table','withdraw_table_batch','withdraw_table_batch_detail','bank_withdraw','return_back','cash_to_sharing_point','order_repair_of_comm','commission_special_do','paypal_withdrawal_list','incentive_system_management','users_amount_check','bonus_plan_control','users_bonus_list_check','bank_withdraw','commission_special_check')) ? ' in' : '' ?>">
+
 		<li class="<?php echo $curControlName == 'commission_report' ? 'active' : '' ?>"><a href="<?php echo base_url('admin/commission_report'); ?>"><?php echo lang('funds_change_report') ?></a></li>
-		<?php if(in_array($adminInfo['role'],array(0,4)) || in_array($adminInfo['id'],array(1,18,68,99,210,60,188,277,291,173,3,8,9,212,64,294,293,295,144,198,280))){?>
+		<?php if(in_array($adminInfo['role'],array(0,4)) || in_array($adminInfo['id'],array(1,18,68,99,210,60,188,277,291,173,3,8,9,212,64,294,293,295,144,198,280,160,464))){?>
 			<li class="<?php echo in_array($curControlName,array('withdraw_table','withdraw_table_batch','withdraw_table_batch_detail'))? 'active' : '' ?>"><a href="<?php echo base_url('admin/withdraw_table'); ?>"><?php echo lang('alipay_withdraw') ?></a></li>
+                        <li class="<?php echo in_array($curControlName,array('bank_withdraw','bank_withdraw_batch','bank_withdraw_batch_detail'))? 'active' : '' ?>"><a href="<?php echo base_url('admin/bank_withdraw'); ?>"><?php echo lang('bank_withdraw') ?></a></li>
                 <?php }?>
-                <?php if(in_array($adminInfo['id'],array(1,3,18,61,173,99,210,60,188,277,291,8,9,212,64,294,293,295,144,198,280)) || in_array($adminInfo['role'], array(0)) ){?>
+                <?php if(in_array($adminInfo['id'],array(1,3,18,61,173,99,210,60,188,277,291,8,9,212,64,294,293,295,144,198,280,160)) || in_array($adminInfo['role'], array(0)) ){?>
 			<li class="<?php echo $curControlName == 'cash_withdrawal_list' ? 'active' : '' ?>"><a href="<?php echo base_url('admin/cash_withdrawal_list'); ?>"><?php echo lang('cash_withdrawal_list') ?></a></li>
                         <li class="<?php echo $curControlName == 'paypal_withdrawal_list' ? 'active' : '' ?>"><a href="<?php echo base_url('admin/paypal_withdrawal_list'); ?>"><?php echo lang('paypal_withdrawal_list') ?></a></li>
 		<?php }?>
@@ -199,9 +203,19 @@
             <li class="<?php echo $curControlName == 'incentive_system_management' ? 'active' : '' ?>"><a href="<?php echo base_url('admin/incentive_system_management'); ?>"><?php echo lang('incentive_system_management') ?></a></li>
         <?php }?>
         <li class="<?php echo $curControlName == 'users_amount_check' ? 'active' : '' ?>"><a href="<?php echo base_url('admin/users_amount_check'); ?>"><?php echo lang('transfer_contr') ?></a></li>
+      
+       <?php if(in_array($adminInfo['id'],array(1,145,280))){?>       
+            <li class="<?php echo $curControlName == 'users_bonus_list_check' ? 'active' : ''; ?>">
+                    <a href="<?php echo base_url('admin/users_bonus_list_check'); ?>"><?php echo lang("users_bonus_list_check"); ?></a>
+            </li>
+       <?php } ?>
+       
         <li class="<?php echo $curControlName == 'bonus_plan_control' ? 'active' : ''; ?>">
                 <a href="<?php echo base_url('admin/bonus_plan_control'); ?>">奖金发放监控</a>
-            </li>
+        </li>
+        <li class="<?php echo $curControlName == 'commission_special_check' ? 'active' : ''; ?>">
+                <a href="<?php echo base_url('admin/commission_special_check'); ?>"><?php echo lang("commission_special_check");?></a>
+        </li>
 	</ul>
 <?php }?>
 
@@ -289,7 +303,12 @@
 
 			<?php if(in_array($adminInfo['role'],array(0,1,2,3)) || check_right('hk_customer_1v1_role_5')){?>
 
+
 				<?php if(in_array($adminInfo['id'],array(1))){?>
+
+				<?php if(in_array($adminInfo['id'],array(1)) || check_right('import_third_part_orders')){?>
+
+				<?php if(in_array($adminInfo['id'],array(1,9,131,420,464,144)) || check_right('import_third_part_orders')){?>
 					<li class="<?php echo $curControlName == 'import_third_part_orders' ? 'active' : ''; ?>" ><a href="<?php echo base_url('admin/import_third_part_orders'); ?>"><?php echo lang('import_third_part_orders'); ?></a></li>
 				<?php }?>
 
@@ -316,6 +335,8 @@
 				<li class="<?php echo $curControlName == 'export_customs_orders' ? 'active' : ''; ?>" ><a href="<?php echo base_url('admin/export_customs_orders'); ?>"><?php echo lang('export_customs_orders'); ?></a></li>
                                 <li class="<?php echo $curControlName == 'export_bank_orders' ? 'active' : ''; ?>" ><a href="<?php echo base_url('admin/export_bank_orders'); ?>"><?php echo lang('export_bank_orders'); ?></a></li>
 			<?php }?>
+		<?php }?>
+		<?php }?>
 		<?php }?>
 	</ul>
 	<?php if(in_array($adminInfo['role'],array(0,1,2,3,4))){?>

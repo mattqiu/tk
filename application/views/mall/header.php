@@ -27,13 +27,17 @@
 				$('.this-ts').show();
 			}
 		});
-		var _hmt = _hmt || [];
-		(function() {
-			var hm = document.createElement("script");
-			hm.src = "//hm.baidu.com/hm.js?578f5b60e0b8afa397afd3ca1332c296d";
-			var s = document.getElementsByTagName("script")[0];
-			s.parentNode.insertBefore(hm, s);
-		})();
+
+		//百度统计
+		window.onload = function(){
+			var _hmt = _hmt || [];
+			(function() {
+				var hm = document.createElement("script");
+				hm.src = "/themes/mall/js/baidu_statistics.js?v=5";
+				var s = document.getElementsByTagName("script")[0];
+				s.parentNode.insertBefore(hm, s);
+			})();
+		}
 
 		$(function(){
 			$('#tog').click(function(){

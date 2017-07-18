@@ -214,12 +214,11 @@ class Index extends MY_Controller {
         $product_data['goods_sn']= $goods_sn;
 
         /* 头部信息 */
-        $product_data['title']=$goods_info['extends']['meta_title'].' - '.lang('site_name');
-        $product_data['keywords']=$goods_info['extends']['meta_keywords'];
-        $product_data['description']=$goods_info['extends']['meta_desc'];
-        $product_data['canonical']=base_url().'index/product?snm='.$goods_info['goods_sn_main'];
-
-        $product_data['goods_info']=$goods_info;
+        $product_data['title']       = isset($goods_info['extends']['meta_title']) ? $goods_info['extends']['meta_title'] .' - '.lang('site_name') : '';
+        $product_data['keywords']    = isset($goods_info['extends']['meta_keywords']) ? $goods_info['extends']['meta_keywords'] : '';
+        $product_data['description'] = isset($goods_info['extends']['meta_desc']) ? $goods_info['extends']['meta_desc'] : '';
+        $product_data['canonical']   = base_url().'index/product?snm='.$goods_info['goods_sn_main'];
+        $product_data['goods_info']  = $goods_info;
 
         /* 套餐详情 */
         if($goods_info['is_alone_sale'] == 2 && $goods_info['group_goods_id']) {
@@ -295,7 +294,7 @@ class Index extends MY_Controller {
         if ( '156' == $product_data['curLocation_id'] && $product_data['goods_info']['supplier_id']) {
             $this->load->model('tb_mall_supplier');
             $tb_mall_supplier = $this->tb_mall_supplier->get_one("supplier_qq", ['supplier_id' => $product_data['goods_info']['supplier_id']]);
-            $product_data['supplier_qq'] = $tb_mall_supplier['supplier_qq'] ? explode(",", $tb_mall_supplier['supplier_qq']) : [];
+            $product_data['supplier_qq'] = !empty($tb_mall_supplier['supplier_qq']) ? explode(",", $tb_mall_supplier['supplier_qq']) : [];
             $product_data['supplier_qq'] = array_filter($product_data['supplier_qq']);
         }
   		$this->_viewData = $product_data;

@@ -569,6 +569,21 @@ class m_user extends MY_Model {
                 'card_number'=>trimall($data['card_number']),
                 'remark'=>$data['remark'],
             ));
+        }elseif($data['take_cash_type'] == 6){
+            $fee = aliapy_withdrawal_fee($data['take_out_amount']);
+            $this->db->insert('cash_take_out_logs',array(
+                'uid'=>$uid,
+                'amount'=>$data['take_out_amount'],
+                'actual_amount'=>$data['take_out_amount'],
+                'actual_amount'=>$fee['actual_fee'],
+                'handle_fee'=>$fee['withdrawal_fee'],
+                'take_out_type'=>$data['take_cash_type'],
+                'account_bank'=>$data['bank_name'],
+                'subbranch_bank'=>$data['bank_branch_name'],
+                'account_name'=>$data['bank_user_name'],
+                'card_number'=>trimall($data['bank_number']),
+                'remark'=>$data['remark'],
+            ));
         }else{
             $this->db->insert('cash_take_out_logs',array(
                 'uid'=>$uid,
@@ -3448,6 +3463,7 @@ class m_user extends MY_Model {
     /**
      * @author brady.wang
      * @param $mobile 手机号
+     * @desc 验证手机号是否被人验证了
      */
     public function check_mobile_exists($mobile)
     {
@@ -3476,6 +3492,42 @@ class m_user extends MY_Model {
         {
             return null;
         }        
+    }
+    
+    
+    /**
+     * 获取用户用户职称店铺等信息
+     * @param 用户id $uid
+     */
+    public function get_user_info_all($uid)
+    {
+        $user_data = array();
+        $sql = "SELECT id,sale_rank,user_rank,sale_rank_up_time FROM users WHERE id=".$uid;
+        $query = $this->db->query($sql);
+        $return_value = $query->row_array();
+        if(!empty($return_value))
+        {
+            $user_sql = "SELECT create_time FROM users_level_change_log WHERE level_type=2 and uid=".$uid." order by create_time desc limit 1";
+            $user_query = $this->db->query($user_sql);
+            $user_value = $user_query->row_array();
+            $user_data = array
+            (
+                'uid' => $uid,
+                'sale_rank' => $return_value['sale_rank'],
+                'user_rank' => $return_value['user_rank'],
+                'sale_rank_up_time'=> $return_value['sale_rank_up_time'],
+                'user_rank_up_time'=> $user_value['create_time']
+            );
+            if(!empty($user_value))
+            {
+                $user_data['user_rank_up_time'] = $user_value['create_time'];
+            }            
+            return $user_data;
+        }
+        else
+        {
+            return null;
+        }
     }
     
     /**

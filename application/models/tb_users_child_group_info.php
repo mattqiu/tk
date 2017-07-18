@@ -234,6 +234,12 @@ class tb_users_child_group_info extends CI_Model{
     		return false;
     	}
     	$this->redis->set_hash_object($this->_get_groupid_redis_key($group_id), $data);
+        //判断用户是否在list列表，如果不在则新增
+        $list = $this->redis->get_set_list($this->_get_listid_redis_key($data["uid"]));
+    	if (!in_array($group_id,$list)) {
+            //添加映射关系
+            $this->redis->add_set_list($this->_get_listid_redis_key($data["uid"]),$group_id);
+    	}
     }
     
     /**
@@ -271,7 +277,36 @@ class tb_users_child_group_info extends CI_Model{
 		//更新上级
     	$this->_fix_up_user_rank($user['parent_id']);
     }
-    
+     /**
+     * @author: haiya 修复会员上下级对应关系到 redis
+     * @date: 2017年7月17日
+     * @param type $user_id
+     */
+    public function  fix_user_logic($user_id){
+        $this->_fix_user_down_logic($user_id);
+    }
+    /**
+     * @author: haiya 往下修复每一个用户的下级
+     * @date: 2017年7月17日
+     * @param type $user_id
+     * @return boolean
+     */
+    function _fix_user_down_logic($user_id){
+        $this->load->model('tb_users');
+        $childrens = $this->tb_users->find_by_parent_id('id', $user_id);
+        //$list = $this->redis->get_set_list($this->_get_listid_redis_key(1380101377));
+        //fout($list);exit;
+        if ($childrens) {
+            foreach ($childrens as $c) {
+                //递归每个子分支
+                $this->_fix_user_down_logic($c['id']);
+                $this->redis->add_set_list($this->_get_listid_redis_key($user_id),$c["id"]);
+            }
+        }
+        return true;
+    	
+    }
+
     /**
      * @author: derrick 单独修复用户职称变动时间
      * @date: 2017年7月4日
@@ -455,7 +490,7 @@ class tb_users_child_group_info extends CI_Model{
     		return false;
     	}
     	
-    	if ($user['sale_rank'] < 5 && $user['user_rank'] != 4) {
+    	if ($user['sale_rank'] <= 5 && $user['user_rank'] != 4) {
     		//修复职称
     		return $this->_fix($user_id, $user['parent_id'], $user['sale_rank']);
     	}
@@ -496,7 +531,6 @@ class tb_users_child_group_info extends CI_Model{
 	    	}
 	    	
     		$this->add_one($user_id, $parent);
-    		
     		//继续往上更新
     		$this->_fix_up_user_rank($user['parent_id']);
     	}
@@ -513,54 +547,69 @@ class tb_users_child_group_info extends CI_Model{
      */
     private function _fix($user_id, $parent_id, $current_sale_rank) {
     	//从销售总监开始统计, 如果用户已经是副总裁, 则没有统计的必要了.
-    	$rank_level = 4;
+    	$rank_level = 5;
 
-		$this->load->model(array('tb_users', 'tb_user_sale_rank_repair_log'));
+	$this->load->model(array('tb_users', 'tb_user_sale_rank_repair_log'));
         $user_info = $this->tb_users->getUserInfo($user_id,array('sale_rank_up_time','sale_rank'));
         $data =$this->find_by_group_id($user_id);
-        
     	//只修复职称少加的情况
-    	while ($rank_level >= $current_sale_rank) {
-    		
+       // while ($rank_level >= $current_sale_rank) {    
+        while ($rank_level >= 0) {
+    		//获取用户的某个等级之下的所有用户数
     		$num = $this->get_branch_user_total_num_before_level($user_id, $rank_level);
-    		
     		if ($num >= 3 || $rank_level == 0) {
-    			//触发职称改变
-    			if ($rank_level == 0) {
-    				$num = $this->tb_users->count_pay_user_by_parent_id($user_id);
-    				$sale_rank_info = $this->db->from('users_sale_rank_info')->where('uid', $user_id)->get()->row_array();
-    				if ($sale_rank_info) {
-    					$this->db->set('above_silver_num', $num)->where('uid', $user_id)->update('users_sale_rank_info');
-    				} else {
-    					$this->db->replace('users_sale_rank_info', array(
-    							'uid' => $user_id,
-    							'above_silver_num' => 0
-    					));
-    				}
-    			}
+                                //触发职称改变
+                                if ($rank_level == 0) {
+                                        $num = $this->tb_users->count_pay_user_by_parent_id($user_id);
+                                        $sale_rank_info = $this->db->from('users_sale_rank_info')->where('uid', $user_id)->get()->row_array();
+                                        if ($sale_rank_info) {
+                                                $this->db->set('above_silver_num', $num)->where('uid', $user_id)->update('users_sale_rank_info');
+                                        } else {
+                                                $this->db->replace('users_sale_rank_info', array(
+                                                                'uid' => $user_id,
+                                                                'above_silver_num' => 0
+                                                ));
+                                        }
+                                }
     			
 				$n_user_rank = $num >= 3 ? $rank_level+1 : $rank_level;
-				$sale_rank_up_time = $this->_get_real_sale_rank_time($user_id, $n_user_rank);
+				//$sale_rank_up_time = $this->_get_real_sale_rank_time($user_id, $n_user_rank);
+                                $sale_rank_up_time = 1;
 				if (empty($sale_rank_up_time)) {
 					return $data;
 				}
-				
-				if ($user_info['sale_rank_up_time'] != $sale_rank_up_time || $n_user_rank != $user_info['sale_rank']) {
-					//升级时间和职称有一项不同时, 则进行更新
-	    			$this->db->where('id', $user_id)->update('users', array('sale_rank' => $n_user_rank, 'sale_rank_up_time' => $sale_rank_up_time));
-	
-	                //职称变动的会员做个日志
-	                $this->tb_user_sale_rank_repair_log->add_log($user_id, $user_info['sale_rank'], $n_user_rank);
-	
-	    			$this->load->model('tb_users_store_sale_info_monthly');
-	    			$this->tb_users_store_sale_info_monthly->user_rank_change_week_comm($user_id, $current_sale_rank, $rank_level, 0);
+                                //$user_info['sale_rank_up_time'] != $sale_rank_up_time || 
+				if ($n_user_rank != $user_info['sale_rank']) {
+					//升级时间和职称有一项不同时, 则进行更新 , 'sale_rank_up_time' => $sale_rank_up_time
+                                        $this->db->where('id', $user_id)->update('users', array('sale_rank' => $n_user_rank));
+                                        //职称变动的时候加入积分队列
+                                        if($n_user_rank != $user_info['sale_rank']){
+                                            $this->load->model("tb_users_credit_queue_sale_rank");
+                                            $queue_data = array(
+                                                'uid'=>$user_id,
+                                                'before_sale_rank'=>$user_info['sale_rank'],
+                                                'after_sale_rank'=>$n_user_rank,
+                                                'created_time'=>date("Y-m-d H:i:s")
+                                            );
+                                            if($user_info['sale_rank'] > $n_user_rank){
+                                                $this->tb_users_credit_queue_sale_rank->add_queue_demote($queue_data); //添加进入队列,降级
+                                            }else{
+                                                $this->tb_users_credit_queue_sale_rank->add_queue($queue_data); //添加进入队列,升级
+                                            }
+                                        }
+                                        
+                                        //职称变动的会员做个日志
+                                        $this->tb_user_sale_rank_repair_log->add_log($user_id, $user_info['sale_rank'], $n_user_rank);
+
+                                        $this->load->model('tb_users_store_sale_info_monthly');
+                                        $this->tb_users_store_sale_info_monthly->user_rank_change_week_comm($user_id, $current_sale_rank, $rank_level, 0);
 				}
     			
-    			//更新统计
+                                //更新统计
 				$data = $this->get_all_childrens_total($user_id);
 				$data['uid'] = $parent_id;
 				$data['group_id'] = $user_id;
-    			$sql = 'SELECT sale_rank, COUNT(id) AS num FROM users WHERE parent_id = '.$user_id.' AND sale_rank = 5 GROUP BY sale_rank';
+                                $sql = 'SELECT sale_rank, COUNT(id) AS num FROM users WHERE parent_id = '.$user_id.' AND sale_rank = 5 GROUP BY sale_rank';
 				$ranks = $this->db->query($sql)->result_array();
 				foreach ($ranks as $r) {
 					$data['mso_num'] += $r['num'];

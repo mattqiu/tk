@@ -1064,7 +1064,6 @@ class m_goods extends CI_Model{
             ->get("mall_goods_main")->row_array();
 
             $this->load->model("tb_empty");
-            if($debug)$this->tb_empty->redis_lPush($attr['goods_sn_main'].'mall_goods_main',var_export($attr, true));
 //        $this->load->model("tb_mall_goods_main");
 //        $goods_sn_data = $this->tb_mall_goods_main->get_list("goods_sn_main",
 //            ['goods_sn_main'=>$attr['goods_sn_main'],"language_id"=>$lid]);
@@ -1150,7 +1149,6 @@ class m_goods extends CI_Model{
 			return $retData;
 		}
 		$goodsId = $this->db->insert_id();
-		if($debug)$this->tb_empty->redis_lPush($attr['goods_sn_main'].'mall_goods_main','mall_goods_main'. __LINE__);
 		// 添加seo部分
 		$mainDetailData = array(
 			'goods_main_id' => $goodsId,
@@ -1167,7 +1165,6 @@ class m_goods extends CI_Model{
 			$retData['msg'] = "insert main detail failed, ".$this->db->_error_message();
 			return $retData;
 		}
-		if($debug)$this->tb_empty->redis_lPush($attr['goods_sn_main'].'mall_goods_main','mall_goods_main_detail'. __LINE__);
 		// 商品详情图
 		foreach ($attr['detail_img'] as $dk => $item) {
 			$detailImgData = array(
@@ -1184,7 +1181,6 @@ class m_goods extends CI_Model{
 				return $retData;
 			}
 		}
-		if($debug)$this->tb_empty->redis_lPush($attr['goods_sn_main'].'mall_goods_main','mall_goods_detail_img'. __LINE__);
 		//海关
 		if (isset($attr['hgInfo']) && isset($attr['is_hg']) && $attr['is_hg'] == 1) {
 			foreach ($attr['hgInfo'] as $hk => $hv) {
@@ -1233,7 +1229,6 @@ class m_goods extends CI_Model{
 				$retData['msg'] = "insert sub failed, ".$this->db->_error_message();
 				return $retData;
 			}
-			if($debug)$this->tb_empty->redis_lPush($attr['goods_sn_main'].'mall_goods_main','mall_goods'. __LINE__);
 			// 相册
             foreach ($sub['gallery'] as $gk => $v) {
                 $galleryData = array(
@@ -1243,8 +1238,6 @@ class m_goods extends CI_Model{
                     'img_order' => $gk,
                 );
 				$this->db->insert('mall_goods_gallery', $galleryData);
-				$sql = $this->db->last_query();
-				if($debug)$this->tb_empty->redis_lPush($attr['goods_sn_main'].'mall_goods_main',$sql.",".rand(0,99999).",line:". __LINE__);
                 if ($this->db->trans_status() === FALSE) {
 					$this->db->trans_rollback();
                     $retData['code'] = 1102;
@@ -1253,7 +1246,6 @@ class m_goods extends CI_Model{
                 }
             }
         }
-        if($debug)$this->tb_empty->redis_lPush($attr['goods_sn_main'].'mall_goods_main','tb_mall_goods----mall_goods_gallery'. __LINE__);
         // 添加促销信息
         if (isset($attr['is_promote']) && $attr['is_promote'] ==1) {
             $mainSku  = $attr['goods_sn_main'];
@@ -1267,16 +1259,15 @@ class m_goods extends CI_Model{
                     'end_time' => $p['end_time'],
                     'promote_currency' => $p['promote_currency'],
                 );
-                if (false == $this->db->insert('mall_goods_promote', $promoteData)) {
+                $this->db->insert('mall_goods_promote', $promoteData);
+                if ($this->db->trans_status() === FALSE ) {
                     $retData['code'] = 1102;
                     $retData['msg'] = "insert promote failed, ".$this->db->_error_message();
                     return $retData;
                 }
             }
         }
-        if($debug)$this->tb_empty->redis_lPush($attr['goods_sn_main'].'mall_goods_main','mall_goods_promote'. __LINE__);
 		$this->db->trans_commit();
-        if($debug)$this->tb_empty->redis_lPush($attr['goods_sn_main'].'mall_goods_main',var_export($retData,true). __LINE__);
         return $retData;
     }
 
@@ -1529,7 +1520,7 @@ class m_goods extends CI_Model{
 
          //海关 
         // 1.变为非需要海关信息 删除
-        $isHg = isset($attr['is_hg'])  ? $attr['is_hg'] : '';
+        $isHg = isset($attr['is_hg'])  ? $attr['is_hg'] : null;
         if (isset($isHg) && $isHg == 0) {
         	$this->db->delete('mall_goods_customs', array('goods_sn_main' => $skuMain));
     	    if ($this->db->trans_status() === FALSE) {
@@ -1556,14 +1547,14 @@ class m_goods extends CI_Model{
 			foreach ($attr['hgInfo'] as $hk => $hv) {
 				$hg_update = $where_hg = array();
 				// 修改的时候新增
-				if ($hv['is_new'] == 1) {
+				if (isset($hv['is_new']) && $hv['is_new'] == 1) {
 						$hgData = array(
-							'goods_sn_main' => $hv['goods_sn_main'],
-							'goods_sn' => $hv['goods_sn'],
-							'ciqgno' => $hv['ciqgno'],
-							'gcode' => $hv['gcode'],
-							'gmodel' => $hv['gmodel'],
-							'ciqgmodel' => $hv['ciqgmodel'],
+							'goods_sn_main' => isset($hv['goods_sn_main']) ? $hv['goods_sn_main'] : '',
+							'goods_sn'      => isset($hv['goods_sn']) ? $hv['goods_sn'] : '',
+							'ciqgno'        => isset($hv['ciqgno']) ? $hv['ciqgno'] : '',
+							'gcode'         => isset($hv['gcode']) ? $hv['gcode'] : '',
+							'gmodel'        => isset($hv['gmodel']) ? $hv['gmodel'] : '',
+							'ciqgmodel'     => isset($hv['ciqgmodel']) ? $hv['ciqgmodel'] : '', 
 						);
 						$this->db->insert('mall_goods_customs', $hgData);
 						if ($this->db->trans_status() === FALSE) {
@@ -2251,19 +2242,19 @@ class m_goods extends CI_Model{
 					$size_arr[]=$v['size'];
 				}
                 //检查是否有尺寸
-				$size_key = $v['customer'].'-'.$v['color'];
+				/*$size_key = $v['customer'].'-'.$v['color'];
 				if ($v['goods_number'] > 0 && !empty($v['size']) && (!empty($v['color']) || !empty($v['customer']))  && !in_array($v['size'],$size_key_arr[$v['customer']])) {
 					$size_key_arr[$size_key][] = $v['size'];
 				}
 				if (!isset($size_key_arr[$v['goods_sn']])) {
 						$size_key_arr[$v['goods_sn']] = $size_key;
-				}
+				}*/
 
 				if(!empty($v['customer']) && !in_array($v['customer'],$other_arr)) {
 					$other_arr[]=$v['customer'];
 				}
                 //检查是否有规格
-				if ($v['color']) {
+			/*	if ($v['color']) {
 					$customer_key = 'color_'.$v['color'];
 					if ($v['goods_number'] > 0 && !empty($v['customer'])  && !empty($v['color'])  && !in_array($v['customer'],$customer_key_arr[$customer_key])) {
 						$customer_key_arr[$customer_key][] = $v['customer'];
@@ -2272,7 +2263,7 @@ class m_goods extends CI_Model{
 					if (!$customer_key_arr[$v['goods_sn']]) {
 						$customer_key_arr[$v['goods_sn']] = $customer_key;
 					}
-				}
+				}*/
 				if($v['goods_sn'] == $goods_sn) {
 					$goods_main['goods_number']=$v['goods_number'];
 

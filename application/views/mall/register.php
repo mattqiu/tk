@@ -54,7 +54,6 @@
                             
                             <li>
                                 <input autocomplete="off" name="email_disclaimer" checked type="checkbox" class="tps_checkbox"/>
-                                <input autocomplete="off" name="email_disclaimer" checked type="checkbox" class="tps_checkbox"/>
                                 <?php echo lang('user_register_agreement')?>
                             </li>
                             <!-- 注册内容提交 按钮 -->

@@ -60,7 +60,7 @@
                 <!--            验证码-->
                 <label for="email_code" style="margin-top: 20px;"><?php echo lang("verify_code");?></label>
                 <div class="inline">
-                    <input class="input-xlarge pull-left" name="email_code" class="btn btn-white btn-weak " autocomplete="off" maxlength="5" type="text" id="email_code"  placeholder="<?php echo lang("verify_code");?>" style="width:120px;" >&nbsp;&nbsp; <?php  if($is_verified_email == 1)  {  ?><input type="button" id = "get_email_code" value="<?php echo lang('get_captcha');?>" >  <?php  }  ?>
+                    <input class="input-xlarge pull-left" name="email_code" class="btn btn-white btn-weak " autocomplete="off" maxlength="6" type="text" id="email_code"  placeholder="<?php echo lang("verify_code");?>" style="width:120px;" >&nbsp;&nbsp; <?php  if($is_verified_email == 1)  {  ?><input type="button" id = "get_email_code" value="<?php echo lang('get_captcha');?>" >  <?php  }  ?>
                     <?php if (!empty($email) && $is_verified_email == 1) {
                         if ($curLocation_id == '410') {
                             echo '('.  lang_attr('verify_code_tip3',array("email"=>'<span style="color:red;">'.$email.'</span> ')).')';
@@ -136,7 +136,7 @@
     <!--            验证码-->
                 <label for="phone_code" style="margin-top: 20px;"><?php echo lang("phone_code");?></label>
                 <div class="inline">
-                    <input class="input-xlarge pull-left" name="phone_code" class="btn btn-white btn-weak " type="text" id="pwd" name="phone_code" maxlength="4" placeholder="<?php echo lang("verify_code");?>" style="width:100px;" >&nbsp;&nbsp; <input type="button" id = "get_phone_code" value="<?php echo lang('get_phone_code');?>"><?php echo lang("verify_code_tip1"), $mobile_encrypt,lang('verify_code_tip2');?>
+                    <input class="input-xlarge pull-left" name="phone_code" class="btn btn-white btn-weak " type="text" id="pwd" name="phone_code" maxlength="6" placeholder="<?php echo lang("verify_code");?>" style="width:100px;" >&nbsp;&nbsp; <input type="button" id = "get_phone_code" value="<?php echo lang('get_phone_code');?>"><?php echo lang("verify_code_tip1"), $mobile_encrypt,lang('verify_code_tip2');?>
                 </div>
                 <br>
                 <div style="margin-top:20px; ">
@@ -443,7 +443,7 @@
         }
 
 
-        if (!phone_code.match(/^\d{3,5}$/)) {
+        if (!phone_code.match(/^\d{6}$/)) {
             layer.msg("<?php echo lang("phone_code_rule_error");?>");
             return '';
         }
@@ -532,8 +532,8 @@
         add1(60);
         $.ajax({
             type: "POST",
-            url: "/register/add_captcha_zj",
-            data: {email_or_phone: mobile, reg_type: reg_type, action_id: 4},
+            url: "/ucenter/mobile/get_mobile_code",
+            data: {mobile: mobile, reg_type: reg_type, action_id: 4},
             dataType: "json",
             success: function (data) {
                 if (data.error == false) {
@@ -662,7 +662,7 @@
                     layer.msg("<?php echo lang("please_input_code");?>");
                     return '';
                 }
-                if (!email_code.match(/^\d{3,5}$/)) {
+                if (!email_code.match(/^\d{3,7}$/)) {
                     layer.msg("<?php echo lang("phone_code_rule_error");?>");
                     return '';
                 }

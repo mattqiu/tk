@@ -285,6 +285,7 @@ class Add_after_sale_order extends MY_Controller {
 	public function do_add_after_sale(){
 
 		$data = $this->input->post(NULL,TRUE);
+               
                 $data["refund_amount"] = Sbc2Dbc($data["refund_amount"]);
                 if($data["method"]==2){
                     $data["refund_amount"] = sprintf("%.2f",$data["refund_amount"]);
@@ -294,11 +295,19 @@ class Add_after_sale_order extends MY_Controller {
 		if($as_order && isset($data['edit_as_id']) && $data['edit_as_id']){
 			$is_edit = TRUE;
 		}
-
 		if(!isset($data['demote_level']) && $data['type'] == 1){
 			die(json_encode(array('success'=>0,'msg'=>lang('no_operate'))));
 		}
-
+                if($data['method'] == 0 && (preg_match('/^[\x{4E00}-\x{9FA5}]+$/u', $data['account_bank'])==false || $data['account_bank']=="" || iconv_strlen($data['account_bank'],"UTF-8")> 50)){//退款到银行卡
+                    die(json_encode(array('success'=>0,'msg'=>lang('admin_after_sale_brank_name'))));
+                }
+                if($data['method'] == 0 && (is_numeric($data['card_number'])==false || $data['card_number']=="" || iconv_strlen($data['card_number'],"UTF-8")> 50)){//卡号
+                    die(json_encode(array('success'=>0,'msg'=>lang('admin_after_sale_brank_num'))));
+                }
+                if($data['method'] == 0 && (preg_match("/[\'.,:;*?~`!@#$%^&+=)(<>{}]|\]|\[|\/|\\\|\"|\|/",$data['account_name']) || $data['account_name']=="" || iconv_strlen($data['account_name'],"UTF-8")> 50)){//退款到银行卡
+                    die(json_encode(array('success'=>0,'msg'=>lang('admin_after_sale_brank_pop'))));
+                }
+                
 		if(in_array($data['type'],array(0,1))){
 			$this->load->model('m_user');
 			$user = $this->m_user->getUserByIdOrEmail($data['uid']);
@@ -327,13 +336,13 @@ class Add_after_sale_order extends MY_Controller {
 			}
 		}else if(in_array($data['type'],array(2)) && isset($data['order_id'])&&$data['order_id']){
 //			$c = $this->db->from('trade_orders')->where('order_id',trim($data['order_id']))->where_in('order_prop',array('0','1'))->get()->row_array();
-            $this->load->model("tb_trade_orders");
-            $c = $this->tb_trade_orders->get_one("order_id,status,deliver_fee_usd,customer_id,",
-                [
-                    'order_id'=>trim($data['order_id']),
-                    'order_prop'=>array('0','1')
-                ]);
-            if(!$c){
+                        $this->load->model("tb_trade_orders");
+                        $c = $this->tb_trade_orders->get_one("order_id,status,deliver_fee_usd,customer_id,",
+                            [
+                                'order_id'=>trim($data['order_id']),
+                                'order_prop'=>array('0','1')
+                            ]);
+                        if(!$c){
 				die(json_encode(array('success'=>0,'msg'=>lang('order_not_exits'))));
 			}
 			if(in_array($c['status'],array(99,2,90,98,111))){
@@ -356,16 +365,16 @@ class Add_after_sale_order extends MY_Controller {
 				die(json_encode(array('success'=>0,'msg'=>lang('admin_return_fee_tip4'))));
 			}
 		}else{
-//            $c = $this->db->from('trade_orders')->where('order_id',trim($data['order_id']))->where_in('order_prop',array('0','1'))->get()->row_array();
-            $this->load->model("tb_trade_orders");
-            $c = $this->tb_trade_orders->get_one("order_id",[
-                'order_id'=>trim($data['order_id']),
-                'order_prop'=>array('0','1')
-            ]);
-            if(!$c){
-                die(json_encode(array('success'=>0,'msg'=>lang('order_not_exits'))));
-            }
-        }
+        //          $c = $this->db->from('trade_orders')->where('order_id',trim($data['order_id']))->where_in('order_prop',array('0','1'))->get()->row_array();
+                    $this->load->model("tb_trade_orders");
+                    $c = $this->tb_trade_orders->get_one("order_id",[
+                        'order_id'=>trim($data['order_id']),
+                        'order_prop'=>array('0','1')
+                    ]);
+                    if(!$c){
+                        die(json_encode(array('success'=>0,'msg'=>lang('order_not_exits'))));
+                    }
+                }
 
 		if($data['uid'] == "" && in_array($data['type'],array(0,1))){
 			die(json_encode(array('success'=>0,'msg'=>lang('user_id_list_requied'))));
@@ -394,21 +403,22 @@ class Add_after_sale_order extends MY_Controller {
 				$add_data_arr['account_name'] = $data['account_name'];
 			}
 			if(!$data['account_bank'] || !$data['card_number'] ||!$data['account_name'] ){
-				die(json_encode(array('success'=>0,'msg'=>"请输入支付宝信息")));
+				die(json_encode(array('success'=>0,'msg'=>"请输入银行卡信息")));
 			}
+                        $add_data_arr['refund_amount'] =  $add_data_arr['refund_amount'] - round($add_data_arr['refund_amount']*0.005,2);
 		}else if($add_data_arr['refund_method'] == '2'){
-            if($is_edit){
-                $update_arr['card_number'] = $data['card_number'];
-                $update_arr['account_name'] = $data['account_name'];
-            }else{
-                $add_data_arr['card_number'] = $data['card_number'];
-                $add_data_arr['account_name'] = $data['account_name'];
-            }
-            if(!$data['card_number'] ||!$data['account_name'] ){
-                die(json_encode(array('success'=>0,'msg'=>lang('payee_info_incomplete'))));
-            }
-            $add_data_arr['refund_amount'] = $add_data_arr['refund_amount'] - round($add_data_arr['refund_amount']*0.005,2);
-        }else if($add_data_arr['refund_method'] == '1'){
+                    if($is_edit){
+                        $update_arr['card_number'] = $data['card_number'];
+                        $update_arr['account_name'] = $data['account_name'];
+                    }else{
+                        $add_data_arr['card_number'] = $data['card_number'];
+                        $add_data_arr['account_name'] = $data['account_name'];
+                    }
+                    if(!$data['card_number'] ||!$data['account_name'] ){
+                        die(json_encode(array('success'=>0,'msg'=>lang('payee_info_incomplete'))));
+                    }
+                    $add_data_arr['refund_amount'] = $add_data_arr['refund_amount'] - round($add_data_arr['refund_amount']*0.005,2);
+                }else if($add_data_arr['refund_method'] == '1'){
 
 			if($is_edit){
 
@@ -434,16 +444,6 @@ class Add_after_sale_order extends MY_Controller {
 
 		if($data['type'] == 1){
 			$add_data_arr['demote_level'] = $data['demote_level'];
-			/*if($user['is_choose'] == 1){
-				$this->load->model('m_coupons');
-				$coupons = $this->m_coupons->get_coupons_list($user['id'])['total_money'];
-
-				$this->load->model('M_overrides','m_overrides');
-				$duce_amount =  $this->m_overrides->getUpgradeProfit($user['user_rank'],$data['demote_level'],$user['id']);
-				if($duce_amount > $coupons){
-					die(json_encode(array('success'=>0,'msg'=>lang('admin_after_sale_coupons'))));
-				}
-			}*/
 		}
 
 		if($data['check_info'] == ""){
@@ -461,7 +461,6 @@ class Add_after_sale_order extends MY_Controller {
 			}else if($as_order['status'] == 4){
 				$update_arr['status'] = 0;
 			}
-                        
 			$this->db->where('as_id',$data['edit_as_id'])->update('admin_after_sale_order',$update_arr);
 			$this->m_log->admin_after_sale_remark($data['edit_as_id'],$this->_adminInfo['id'],"提交修改申请信息");
 
@@ -477,6 +476,7 @@ class Add_after_sale_order extends MY_Controller {
                         if($data['type'] == 0){//退会的时候改变用户的状态为退会中，status=6
                             $this->db->where('id', $data["uid"])->set('status', 6, FALSE)->update('users');
                         }
+                        //fout($add_data_arr);exit;
 			$this->db->insert('admin_after_sale_order',$add_data_arr);
 
 			$affected_rows = $this->db->insert_id();

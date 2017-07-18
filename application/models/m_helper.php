@@ -261,6 +261,7 @@
 
 			$this->load->model('M_order','m_order');
 			$sql = 'SELECT * FROM `logs_orders_rollback` WHERE `status` = 0 AND process_num < 10 AND id % 10 = '.$idx.' LIMIT 200';
+                        @$this->db->reconnect();//重连数据库
 			$orders = $this->db->query($sql)->result_array();
 // 			$orders = $this->db->from('logs_orders_rollback')->where('status',0)->where('process_num < ',10)->where('id % 10', $idx)->limit(10)->get()->result_array();
 			if($orders)foreach($orders as $order_rollback){

@@ -340,21 +340,27 @@ class Cron extends MY_Controller {
         $this->load->model('m_commission');
         $this->load->model('o_bonus');       
         
-        $ceoList = $this->db->query("select id,child_count from users where sale_rank=5 and sale_rank_up_time<'2017-06-01'
+        $s_time = date('Y-m-01');
+        $year_month = date("Ym", strtotime(date("Ym15"))-30*24*3600);
+        
+        $ceoList = $this->db->query("select id,child_count from users where sale_rank=5 and sale_rank_up_time<'".$s_time."'
  and user_rank=1 order by id asc")->result_array();
         foreach($ceoList as $v){
             $uid = $v['id'];
 
-            $check_fix_sql = "select * from cash_account_log_201706 where item_type = 4 and uid = ".$uid;
+            
+            $tb_name = get_cash_account_log_table($uid,date("Ym"));
+            $check_fix_sql = "select * from ".$tb_name." where item_type = 4 and uid = ".$uid;
             $check_query = $this->db->query($check_fix_sql)->result_array();
             if(!empty($check_query))
             {
+                $this->m_debug->log($uid.':'.-1002);
                 continue;
             }
             $this->m_debug->log($uid.':'.-1001);
             
             /*检查上个月销售额是否满足*/
-            $res = $this->db->query("select sale_amount from users_store_sale_info_monthly where uid=$uid and `year_month`=201705")->row_array();
+            $res = $this->db->query("select sale_amount from users_store_sale_info_monthly where uid=$uid and `year_month`=$year_month")->row_array();
             if($res && $res['sale_amount']>=25000){
 
                 /*检查团队是否满足3000*/
@@ -362,7 +368,7 @@ class Cron extends MY_Controller {
                 $totalBranchCount = 0;
                 foreach($branchUids as $v2){
                     $branchUid = $v2['id'];
-                    $countBranch = $this->db->query("select count(*) as countBranch from users where user_rank<>4 and `status`=1 and enable_time<'2017-06-01' 
+                    $countBranch = $this->db->query("select count(*) as countBranch from users where user_rank<>4 and `status`=1 and enable_time<'".$s_time."' 
     and parent_ids like '%".$branchUid."%'")->row_object()->countBranch;
                     $totalBranchCount+=($countBranch>1500?1500:$countBranch);
                     if($totalBranchCount>=3000){
@@ -388,13 +394,13 @@ class Cron extends MY_Controller {
                     if($v['child_count']<13000){
                         $v['child_count']=round($v['child_count']/10)+13000;
                     }
-                    $ceoComm = tps_money_format($v['child_count']/83885 * 2426.54);
+                    $ceoComm = tps_money_format($v['child_count']/83885 * 2591.45);
 
                     if($istest==1){
                         $this->m_debug->log($uid.':'.$ceoComm);
                     }else{
 
-                        //发放全球副总裁奖                        
+                        //发放全球副总裁奖
                         $user_data[] = array
                         (
                             'uid' => $uid,
@@ -616,9 +622,9 @@ class Cron extends MY_Controller {
                          $commissionToPoint = tps_money_format($ceoComm * $rate);
                          if($commissionToPoint>=0.01){
                          $this->db->where('id', $uid)->set('profit_sharing_point', 'profit_sharing_point+' . $commissionToPoint, FALSE)->set('profit_sharing_point_from_sale', 'profit_sharing_point_from_sale+' . $commissionToPoint, FALSE)->update('users');
-    
+
                          $comm_id = $this->m_commission->commissionLogs($uid,17,-1*$commissionToPoint); //佣金轉分紅點
-    
+
                          $this->m_profit_sharing->createPointAddLog(array(
                          'uid' => $uid,
                          'commission_id' => $comm_id,
@@ -630,7 +636,7 @@ class Cron extends MY_Controller {
                          }
                          $real_cash = $ceoComm - $commissionToPoint;
                          $this->db->where('id', $uid)->set('amount','amount+'.$real_cash,FALSE)->set('infinite_commission','infinite_commission+'.$ceoComm,FALSE)->update('users');
-    
+
                          //$this->db->query("INSERT INTO `infinity_generation_log` (`uid`, `money`, `qualified_time`, `grant`) VALUES ($uid, $ceoComm, '2017-02', '1')");
                         */
                     }
@@ -1095,7 +1101,7 @@ group by order_id having count(id)>=2")->result_array();
     
         $this->load->model('m_profit_sharing');
     
-        $this->m_profit_sharing->getCurMonthWeekLeaderMem_new();//筛选出本月可以参加每周领导对等奖的会员       
+        $this->m_profit_sharing->getCurMonthWeekLeaderMem_new();//筛选出本月可以参加每周领导对等奖的会员
     }
 
     /*创建周领导对等奖发放列队. 执行时间：每周1的6点1分执行.*/
@@ -1284,6 +1290,15 @@ group by order_id having count(id)>=2")->result_array();
         $this->tb_month_eminent_store_preview->monthEminentStoreRewardImplement($num ,$debug);
         $this->bonus_plan_control(8,2,0,time(),"月杰出店铺实际发奖完成",0);
         return;
+    }
+
+    /**
+     * 修复7月份漏发月杰出店铺奖
+     */
+    public function fixMonthEminentStoreBonus(){
+        ini_set('memory_limit', '512M');
+        $this->load->model('tb_month_eminent_store_preview');
+        $this->tb_month_eminent_store_preview->FixMonthEminentStoreRewardTemp();
     }
     /**********新月杰出店铺奖发放脚本 end **********/
 
@@ -1511,7 +1526,15 @@ group by order_id having count(id)>=2")->result_array();
 		$this->load->model('m_helper');
 		echo $this->m_helper->processOrdersRollback(9);
 	}
-
+        /** 订单回滚后续处理_____多开进程 */
+	public function processOrdersRollbackBurst(){
+		$this->load->model('o_pcntl');
+                $this->load->model('m_helper');
+                $this->o_pcntl->burst(10,function ($num){$this->m_helper->processOrdersRollback($num);});//用子进程处理
+                $cmd="echo -ne \"[\033[32m OK \033[0m]\n\"";  
+                $a=exec($cmd);  
+                exit("$a"."\n");  
+	}
 	/** 统计 精英分红奖 */
 	public function fixEliteCash(){
 		$this->load->model('m_helper');
@@ -3088,7 +3111,7 @@ group by order_id having count(id)>=2")->result_array();
         $this->bonus_plan_control(1,1,time(),0,"月团队组织分红用户加入预发队列",0);
         $this->load->model("o_month_leader_bonus_option");      
         $this->o_month_leader_bonus_option->grant_pre_every_month_team_dividend();
-        $this->bonus_plan_control(1,1,0,time(),"月团队组织分红用户加入预发队列完成",0);
+        $this->bonus_plan_control(1,2,0,time(),"月团队组织分红用户加入预发队列完成",0);
     }
     
     /***
@@ -3105,7 +3128,7 @@ group by order_id having count(id)>=2")->result_array();
         $this->o_month_leader_bonus_option->pre_monthTopLeaderSharing_new(); //市场总监
         $this->o_month_leader_bonus_option->pre_monthLeader5Sharing_new(); //全球副总裁
         $this->tb_grant_pre_bonus_state->edit_state(23,3,"");  //预发奖状态初始化
-        $this->bonus_plan_control(23,1,0,time(),"每月领导分红用户加入预发队列完成",0);
+        $this->bonus_plan_control(23,2,0,time(),"每月领导分红用户加入预发队列完成",0);
     }
     
     //-->end  预发奖
@@ -3175,7 +3198,7 @@ group by order_id having count(id)>=2")->result_array();
             'uid' => $uid,
             'item_type' => $item_type,
             'grant_type' => $option,
-            'grant_state' => 0            
+            'grant_state' => 0
         );
         $this->tb_system_grant_bonus_logs->add_grant_bonus_logs($data);  */
         switch($option)

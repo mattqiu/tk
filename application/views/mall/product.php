@@ -83,10 +83,11 @@
 		  <dd>
 			<ul class="sys_spec_text other-attr">
 			  <?php 
-			  $customer_key_arr = $goods_info['customer_key_arr'][$goods_info['customer_key_arr'][$goods_sn]];
+              $customer_key_arr_goods_sn = isset($goods_info['customer_key_arr'][$goods_sn]) ? $goods_info['customer_key_arr'][$goods_sn] : '';
+			  $customer_key_arr = isset($goods_info['customer_key_arr'][$customer_key_arr_goods_sn]) ? $goods_info['customer_key_arr'][$customer_key_arr_goods_sn] : '';
 			  foreach($goods_info['other_list'] as $other) {
 				$disable = '';
-				$disable =  !in_array($other, $customer_key_arr) && $goods_info['color_list'] ?   'disable' : '';
+				$disable = !empty($customer_key_arr) &&  !in_array($other, $customer_key_arr) && $goods_info['color_list'] ?   'disable' : '';
 			  ?>
 			  <li class="js-li-other  <?php if(isset($goods_info['other']) && $goods_info['other'] == $other) {?> on <?php } echo $disable;?>"> 
 				<a href="javascript:;" class="js-other" title="<?php echo $other?>"><?php echo $other?></a> 
@@ -103,10 +104,11 @@
 		  <dd>
 			<ul class="sys_spec_text">
 			  <?php 
-				$customer_list_size = $goods_info['customer_list'][$goods_info['customer_list'][$goods_sn]];
+                $customer_list_goods_sn = isset($goods_info['customer_list'][$goods_sn]) ? $goods_info['customer_list'][$goods_sn] : '';
+				$customer_list_size = isset($goods_info['customer_list'][$customer_list_goods_sn]) ? $goods_info['customer_list'][$customer_list_goods_sn] : '';
 				  foreach($goods_info['size_list'] as $size) {
 					$disable = '';
-					$disable =  !in_array($size, $customer_list_size) && $customer_list_size  ?  'disable' : '';
+					$disable =  !empty($customer_list_size) && !in_array($size, $customer_list_size) && $customer_list_size  ?  'disable' : '';
 					
 				  ?>
 				  <li class="js-li-size <?php if(isset($goods_info['size']) && $goods_info['size'] == $size && $disable == '') {?> on <?php } echo $disable;?> " >

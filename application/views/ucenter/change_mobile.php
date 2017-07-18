@@ -48,7 +48,7 @@
             <div class="modify_info_step2" id="show_step2" style="display: none">
                 <div class="code_msg" style="height:300px;">
                     <span><?php echo lang('alipay_binding_vcode');?></span>&nbsp;
-                    <input type="text" id="old_code" name="old_code" placeholder="<?php echo lang('alipay_binding_vcode');?>" autocomplete="off" maxlength="4"   onkeyup="value=value.replace(/[^\d]/g,'') "onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))"/>
+                    <input type="text" id="old_code" name="old_code" placeholder="<?php echo lang('alipay_binding_vcode');?>" autocomplete="off" maxlength="6"   onkeyup="value=value.replace(/[^\d]/g,'') "onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))"/>
                     <input type="button" id="get_code" value="<?php echo lang('tps_get_captcha');?>"  />
                     <p style="margin-top:15px;font-size:14px;margin-left:50px" id="old_code_tips"></p>
                 </div>
@@ -208,7 +208,7 @@
                 url = 'change_mobile/verify_email_code';
             }
 
-            var pattern = /^\d{4}$/;
+            var pattern = /^\d{3,6}$/;
 
             //验证码数据验证
             if(old_code.length == 0) {
@@ -322,7 +322,7 @@
                     layer.msg("<?php echo lang('email_code_not_nul');?>");
                     return ;
                 }
-                if (!(/^\d{4}$/.test(new_code))) {
+                if (!(/^\d{3,6}$/.test(new_code))) {
                     layer.msg("<?php echo lang('phone_code_rule_error');?>");
                     return ;
                 }

@@ -160,7 +160,7 @@ class tb_cash_take_out_logs extends MY_Model {
         return $array;
     }
     /*
-     * 取出提现申请列表
+     * 取出支付宝提现申请列表
      */
 
     public function get_all_cash_take_out_logs($filter, $page = false, $perPage = 10) {
@@ -208,14 +208,79 @@ class tb_cash_take_out_logs extends MY_Model {
         $array['list'] = $obj2->order_by("log.create_time", "asc")->limit($perPage, ($page - 1) * $perPage)->get()->result_array();
         return $array;
     }
+/*
+     * 取出银行卡提现申请列表
+     */
 
+    public function get_all_bank_logs($filter, $page = false, $perPage = 10) {
+
+        /*         * *要注销的提交项* */
+        unset($filter['page']);//分页
+        unset($filter['checkboxes']);//勾选按钮
+        unset($filter['page_num']);//每页数量
+        unset($filter['rate']);//汇率
+        unset($filter['batch_number']);//批次号
+        unset($filter['total']);//勾选的总数
+        unset($filter['lump_sum']);//总金额
+        /*         * ************** */
+        //
+        $this->db->select('log.id,log.uid,log.amount,log.handle_fee,log.actual_amount,log.check_info,log.take_out_type,log.create_time,log.status,log.account_name,log.card_number,log.remark,log.batch_num,user.name,batch.exchange_rate,batch.pay_type'); //联表查询字段
+        $this->db->from('cash_take_out_logs as log');
+        $this->db->join('users as user', 'log.uid = user.id');
+        $this->db->join('cash_bank_take_out_batch_tb as batch', 'log.batch_num = batch.id', 'left');
+        foreach ($filter as $k => $v) {
+            if ($v === '') {
+                continue;
+            }
+            if ($k == 'uid') {
+                if (!is_numeric($v)) {
+                    $this->db->where('user.name =', str_replace(' ','',$v));
+                    continue;
+                }
+            }
+            if ($k == 'start') {
+                $this->db->where('log.create_time >=', $v);
+                continue;
+            }
+            if ($k == 'end') {
+                $end = date('Y-m-d H:i:s',strtotime($v)+86400-1);
+                $this->db->where('log.create_time <=', $end);
+                continue;
+            }
+            $this->db->where('log.' . $k, $v);
+        }
+        $this->db->where('log.take_out_type', 6);
+        $this->db->order_by('status','ASC');
+        $this->db->order_by('id','asc');
+        $obj2 = clone $this->db;
+        $array['num'] = $this->db->get()->num_rows();
+        $array['list'] = $obj2->order_by("log.create_time", "asc")->limit($perPage, ($page - 1) * $perPage)->get()->result_array();
+        return $array;
+    }
     /*
-     * 批量插入批次号
+     * 批量插入支付宝批次号
      */
 
     public function insert_batch_num($batch, $dota) {
         $this->db->trans_start();
         $this->db->insert('cash_take_out_batch_tb', $batch);
+        $insert_id = $this->db->insert_id();
+        foreach ($dota as $key => $value) {
+            $data[$key]['id'] = $value;
+            $data[$key]['batch_num'] = $insert_id;
+            $data[$key]['status'] = 2; //生成批次的提现申请，自动变为处理中
+        }
+        $this->db->update_batch('cash_take_out_logs', $data, 'id');
+        $this->db->trans_complete();
+        return $this->db->trans_status();
+    }
+    /*
+     * 批量插入银行卡批次号
+     */
+
+    public function insert_batch_bank_num($batch, $dota) {
+        $this->db->trans_start();
+        $this->db->insert('cash_bank_take_out_batch_tb', $batch);
         $insert_id = $this->db->insert_id();
         foreach ($dota as $key => $value) {
             $data[$key]['id'] = $value;
@@ -252,6 +317,20 @@ class tb_cash_take_out_logs extends MY_Model {
         $this->db->trans_start();
         $this->db->where('id', $batch)->delete('cash_take_out_batch_tb'); 
         $this->db->where("take_out_type",2);//支付宝提现属性
+        $this->db->where("status",2);
+        $this->db->update('cash_take_out_logs', $data['data'], $data['where']);
+        $this->db->trans_complete();
+        return $this->db->trans_status();
+    }
+    /*
+     * 支付宝取消批次
+     */
+
+    public function up_bank_batch_num($batch, $data) {
+        $this->db->trans_start();
+        $this->db->where('id', $batch)->delete('cash_bank_take_out_batch_tb'); 
+        $this->db->where("take_out_type",6);//银行卡提现属性
+        $this->db->where("status",2);
         $this->db->update('cash_take_out_logs', $data['data'], $data['where']);
         $this->db->trans_complete();
         return $this->db->trans_status();
@@ -312,7 +391,7 @@ class tb_cash_take_out_logs extends MY_Model {
     }
 
     /*
-     * 取出批次列表
+     * 取出支付宝批次列表
      */
 
     public function get_all_batch($filter, $page = false, $perPage = 10) {
@@ -354,7 +433,92 @@ class tb_cash_take_out_logs extends MY_Model {
     }
 
     /*
-     * 取出批次详情
+     * 取出银行卡批次列表
+     */
+
+    public function get_bank_all_batch($filter, $page = false, $perPage = 10) {
+        /*         * *要注销的提交项* */
+        unset($filter['page']);//分页
+        unset($filter['checkboxes']);//勾选按钮
+        unset($filter['page_num']);//每页数量
+        unset($filter['rate']);//汇率
+        unset($filter['batch_number']);//批次号
+        /*         * ************** */
+        $this->db->select('*'); //联表查询字段
+        $this->db->from('cash_bank_take_out_batch_tb');
+        foreach ($filter as $k => $v) {
+            if ($v==='') {
+                continue;
+            }
+            if ($k == 'start') {
+                $this->db->where('born_time >=', $v);
+                continue;
+            }
+            if ($k == 'end') {
+                $this->db->where('born_time <=', date('Y-m-d H:i:s',strtotime($v)+86400-1));
+                continue;
+            }
+            $this->db->where($k, $v);
+        }
+        $obj2 = clone $this->db;
+        $array['num'] = $obj2->get()->num_rows();
+        $array['list'] = $this->db->order_by("born_time", "desc")->limit($perPage, ($page - 1) * $perPage)->get()->result_array();
+       // $array["count"]["count_usd"] = $this->db->select("SUM(lump_sum) as sum")->where_in("status",array("1","3"))->get('cash_take_out_batch_tb')->row_array();//总金额 美元
+      //  $array["count"]["count_rmb"] = $this->db->select("SUM(lump_sum*exchange_rate) as sum")->where_in("status",array("1","3"))->get('cash_take_out_batch_tb')->row_array();//总金额 人民币
+        $array["count"]["three_usd"] = $this->db->select("SUM(lump_sum) as sum")->where("status",3)->get('cash_bank_take_out_batch_tb')->row_array();//已完成  美元
+        $array["count"]["three_rmb"] = $this->db->select("SUM(lump_sum*exchange_rate) as sum")->where("status",3)->get('cash_bank_take_out_batch_tb')->row_array();//已完成  人民币
+      //  $array["count"]["two_usd"] = $this->db->select("SUM(lump_sum) as sum")->where("status",2)->get('cash_bank_take_out_batch_tb')->row_array();//处理中  美元
+      //  $array["count"]["two_rmb"] = $this->db->select("SUM(lump_sum*exchange_rate) as sum")->where("status",2)->get('cash_bank_take_out_batch_tb')->row_array();//处理中  人民币
+        $array["count"]["one_usd"] = $this->db->select("SUM(lump_sum) as sum")->where("status",1)->get('cash_bank_take_out_batch_tb')->row_array();//待处理  美元
+        $array["count"]["one_rmb"] = $this->db->select("SUM(lump_sum*exchange_rate) as sum")->where("status",1)->get('cash_bank_take_out_batch_tb')->row_array();//待处理  人民币
+        return $array;
+    }
+    /*
+     * 取出银行卡批次详情
+     */
+
+    public function get_bank_batch_detail($filter, $batch_num) {
+        /*         * *要注销的提交项* */
+        unset($filter['page']);//分页
+        unset($filter['checkboxes']);//勾选按钮
+        unset($filter['batch_number']);//批次号
+        /*         * ************** */
+        $rate = $this->db->select('exchange_rate,status')->where('id', $batch_num)->get('cash_take_out_batch_tb')->row_array();
+        $this->db->select('log.*,user.name,batch.pay_type'); //联表查询字段
+        $this->db->from('cash_take_out_logs as log');
+        $this->db->join('users as user', 'log.uid = user.id');
+        $this->db->join('cash_bank_take_out_batch_tb as batch', 'log.batch_num = batch.id', 'left');
+        foreach ($filter as $k => $v) {
+            if (!$v) {
+                continue;
+            }
+            if ($k == 'uid') {
+                if (!is_numeric($v)) {
+                    $this->db->where('user.name =', str_replace(' ','',$v));
+                    continue;
+                }
+            }
+//            if ($k == 'start') {
+//                $this->db->where('log.create_time >=', $v);
+//                continue;
+//            }
+//            if ($k == 'end') {
+//                $this->db->where('log.create_time <=', date('Y-m-d H:i:s',strtotime($v)+86400-1));
+//                continue;
+//            }
+            $this->db->where('log.' . $k, $v);
+        }
+        $this->db->where("take_out_type",6);//支付宝提现属性
+        $this->db->order_by('status','ASC');
+        $this->db->order_by('id','DESC');
+        $obj2 = clone $this->db;
+        $array['rate'] = $rate;
+        $array['num'] = $this->db->get()->num_rows();
+        $array['list'] = $obj2->get()->result_array();
+        return $array;
+    }
+    /*
+     * 取出支付宝批次详情
      */
 
     public function get_batch_detail($filter, $batch_num) {
@@ -536,6 +700,13 @@ class tb_cash_take_out_logs extends MY_Model {
      */
     public function update_batch_pending($batch_id) {
         $this->db->where('id', $batch_id)->update('cash_take_out_batch_tb', array('status' => 2));
+        return $this->db->affected_rows();
+    }
+    /**
+     * 修改批次为处理中
+     */
+    public function update_bank_batch_pending($batch_id,$type) {
+        $this->db->where('id', $batch_id)->update('cash_bank_take_out_batch_tb', array('status' => 2,'pay_type' => $type));
         return $this->db->affected_rows();
     }
 

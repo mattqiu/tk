@@ -44,7 +44,8 @@ $lang['add_blacklist'] = '필터링 추가';
 $lang['blacklist'] = '필터링 리스트';
 $lang['blacklist_ex'] = '필터링';
 $lang['enter_blacklist'] = '필터링을 입력하세요.';
-
+$lang['user_up_time'] = '用户级别升级时间';
+$lang['admin_user_rank'] = '用户级别';
 /** 支付宝提现失败通知，异步通知只会取英文的文字 */
 $lang['DAILY_QUOTA_LIMIT_EXCEED'] = '日限额超限';
 $lang['RECEIVE_ACCOUNT_ERROR'] = '收款账户有误或不存在';
@@ -62,6 +63,16 @@ $lang['PAYEE_ACCOUNT_IS_RELEASED'] = '收款账户名与他人重复，无法进
 $lang['btn_check'] = '正向检测';
 $lang['btn_f_check'] = '反向检测';
 $lang['transfer_contr'] = '转账监控';
+
+//补发佣金信息
+$lang['admin_show_user_monthly'] = "是否显示用户业绩&nbsp;&nbsp;(默认显示最近3个月的数据)";
+$lang['admin_show_day_bonsu_monthly'] = "显示每天全球利润分红队列信息";
+$lang['admin_show_week_bonsu_monthly'] = "显示每周团队销售分红队列信息";
+$lang['admin_show_month_bonsu_monthly'] = "显示每月团队销售分红队列信息";
+$lang['admin_day_bonus_list'] = "每天全球利润分红队列";
+$lang['admin_week_bonus_list'] = "每周团队销售分红队列";
+$lang['admin_month_bonus_list'] = "每月团队销售分红队列";
+
 /**会员中心*/
 $lang['admin_exchange_user_email_title'] = '이메일주소 수정';
 $lang['admin_exchange_user_mobile_title'] = '휴대전화번호 수정';
@@ -193,6 +204,9 @@ $lang['admin_as_upload_info'] = '수령증 업로드';
 $lang['admin_as_del_upload_info'] = '수령증 삭제';
 $lang['admin_after_sale_coupons'] = '주의：삭감한 바우처는 감등하는데 부족합니다. 부분 환불금액은 바우처의 부족한 부분 대신해 사용됩니다.';
 $lang['is_grant_generation'] = '팀 매출 커미션 발급';
+$lang['admin_after_sale_brank_name'] = '开户行不能输入特殊字符，不能为空，最多能输入50个中文字。';
+$lang['admin_after_sale_brank_num'] = '银行账户只能输入数字，不能为空，最多能输入50个数字。';
+$lang['admin_after_sale_brank_pop'] = '开户名只能输入数字，不能为空，最多能输入50个数字。';
 
 /** 导入运单号 */
 $lang['admin_no_lock'] = '잠기지 않은 주문';
@@ -502,6 +516,13 @@ $lang['reject_confirm']='현금 인출 기각원인을 기입하세요. ';
 $lang['cause']='원인';
 $lang['view_batch']='차수조회';
 $lang['alipay_withdraw'] = 'Alipay인출 리스트';
+$lang['bank_withdraw'] = '인출 리스트';
+$lang['payment_interface'] = '그리고 지불 인터페이스';
+$lang['payment_type_1'] = 'CUP';
+$lang['payment_type_2'] = 'TenPay';
+$lang['payment_type_3'] = '를 지불 빠른';
+$lang['payment_type_4'] = '위안 지급';
+$lang['submit_pay_tyep'] = '지불을 제출하고 지불';
 $lang['batch_xq'] = '차수 디테일';
 $lang['process']='조회';
 $lang['cancel_batch']='차수 취소';
@@ -1498,6 +1519,7 @@ $lang['user_amount_total'] = '회원 현재 현금 풀 금액';
 
 
 $lang['invoice_type_form_error'] = '请选择发票类型';
+$lang['no_time_all_null'] = '日期不能为空';
 $lang['invoice_type_2'] = '发票类型';
 $lang['invoice_type_common'] = '普通发票';
 $lang['invoice_type_tax'] = '增值税专用发票';
@@ -1543,3 +1565,5 @@ $lang['add_reward'] = "보너스 제고 추가";
 $lang['add_show'] = "표시";
 $lang['add_hide'] = "표시 않함";
 $lang['is_show_hide'] = "표시여부";
+$lang['users_bonus_list_check'] = "用户佣金队列异常";
+$lang['import_third_order_tips'] = '문서를 업로드하기 전에 먼저 템플릿 데이터를 제거해야합니다!!!';

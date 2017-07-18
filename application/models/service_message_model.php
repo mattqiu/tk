@@ -70,6 +70,7 @@ class service_message_model extends MY_Model
         '10501043' => array('message' => "re_enter_new_mobile"),//请再次输入新手机号
         '10501044' => array('message' => "not_match_your_input"),//两次输入不一致
         '10501045' => array('message' => "new_mobile_not_null"),//手机号不能为空
+        '105010406' => array('message' => "mobile_verify_not"),//手机号未认证
 
 
     );
@@ -84,7 +85,9 @@ class service_message_model extends MY_Model
         $msg = array(
             'error' => true,
             'code' => $code,
+            "success"=>false,
             'message' => lang($this->error_code[$code]['message']),
+            'msg' => lang($this->error_code[$code]['message']),
             'data' => ''
         );
         return $msg;
@@ -110,7 +113,9 @@ class service_message_model extends MY_Model
         $message = !empty($data['message']) ? $data['message'] : 'success';
         $msg = array(
             'error' => false,
+            "success"=>true,
             'message' => $message,
+            'msg' => $message,
             'data' => $data
         );
         return $msg;

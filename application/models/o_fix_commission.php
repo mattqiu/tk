@@ -184,6 +184,45 @@ class o_fix_commission extends CI_Model
         }
     }
 
+    /**
+     * 获取某一时间段内有几个星期一
+     * @param unknown $startdate
+     * @param unknown $enddate
+     * @return multitype:string
+     */
+    function getWeek_new($startdate,$enddate)
+    {
+        $arr=array();
+        //参数不能为空
+        if(!empty($startdate) && !empty($enddate))
+        {
+    
+            //先把两个日期转为时间戳
+            $startTime=strtotime($startdate);
+            $endTime=strtotime($enddate);
+            //开始日期不能大于结束日期            
+            if($startTime<=$endTime){
+                
+                $end_date=strtotime("1 monday",$endTime);
+                if(date("w",$startTime)==1){
+                    $start_date=$startTime;
+                }                
+                $end_times = 0;
+                $week_idx = 0;
+                
+                while ($end_times<=$endTime)
+                {
+                    $end_times = 0;        
+                    $week_idx ++;
+                    $day = date('Y-m-d',strtotime($week_idx.' monday',$startTime));
+                    $arr[$week_idx-1]=$day;
+                    $end_times = strtotime($day);
+                   
+                }                
+            } 
+        }
+        return $arr;
+    }
 
     public function fixUserComm($uid, $commItemId, $start, $end)
     {
@@ -350,23 +389,17 @@ class o_fix_commission extends CI_Model
         switch($commItemId)
         {
             case 25:
-                // 每周团队销售分红奖
-                if($s_time>=20170305)
-                {
-                    //使用2017年4月份新的补发机制
-                    $amount_data = $this->week_ressiue_group_money_new_check($uid, $start, $end, $commItemId);
-                }
+                // 每周团队销售分红奖                    
+                // 使用2017年4月份新的补发机制
+                $amount_data = $this->week_ressiue_group_money_new_check($uid, $start, $end, $commItemId);                
                 break;
             case 7:
                 // 每周领导对等奖
                 $amount_data = $this->weekLeaderBonusAwardFix_check($uid, $start, $end, $commItemId);
                 break;
             case 1:
-                //每月团队组织分红奖
-                if($m_time>=201704)
-                {
-                    $amount_data = $this->every_month_ressiue_group_money_new_check($uid,$start,$end,$commItemId);
-                }
+                //每月团队组织分红奖                
+                $amount_data = $this->every_month_ressiue_group_money_new_check($uid,$start,$end,$commItemId);
                 break;
             case 6:
                 //每天全球日分红
@@ -374,11 +407,7 @@ class o_fix_commission extends CI_Model
                 break;
             case 23:
                 //每月领导分红奖
-                if($m_time>=201704)
-                {
-                    //2017年4月份执行新的补发机制
-                    $amount_data = $this->resMonthLeaderAmount_new_check($uid,$start,$end,$commItemId);
-                }
+                $amount_data = $this->resMonthLeaderAmount_new_check($uid,$start,$end,$commItemId);
                 break;
         }
 
@@ -649,7 +678,7 @@ and (a.sale_amount>=10000 or b.user_rank<>4) and a.uid = ".$uid;
         if (strtotime($end) >= strtotime($start_day)) {
             $sql = "select a.uid,a.sale_amount,if(c.user_rank=4,1,if(c.user_rank=5,2,if(c.user_rank=3,3,if(c.user_rank=2,4,5)) ) )  from users_store_sale_info_monthly a left join users b
 on a.uid=b.id left join users as c on a.uid=c.id  where a.`year_month`=".$yearmonth." and a.sale_amount>=2500
-and (a.sale_amount>=10000 or b.user_rank<>4) and a.uid = ".$uid;
+and (a.sale_amount>=10000 or b.user_rank<>4) and a.uid = ".$uid;            
             $rs = $this->db->query($sql)->row_array();
             if (empty($rs)) {
                 echo json_dump(array('success'=>false,'msg'=>lang("user_not_match_daily_bonus")));
@@ -675,8 +704,10 @@ and (a.sale_amount>=10000 or b.user_rank<>4) and a.uid = ".$uid;
             for($index = 0; $index < count($day_all) ; $index++)
             {
                 //判断用户是否拿过这天的奖金了
-                $exists = $this->o_cash_account->check_exists($uid,strtotime($day_all[$index]),$commItemId);
-                if ($exists){
+//                 $exists = $this->o_cash_account->check_exists($uid,strtotime($day_all[$index]),$commItemId);             
+//                 if ($exists)
+                {
+                   
                     //获取用户应该发放的奖金
                     //获取昨天全球利润
                     $yesterday =  date("Ymd",strtotime($day_all[$index]) - 24 * 3600);
@@ -687,6 +718,8 @@ and (a.sale_amount>=10000 or b.user_rank<>4) and a.uid = ".$uid;
                     }
                     $yesterdayProfit = $yesterdayProfitArr['money'];
                     $total_money = tps_int_format($yesterdayProfit * $rate_a);//根据配置的利润比例算出日分红金额
+                    
+                   
                     if ($total_money > 0) {
                         $rate_b = $obonus_rate['rate_b'] <0 ? 0.5 : $obonus_rate['rate_b'];
                         $rate_c = $obonus_rate['rate_c'] <0 ? 0.5 : $obonus_rate['rate_c'];
@@ -1079,6 +1112,7 @@ and (a.sale_amount>=10000 or b.user_rank<>4) and a.uid = ".$uid;
         {
             // 检测奖金是否已经发过
             $ressiue_info = $this->tb_month_leader_bonus->getRessiueLeaderAutoAmount_new($user_info['sale_rank'], $user_point, $month_array[$index], $uid);
+           
             if (! empty($ressiue_info) && $ressiue_info[0]['money'] >= 0) {
                 $c_time = $month_array[$index] . " " . date('H:i:s');
                 $amount_data[] = array(
@@ -1088,7 +1122,6 @@ and (a.sale_amount>=10000 or b.user_rank<>4) and a.uid = ".$uid;
                     'time' => $c_time
                 );
             }
-
         }
 
         return $amount_data;
@@ -1552,14 +1585,15 @@ and (a.sale_amount>=10000 or b.user_rank<>4) and a.uid = ".$uid;
         $this->load->model('tb_week_leader_members');
         $this->load->model('tb_month_leader_bonus');
         $amount_data = array();
+       
         $user_title_info = $this->m_user->get_user_title_info($uid);
         if (!empty($user_title_info)) {
-
+           
             $ressiue_day = $this->everyMonthFixedDay($start, $end); // 每月15号发奖
-
+           
             for ($index = 0; $index < count($ressiue_day); $index ++) {
                 $ressiue_info = $this->tb_month_leader_bonus->getRessiueWeekTeamAutoAmount_new($ressiue_day[$index], $commItemId, $uid);
-
+               
                 if (! empty($ressiue_info) && $ressiue_info[0]['money'] >= 0) {
                     $c_time = $ressiue_day[$index] . " " . date('H:i:s');
                     $amount_data[] = array(
@@ -1664,14 +1698,14 @@ and (a.sale_amount>=10000 or b.user_rank<>4) and a.uid = ".$uid;
         $user_title_info = $this->m_user->get_user_title_info($uid);
         if (! empty($user_title_info))
         {
-            $ressiue_day = $this->getWeek($start, $end);
-
+           
+            $ressiue_day = $this->getWeek_new($start, $end);
+         
             for ($index = 0; $index < count($ressiue_day); $index ++)
             {
-
+                
                 $ressiue_info = $this->tb_week_leader_members->getRessiueWeekTeamAutoAmount_new_check($ressiue_day[$index], $commItemId, $uid);
-
-
+                
                 if(!empty($ressiue_info)&&$ressiue_info[0]['money']>=0)
                 {
                     $c_time = $ressiue_day[$index]." ".date('H:i:s');

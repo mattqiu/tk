@@ -381,6 +381,7 @@ class Trade extends MY_Controller
 			110 => lang('admin_order_payment_amount'),
 			104 => 'WxPay(微信支付)',
 			111 => lang('payment_111'),
+                        113 => '快付通',
 		);
 
 		// 折扣 map

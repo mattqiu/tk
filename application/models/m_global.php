@@ -28,7 +28,7 @@ class m_global extends MY_Model {
                 break;
                 
             case 'withdraw_table':
-                if(!in_array($userInfo['role'],array(0)) && !in_array($userInfo['id'], array(1,18,68,99,210,60,188,277,291,173,3,8,9,212,64,294,293,295,144,198,280))){
+                if(!in_array($userInfo['role'],array(0)) && !in_array($userInfo['id'], array(160,1,18,68,99,210,60,188,277,291,173,3,8,9,212,64,294,293,295,144,198,280))){
                     redirect(base_url('admin/no_permission'));
                 }
                 break;
@@ -104,7 +104,7 @@ class m_global extends MY_Model {
                 }
                 break;
             case 'import_third_part_orders':
-                if(!in_array($userInfo['id'],array(1))){
+                if(!in_array($userInfo['id'],array(1,9,131,420,464,144)) && !check_right('import_third_part_orders')){
                     redirect(base_url('admin/no_permission'));
                 }
                 break;

@@ -683,7 +683,7 @@ class Redis_Cache extends Redis_Class
      * @param null $data
      * @param $defined_vars
      */
-    function after_get_list($data=null,$defined_vars=null)
+    function after_get_list(&$data=null,$defined_vars=null)
     {
         $this->redis_cache_log("call after_get_list:",$defined_vars);
         $config = $this->get_config();

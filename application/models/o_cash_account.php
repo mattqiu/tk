@@ -234,7 +234,7 @@ class o_cash_account extends CI_Model {
     public function check_exists($uid,$time,$item_type)
     {
         $time_start = date("Y-m-d",$time);
-        $res = $this->tb_cash_account_log_x->check_exits_by_day($uid,$item_type,$time_start);
+        $res = $this->tb_cash_account_log_x->check_exits_by_days($uid,$item_type,$time_start);
         if(empty($res)) {
             return true;
         } else {
